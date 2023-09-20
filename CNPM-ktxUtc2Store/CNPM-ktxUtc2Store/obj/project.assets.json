@@ -12110,11 +12110,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Asp.Net\\CNPM-E-commerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+      "projectUniqueName": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
       "projectName": "CNPM-ktxUtc2Store",
-      "projectPath": "C:\\Asp.Net\\CNPM-E-commerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+      "projectPath": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
       "packagesPath": "C:\\Users\\rukac\\.nuget\\packages\\",
-      "outputPath": "C:\\Asp.Net\\CNPM-E-commerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
+      "outputPath": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rukac\\AppData\\Roaming\\NuGet\\NuGet.Config",
