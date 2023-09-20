@@ -1,0 +1,83 @@
+﻿@model productDisplayModel
+   @{
+
+   }
+<div class="my-2">
+    <form asp-action="Index" class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+            <label class="visually-hidden" for="categoryId"></label>
+            <select class="form-select" id="categoryId" name="categoryId">
+                <option selected>Category</option>
+                @foreach(var item in Model.categories)
+                {
+                    <option selected="@(item.Id==Model.categoryId)" value="@item.Id">@item.categoryName</option>
+                }
+            </select>
+        </div>
+        <div class="col-12">
+            <label class="visually-hidden" for="sterm">Search</label>
+            <div class="input-group">
+                <div class="input-group-text">
+                    <input type="text" class="form-control" value="@Model.sterm" id="sterm" name="sterm" placeholder="Search" />
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+        <div class="col-12">
+            <a class="btn btn-dark" href="/Home/Index">Reset</a>
+        </div>
+    </form>
+</div>
+
+
+<div class="w-100 mt-4 d-flex flex-wrap">
+    @foreach(var product in Model.products)
+    {
+            <div class="card mx-2 mb-4"  style="width: 16rem;">
+            <img class="card-img-top" src="/images/@product.imageUrl" alt="..." style="width:100% ;height:300px">
+                <div class="card-body">
+                    <h5 class="card-title">@product.productName</h5>
+                    <p class="card-text">
+                        category:@product.categoryName
+                        price:@product.price
+
+                    </p>
+                
+                <button type="button" onclick="AddItem(@product.Id)" class="btn btn-primary">Thêm vào giỏ hàng</button>
+
+                </div>
+        </div>
+    }
+   
+</div>
+@section Scripts{
+    <script> 
+        async function AddItem(productId) {
+              var usernameEl = document.getElementById("username");
+
+        if (usernameEl == null) {
+
+           
+                window.location.href = "/Identity/Account/Login";
+            
+        }
+            try 
+            {
+                var response = await fetch(`/Cart/AddItem?productId=${productId}`);
+                if (response.status==200) 
+                {
+                    var result = await response.json();
+                    console.log(result);
+                    var cartCountEl = document.getElementById("cartCount");
+                    cartCountEl.innerHTML = result;
+                    window.location.href="#cartCount"
+                }
+            }
+            catch(err){
+                console.log(err);
+            }
+        }
+    </script>
+}
