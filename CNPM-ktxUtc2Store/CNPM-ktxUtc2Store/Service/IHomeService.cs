@@ -2,7 +2,7 @@
 {
     public interface IHomeService
     {
-         Task<IEnumerable<product>> GetProduct(string sTerm = "", int categoryId = 0);
-        Task<IEnumerable<category>> Categories();
+         List<product> GetProduct(/*string sTerm = "", int categoryId = 0*/);
+       List<category> Categories();
     }
 }

@@ -19,10 +19,12 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
     public class productsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public productsController(ApplicationDbContext context)
+        public productsController(ApplicationDbContext context,IWebHostEnvironment environment)
         {
             _context = context;
+            _webHostEnvironment = environment;
         }
 
         // GET: Admin/products
@@ -46,10 +48,10 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 listProduct =_context.products.ToList();
             }
             ViewBag.currentFilter = SearchString;
-            int pageSize = 1;
+            int pageSize = 5;
             int pageNumber = (page ?? 1);
             listProduct = listProduct.OrderByDescending(n => n.Id).ToList();
-            return View(listProduct.ToPagedList(pageNumber,pageSize));
+            return View(listProduct.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/products/Details/5
@@ -74,7 +76,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/products/Create
         public IActionResult Create()
         {
-            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id");
+            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id");
             return View();
         }
 
@@ -83,13 +85,22 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,productName,description,discount,price,imageUrl,categoryId,categoryName")] product product)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(product);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(product);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
-            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
+            catch(Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+
+          
+            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id", product.categoryId);
             return View(product);
         }
 
@@ -106,7 +117,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
+            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id", product.categoryId);
             return View(product);
         }
 
@@ -140,7 +151,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
+            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id", product.categoryId);
             return View(product);
         }
 
@@ -186,5 +197,21 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         {
           return (_context.products?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+        private string uploadImage(product model)
+        {
+            string uniqueFileName = string.Empty;
+            if (model.image != null)
+            {
+                string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, ("images/"));
+                 string uniquFileName = Guid.NewGuid().ToString() + "_" + model.image.FileName;
+                string filePath=Path.Combine(uploadFoder, uniquFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.image.CopyTo(fileStream); 
+                }
+            }
+            return uniqueFileName;
+        }
     }
+   
 }

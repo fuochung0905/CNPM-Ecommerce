@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using X.PagedList;
 
 namespace CNPM_ktxUtc2Store.Service.Impl
 {
@@ -11,18 +12,18 @@ namespace CNPM_ktxUtc2Store.Service.Impl
             _dbcontext = dbContext;
 
         }
-        public async Task<IEnumerable<category>> Categories()
+        public List<category> Categories()
         {
-            return await _dbcontext.categories.ToListAsync();
+            return  _dbcontext.categories.ToList();
         }
-        public async Task<IEnumerable<product>> GetProduct(string sterm = "", int categoryId = 0)
+        public List<product> GetProduct(/*string sterm = "", int categoryId = 0)*/)
         {
-            sterm = sterm.ToLower();
+            //sterm = sterm.ToLower();
 
-            IEnumerable<product> products = await (from product in _dbcontext.products
+            List<product> products =  (from product in _dbcontext.products
                                                    join category in _dbcontext.categories
                                                    on product.categoryId equals category.Id
-                                                  where string.IsNullOrWhiteSpace(sterm) ||( product != null && product.productName.ToLower().Contains(sterm))
+                                                  //where string.IsNullOrWhiteSpace(sterm) ||( product != null && product.productName.ToLower().Contains(sterm))
                                                    select new product
                                                    {
                                                        Id = product.Id,
@@ -34,11 +35,12 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                                                        imageUrl = product.imageUrl,
                                                        categoryName = category.categoryName
 
-                                                   }).ToListAsync();
-            if (categoryId > 0)
-            {
-                products = products.Where(a => a.categoryId == categoryId).ToList();
-            }
+                                                   }).ToList();
+            //if (categoryId > 0)
+            //{
+            //    products = products.Where(a => a.categoryId == categoryId).ToList();
+            //}
+         
             return products;
 
         }

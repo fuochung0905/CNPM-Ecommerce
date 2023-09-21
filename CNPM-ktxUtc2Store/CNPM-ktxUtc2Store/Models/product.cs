@@ -14,6 +14,9 @@ namespace CNPM_ktxUtc2Store.Models
         public double discount { get; set;}
         public double price { get; set; }
         public string?  imageUrl { get; set;}
+        [NotMapped]
+        [Display(Name ="choose image")]
+        public IFormFile image { get; set; }
         public int categoryId { get; set;}
         public category category { get; set; }
         public string categoryName { get; set; }

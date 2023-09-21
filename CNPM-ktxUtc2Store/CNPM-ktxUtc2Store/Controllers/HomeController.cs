@@ -1,7 +1,9 @@
 ﻿using CNPM_ktxUtc2Store.Dto;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using X.PagedList;
 
 namespace CNPM_ktxUtc2Store.Controllers
 {
@@ -9,25 +11,38 @@ namespace CNPM_ktxUtc2Store.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IHomeService _homeRepository;
+        private readonly ApplicationDbContext _dbcontext;
 
-        public HomeController(ILogger<HomeController> logger, IHomeService homeRepository)
+        public HomeController(ILogger<HomeController> logger, IHomeService homeRepository, ApplicationDbContext dbcontext)
         {
             _logger = logger;
             _homeRepository = homeRepository;
+            _dbcontext = dbcontext;
         }
 
-        public async Task<IActionResult>Index(string sterm="",int categoryId=0)
+        public  IActionResult Index(int?page)
         {
-            IEnumerable<product> productss= await _homeRepository.GetProduct(sterm,categoryId);
-            IEnumerable<category> categoriess = await _homeRepository.Categories();
-            var productDisplayModel = new productDisplayModel
-            {
-                products = productss,
-                categories = categoriess,
-                sterm=sterm,
-                categoryId=categoryId
-            };
-            return View(productDisplayModel);
+            var listProduct = new List<product>();
+            listProduct = (from product in _dbcontext.products
+                           join category in _dbcontext.categories
+                           on product.categoryId equals category.Id
+                           select new product
+                           {
+                               Id = product.Id,
+                               productName = product.productName,
+                               description = product.description,
+                               discount = product.discount,
+                               price = product.price,
+                               categoryId = product.categoryId,
+                               imageUrl = product.imageUrl,
+                               categoryName = category.categoryName
+
+                           }).ToList();
+
+
+            int pageSize = 12;
+            int pageNumber = (page ?? 1);
+            return View(listProduct.ToPagedList(pageNumber,pageSize));
         }
 
         public IActionResult Privacy()

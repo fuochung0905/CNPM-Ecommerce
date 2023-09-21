@@ -1,0 +1,47 @@
+﻿@model CNPM_ktxUtc2Store.Models.shoppingCart
+@{
+
+    ViewData["Title"] = "GetUserCart";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div style="width:90%; margin:auto">
+    @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
+    {
+        <h3>Gio hang cua toi</h3>
+        @foreach (var item in Model.cartDetails)
+        {
+            <table class="table table-bordered">
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <td>@item.product.productName</td>
+                    <td>
+                        <img src="/images/@item.product.imageUrl" style="width:80px;height:100px">
+                    </td>
+                    <td>@item.quantity</td>
+                    <td>@item.quantity*@item.product.price</td>
+                    <td>
+                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
+                        <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
+                    </td>
+                </tr>
+
+            </table>
+            <div class="my-2">
+                <h5>Total:</h5>
+                @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum())
+
+            </div>
+        }
+    }
+</div>
+
