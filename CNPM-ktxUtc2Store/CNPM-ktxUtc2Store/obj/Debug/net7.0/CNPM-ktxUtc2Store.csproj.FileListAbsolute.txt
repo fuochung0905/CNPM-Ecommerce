@@ -1240,8 +1240,6 @@ C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\NuGet
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\NuGet.ProjectModel.dll
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\NuGet.Protocol.dll
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\NuGet.Versioning.dll
-C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\PagedList.dll
-C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\PagedList.Mvc.dll
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\SQLitePCLRaw.batteries_v2.dll
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\SQLitePCLRaw.core.dll
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -1459,3 +1457,6 @@ C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\refin
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.pdb
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.genruntimeconfig.cache
 C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\ref\CNPM-ktxUtc2Store.dll
+C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\JetBrains.Annotations.dll
+C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\X.PagedList.dll
+C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll

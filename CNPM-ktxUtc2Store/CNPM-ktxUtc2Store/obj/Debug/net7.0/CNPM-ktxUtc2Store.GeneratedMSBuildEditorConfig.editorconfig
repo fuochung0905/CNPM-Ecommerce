@@ -16,8 +16,48 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\WEB\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NccHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NccHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NccHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NccHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NccHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Shared/_Layout.cshtml]
