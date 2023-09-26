@@ -11,5 +11,6 @@ namespace CNPM_ktxUtc2Store.Models
         public int productId { get; set; }
         public product product { get; set; }
         public int quantity { get; set; }
+        public double unitPrice { get; set; }
     }
 }

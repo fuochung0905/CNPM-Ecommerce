@@ -48,11 +48,13 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                 }
                 else
                 {
+                    var product = _context.products.Find(productId);
                     cartItem = new cartDetail
                     {
                         productId = productId,
                         shoppingCartId = cart.Id,
-                        quantity = quantity
+                        quantity = quantity,
+                        unitPrice=product.price
                     };
                     _context.cartDetails.Add(cartItem);
                 }
@@ -152,9 +154,61 @@ namespace CNPM_ktxUtc2Store.Service.Impl
             var cart = _context.shoppingCarts.FirstOrDefault(x => x.UserId == userId);
             return cart;
         }
+
+        public async Task<bool> Docheckout()
+        {
+            using var transaction=_context.Database.BeginTransaction();
+
+            try
+            {
+
+                var userid = GetUserId();
+                if (string.IsNullOrEmpty(userid)){
+                    throw new Exception("user is not logged-in");
+                }
+                var cart = await GetCart(userid);
+                if(cart is null) 
+                {
+                    throw new Exception("Invalid cart");
+                }
+                var cartdetail = _context.cartDetails
+                                        .Where(a => a.shoppingCartId == cart.Id).ToList();
+                if (cartdetail.Count == 0)
+                {
+                    throw new Exception("cart is empty");
+                }
+                var order = new order { 
+                userId=userid,
+                createDate=DateTime.UtcNow,
+                orderStatusId=1
+                };
+                _context.orders.Add(order);
+                 _context.SaveChanges();
+                foreach(var item in cartdetail )
+                {
+                    var orderdetail = new orderDetail
+                    {
+                        productId = item.productId,
+                        orderId = order.Id,
+                        quantity = item.quantity,
+                        unitPrice = item.unitPrice
+                    };
+                    _context.orderDetails.Add(orderdetail);
+                }
+                _context.SaveChanges();
+                _context.RemoveRange(cartdetail);
+                _context.SaveChanges();
+                transaction.Commit();
+                return true;
+
+            }
+            catch (Exception )
+            {
+                return false;
+            }
+        }
         private string GetUserId()
         {
-
             var pricipal = _httpContextAccessor.HttpContext.User;
             string userId = _usermanagement.GetUserId(pricipal);
 

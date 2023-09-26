@@ -1,12 +1,10 @@
 ﻿@model CNPM_ktxUtc2Store.Models.shoppingCart
+
 @{
 
     ViewData["Title"] = "GetUserCart";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
-
-
 <div style="width:90%; margin:auto">
     @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
     {
@@ -15,11 +13,12 @@
         {
             <table class="table table-bordered">
                 <tr>
-                    <th>Product</th>
-                    <th>Image</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                    <th>Action</th>
+                    <th>Sản phẩm</th>
+                    <th>Ảnh</th>
+                    <th>Số lượng</th>
+                    <th>Tổng giá</th>
+                    <th>Khác</th>
+                    <th>Đặt hàng</th>
                 </tr>
 
                 <tr>
@@ -33,12 +32,19 @@
                         <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
                         <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
                     </td>
+                    <td>
+                        <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
+                    </td>
                 </tr>
 
             </table>
             <div class="my-2">
                 <h5>Total:</h5>
                 @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum())
+
+            </div>
+            <div class="my-2">
+                <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
 
             </div>
         }

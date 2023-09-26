@@ -89,6 +89,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
                     _context.Add(product);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));

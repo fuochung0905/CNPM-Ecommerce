@@ -1,5 +1,6 @@
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
+using CNPM_ktxUtc2Store.Service;
 using CNPM_ktxUtc2Store.Service.Impl;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddTransient<IHomeService,HomeService>();
 builder.Services.AddTransient<ICartService,CartService>();
-
+builder.Services.AddTransient<IUserOrderService, UserOrderService>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
