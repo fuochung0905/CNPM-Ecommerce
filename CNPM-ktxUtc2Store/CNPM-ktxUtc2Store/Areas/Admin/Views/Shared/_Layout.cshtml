@@ -34,6 +34,5 @@
     </div>
 </body>
 </html>
-@{
-    @if (IsSectionDefined("Scripts")) { IgnoreSection("Scripts"); }
-}
+@RenderSection("scripts", required: false)
+

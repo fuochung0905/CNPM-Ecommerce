@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YGwqR1DL9a9ZPKyu4bhLTyKKMThKd8xmjs2B70G3Aeo=",
+  "Hash": "TkwhGR+pijUxTr5hFAAvfZjxiN9eaTBUoNQrfbFA3eI=",
   "Source": "CNPM-ktxUtc2Store",
   "BasePath": "_content/CNPM-ktxUtc2Store",
   "Mode": "Default",
@@ -1426,6 +1426,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\tuinu6.jpg"
+    },
+    {
+      "Identity": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\PreImg.js",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "js/PreImg.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\PreImg.js"
     },
     {
       "Identity": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\site.js",

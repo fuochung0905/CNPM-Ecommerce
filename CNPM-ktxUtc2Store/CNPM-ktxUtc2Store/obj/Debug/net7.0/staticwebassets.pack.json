@@ -89,6 +89,10 @@
       "PackagePath": "staticwebassets\\images\\tuinu6.jpg"
     },
     {
+      "Id": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\PreImg.js",
+      "PackagePath": "staticwebassets\\js\\PreImg.js"
+    },
+    {
       "Id": "C:\\WEB\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
