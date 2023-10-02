@@ -8,7 +8,7 @@ namespace CNPM_ktxUtc2Store.Models
         public int Id { get; set; }
         public string userId { get; set; }
         public DateTime createDate { get; set; } = DateTime.UtcNow;
-        public int orderStatusId { get; set; }
+        public int orderStatusId { get; set; } 
         public bool IsDelete { get; set; }
         public orderStatus status { get; set; }
         public List<orderDetail> orderDetails { get; set; }

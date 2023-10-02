@@ -244,32 +244,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxHZXRVc2VyQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/products/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/products/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/products/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/products/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/products/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/Error.cshtml]
@@ -282,6 +266,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/UserOrder/dathang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyXGRhdGhhbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/WEB/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/UserOrder/UserOrder.cshtml]

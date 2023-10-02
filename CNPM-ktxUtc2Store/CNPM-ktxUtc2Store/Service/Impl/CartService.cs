@@ -147,14 +147,14 @@ namespace CNPM_ktxUtc2Store.Service.Impl
 
         }
 
-
+        
 
         public async Task<shoppingCart> GetCart(string userId)
         {
             var cart = _context.shoppingCarts.FirstOrDefault(x => x.UserId == userId);
             return cart;
         }
-
+       
         public async Task<bool> Docheckout()
         {
             using var transaction=_context.Database.BeginTransaction();

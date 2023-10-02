@@ -44,7 +44,23 @@ namespace CNPM_ktxUtc2Store.Controllers
             int pageNumber = (page ?? 1);
             return View(listProduct.ToPagedList(pageNumber,pageSize));
         }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _dbcontext.products == null)
+            {
+                return NotFound();
+            }
 
+            var product = await _dbcontext.products
+                .Include(p => p.category)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
         public IActionResult Privacy()
         {
             return View();

@@ -1,10 +1,6 @@
 ﻿@model CNPM_ktxUtc2Store.Models.shoppingCart
 
-@{
 
-    ViewData["Title"] = "GetUserCart";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
 <div style="width:90%; margin:auto">
     @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
     {
@@ -48,6 +44,7 @@
 
             </div>
         }
+
     }
 </div>
 
