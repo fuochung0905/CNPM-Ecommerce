@@ -1,10 +1,7 @@
 ﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.order>
 @{
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+  
 }
-
-
-
 <div style="width:90%; margin:auto">
     @if (Model != null )
     {
@@ -22,6 +19,7 @@
                     @if(order.orderDetails!=null && order.orderDetails.Count > 0)
                     {
                         <span>Order detail</span>
+
                     }
                 </tr>
             }

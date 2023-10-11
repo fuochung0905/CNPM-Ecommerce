@@ -83,15 +83,25 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,productName,description,discount,price,imageUrl,categoryId,categoryName")] product product)
+        public async Task<IActionResult> Create(product product)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-
-                    _context.Add(product);
+                    string uniqueFileName = uploadImage(product);
+                    var data = new product
+                    {
+                        productName=product.productName,
+                        description=product.description,
+                        discount=product.discount,
+                        price=product.price,
+                        imageUrl=uniqueFileName,
+                        categoryId=product.categoryId,
+                    };
+                    _context.Add(data);
                     await _context.SaveChangesAsync();
+                    TempData["success"] = "Record Successfully saved";
                     return RedirectToAction(nameof(Index));
                 }
             }
@@ -204,8 +214,8 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             if (model.image != null)
             {
                 string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, ("images/"));
-                 string uniquFileName = Guid.NewGuid().ToString() + "_" + model.image.FileName;
-                string filePath=Path.Combine(uploadFoder, uniquFileName);
+                  uniqueFileName = Guid.NewGuid().ToString() + "_" + model.image.FileName;
+                string filePath=Path.Combine(uploadFoder, uniqueFileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     model.image.CopyTo(fileStream); 
