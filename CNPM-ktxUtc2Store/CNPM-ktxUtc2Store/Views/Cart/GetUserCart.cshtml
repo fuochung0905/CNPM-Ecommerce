@@ -3,15 +3,42 @@
 @{
 
     ViewData["Title"] = "GetUserCart";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-<div style="width:90%; margin:auto">
+<div style="width:90%; margin:auto; ">
     @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
     {
         <h3>Gio hang cua toi</h3>
+        <section class="main-item-info">
+            <h3 class="hidden-item-main-title">Item Info</h3>
+            <div class="item-img">
+                <h5>Hình ảnh</h5>
+            </div>
+            <!--    -->
+            <div class="item-name-product">
+                <h5>Sản phẩm</h5>
+            </div>
+            <!--    -->
+            <div class="item-money">
+                <h5>Giá</h5>
+            </div>
+            <!--    -->
+            <div class="item-quantity">
+                <h5>Số lượng</h5>
+            </div>
+            <!--    -->
+            <div class="item-moneypay">
+                <h5>Tổng tiền</h5>
+            </div>
+            <!--    -->
+            <div class="item-order">
+                <h5 class="hidden-item-order">Thao tác</h5>
+            </div>
+
+        </section>
         @foreach (var item in Model.cartDetails)
         {
-            <table class="table table-bordered">
+            /*<table class="table table-bordered">
                 <tr>
                     <th>Sản phẩm</th>
                     <th>Ảnh</th>
@@ -37,17 +64,59 @@
                     </td>
                 </tr>
 
-            </table>
-            <div class="my-2">
-                <h5>Total:</h5>
-                @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum())
+            </table>*/
 
-            </div>
-            <div class="my-2">
-                <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
-
-            </div>
+            <section class="main-item-info">
+                <h3 class="hidden-item-main-title">Item Info</h3>
+                <!--    -->
+                <div class="item-img">
+                    <img class="img" src="/images/@item.product.imageUrl">
+                </div>
+                <!--    -->
+                <div class="item-name-product">
+                    <div class="item-name">
+                        <p>@item.product.productName</p>
+                    </div>
+                </div>
+                <!--    -->
+                <div class="item-money">
+                    <p>@item.product.price</p>
+                </div>
+                <!--    -->
+                <div class="item-quantity">
+                    <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
+                    <input id="item-soluong" value="@item.quantity" type"number">
+                    <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
+                </div>
+                <!--    -->
+                <div class="item-moneypay">
+                    <p>@(item.product.price * item.quantity)</p>
+                </div>
+                <!--    -->
+                <div class="item-order">
+                    <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
+                </div>
+            </section>
         }
+        <div class="nav-show-allsell">
+
+        <div class="my-2">
+           <div style="display: flex; flex-direction: row">
+                    <h5 style="display: grid;
+    place-content: center;">
+                        Tổng cộng( @Model.cartDetails.Count Sản Phẩm ):
+                    </h5>
+                    <h5 style="display: grid;
+    place-content: center; color: orangered; font-size: 20px; padding-left: 5px;"> @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫ </h5>
+           </div>     
+
+        </div>
+        <div class="my-2">
+            <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
+
+        </div>
+
+        </div>
     }
 </div>
 

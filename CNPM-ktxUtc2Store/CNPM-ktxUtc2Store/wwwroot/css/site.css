@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+nav.navbar{
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
