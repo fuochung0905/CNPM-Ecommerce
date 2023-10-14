@@ -8,5 +8,6 @@ namespace CNPM_ktxUtc2Store.Models
         public int Id { get; set; }
         public string categoryName { get; set; }
         public List<product> products { get; set; }
+        public ICollection<variation> variations { get; set; }  
     }
 }

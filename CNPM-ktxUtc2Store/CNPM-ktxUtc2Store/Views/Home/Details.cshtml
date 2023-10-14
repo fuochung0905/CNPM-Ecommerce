@@ -1,83 +1,84 @@
 ﻿@model CNPM_ktxUtc2Store.Models.product
 
 
-<h1>Details</h1>
+<div class="card-wrapper">
+    <div class="card">
+        <!--card trái-->
+        <div class="product-imgs">
+            <div class="img-display">
+                <div class="img-showcase">
+                    <img src="/images/@Model.imageUrl" alt="Tshirt image">
+                   
+                </div>
+            </div>
+        </div>
+        <!--card phải-->
+        <div class="product-content">
+            <h2 class="product-title">@Model.productName</h2>
+            <a href="#" class="product-link">visit shop</a>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.5(3700)</span>
+            </div>
+            <div class="product-price">
+                <p class="last-price">Giá cũ: <span>@Model.price</span></p>
+                <p class="new-price">Giá hiện tại: <span>@Model.price</span></p>
+            </div>
 
-<div>
-    <h4>product</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.productName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.productName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.discount)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.discount)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.price)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.imageUrl)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.imageUrl)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.category)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.category.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.categoryName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.categoryName)
-        </dd>
-    </dl>
-</div>
-<div>
-    
-    <a type="button" class="btn btn-primary" href="/UserOrder/dathang?productId=@Model.Id">Mua Hàng</a>
+            <div class="product-detail">
 
-    <a class="btn btn-outline-primary" asp-action="Index">Thoát</a>
-</div>
+                <div class="size">
+                    <p>Size</p>
+                    <div class="psize">
+                        <p>M[nhỏ hơn 1m55/ 45kg]</p>
+                    </div>
+                    <div class="psize">
+                        <p>L[nhỏ hơn 1m60/ 55kg]</p>
+                    </div>
+                    <div class="psize">
+                        <p>XL[nhỏ hơn 1m70/ 65kg]</p>
+                    </div>
+                </div>
 
-@* @section Scripts{
-    <script>
-        async function dathang(productId, redirect) {
-            var usernameEl = document.getElementById("username");
-
-            if (usernameEl == null) {
-                window.location.href = "/Identity/Account/Login";
-            }
-            try {
-                var response = await fetch(`/UserOrder/dathang?productId=${productId}&`=${redirect}`);
-                if (response.status == 200) {
-                    var result = await response.json();
-                    console.log(result);  
-                }
-
-            }
-            catch (err) {
-                console.log(err);
-            }
-        }
-    </script>
-}  *@
-
+                <div class="purchase-info">
+                    <p>Số Lượng</p>
+                    <input type="number" min="0" value="1">
+                    <button type="button" class="btn">
+                        Thêm vào giỏ hàng <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button type="button" class="btn">
+                        Mua ngay
+                    </button>
+                </div>
+                <p>
+                    <h3>MÔ TẢ SẢN PHẨM</h3>
+                  @Model.description
+                </p>
+            </div>
+            <div class="social-links">
+                <p>Chia sẻ</p>
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-facebook-messenger"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
+        </div>
+    </div>

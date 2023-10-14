@@ -10,7 +10,7 @@
 <h1>Quản lí sản phẩm</h1>
  
 <p>
-    <a asp-action="Create">Create New</a>
+    <a href="/Admin/products/Create">Thêm sản phẩm mới</a>
 </p>
 <form>
 </form>
@@ -32,13 +32,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.FirstOrDefault().imageUrl)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().categoryName)
-            </th>
-            <th></th>
+           
+           
         </tr>
     </thead>
     <tbody>
@@ -63,9 +58,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.category.Id)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.categoryName)
-                </td>
+               
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

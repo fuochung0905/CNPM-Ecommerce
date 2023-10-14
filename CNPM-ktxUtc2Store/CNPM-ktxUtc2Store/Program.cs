@@ -1,3 +1,5 @@
+using CNPM_ktxUtc2Store.Areas.Admin.Service;
+using CNPM_ktxUtc2Store.Areas.Admin.Service.Impl;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using CNPM_ktxUtc2Store.Service;
@@ -14,6 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddTransient<IHomeService,HomeService>();
 builder.Services.AddTransient<ICartService,CartService>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IUserOrderService, UserOrderService>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -21,6 +24,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
+
 
 //builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
@@ -47,11 +51,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-app.MapControllerRoute(
+app.MapAreaControllerRoute(
     name: "areas",
-      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-
+    areaName:"Admin",
+    pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
     );
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

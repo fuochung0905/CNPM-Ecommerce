@@ -7,12 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
     public class categoriesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -54,9 +52,6 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,categoryName")] category category)
@@ -86,7 +81,6 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View(category);
         }
 
-       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,categoryName")] category category)

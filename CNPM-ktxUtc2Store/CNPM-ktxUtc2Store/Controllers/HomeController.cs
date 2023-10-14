@@ -35,7 +35,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                                price = product.price,
                                categoryId = product.categoryId,
                                imageUrl = product.imageUrl,
-                               categoryName = category.categoryName
+                              
 
                            }).ToList();
 

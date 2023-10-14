@@ -9,49 +9,46 @@ using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
 
-using X.PagedList;
-
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-
     public class productsController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public productsController(ApplicationDbContext context,IWebHostEnvironment environment)
+        public productsController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
-            _webHostEnvironment = environment;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // GET: Admin/products
-        public IActionResult Index(string currentFilter, string SearchString, int? page)
+        public IActionResult Index(string name,double ?to,double ?from)
         {
-            var listProduct = new List<product>();
-            if (SearchString != null)
+            var product = from p in _context.products select p;
+            if (!string.IsNullOrEmpty(name))
             {
-                page = 1;
+                if (to != null && from != null)
+                {
+                    product = product.Where(x => x.productName.Contains(name) && x.price >= to && x.price <= from);
+                }
+                else
+                {
+                    product = product.Where(x => x.productName.Contains(name));
+                }
             }
             else
             {
-                SearchString = currentFilter;
+                if (to != null && from != null)
+                {
+                    product = product.Where(x => x.productName.Contains(name) && x.price >= to && x.price <= from);
+                }
             }
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                listProduct = _context.products.Where(n=>n.productName.Contains(SearchString)).ToList();
-            }
-            else
-            {
-                listProduct =_context.products.ToList();
-            }
-            ViewBag.currentFilter = SearchString;
-            int pageSize = 5;
-            int pageNumber = (page ?? 1);
-            listProduct = listProduct.OrderByDescending(n => n.Id).ToList();
-            return View(listProduct.ToPagedList(pageNumber, pageSize));
+            
+            
+            return View(product);
         }
 
         // GET: Admin/products/Details/5
@@ -76,43 +73,24 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/products/Create
         public IActionResult Create()
         {
-            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id");
+            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "categoryName");
             return View();
         }
 
-        
+        // POST: Admin/products/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(product product)
+        public async Task<IActionResult> Create( product product)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    string uniqueFileName = uploadImage(product);
-                    var data = new product
-                    {
-                        productName=product.productName,
-                        description=product.description,
-                        discount=product.discount,
-                        price=product.price,
-                        imageUrl=uniqueFileName,
-                        categoryId=product.categoryId,
-                    };
-                    _context.Add(data);
-                    await _context.SaveChangesAsync();
-                    TempData["success"] = "Record Successfully saved";
-                    return RedirectToAction(nameof(Index));
-                }
-            }
-            catch(Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-
-          
-            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id", product.categoryId);
-            return View(product);
+            string uniqueFileName = uploadImage(product);
+            
+                product.imageUrl= uniqueFileName;
+                _context.Add(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+         
         }
 
         // GET: Admin/products/Edit/5
@@ -128,14 +106,14 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id", product.categoryId);
+            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
             return View(product);
         }
 
-       
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,productName,description,discount,price,imageUrl,categoryId,categoryName")] product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,productName,description,discount,price,imageUrl,categoryId,qty_inStock,categoryName")] product product)
         {
             if (id != product.Id)
             {
@@ -162,7 +140,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["categoryId"] = new SelectList(_context.categories, "categoryName", "Id", product.categoryId);
+            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
             return View(product);
         }
 
@@ -214,15 +192,14 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             if (model.image != null)
             {
                 string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, ("images/"));
-                  uniqueFileName = Guid.NewGuid().ToString() + "_" + model.image.FileName;
-                string filePath=Path.Combine(uploadFoder, uniqueFileName);
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.image.FileName;
+                string filePath = Path.Combine(uploadFoder, uniqueFileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    model.image.CopyTo(fileStream); 
+                    model.image.CopyTo(fileStream);
                 }
             }
             return uniqueFileName;
         }
     }
-   
 }

@@ -1,44 +1,44 @@
-﻿@using X.PagedList;
-@using X.PagedList.Mvc.Core;
-@model X.PagedList.IPagedList<CNPM_ktxUtc2Store.Models.product>
+﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.product>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Quản lí sản phẩm</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<form>
-
+<form class="form-inline" asp-action="Index" method="get" >
+    <input class="form-control me-2"  type="search" placeholder="Search" name="name"aria-label="Search">
+    giá từ <input type="number" name="to" /> đến <input type="number" name="from" />
+    <button class="btn btn-outline-success" type="submit">Search</button>
+    
 </form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().productName)
+              Tên sản phẩm
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().description)
+                Miêu tả
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().discount)
+              Giảm giá
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().price)
+               Gía
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().imageUrl)
+              ảnh
             </th>
+           
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().category)
+               số lượng còn lại
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().categoryName)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -46,26 +46,25 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.productName)
+              @item.productName
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.description)
+               @item.description
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.discount)
+                @item.discount
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.price)
+               @item.price
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.imageUrl)
+               <img src="/images/@item.imageUrl">
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.category.Id)
+               @item.qty_inStock
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.categoryName)
-            </td>
+           
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
@@ -75,5 +74,3 @@
 }
     </tbody>
 </table>
-Trang @(Model.PageCount<Model.PageNumber ? 0: Model.PageNumber) of @Model.PageCount
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

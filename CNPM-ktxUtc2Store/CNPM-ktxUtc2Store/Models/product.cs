@@ -19,6 +19,7 @@ namespace CNPM_ktxUtc2Store.Models
         public IFormFile image { get; set; }
         public int categoryId { get; set;}
         public category category { get; set; }
-        public string categoryName { get; set; }
+        public int qty_inStock { get; set; }
+        public ICollection<variation_option> variation_Options { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                                                        price = product.price,
                                                        categoryId=product.categoryId,
                                                        imageUrl = product.imageUrl,
-                                                       categoryName = category.categoryName
+                                                     
 
                                                    }).ToList();
             //if (categoryId > 0)

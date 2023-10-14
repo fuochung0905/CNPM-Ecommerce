@@ -11,7 +11,6 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-CNPM_ktxUtc2Store-8df84c5e-771d-43d7-95b3-2399eaf55a57")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CNPM-ktxUtc2Store")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]

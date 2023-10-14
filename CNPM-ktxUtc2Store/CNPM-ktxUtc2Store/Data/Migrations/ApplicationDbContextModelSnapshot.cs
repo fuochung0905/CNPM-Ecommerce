@@ -172,6 +172,9 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("qty_inStock")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("categoryId");
@@ -197,6 +200,50 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("shoppingCart");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("categoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("categoryId");
+
+                    b.ToTable("variation");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("variationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("variationId");
+
+                    b.ToTable("variation_option");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -397,6 +444,21 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("productvariation_option", b =>
+                {
+                    b.Property<int>("productsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("variation_OptionsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("productsId", "variation_OptionsId");
+
+                    b.HasIndex("variation_OptionsId");
+
+                    b.ToTable("productvariation_option");
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.cartDetail", b =>
                 {
                     b.HasOne("CNPM_ktxUtc2Store.Models.product", "product")
@@ -457,6 +519,20 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.Navigation("category");
                 });
 
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.category", null)
+                        .WithMany("variations")
+                        .HasForeignKey("categoryId");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.variation", null)
+                        .WithMany("variation_Options")
+                        .HasForeignKey("variationId");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -508,9 +584,26 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("productvariation_option", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.product", null)
+                        .WithMany()
+                        .HasForeignKey("productsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CNPM_ktxUtc2Store.Models.variation_option", null)
+                        .WithMany()
+                        .HasForeignKey("variation_OptionsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.category", b =>
                 {
                     b.Navigation("products");
+
+                    b.Navigation("variations");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.order", b =>
@@ -521,6 +614,11 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.shoppingCart", b =>
                 {
                     b.Navigation("cartDetails");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
+                {
+                    b.Navigation("variation_Options");
                 });
 #pragma warning restore 612, 618
         }
