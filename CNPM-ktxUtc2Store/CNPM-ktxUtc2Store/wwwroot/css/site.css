@@ -7,7 +7,14 @@ html {
     font-size: 16px;
   }
 }
-
+a{
+    text-decoration:unset;
+    color:unset;
+}
+a:hover {
+    text-decoration: unset;
+    color: unset;
+}
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -25,4 +32,23 @@ nav.navbar{
     position: fixed;
     top: 0;
     width: 100%;
+}
+.container-header {
+    width: 85%;
+    margin: 0px auto;
+}
+.container-web{
+    width:1350px;
+    margin:0px auto;
+}
+input{
+    padding:0px;
+    margin:0px;
+    outline:none;
+    padding-left:5px;
+}
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

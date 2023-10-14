@@ -18,7 +18,7 @@ namespace CNPM_ktxUtc2Store.Data
             var user = new IdentityUser
             {
                 UserName = "Admin123@gmail.com",
-                Email = "Admin123@gmail.com",
+                Email = "Admin123@gmail.com", 
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
 
@@ -28,6 +28,7 @@ namespace CNPM_ktxUtc2Store.Data
             {
                 await userManager.CreateAsync(user, "Admin@123");
                 await userManager.AddToRoleAsync(user, Roles.Admin.ToString());
+
             }
         }
     }
