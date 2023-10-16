@@ -2,13 +2,8 @@
 
 
 
-<<<<<<< HEAD
-    ViewData["Title"] = "GetUserCart";
-    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    
 }
-=======
-   
->>>>>>> b499b090103f8ca2992491c43a86839d53f2bb9a
 <div style="width:90%; margin:auto; ">
 
 <div style="width:90%; margin:auto">
@@ -88,54 +83,46 @@
                 <!--    -->
                 <div class="item-money">
                     <p>@item.product.price</p>
-                </div>
-                <!--    -->
-                <div class="item-quantity">
-                    <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
-                    <input id="item-soluong" value="@item.quantity" type"number">
-                    <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
-                </div>
-                <!--    -->
-                <div class="item-moneypay">
-                    <p>@(item.product.price * item.quantity)</p>
-                </div>
-                <!--    -->
-                <div class="item-order">
-                    <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
-                </div>
-            </section>
-        }
+                    </div>
+                    <!--    -->
+                    <div class="item-quantity">
+                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
+                        <input id="item-soluong" value="@item.quantity" type"number">
+                        <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
+                    </div>
+                    <!--    -->
+                    <div class="item-moneypay">
+                        <p>@(item.product.price * item.quantity)</p>
+                    </div>
+                    <!--    -->
+                    <div class="item-order">
+                        <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
+                    </div>
+                </section>
+            }
 
-        <div class="nav-show-allsell">
+            <div class="nav-show-allsell">
 
-        <div class="my-2">
-           <div style="display: flex; flex-direction: row">
-                    <h5 style="display: grid;
+                <div class="my-2">
+                    <div style="display: flex; flex-direction: row">
+                        <h5 style="display: grid;
     place-content: center;">
-                        Tổng cộng( @Model.cartDetails.Count Sản Phẩm ):
-                    </h5>
-                    <h5 style="display: grid;
-    place-content: center; color: orangered; font-size: 20px; padding-left: 5px;"> @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫ </h5>
-           </div>     
+                            Tổng cộng( @Model.cartDetails.Count Sản Phẩm ):
+                        </h5>
+                        <h5 style="display: grid;
+    place-content: center; color: orangered; font-size: 20px; padding-left: 5px;">
+                            @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫
+                        </h5>
+                    </div>
 
-        </div>
-        <div class="my-2">
-            <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
+                </div>
+                <div class="my-2">
+                    <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
 
-        </div>
+                </div>
 
-        </div>
+            </div>
 
-
-<<<<<<< HEAD
-
-    }
+        }
+    </div>
 </div>
- </div>
-=======
-   
-    }
-</div>
-</div>
->>>>>>> b499b090103f8ca2992491c43a86839d53f2bb9a
-

@@ -1,0 +1,114 @@
+html {
+
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+a{
+    text-decoration:unset;
+    color:unset;
+}
+p{
+    margin:0px;
+}
+a:hover {
+    text-decoration: unset;
+    color: unset;
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    font-family: Arial,sans-serif;
+}
+nav.navbar{
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.container-large {
+    width: 85%;
+    margin: 0px auto;
+}
+.container-web{
+    width:1350px;
+    margin:0px auto;
+}
+input{
+    padding:0px;
+    margin:0px;
+    outline:none;
+    padding-left:5px;
+}
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+input, select{
+    outline:none;
+}
+.wrap-btn {
+    position:relative;
+    display: block;
+    outline: none;
+    border: none;
+    background: unset;
+    padding: 7px 15px;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 3px;
+    line-height: 1;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    gap:3px;
+}
+    .wrap-btn:hover{
+        color:#fff;
+    }
+    .wrap-btn:hover::after {
+        width: 100%;
+    }
+    .wrap-btn::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 100%;
+        transition: 0.3s ease;
+    }
+.wrap-btn i::before{
+
+    margin-bottom:4px;
+}
+.logo a {
+    line-height: 1;
+    font-size: 30px;
+    color: #000;
+    font-weight: 700;
+}
+
+    .logo a span:first-child {
+        margin-right: 5px;
+    }
+
+    .logo a span:last-child {
+        color: #e74c3c;
+        font-size: 28px;
+        font-weight: 600;
+    }
