@@ -4,97 +4,23 @@ using CNPM_ktxUtc2Store.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CNPM_ktxUtc2Store.Data.Migrations
+namespace CNPM_ktxUtc2Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230831172430_added-user")]
-    partial class addeduser
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.ApplicationUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("fullName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("imageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-                });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.cartDetail", b =>
                 {
@@ -112,6 +38,9 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
 
                     b.Property<int>("shoppingCartId")
                         .HasColumnType("int");
+
+                    b.Property<double>("unitPrice")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -184,8 +113,8 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.Property<int>("quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("unitPrice")
-                        .HasColumnType("int");
+                    b.Property<double>("unitPrice")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -239,11 +168,31 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("qty_inStock")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("categoryId");
 
                     b.ToTable("product");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productvoption", b =>
+                {
+                    b.Property<int>("productId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(0);
+
+                    b.Property<int>("variationoptionId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("productId", "variationoptionId");
+
+                    b.HasIndex("variationoptionId");
+
+                    b.ToTable("productvoption");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.shoppingCart", b =>
@@ -264,6 +213,50 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("shoppingCart");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("categoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("categoryId");
+
+                    b.ToTable("variation");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("variationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("variationId");
+
+                    b.ToTable("variation_option");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -316,6 +309,71 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -407,15 +465,15 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CNPM_ktxUtc2Store.Models.shoppingCart", "shoppingCartName")
-                        .WithMany()
+                    b.HasOne("CNPM_ktxUtc2Store.Models.shoppingCart", "shoppingCart")
+                        .WithMany("cartDetails")
                         .HasForeignKey("shoppingCartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("product");
 
-                    b.Navigation("shoppingCartName");
+                    b.Navigation("shoppingCart");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.order", b =>
@@ -459,6 +517,39 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.Navigation("category");
                 });
 
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productvoption", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.product", "product")
+                        .WithMany("productvariation_Options")
+                        .HasForeignKey("productId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CNPM_ktxUtc2Store.Models.variation_option", "variationoption")
+                        .WithMany("productvariation_Options")
+                        .HasForeignKey("variationoptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("product");
+
+                    b.Navigation("variationoption");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.category", null)
+                        .WithMany("variations")
+                        .HasForeignKey("categoryId");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.variation", null)
+                        .WithMany("variation_Options")
+                        .HasForeignKey("variationId");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -470,7 +561,7 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.ApplicationUser", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -479,7 +570,7 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.ApplicationUser", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -494,7 +585,7 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CNPM_ktxUtc2Store.Models.ApplicationUser", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -503,7 +594,7 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.ApplicationUser", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -513,11 +604,33 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.category", b =>
                 {
                     b.Navigation("products");
+
+                    b.Navigation("variations");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.order", b =>
                 {
                     b.Navigation("orderDetails");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.product", b =>
+                {
+                    b.Navigation("productvariation_Options");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.shoppingCart", b =>
+                {
+                    b.Navigation("cartDetails");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
+                {
+                    b.Navigation("variation_Options");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
+                {
+                    b.Navigation("productvariation_Options");
                 });
 #pragma warning restore 612, 618
         }

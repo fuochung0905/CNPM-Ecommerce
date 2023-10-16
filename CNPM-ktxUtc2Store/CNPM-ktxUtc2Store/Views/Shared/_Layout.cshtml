@@ -8,8 +8,11 @@
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -17,20 +20,24 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="~/css/repos_inven.css" asp-append-version="true" />
+=======
+
+>>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
     <link rel="stylesheet" href="~/css/css_cart.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/ctdh.css">
-   
+
 </head>
 <body>
     <header>
-        <div class="container-header">
+        <div class="container-large">
             <div class="top-box">
                 <div class="logo">
                     <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span>UTC2</span><span>Store</span></a>
                 </div>
-                
+
                 <partial name="_LoginPartial" />
             </div>
             <div class="bottom-box">
@@ -38,7 +45,11 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <li class="menu-item">
+<<<<<<< HEAD
                             <a class="nav-link " href="/Admin/Home/Index">Quản lí </a>
+=======
+                            <a class="" href="/Admin/Home">Quản lí </a>
+>>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
                         </li>
                     }
 
@@ -50,24 +61,13 @@
                         <a class="" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </li>
                 </ul>
-                <div class="search-wrap">
-                    <div class="search">
-                        <input type="text" placeholder="Search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div class="cart">
-                        <a class="" href="/Cart/GetUserCart">
-                            <i class="bi bi-cart"></i>
-                            <span id="cartCount" class="num">0</span>
-                        </a>
-                    </div>
+                <div></div>
 
-                </div>
-               
             </div>
         </div>
     </header>
     @* <div>
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ktx Utc2 Store</a>
@@ -87,25 +87,95 @@
 
                             </li>
                         }
+=======
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3" data-bs-theme="dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ktx Utc2 Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="navbar-nav flex-grow-1">
+    @if (User.IsInRole("Admin"))
+    {
+    <li class="nav-item">
+
+    <a class="nav-link text-white" href="/Admin/Home">Quản lí</a>
+
+    <a class="nav-link text-white" asp-area="" asp-controller="Products" asp-action="Create">Quản lí </a>
+
+    </li>
+    }
+>>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
 
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
+    <li class="nav-item">
+    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </li>
+    </ul>
+    <partial name="_LoginPartial" />
+    </div>
+    </div>
+    </nav>
+    </div> *@
+
+    <div class="content-body">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container-large">
+            <div class="wrap-footer">
+                <div class="about-us">
+                    <div class="title fw-semibold">Về chúng tôi</div>
+                    <div class="logo">
+                        <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span>UTC2</span><span>Store</span></a>
+                    </div>
+                    <p class="fw-lighter pt-2">Đến với UTC2STORE quý khách sẽ được trải nghiệm các sản phẩm hoàn toàn mới với chất lượng đảm bảo uy tín - mẫu mã.</p>
+                </div>
+                <div class="other-us">
+                    <div class="title fw-semibold">Chi nhánh</div>
+                    <span class="fw-lighter">Cơ sở I: <span class="fw-bold">445 Sư Vạn Hạnh, P.12, Q.10.</span></span><br />
+                    <span class="fw-lighter">Cơ sở II: <span class="fw-bold">22/40 Phường Hiệp Bình Chánh, Thủ Đức.</span></span><br />
+                    <span class="fw-lighter">Cơ sở III: <span class="fw-bold">53 Tân lập 1, Thủ Đức.</span></span>
+
+                </div>
+                <div class="contact-us">
+                    <div class="title fw-semibold">Liên hệ</div>
+                    <div class="text-wrap">
+                        <p class="fw-lighter">Điện thoại</p>
+                        <span class="fw-bold">036 378 5203</span>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="fw-lighter">Email CSKH</p>
+                        <span class="fw-bold">customercare@utc2store.vn</span>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="fw-lighter">Email công việc</p>
+                        <span class="fw-bold">business@utc2store.vn</span>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="fw-lighter">Thứ Hai - Chủ Nhật</p>
+                        <span class="fw-bold">8h30 - 22h30</span>
+                    </div>
+                </div>
+
+                <div class="follow-us">
+                    <div class="title fw-semibold">Hệ thống cửa hàng</div>
+                    <p class="fw-lighter">Hiện tại UTC2STORE chỉ hoạt động kinh doanh qua các kênh trực tuyến: Website, Facebook, Instagram, Shopee, Lazada & Tiktok shop</p>
+                    <div class="list-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </div> *@
-    
-    <div class="container">
-            @RenderBody()
-    </div>
-   
+        </div>
+    </footer>
     <script>
         loadcartcount();
 
@@ -124,11 +194,12 @@
             }
         }
     </script>
-  
+
 </body>
-    
-    <script link="~/js/site.js"></script>
+
+<script link="~/js/site.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.js"></script>
 
 </html>
- @RenderSection("scripts", required: false)
- @RenderSection("styles", required: false)
+@RenderSection("scripts", required: false)
+@RenderSection("styles", required: false)

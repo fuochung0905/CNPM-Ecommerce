@@ -6,6 +6,7 @@ namespace CNPM_ktxUtc2Store.Models
     [Table("product")]
     public class product
     {
+        [Key]
         public int Id { get; set; }
         [Required]
 
@@ -20,6 +21,6 @@ namespace CNPM_ktxUtc2Store.Models
         public int categoryId { get; set;}
         public category category { get; set; }
         public int qty_inStock { get; set; }
-        public ICollection<variation_option> variation_Options { get; set; }
+        public virtual ICollection<productvoption> productvariation_Options { get; set; }
     }
 }

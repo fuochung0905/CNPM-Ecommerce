@@ -1,9 +1,9 @@
 ﻿@using X.PagedList;
 @using X.PagedList.Mvc.Core;
 @model X.PagedList.IPagedList<product>
-   @{
+@{
 
-   }
+}
 @* <div class="my-2">
     <form asp-action="Index" class="row row-cols-lg-auto g-3 align-items-center">
         <div class="col-12">
@@ -34,53 +34,123 @@
 </div> *@
 
 
-<div class="w-100 mt-4 d-flex flex-wrap" >
-    @foreach(var product in Model)
-    {
-            <div class="card mx-2 mb-4"  style="width: 16rem;">
-            <img class="card-img-top" src="/images/@product.imageUrl" alt="..." style="width:100% ;height:300px">
-                <div class="card-body">
-                    <h5 class="card-title">@product.productName</h5>
-                    <p class="card-text">
-                       
-                        price:@product.price
 
-                    </p>
-                <a class="btn btn-dark" asp-action="Details" asp-route-id="@product.Id">View</a> |
-                <button type="button" onclick="AddItem(@product.Id)" class="btn btn-primary">Thêm vào giỏ hàng</button>
+<div class="banner">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a class="img-banner" href="#"><img src="./images/banner3.jpg" /></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="img-banner" href="#"><img src="./images/banner2.webp" /></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="img-banner" href="#"><img src="./images/banner1.jpg" /></a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div class="main-product">
+    <div class="container-web">
+        <div class="head-product">
+            <div class="filter-product">
+                <form class="list-filter">
+                    <select>
+                        <option>Giá cả</option>
+                        <option>Giá từ thấp đến cao</option>
+                        <option>Giá từ cao đến thâp</option>
+                    </select>
+                    <select>
+                        <option>Thể loại</option>
+                        <option>Quần áo</option>
+                        <option>Giày dép</option>
+                        <option>Túi xách</option>
+                    </select>
+                </form>
+            </div>
+            <div class="search-wrap">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="cart">
+                    <a class="" href="/Cart/GetUserCart">
+                        <i class="bi bi-cart"></i>
+                        <span id="cartCount" class="num">0</span>
+                    </a>
+                </div>
+
+
+
+                <div class="list-product">
+
+                    @foreach (var product in Model)
+                    {
+                        <div class="item-product">
+                            <div class="img-box">
+                                <img src="/images/@product.imageUrl" alt="...">
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">@product.productName</h5>
+                                <div class="card-detail">
+                                    <p class="card-text">@product.price vnđ</p>
+                                    <span class="card-rate">4.5<i class="fa-solid fa-star"></i></span>
+                                </div>
+                                <div class="box-button">
+                                    <a class="wrap-btn detail" asp-action="Details" asp-route-id="@product.Id">Chi tiết</a>
+                                    <button type="button" onclick="AddItem(@product.Id)" class="wrap-btn add"><i class="bi bi-cart-plus"></i><sapn>Thêm</sapn></button>
+                                </div>
+                            </div>
+                        </div>
+                    }
 
                 </div>
+                <div class="foot-product">
+                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+                </div>
+            </div>
         </div>
-    }
-   
-</div>
-Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
-@section Scripts{
-    <script  > 
-        async function AddItem(productId) {
 
-            var usernameEl = document.getElementById("username");
 
-        if (usernameEl == null) {
-                window.location.href = "/Identity/Account/Login";
-        }
-            try 
-            {
-                var response = await fetch(`/Cart/AddItem?productId=${productId}`);
-             
-                if (response.status==200) 
-                {
-                    var result = await response.json();
-                    console.log(result);
-                    var cartCountEl = document.getElementById("cartCount");
-                    cartCountEl.innerHTML = result;
-                    window.location.href="#cartCount"
+
+
+        @section Scripts{
+            <script>
+                async function AddItem(productId) {
+
+                    var usernameEl = document.getElementById("username");
+
+                    if (usernameEl == null) {
+                        window.location.href = "/Identity/Account/Login";
+                    }
+                    try {
+                        var response = await fetch(`/Cart/AddItem?productId=${productId}`);
+
+                        if (response.status == 200) {
+                            var result = await response.json();
+                            console.log(result);
+                            var cartCountEl = document.getElementById("cartCount");
+                            cartCountEl.innerHTML = result;
+                            window.location.href = "#cartCount"
+                        }
+                    }
+                    catch (err) {
+                        console.log(err);
+                    }
                 }
-            }
-            catch(err){
-                console.log(err);
-            }
+            </script>
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    }
+                });
+            </script>
         }
-    </script>
-}

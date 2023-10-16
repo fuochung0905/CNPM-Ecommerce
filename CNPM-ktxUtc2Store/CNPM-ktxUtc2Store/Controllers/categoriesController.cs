@@ -55,14 +55,14 @@ namespace CNPM_ktxUtc2Store.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("categoryName")] category category)
+        public IActionResult Create( category category)
         {
            
                 _context.Add(category);
                 _context.SaveChangesAsync();
               
             
-            return RedirectToAction(nameof(Edit));
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: categories/Edit/5

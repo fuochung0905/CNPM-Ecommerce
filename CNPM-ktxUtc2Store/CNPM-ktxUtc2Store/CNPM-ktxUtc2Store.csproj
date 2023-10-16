@@ -37,8 +37,13 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Data\Migrations\" />
     <Folder Include="Views\Shared\" />
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />

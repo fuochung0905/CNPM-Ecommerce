@@ -4,20 +4,23 @@ using CNPM_ktxUtc2Store.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CNPM_ktxUtc2Store.Data.Migrations
+namespace CNPM_ktxUtc2Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231015172451_chiuuuanhhh")]
+    partial class chiuuuanhhh
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -152,10 +155,6 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.Property<int>("categoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("categoryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("description")
                         .HasColumnType("nvarchar(max)");
 
@@ -180,6 +179,23 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.HasIndex("categoryId");
 
                     b.ToTable("product");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productvoption", b =>
+                {
+                    b.Property<int>("productId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(0);
+
+                    b.Property<int>("variationoptionId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("productId", "variationoptionId");
+
+                    b.HasIndex("variationoptionId");
+
+                    b.ToTable("productvoption");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.shoppingCart", b =>
@@ -444,21 +460,6 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("productvariation_option", b =>
-                {
-                    b.Property<int>("productsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("variation_OptionsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("productsId", "variation_OptionsId");
-
-                    b.HasIndex("variation_OptionsId");
-
-                    b.ToTable("productvariation_option");
-                });
-
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.cartDetail", b =>
                 {
                     b.HasOne("CNPM_ktxUtc2Store.Models.product", "product")
@@ -517,6 +518,25 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("category");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productvoption", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.product", "product")
+                        .WithMany("productvariation_Options")
+                        .HasForeignKey("productId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CNPM_ktxUtc2Store.Models.variation_option", "variationoption")
+                        .WithMany("productvariation_Options")
+                        .HasForeignKey("variationoptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("product");
+
+                    b.Navigation("variationoption");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
@@ -584,21 +604,6 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("productvariation_option", b =>
-                {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.product", null)
-                        .WithMany()
-                        .HasForeignKey("productsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CNPM_ktxUtc2Store.Models.variation_option", null)
-                        .WithMany()
-                        .HasForeignKey("variation_OptionsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.category", b =>
                 {
                     b.Navigation("products");
@@ -611,6 +616,11 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
                     b.Navigation("orderDetails");
                 });
 
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.product", b =>
+                {
+                    b.Navigation("productvariation_Options");
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.shoppingCart", b =>
                 {
                     b.Navigation("cartDetails");
@@ -619,6 +629,11 @@ namespace CNPM_ktxUtc2Store.Data.Migrations
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
                 {
                     b.Navigation("variation_Options");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
+                {
+                    b.Navigation("productvariation_Options");
                 });
 #pragma warning restore 612, 618
         }
