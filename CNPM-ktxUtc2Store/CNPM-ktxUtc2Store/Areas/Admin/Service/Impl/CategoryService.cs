@@ -1,11 +1,13 @@
-﻿namespace CNPM_ktxUtc2Store.Areas.Admin.Service.Impl
+﻿using CNPM_ktxUtc2Store.Areas.Admin.Service;
+
+namespace CNPM_ktxUtc2Store.Areas.Admin.Service.Impl
 {
     public class CategoryService : ICategoryService
     {
         private readonly ApplicationDbContext _context;
         public CategoryService(ApplicationDbContext context)
         {
-            _context = context; 
+            _context = context;
         }
         public bool Add(category category)
         {
@@ -14,7 +16,8 @@
                 _context.categories.Add(category);
                 _context.SaveChanges();
                 return true;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
@@ -41,7 +44,7 @@
 
         public IQueryable<category> GetAll()
         {
-            var data=_context.categories.AsQueryable();
+            var data = _context.categories.AsQueryable();
             return data;
         }
 

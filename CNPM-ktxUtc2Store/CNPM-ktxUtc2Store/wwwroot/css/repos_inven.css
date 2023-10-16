@@ -1,0 +1,50 @@
+﻿body {
+    
+}
+.repos-main-list-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.repos-item-name, .repos-item-classify, .repos-item-price, .repos-item-discount, .repos-item-inventory, .repos-item-img, .repos-item-control{
+    display:grid;
+    place-content: center;
+}
+.repos-item-name {
+    flex-basis: 15%;
+}
+.repos-item-classify {
+    flex-basis: 10%;
+}
+.repos-item-price {
+    flex-basis: 10%;
+}
+.repos-item-discount {
+    flex-basis: 10%;
+}
+.repos-item-inventory {
+    flex-basis: 10%;
+}
+.repos-item-img {
+   
+    flex-basis: 10%;
+}
+.repos-item-img-container {
+    position: relative;
+    display: flex;
+}
+.repos-item-img-show {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    margin-top: 30px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.repos-item-img-container:hover .repos-item-img-show {
+    display: block;
+}
+.repos-item-control {
+    flex-basis: 25%;
+}
