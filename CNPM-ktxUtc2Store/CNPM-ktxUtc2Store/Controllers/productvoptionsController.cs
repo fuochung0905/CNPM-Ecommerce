@@ -49,8 +49,21 @@ namespace CNPM_ktxUtc2Store.Controllers
         // GET: productvoptions/Create
         public IActionResult Create()
         {
+            var product = _context.products.ToList();
+            var selectList=new List<SelectListItem>();
+            foreach(var item in product)
+            {
+                selectList.Add(new SelectListItem(item.productName, item.Id.ToString()));
+            }
+            var vm = new productvoption()
+            {
+            
+            };
+
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName");
-            ViewData["variationoptionId"] = new SelectList(_context.variation_option, "Id", "Id");
+
+           
+
             return View();
         }
 
@@ -59,7 +72,7 @@ namespace CNPM_ktxUtc2Store.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("productId,variationoptionId")] productvoption productvoption)
+        public async Task<IActionResult> Create( productvoption productvoption)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +81,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName", productvoption.productId);
-            ViewData["variationoptionId"] = new SelectList(_context.variation_option, "Id", "Id", productvoption.variationoptionId);
+            ViewData["variationoptionId"] = new SelectList(_context.variation_option, "Id", "value", productvoption.variationoptionId);
             return View(productvoption);
         }
 

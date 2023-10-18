@@ -59,6 +59,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/products/Create
         public IActionResult Create()
         {
+           
             ViewData["categoryId"] = new SelectList(_context.categories, "Id", "categoryName");
             return View();
         }
@@ -71,6 +72,14 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         public async Task<IActionResult> Create(product product)
         {
             string uniqueFileName = uploadImage(product);
+
+            
+                product.imageUrl= uniqueFileName;
+                _context.Add(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Create));
+         
+
 
             product.imageUrl = uniqueFileName;
             _context.Add(product);

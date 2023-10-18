@@ -1,0 +1,7 @@
+﻿@model IEnumerable<category>
+@foreach(var item in Model)
+{
+<li>
+    <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-maloai="@item.Id">@item.categoryName</a>
+</li>
+}
