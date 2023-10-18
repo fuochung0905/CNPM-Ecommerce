@@ -86,21 +86,12 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         public async Task<IActionResult> Create(product product)
         {
             string uniqueFileName = uploadImage(product);
-<<<<<<< HEAD
-            
+         
                 product.imageUrl= uniqueFileName;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Create));
-         
-=======
-
-            product.imageUrl = uniqueFileName;
-            _context.Add(product);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-
->>>>>>> b15b2d14c23078c3671426120de4c95c9c8b5813
+        
         }
 
         // GET: Admin/products/Edit/5

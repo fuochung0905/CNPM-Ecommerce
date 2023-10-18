@@ -1,16 +1,8 @@
 ﻿@model CNPM_ktxUtc2Store.Models.shoppingCart
-
-
-
-<<<<<<< HEAD
     ViewData["Title"] = "GetUserCart";
     //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-=======
-    
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
 }
 <div style="width:90%; margin:auto; ">
-
     <div style="width:90%; margin:auto">
 
         @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
@@ -27,7 +19,6 @@
                 </div>
                 <!--    -->
                 <div class="item-money">
-<<<<<<< HEAD
                     <h5>Giá</h5>
                 </div>
                 <!--    -->
@@ -109,29 +100,6 @@
 
             <div class="nav-show-allsell">
 
-=======
-                    <p>@item.product.price</p>
-                    </div>
-                    <!--    -->
-                    <div class="item-quantity">
-                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
-                        <input id="item-soluong" value="@item.quantity" type"number">
-                        <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
-                    </div>
-                    <!--    -->
-                    <div class="item-moneypay">
-                        <p>@(item.product.price * item.quantity)</p>
-                    </div>
-                    <!--    -->
-                    <div class="item-order">
-                        <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
-                    </div>
-                </section>
-            }
-
-            <div class="nav-show-allsell">
-
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
                 <div class="my-2">
                     <div style="display: flex; flex-direction: row">
                         <h5 style="display: grid;
