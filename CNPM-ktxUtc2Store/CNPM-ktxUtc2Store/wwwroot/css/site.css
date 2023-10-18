@@ -46,7 +46,18 @@ nav.navbar {
     width: 85%;
     margin: 0px auto;
 }
-
+.bottom-bot{
+    display: flex;
+    justify-content: space-between;
+}
+.main-menu{
+    flex-basis: 50%;
+}
+.cart{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
 .container-web {
     width: 1350px;
     margin: 0px auto;
@@ -126,3 +137,6 @@ input, select {
         font-size: 28px;
         font-weight: 600;
     }
+h1{
+    display: none;
+}

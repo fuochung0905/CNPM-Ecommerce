@@ -25,26 +25,12 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         }
 
         // GET: Admin/products
-        public IActionResult Index(string name, double? to, double? from)
+        public IActionResult Index(string name)
         {
             var product = from p in _context.products select p;
             if (!string.IsNullOrEmpty(name))
             {
-                if (to != null && from != null)
-                {
-                    product = product.Where(x => x.productName.Contains(name) && x.price >= to && x.price <= from);
-                }
-                else
-                {
-                    product = product.Where(x => x.productName.Contains(name));
-                }
-            }
-            else
-            {
-                if (to != null && from != null)
-                {
-                    product = product.Where(x => x.productName.Contains(name) && x.price >= to && x.price <= from);
-                }
+                    product = product.Where(x => x.productName.Contains(name) );
             }
 
 
@@ -86,12 +72,28 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         public async Task<IActionResult> Create(product product)
         {
             string uniqueFileName = uploadImage(product);
+<<<<<<< HEAD
          
+=======
+
+            
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
                 product.imageUrl= uniqueFileName;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Create));
+<<<<<<< HEAD
         
+=======
+         
+
+
+            product.imageUrl = uniqueFileName;
+            _context.Add(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
         }
 
         // GET: Admin/products/Edit/5

@@ -1,7 +1,11 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj": {}
+=======
+    "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj": {}
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
   },
   "projects": {
     "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj": {
@@ -9,16 +13,26 @@
       "restore": {
         "projectUniqueName": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
         "projectName": "CNPM-ktxUtc2Store",
+<<<<<<< HEAD
         "projectPath": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
+=======
+        "projectPath": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+        "packagesPath": "C:\\Users\\huy26\\.nuget\\packages\\",
+        "outputPath": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\huy26\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,6 +97,10 @@
               "target": "Package",
               "version": "[8.4.7, )"
             },
+            "X.PagedList.Mvc.Bootstrap4": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[8.4.7, )"
@@ -107,7 +125,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
         }
       }
     }
