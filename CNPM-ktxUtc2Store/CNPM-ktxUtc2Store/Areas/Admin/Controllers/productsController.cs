@@ -73,6 +73,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/products/Create
         public IActionResult Create()
         {
+           
             ViewData["categoryId"] = new SelectList(_context.categories, "Id", "categoryName");
             return View();
         }
@@ -89,7 +90,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 product.imageUrl= uniqueFileName;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Create));
          
         }
 

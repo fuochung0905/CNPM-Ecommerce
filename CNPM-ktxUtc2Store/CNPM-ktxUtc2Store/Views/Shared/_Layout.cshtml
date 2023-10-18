@@ -44,8 +44,20 @@
                             <a class="" href="/Admin/Home">Quản lí </a>
                         </li>
                     }
+                    <li>
+                        <div class="filter-product">
+                            <form class="form-inline" asp-area="" asp-controller="Home" asp-action="Index" method="get">
+                                <div class="search">
+                                    <input type="text" name="searchName" placeholder="Search">
 
+                                </div>
 
+                                <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                            </form>
+                        </div>
+                    </li>
+                    
                     <li class="menu-item">
                         <a class="" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>

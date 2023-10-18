@@ -1,13 +1,11 @@
-﻿@model CNPM_ktxUtc2Store.Models.product
+﻿@model  CNPM_ktxUtc2Store.Models.product
 
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>product</h4>
+<h2>Thêm</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -60,7 +58,9 @@
     </div>
 </div>
 
+
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-area="Admin" asp-controller="Home" asp-action="Index">Back to List</a>
 </div>
+@await Component.InvokeAsync("AdminProducts");
 

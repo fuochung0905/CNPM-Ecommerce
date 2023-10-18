@@ -26,7 +26,7 @@ namespace CNPM_ktxUtc2Store.Controllers
         }
         
 
-        public async Task<IActionResult> dathang(int productId, int quantity = 1)
+        public async Task<IActionResult> dathang(int productId, int variationId, int quantity = 1)
         {
             using var transaction = _context.Database.BeginTransaction();
             var userid = GetUserId();
@@ -56,7 +56,10 @@ namespace CNPM_ktxUtc2Store.Controllers
                 }
                 else
                 {
-                    var product = _context.products.Find(productId);
+                     var product = _context.products.Find(productId);
+                  
+                                    
+                   
                     CTDH = new orderDetail
                     {
                         productId = productId,
