@@ -20,26 +20,44 @@ namespace CNPM_ktxUtc2Store.Controllers
             _dbcontext = dbcontext;
         }
 
-        public  IActionResult Index(int?page)
+        public  IActionResult Index(int?page, string searchName)
         {
+
             var listProduct = new List<product>();
-            listProduct = (from product in _dbcontext.products
-                           join category in _dbcontext.categories
-                           on product.categoryId equals category.Id
-                           select new product
-                           {
-                               Id = product.Id,
-                               productName = product.productName,
-                               description = product.description,
-                               discount = product.discount,
-                               price = product.price,
-                               categoryId = product.categoryId,
-                               imageUrl = product.imageUrl,
-                              
-
-                           }).ToList();
-
-
+            if (string.IsNullOrEmpty(searchName))
+            {
+                
+                listProduct = (from product in _dbcontext.products
+                               join category in _dbcontext.categories
+                               on product.categoryId equals category.Id
+                               select new product
+                               {
+                                   Id = product.Id,
+                                   productName = product.productName,
+                                   description = product.description,
+                                   discount = product.discount,
+                                   price = product.price,
+                                   categoryId = product.categoryId,
+                                   imageUrl = product.imageUrl
+                               }).ToList();
+            }
+            else
+            {
+               
+                listProduct = (from product in _dbcontext.products
+                               join category in _dbcontext.categories
+                               on product.categoryId equals category.Id
+                               select new product
+                               {
+                                   Id = product.Id,
+                                   productName = product.productName,
+                                   description = product.description,
+                                   discount = product.discount,
+                                   price = product.price,
+                                   categoryId = product.categoryId,
+                                   imageUrl = product.imageUrl
+                               }).Where(x => x.productName.Contains(searchName)).ToList();
+            }
             int pageSize = 12;
             int pageNumber = (page ?? 1);
             return View(listProduct.ToPagedList(pageNumber,pageSize));

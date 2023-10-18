@@ -4966,6 +4966,18 @@
           "lib/net7.0/X.PagedList.dll": {}
         }
       },
+      "X.PagedList.Mvc.Bootstrap4/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "X.PagedList.Mvc.Core": "8.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/X.PagedList.Mvc.Bootstrap4.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/X.PagedList.Mvc.Bootstrap4.Core.dll": {}
+        }
+      },
       "X.PagedList.Mvc.Core/8.4.7": {
         "type": "package",
         "dependencies": {
@@ -13455,6 +13467,18 @@
         "x.pagedlist.nuspec"
       ]
     },
+    "X.PagedList.Mvc.Bootstrap4/8.1.0": {
+      "sha512": "sP9V26oOtwwJrHhuOZ7T95/3oSoLGpUIqKg0gdpjepNvCrVCEQqO5CHirM6etl5qIUEK+7q2+rYhsI6UDfo57A==",
+      "type": "package",
+      "path": "x.pagedlist.mvc.bootstrap4/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/X.PagedList.Mvc.Bootstrap4.Core.dll",
+        "x.pagedlist.mvc.bootstrap4.8.1.0.nupkg.sha512",
+        "x.pagedlist.mvc.bootstrap4.nuspec"
+      ]
+    },
     "X.PagedList.Mvc.Core/8.4.7": {
       "sha512": "dS8sJr/aT3AoV9ePaqmF4wijh/2vqS9rxpOvzjPPStkQcR8rUaGPVezPgY/kJwWCZ2hdgKNralbU08So0otNxw==",
       "type": "package",
@@ -13480,20 +13504,16 @@
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.9",
       "X.PagedList >= 8.4.7",
+      "X.PagedList.Mvc.Bootstrap4 >= 8.1.0",
       "X.PagedList.Mvc.Core >= 8.4.7"
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\huy26\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\rukac\\.nuget\\packages\\": {}
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
       "projectName": "CNPM-ktxUtc2Store",
       "projectPath": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
@@ -13502,16 +13522,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\huy26\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
-      "projectName": "CNPM-ktxUtc2Store",
-      "projectPath": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
-      "packagesPath": "C:\\Users\\rukac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\rukac\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13575,6 +13585,10 @@
             "target": "Package",
             "version": "[8.4.7, )"
           },
+          "X.PagedList.Mvc.Bootstrap4": {
+            "target": "Package",
+            "version": "[8.1.0, )"
+          },
           "X.PagedList.Mvc.Core": {
             "target": "Package",
             "version": "[8.4.7, )"
@@ -13599,11 +13613,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
       }
     }
   }

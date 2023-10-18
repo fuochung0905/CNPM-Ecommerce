@@ -16,17 +16,14 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         {
             _context = context;
         }
-        public IActionResult Index(string currentFilter, string SearchString, int? page)
+        public IActionResult Index( string SearchString, int? page)
         {
             var listProduct = new List<product>();
             if (SearchString != null)
             {
                 page = 1;
             }
-            else
-            {
-                SearchString = currentFilter;
-            }
+           
             if (!string.IsNullOrEmpty(SearchString))
             {
                 listProduct = _context.products.Where(n => n.productName.Contains(SearchString)).ToList();
@@ -35,7 +32,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 listProduct = _context.products.ToList();
             }
-            ViewBag.currentFilter = SearchString;
+         
             int pageSize = 5;
             int pageNumber = page ?? 1;
             listProduct = listProduct.OrderByDescending(n => n.Id).ToList();

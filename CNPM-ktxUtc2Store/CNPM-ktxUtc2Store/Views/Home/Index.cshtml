@@ -39,13 +39,13 @@
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <a class="img-banner" href="#"><img src="./images/banner3.jpg" /></a>
+                <a class="img-banner" href="#"><img src="/images/banner3.jpg" /></a>
             </div>
             <div class="swiper-slide">
-                <a class="img-banner" href="#"><img src="./images/banner2.webp" /></a>
+                <a class="img-banner" href="#"><img src="/images/banner2.webp" /></a>
             </div>
             <div class="swiper-slide">
-                <a class="img-banner" href="#"><img src="./images/banner1.jpg" /></a>
+                <a class="img-banner" href="#"><img src="/images/banner1.jpg" /></a>
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -54,34 +54,23 @@
 <div class="main-product">
     <div class="container-web">
         <div class="head-product">
-            <div class="filter-product">
-                <form class="list-filter">
-                    <select>
-                        <option>Giá cả</option>
-                        <option>Giá từ thấp đến cao</option>
-                        <option>Giá từ cao đến thâp</option>
-                    </select>
-                    <select>
-                        <option>Thể loại</option>
-                        <option>Quần áo</option>
-                        <option>Giày dép</option>
-                        <option>Túi xách</option>
-                    </select>
-                </form>
-            </div>
+            
             <div class="search-wrap">
-                <div class="search">
-                    <input type="text" placeholder="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="cart">
-                    <a class="" href="/Cart/GetUserCart">
-                        <i class="bi bi-cart"></i>
-                        <span id="cartCount" class="num">0</span>
-                    </a>
-                </div>
+                <div class="filter-search">
+                    <div class="filter-product">
+                        <label class="visually-hidden" for="categoryId"></label>
+                        <select class="form-select" id="categoryId" name="categoryId">
+                           
+                        </select>
+                    </div>
+                    <div class="search">
+                        <form class="form-inline" asp-action="Index" method="get">
+                            <input type="text" name="searchName" placeholder="Search">
+                            <button class="btn btn-outline-success" type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
 
-
+                        </form>
+                    </div>
+                </div>
 
                 <div class="list-product">
 
@@ -113,6 +102,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 
 

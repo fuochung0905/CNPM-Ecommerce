@@ -109,10 +109,18 @@ header {
             align-items: center;
             gap: 10px;
         }
-
-            .content-body .main-product .head-product .search-wrap .search {
-                position: relative;
-            }
+.content-body  .main-product .filter-search{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.search-wrap{
+    flex-direction: column;
+}
+.content-body .main-product .head-product .search-wrap .search {
+    position: relative;
+}
 
                 .content-body .main-product .head-product .search-wrap .search input {
                     border: unset;

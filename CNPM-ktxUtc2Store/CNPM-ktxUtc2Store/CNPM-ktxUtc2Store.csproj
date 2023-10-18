@@ -32,6 +32,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
     <PackageReference Include="X.PagedList" Version="8.4.7" />
+    <PackageReference Include="X.PagedList.Mvc.Bootstrap4" Version="8.1.0" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
   </ItemGroup>
 
@@ -40,10 +41,7 @@
     <Folder Include="Data\Migrations\" />
     <Folder Include="Views\Shared\" />
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />

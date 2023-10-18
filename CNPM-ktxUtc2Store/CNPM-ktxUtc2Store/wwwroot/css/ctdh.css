@@ -1,15 +1,15 @@
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-
+    
 }
 
 
-
-.card-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
+.content-body{
+    width: 100%;
+}
+.detail-card-wrapper {
+    max-width: 100%;
+    padding: 2%;
 }
 
 img {

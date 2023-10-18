@@ -9,11 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CNPM_ktxUtc2Store
 build_property.RootNamespace = CNPM_ktxUtc2Store
-<<<<<<< HEAD
 build_property.ProjectDir = C:\BTL_ASPNET\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\
-=======
-build_property.ProjectDir = C:\Users\rukac\source\repos\fuochung0905\CNPM-Ecommerce\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -288,31 +284,27 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/Error.cshtml]
-=======
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Create.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHZvcHRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Delete.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHZvcHRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Details.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHZvcHRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Edit.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHZvcHRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Index.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/productvoptions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZHVjdHZvcHRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/Error.cshtml]
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -332,51 +324,47 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyXFVzZXJPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/_ViewImports.cshtml]
-=======
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Create.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Delete.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Details.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Edit.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Index.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Create.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uX29wdGlvblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Delete.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uX29wdGlvblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Details.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uX29wdGlvblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Edit.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uX29wdGlvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Index.cshtml]
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/variation_option/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdmFyaWF0aW9uX29wdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/_ViewImports.cshtml]
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -384,10 +372,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/_Layout.cshtml]
-=======
-[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/_Layout.cshtml]
->>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ww8ty7scd0
