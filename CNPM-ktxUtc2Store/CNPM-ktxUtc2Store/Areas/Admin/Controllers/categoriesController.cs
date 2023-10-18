@@ -23,9 +23,9 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/categories
         public async Task<IActionResult> Index()
         {
-              return _context.categories != null ? 
-                          View(await _context.categories.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.categories'  is null.");
+            return _context.categories != null ?
+                        View(await _context.categories.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.categories'  is null.");
         }
 
         // GET: Admin/categories/Details/5
@@ -145,14 +145,14 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 _context.categories.Remove(category);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool categoryExists(int id)
         {
-          return (_context.categories?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.categories?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

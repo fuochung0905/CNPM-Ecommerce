@@ -37,7 +37,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
             ViewBag.currentFilter = SearchString;
             int pageSize = 5;
-            int pageNumber = (page ?? 1);
+            int pageNumber = page ?? 1;
             listProduct = listProduct.OrderByDescending(n => n.Id).ToList();
             return View(listProduct.ToPagedList(pageNumber, pageSize));
         }

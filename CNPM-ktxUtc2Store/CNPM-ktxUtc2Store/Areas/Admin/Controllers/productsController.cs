@@ -25,7 +25,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         }
 
         // GET: Admin/products
-        public IActionResult Index(string name,double ?to,double ?from)
+        public IActionResult Index(string name, double? to, double? from)
         {
             var product = from p in _context.products select p;
             if (!string.IsNullOrEmpty(name))
@@ -46,8 +46,8 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                     product = product.Where(x => x.productName.Contains(name) && x.price >= to && x.price <= from);
                 }
             }
-            
-            
+
+
             return View(product);
         }
 
@@ -83,15 +83,24 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( product product)
+        public async Task<IActionResult> Create(product product)
         {
             string uniqueFileName = uploadImage(product);
+<<<<<<< HEAD
             
                 product.imageUrl= uniqueFileName;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Create));
          
+=======
+
+            product.imageUrl = uniqueFileName;
+            _context.Add(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+>>>>>>> b15b2d14c23078c3671426120de4c95c9c8b5813
         }
 
         // GET: Admin/products/Edit/5
@@ -111,7 +120,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View(product);
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,productName,description,discount,price,imageUrl,categoryId,qty_inStock,categoryName")] product product)
@@ -178,21 +187,21 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 _context.products.Remove(product);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool productExists(int id)
         {
-          return (_context.products?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.products?.Any(e => e.Id == id)).GetValueOrDefault();
         }
         private string uploadImage(product model)
         {
             string uniqueFileName = string.Empty;
             if (model.image != null)
             {
-                string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, ("images/"));
+                string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, "images/");
                 uniqueFileName = Guid.NewGuid().ToString() + "_" + model.image.FileName;
                 string filePath = Path.Combine(uploadFoder, uniqueFileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))

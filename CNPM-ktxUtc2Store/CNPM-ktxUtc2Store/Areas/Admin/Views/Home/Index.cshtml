@@ -5,6 +5,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+   
 }
 
 <h1>Quản lí sản phẩm</h1>
@@ -14,60 +15,139 @@
 </p>
 <form>
 </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().productName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().discount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().imageUrl)
-            </th>
-           
-           
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.productName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.discount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.imageUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.category.Id)
-                </td>
-               
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="repos-main">
+    <div class="repos-bar">
+
+    </div>
+
+    <div class="repos-main-list">
+        <section class="repos-main-list-info">
+            <h3 class="hidden-item-main-title">Item Info</h3>
+            <div class="repos-item-name">
+                <h5>Tên SP</h5>
+            </div>
+            <!--    -->
+            <div class="repos-item-classify">
+                <h5>Phân loại </h5>
+            </div>
+            <!--    -->
+            <div class="repos-item-price">
+                <h5>Giá</h5>
+            </div>
+            <!--    -->
+            <div class="repos-item-discount">
+                <h5>Giảm giá</h5>
+            </div>
+            <!--    -->
+            <div class="repos-item-inventory">
+                <h5>Tồn kho</h5>
+            </div>
+            <div class="repos-item-img">
+                
+                <h5>Hình ảnh</h5>
+            </div>
+            <div class="repos-item-control">
+                <h5>Thao tác</h5>
+            </div>
+            <!--    -->
+
+        </section>
+    </div>
+    @foreach (var item in Model)
+    {
+        /*<table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().productName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().discount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstOrDefault().imageUrl)
+                    </th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.productName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.discount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.imageUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.category.Id)
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>*/
+        <section class="repos-main-list-info">
+            <h3 class="hidden-item-main-title">Item Info</h3>
+            <!--    -->
+            <div class="repos-item-name">
+                @Html.DisplayFor(modelItem => item.productName)
+            </div>
+            <!--    -->
+            <div class="repos-item-classify">
+                <h5>Phân loại </h5>
+            </div>
+            <!--    -->
+            <div class="repos-item-price">
+                @Html.DisplayFor(modelItem => item.price)
+            </div>
+            <!--    -->
+            <div class="repos-item-discount">
+                @Html.DisplayFor(modelItem => item.discount)
+            </div>
+            <!--    -->
+            <div class="repos-item-inventory">
+                @Html.DisplayFor(modelItem => item.qty_inStock)
+            </div>
+            <div class="repos-item-img">
+                <div class="repos-item-img-container">
+                    <img class="repos-item-img-show" src=" /images/@item.imageUrl" />
+                    <h5 class="repos-item-img-hover">Thao tác</h5>
+                </div>
+                
+            </div>
+            <div class="repos-item-control">
+                <h5>Thao tác</h5>
+            </div>
+        </section>
+    }
+
+</div>
+
+
+
 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 

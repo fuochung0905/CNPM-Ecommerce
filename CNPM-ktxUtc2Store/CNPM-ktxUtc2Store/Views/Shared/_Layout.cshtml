@@ -20,7 +20,11 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+<<<<<<< HEAD
+    <link rel="stylesheet" href="~/css/repos_inven.css" asp-append-version="true" />
+=======
 
+>>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
     <link rel="stylesheet" href="~/css/css_cart.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/ctdh.css">
@@ -41,7 +45,11 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <li class="menu-item">
+<<<<<<< HEAD
+                            <a class="nav-link " href="/Admin/Home/Index">Quản lí </a>
+=======
                             <a class="" href="/Admin/Home">Quản lí </a>
+>>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
                         </li>
                     }
                     <li>
@@ -71,6 +79,27 @@
         </div>
     </header>
     @* <div>
+<<<<<<< HEAD
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ktx Utc2 Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+
+                                <a class="nav-link text-white" href="/Admin/Home">Quản lí</a>
+
+                                <a class="nav-link text-white" asp-area="" asp-controller="Products" asp-action="Create">Quản lí </a>
+
+                            </li>
+                        }
+=======
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3" data-bs-theme="dark">
     <div class="container-fluid">
     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ktx Utc2 Store</a>
@@ -90,6 +119,7 @@
 
     </li>
     }
+>>>>>>> e400877f7d3c0f5e42b57df6692c70ec35c7ab47
 
 
     <li class="nav-item">
