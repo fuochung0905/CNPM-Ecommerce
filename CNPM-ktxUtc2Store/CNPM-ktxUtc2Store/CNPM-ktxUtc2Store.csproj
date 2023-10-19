@@ -32,6 +32,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
     <PackageReference Include="X.PagedList" Version="8.4.7" />
+    <PackageReference Include="X.PagedList.Mvc.Bootstrap4" Version="8.1.0" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
   </ItemGroup>
 
@@ -39,6 +40,10 @@
     <Folder Include="Data\Migrations\" />
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
+>>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />

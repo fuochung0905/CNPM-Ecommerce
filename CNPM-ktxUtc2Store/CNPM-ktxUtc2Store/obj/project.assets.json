@@ -4966,6 +4966,18 @@
           "lib/net7.0/X.PagedList.dll": {}
         }
       },
+      "X.PagedList.Mvc.Bootstrap4/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "X.PagedList.Mvc.Core": "8.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/X.PagedList.Mvc.Bootstrap4.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/X.PagedList.Mvc.Bootstrap4.Core.dll": {}
+        }
+      },
       "X.PagedList.Mvc.Core/8.4.7": {
         "type": "package",
         "dependencies": {
@@ -13455,6 +13467,18 @@
         "x.pagedlist.nuspec"
       ]
     },
+    "X.PagedList.Mvc.Bootstrap4/8.1.0": {
+      "sha512": "sP9V26oOtwwJrHhuOZ7T95/3oSoLGpUIqKg0gdpjepNvCrVCEQqO5CHirM6etl5qIUEK+7q2+rYhsI6UDfo57A==",
+      "type": "package",
+      "path": "x.pagedlist.mvc.bootstrap4/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/X.PagedList.Mvc.Bootstrap4.Core.dll",
+        "x.pagedlist.mvc.bootstrap4.8.1.0.nupkg.sha512",
+        "x.pagedlist.mvc.bootstrap4.nuspec"
+      ]
+    },
     "X.PagedList.Mvc.Core/8.4.7": {
       "sha512": "dS8sJr/aT3AoV9ePaqmF4wijh/2vqS9rxpOvzjPPStkQcR8rUaGPVezPgY/kJwWCZ2hdgKNralbU08So0otNxw==",
       "type": "package",
@@ -13480,23 +13504,53 @@
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.9",
       "X.PagedList >= 8.4.7",
+      "X.PagedList.Mvc.Bootstrap4 >= 8.1.0",
       "X.PagedList.Mvc.Core >= 8.4.7"
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\rukac\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\huy26\\.nuget\\packages\\": {}
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
+>>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+=======
+      "projectUniqueName": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
+>>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
       "projectName": "CNPM-ktxUtc2Store",
-      "projectPath": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
-      "packagesPath": "C:\\Users\\rukac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
+      "projectPath": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\rukac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "C:\\Users\\huy26\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
+>>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13504,6 +13558,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13560,6 +13615,10 @@
             "target": "Package",
             "version": "[8.4.7, )"
           },
+          "X.PagedList.Mvc.Bootstrap4": {
+            "target": "Package",
+            "version": "[8.1.0, )"
+          },
           "X.PagedList.Mvc.Core": {
             "target": "Package",
             "version": "[8.4.7, )"
@@ -13584,7 +13643,15 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
+>>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
       }
     }
   }

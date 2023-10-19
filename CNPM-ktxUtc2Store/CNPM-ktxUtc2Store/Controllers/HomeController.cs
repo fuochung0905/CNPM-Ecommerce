@@ -20,7 +20,7 @@ namespace CNPM_ktxUtc2Store.Controllers
             _dbcontext = dbcontext;
         }
 
-        public  IActionResult Index(string maloai,string searchName, int? page)
+        public IActionResult Index(string maloai, string searchName, int? page)
         {
             var listProduct = new List<product>();
             if (!string.IsNullOrEmpty(maloai) & !string.IsNullOrEmpty(searchName))
@@ -37,13 +37,13 @@ namespace CNPM_ktxUtc2Store.Controllers
                                    discount = product.discount,
                                    price = product.price,
                                    categoryId = product.categoryId,
-                                   category= category,
+                                   category = category,
                                    imageUrl = product.imageUrl,
-                               }).Where(x=>x.categoryId== cateId & x.productName.Contains(searchName)).ToList();
+                               }).Where(x => x.categoryId == cateId & x.productName.Contains(searchName)).ToList();
             }
             else
             {
-                if(string.IsNullOrEmpty(searchName) & !string.IsNullOrEmpty(maloai))
+                if (string.IsNullOrEmpty(searchName) & !string.IsNullOrEmpty(maloai))
                 {
                     int cateId = Convert.ToInt32(maloai);
                     listProduct = (from product in _dbcontext.products
@@ -76,7 +76,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                                        imageUrl = product.imageUrl,
                                    }).Where(x => x.productName.Contains(searchName)).ToList();
                 }
-                if(string.IsNullOrEmpty(maloai) & string.IsNullOrEmpty(searchName))
+                if (string.IsNullOrEmpty(maloai) & string.IsNullOrEmpty(searchName))
                 {
                     listProduct = (from product in _dbcontext.products
                                    join category in _dbcontext.categories
@@ -92,20 +92,20 @@ namespace CNPM_ktxUtc2Store.Controllers
                                        imageUrl = product.imageUrl,
                                    }).ToList();
                 }
-              
+
             }
-         
+
 
             ViewBag.maloai = maloai;
             int pageSize = 12;
-            int pageNumber = page==null || page<0 ? 1 : page.Value;
-            PagedList<product>list= new PagedList<product>(listProduct, pageNumber,pageSize );
+            int pageNumber = page == null || page < 0 ? 1 : page.Value;
+            PagedList<product> list = new PagedList<product>(listProduct, pageNumber, pageSize);
             return View(list);
         }
         public IActionResult TheoloaiSanPham(int maloai)
         {
             var listCategory = new List<category>();
-            listCategory=_dbcontext.categories.Where(x=>x.Id==maloai).ToList();
+            listCategory = _dbcontext.categories.Where(x => x.Id == maloai).ToList();
             return View(listCategory);
         }
         public async Task<IActionResult> Details(int? id)
