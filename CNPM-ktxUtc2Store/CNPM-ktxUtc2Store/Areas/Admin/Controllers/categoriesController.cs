@@ -23,9 +23,9 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/categories
         public async Task<IActionResult> Index()
         {
-            return _context.categories != null ?
-                        View(await _context.categories.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.categories'  is null.");
+              return _context.categories != null ? 
+                          View(await _context.categories.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.categories'  is null.");
         }
 
         // GET: Admin/categories/Details/5
@@ -52,17 +52,19 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View();
         }
 
+        // POST: Admin/categories/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,categoryName")] category category)
         {
-            if (ModelState.IsValid)
-            {
+             
                 _context.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            return View(category);
+            
+          
         }
 
         // GET: Admin/categories/Edit/5
@@ -81,6 +83,9 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View(category);
         }
 
+        // POST: Admin/categories/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,categoryName")] category category)
@@ -145,14 +150,14 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 _context.categories.Remove(category);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool categoryExists(int id)
         {
-            return (_context.categories?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.categories?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

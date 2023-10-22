@@ -9,7 +9,6 @@ namespace CNPM_ktxUtc2Store.Models
         [Key]
         public int Id { get; set; }
         [Required]
-
         public string? productName { get; set; }
         public string? description { get; set; }
         public double discount { get; set;}
@@ -19,8 +18,9 @@ namespace CNPM_ktxUtc2Store.Models
         [Display(Name ="choose image")]
         public IFormFile image { get; set; }
         public int categoryId { get; set;}
-        public category category { get; set; }
+        public virtual category category { get; set; }
         public int qty_inStock { get; set; }
-        public virtual ICollection<productvoption> productvariation_Options { get; set; }
+        public virtual ICollection<productVariation> ProductVariations { get; set; }  = new List<productVariation>();
+      
     }
 }

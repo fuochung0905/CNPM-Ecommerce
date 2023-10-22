@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     /// <inheritdoc />
-    public partial class chiuuuanhhh : Migration
+    public partial class ciuanhdi : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -228,7 +228,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    categoryId = table.Column<int>(type: "int", nullable: true)
+                    value = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    categoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -237,7 +238,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                         name: "FK_variation_category_categoryId",
                         column: x => x.categoryId,
                         principalTable: "category",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -291,19 +293,22 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "variation_option",
+                name: "productVariations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    value = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    variationId = table.Column<int>(type: "int", nullable: true)
+                    productId = table.Column<int>(type: "int", nullable: false),
+                    variationId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_variation_option", x => x.Id);
+                    table.PrimaryKey("PK_productVariations", x => new { x.productId, x.variationId });
                     table.ForeignKey(
-                        name: "FK_variation_option_variation_variationId",
+                        name: "FK_productVariations_product_productId",
+                        column: x => x.productId,
+                        principalTable: "product",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_productVariations_variation_variationId",
                         column: x => x.variationId,
                         principalTable: "variation",
                         principalColumn: "Id");
@@ -333,30 +338,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                         name: "FK_orderDetail_product_productId",
                         column: x => x.productId,
                         principalTable: "product",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "productvoption",
-                columns: table => new
-                {
-                    productId = table.Column<int>(type: "int", nullable: false),
-                    variationoptionId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_productvoption", x => new { x.productId, x.variationoptionId });
-                    table.ForeignKey(
-                        name: "FK_productvoption_product_productId",
-                        column: x => x.productId,
-                        principalTable: "product",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_productvoption_variation_option_variationoptionId",
-                        column: x => x.variationoptionId,
-                        principalTable: "variation_option",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -431,19 +412,14 @@ namespace CNPM_ktxUtc2Store.Migrations
                 column: "categoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_productvoption_variationoptionId",
-                table: "productvoption",
-                column: "variationoptionId");
+                name: "IX_productVariations_variationId",
+                table: "productVariations",
+                column: "variationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_variation_categoryId",
                 table: "variation",
                 column: "categoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_variation_option_variationId",
-                table: "variation_option",
-                column: "variationId");
         }
 
         /// <inheritdoc />
@@ -471,7 +447,7 @@ namespace CNPM_ktxUtc2Store.Migrations
                 name: "orderDetail");
 
             migrationBuilder.DropTable(
-                name: "productvoption");
+                name: "productVariations");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -489,13 +465,10 @@ namespace CNPM_ktxUtc2Store.Migrations
                 name: "product");
 
             migrationBuilder.DropTable(
-                name: "variation_option");
+                name: "variation");
 
             migrationBuilder.DropTable(
                 name: "orderStatus");
-
-            migrationBuilder.DropTable(
-                name: "variation");
 
             migrationBuilder.DropTable(
                 name: "category");

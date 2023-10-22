@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace CNPM_ktxUtc2Store.Data
 {
@@ -19,25 +20,18 @@ namespace CNPM_ktxUtc2Store.Data
         public DbSet<orderStatus> orderStatus { get; set; }
         public DbSet<shoppingCart> shoppingCarts { get; set; }
         public DbSet<variation> variation { get; set; }
-        public DbSet<variation_option> variation_option { get; set; }
-        public DbSet<productvoption> productvoption { get; set; }
+        public DbSet<productVariation> productVariations { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
-            base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<productvoption>()
-                 .HasKey(c => new { c.productId, c.variationoptionId });
-            modelBuilder.Entity<productvoption>()
-                .HasOne(b => b.product)
-                .WithMany(ba => ba.productvariation_Options)
-                .HasForeignKey(bi => bi.productId);
-            modelBuilder.Entity<productvoption>()
-              .HasOne(b => b.variationoption)
-              .WithMany(ba => ba.productvariation_Options)
-              .HasForeignKey(bi => bi.variationoptionId);
-        
-    } 
-
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+           
+            builder.Entity<productVariation>().HasKey(pv => new { pv.productId, pv.variationId });
+            builder.Entity<productVariation>()
+                .HasOne(pv => pv.product).WithMany(pv => pv.ProductVariations).HasForeignKey(p => p.productId).OnDelete(DeleteBehavior.ClientNoAction);
+            builder.Entity<productVariation>()
+              .HasOne(pv => pv.variation).WithMany(pv => pv.ProductVariations).HasForeignKey(p => p.variationId).OnDelete(DeleteBehavior.ClientNoAction);
         }
+    }
 }

@@ -1,4 +1,4 @@
-﻿@model CNPM_ktxUtc2Store.Models.productvoption
+﻿@model CNPM_ktxUtc2Store.Models.productVariation
 
 @{
     ViewData["Title"] = "Details";
@@ -8,7 +8,7 @@
 <h1>Details</h1>
 
 <div>
-    <h4>productvoption</h4>
+    <h4>productVariation</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -18,10 +18,10 @@
             @Html.DisplayFor(model => model.product.productName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.variationoption)
+            @Html.DisplayNameFor(model => model.variation)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.variationoption.Id)
+            @Html.DisplayFor(model => model.variation.Id)
         </dd>
     </dl>
 </div>

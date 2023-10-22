@@ -28,6 +28,15 @@ namespace CNPM_ktxUtc2Store.Controllers
 
         public async Task<IActionResult> dathang(int productId, int variationId, int quantity = 1)
         {
+            var item = (from p in _context.products
+                        join pv in _context.productVariations
+                        on p.Id equals pv.productId
+                        where (pv.variationId == variationId)
+                        select new product
+                        {
+                            Id=p.Id,
+                        });
+
             using var transaction = _context.Database.BeginTransaction();
             var userid = GetUserId();
             try

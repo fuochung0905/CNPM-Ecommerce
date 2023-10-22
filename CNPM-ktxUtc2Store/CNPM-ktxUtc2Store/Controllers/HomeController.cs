@@ -2,6 +2,8 @@
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using X.PagedList;
 
@@ -97,7 +99,7 @@ namespace CNPM_ktxUtc2Store.Controllers
 
 
             ViewBag.maloai = maloai;
-            int pageSize = 12;
+            int pageSize = 8;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
             PagedList<product> list = new PagedList<product>(listProduct, pageNumber, pageSize);
             return View(list);
@@ -108,22 +110,52 @@ namespace CNPM_ktxUtc2Store.Controllers
             listCategory = _dbcontext.categories.Where(x => x.Id == maloai).ToList();
             return View(listCategory);
         }
-        public async Task<IActionResult> Details(int? id)
+
+        public IActionResult Details(int? id)
         {
             if (id == null || _dbcontext.products == null)
             {
                 return NotFound();
             }
 
-            var product = await _dbcontext.products
-                .Include(p => p.category)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
+            var product = new product();
+            product = _dbcontext.products.Find(id);
+            var item = (from p in _dbcontext.products
+                        join pv in _dbcontext.productVariations
+                        on p.Id equals pv.productId
+                        where (p.Id == id)
+                        select new productVariation
+                        {
+                            product = p,
+                            variation = pv.variation,
+                        }).ToList();
+                        
+            ViewData["Product"] = new product()
             {
-                return NotFound();
-            }
+                Id=product.Id,
+                productName = product.productName,
+                description = product.description,
+                discount = product.discount,
+                price = product.price,
+                imageUrl = product.imageUrl,
 
-            return View(product);
+                categoryId = product.categoryId,
+                category = product.category,
+                qty_inStock = product.qty_inStock
+            };
+            //var variation = (from v in _dbcontext.variation
+            //                 join c in _dbcontext.categories
+            //                 on v.categoryId equals c.Id
+            //                 where (c.Id == product.categoryId)
+            //                 select new variation
+            //                 {
+            //                     Id = v.Id,
+            //                     name = v.name,
+            //                     value = v.value,
+            //                     category = c
+            //                 }).ToList();
+
+            return View(item);
         }
         public IActionResult Privacy()
         {

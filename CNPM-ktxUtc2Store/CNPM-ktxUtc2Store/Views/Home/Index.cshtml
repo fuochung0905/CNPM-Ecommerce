@@ -1,5 +1,6 @@
 ﻿@using X.PagedList;
 @using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc.Bootstrap4.Core;
 @model X.PagedList.IPagedList<product>
 @{
 
@@ -50,35 +51,7 @@
                            
                         </select>
                     </div>
-                    <div class="search">
-                        <form class="form-inline" asp-action="Index" method="get">
-                            <input type="text" name="searchName" placeholder="Search">
-                            <button class="btn btn-outline-success" type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
-            <div class="filter-product">
-                <form class="form-inline" asp-action="Index" method="get">
-                    <div class="search">
-                        <input type="text" name="searchName" placeholder="Search">
-                        
-                    </div>
-                   
-                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-
-                </form>
-            </div>
-            <div class="search-wrap">
-                <div class="search">
-                    <input type="text" name="name" placeholder="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="cart">
-                    <a class="" href="/Cart/GetUserCart">
-                        <i class="bi bi-cart"></i>
-                        <span id="cartCount" class="num">0</span>
-                    </a>
-                </div>
-
-                        </form>
-                    </div>
+                  
                 </div>
 
                 <div class="list-product">
@@ -107,7 +80,7 @@
                 </div>
                 <div class="foot-product">
                     Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}))
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}),Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)
                 </div>
             </div>
         </div>

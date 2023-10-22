@@ -1,30 +1,13 @@
 ﻿@model CNPM_ktxUtc2Store.Models.shoppingCart
-<<<<<<< HEAD
 
-
-
-=======
-<<<<<<< HEAD
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
-    ViewData["Title"] = "GetUserCart";
-    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
-=======
-
-<<<<<<< HEAD
-<div style="width:90%; margin:auto">
-
-    @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
-=======
 
 
  
->>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
 <div style="width:90%; margin:auto; ">
+
     <div style="width:90%; margin:auto">
 
         @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
     {
         <h3>Gio hang cua toi</h3>
         <section class="main-item-info">
@@ -56,83 +39,7 @@
         </section>
         @foreach (var item in Model.cartDetails)
         {
-<<<<<<< HEAD
             /*<table class="table table-bordered">
-                <tr>
-                    <th>Sản phẩm</th>
-                    <th>Ảnh</th>
-                    <th>Số lượng</th>
-                    <th>Tổng giá</th>
-                    <th>Khác</th>
-                    <th>Đặt hàng</th>
-                </tr>
-
-                <tr>
-                    <td>@item.product.productName</td>
-                    <td>
-                        <img src="/images/@item.product.imageUrl" style="width:80px;height:100px">
-                    </td>
-                    <td>@item.quantity</td>
-                    <td>@item.quantity*@item.product.price</td>
-                    <td>
-                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
-                        <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
-                    </td>
-                </tr>
-
-            </table>*/
-
-=======
-<<<<<<< HEAD
-            <h3>Gio hang cua toi</h3>
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
-            <section class="main-item-info">
-                <h3 class="hidden-item-main-title">Item Info</h3>
-                <!--    -->
-                <div class="item-img">
-                    <img class="img" src="/images/@item.product.imageUrl">
-                </div>
-                <!--    -->
-                <div class="item-name-product">
-                    <div class="item-name">
-                        <p>@item.product.productName</p>
-                    </div>
-                </div>
-                <!--    -->
-                <div class="item-money">
-<<<<<<< HEAD
-                    <p>@item.product.price</p>
-</div>
-=======
-                    <h5>Giá</h5>
-                </div>
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
-                <!--    -->
-                <div class="item-quantity">
-                    <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
-                    <input id="item-soluong" value="@item.quantity" type"number">
-                    <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
-                </div>
-                <!--    -->
-                <div class="item-moneypay">
-                    <p>@(item.product.price * item.quantity)</p>
-                </div>
-                <!--    -->
-                <div class="item-order">
-                    <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
-                </div>
-            </section>
-<<<<<<< HEAD
-=======
-            @foreach (var item in Model.cartDetails)
-            {
-                /*<table class="table table-bordered">
-=======
-            /*<table class="table table-bordered">
->>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
                 <tr>
                     <th>Sản phẩm</th>
                     <th>Ảnh</th>
@@ -192,75 +99,17 @@
                 <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
             </div>
         </section>
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
         }
 
         <div class="nav-show-allsell">
 
-<<<<<<< HEAD
-        <div class="my-2">
-           <div style="display: flex; flex-direction: row">
-                    <h5 style="display: grid;
-=======
-<<<<<<< HEAD
-                <section class="main-item-info">
-                    <h3 class="hidden-item-main-title">Item Info</h3>
-                    <!--    -->
-                    <div class="item-img">
-                        <img class="img" src="/images/@item.product.imageUrl">
-                    </div>
-                    <!--    -->
-                    <div class="item-name-product">
-                        <div class="item-name">
-                            <p>@item.product.productName</p>
-                        </div>
-                    </div>
-                    <!--    -->
-                    <div class="item-money">
-                        <p>@item.product.price</p>
-                    </div>
-                    <!--    -->
-                    <div class="item-quantity">
-                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
-                        <input id="item-soluong" value="@item.quantity" type"number">
-                        <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
-                    </div>
-                    <!--    -->
-                    <div class="item-moneypay">
-                        <p>@(item.product.price * item.quantity)</p>
-                    </div>
-                    <!--    -->
-                    <div class="item-order">
-                        <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
-                    </div>
-                </section>
-            }
-
-            <div class="nav-show-allsell">
-
-                <div class="my-2">
-                    <div style="display: flex; flex-direction: row">
-                        <h5 style="display: grid;
-=======
             <div class="my-2">
                 <div style="display: flex; flex-direction: row">
                     <h5 style="display: grid;
->>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
     place-content: center;">
                         Tổng cộng( @Model.cartDetails.Count Sản Phẩm ):
                     </h5>
                     <h5 style="display: grid;
-<<<<<<< HEAD
-    place-content: center; color: orangered; font-size: 20px; padding-left: 5px;"> @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫ </h5>
-           </div>     
-
-        </div>
-        <div class="my-2">
-            <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
-
-        </div>
-=======
     place-content: center; color: orangered; font-size: 20px; padding-left: 5px;">
                         @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫
                     </h5>
@@ -271,14 +120,9 @@
                 <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
 
             </div>
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
 
         </div>
 
     }
-<<<<<<< HEAD
-</div>
-=======
     </div>
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
 </div>

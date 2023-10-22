@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231015172451_chiuuuanhhh")]
-    partial class chiuuuanhhh
+    [Migration("20231022053045_ciuanhdi")]
+    partial class ciuanhdi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -181,21 +181,19 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.ToTable("product");
                 });
 
-            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productvoption", b =>
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productVariation", b =>
                 {
                     b.Property<int>("productId")
-                        .HasColumnType("int")
-                        .HasColumnOrder(0);
+                        .HasColumnType("int");
 
-                    b.Property<int>("variationoptionId")
-                        .HasColumnType("int")
-                        .HasColumnOrder(1);
+                    b.Property<int>("variationId")
+                        .HasColumnType("int");
 
-                    b.HasKey("productId", "variationoptionId");
+                    b.HasKey("productId", "variationId");
 
-                    b.HasIndex("variationoptionId");
+                    b.HasIndex("variationId");
 
-                    b.ToTable("productvoption");
+                    b.ToTable("productVariations");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.shoppingCart", b =>
@@ -226,10 +224,14 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("categoryId")
+                    b.Property<int>("categoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("value")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -238,28 +240,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.HasIndex("categoryId");
 
                     b.ToTable("variation");
-                });
-
-            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("variationId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("variationId");
-
-                    b.ToTable("variation_option");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -520,37 +500,34 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.Navigation("category");
                 });
 
-            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productvoption", b =>
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.productVariation", b =>
                 {
                     b.HasOne("CNPM_ktxUtc2Store.Models.product", "product")
-                        .WithMany("productvariation_Options")
+                        .WithMany("ProductVariations")
                         .HasForeignKey("productId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
-                    b.HasOne("CNPM_ktxUtc2Store.Models.variation_option", "variationoption")
-                        .WithMany("productvariation_Options")
-                        .HasForeignKey("variationoptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("CNPM_ktxUtc2Store.Models.variation", "variation")
+                        .WithMany("ProductVariations")
+                        .HasForeignKey("variationId")
+                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.Navigation("product");
 
-                    b.Navigation("variationoption");
+                    b.Navigation("variation");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
                 {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.category", null)
+                    b.HasOne("CNPM_ktxUtc2Store.Models.category", "category")
                         .WithMany("variations")
-                        .HasForeignKey("categoryId");
-                });
+                        .HasForeignKey("categoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
-                {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.variation", null)
-                        .WithMany("variation_Options")
-                        .HasForeignKey("variationId");
+                    b.Navigation("category");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -618,7 +595,7 @@ namespace CNPM_ktxUtc2Store.Migrations
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.product", b =>
                 {
-                    b.Navigation("productvariation_Options");
+                    b.Navigation("ProductVariations");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.shoppingCart", b =>
@@ -628,12 +605,7 @@ namespace CNPM_ktxUtc2Store.Migrations
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation", b =>
                 {
-                    b.Navigation("variation_Options");
-                });
-
-            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.variation_option", b =>
-                {
-                    b.Navigation("productvariation_Options");
+                    b.Navigation("ProductVariations");
                 });
 #pragma warning restore 612, 618
         }
