@@ -8,20 +8,6 @@
 
 
 
-    <div class="col-lg-3">
-         <div class="categories">
-             <div class="categories_all"> 
-                 <i class="fade fa-bars"></i>
-                 <span>Loại sản phẩm</span>
-             </div>
-             <ul>
-            @await Component.InvokeAsync("Categories");
-             </ul>
-        
-       
-    </div>
-    </div>
-
 
 
 <div class="banner">
@@ -43,46 +29,77 @@
 <div class="main-product">
     <div class="container-web">
         <div class="head-product">
-            <div class="search-wrap">
+            <div class="title-component-cate">Danh mục: </div>
+            <div class="list-component-cate">
+                @await Component.InvokeAsync("Categories")
+            </div>
+            <div class="state-component-cate"></div>
+            @*<div class="search-wrap">
                 <div class="filter-search">
                     <div class="filter-product">
                         <label class="visually-hidden" for="categoryId"></label>
                         <select class="form-select" id="categoryId" name="categoryId">
-                           
                         </select>
                     </div>
+<<<<<<< HEAD
                   
+=======
+                    <div class="search">
+
+                        <form class="form-inline" asp-action="Index" method="get">
+                            <input type="text" name="searchName" placeholder="Search">
+                            <button class="btn btn-outline-success" type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                    <div class="filter-product">
+                        <form class="form-inline" asp-action="Index" method="get">
+                            <div class="search">
+                                <input type="text" name="searchName" placeholder="Search">
+
+                            </div>
+
+                            <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                        </form>
+                    </div>
+
+>>>>>>> 1804dbdfc2dc4f8fa558a9f355fd76ff479175ac
                 </div>
+            </div>*@
+        </div>
+        <div class="list-product">
+            @foreach (var product in Model)
+            {
+                <div class="item-product">
+                    <div class="img-box">
+                        <img src="/images/@product.imageUrl" alt="...">
+                    </div>
 
-                <div class="list-product">
-
-                    @foreach (var product in Model)
-                    {
-                        <div class="item-product">
-                            <div class="img-box">
-                                <img src="/images/@product.imageUrl" alt="...">
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">@product.productName</h5>
-                                <div class="card-detail">
-                                    <p class="card-text">@product.price vnđ</p>
-                                    <span class="card-rate">4.5<i class="fa-solid fa-star"></i></span>
-                                </div>
-                                <div class="box-button">
-                                    <a class="wrap-btn detail" asp-action="Details" asp-route-id="@product.Id">Chi tiết</a>
-                                    <button type="button" onclick="AddItem(@product.Id)" class="wrap-btn add"><i class="bi bi-cart-plus"></i><sapn>Thêm</sapn></button>
-                                </div>
-                            </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@product.productName</h5>
+                        <div class="card-detail">
+                            <p class="card-text">@product.price vnđ</p>
+                            <span class="card-rate">4.5<i class="fa-solid fa-star"></i></span>
                         </div>
-                    }
-
+                        <div class="box-button">
+                            <a class="wrap-btn detail" asp-action="Details" asp-route-id="@product.Id">Chi tiết</a>
+                            <button type="button" onclick="AddItem(@product.Id)" class="wrap-btn add"><i class="bi bi-cart-plus"></i><sapn>Thêm</sapn></button>
+                        </div>
+                    </div>
                 </div>
+<<<<<<< HEAD
                 <div class="foot-product">
                     Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}),Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)
                 </div>
             </div>
+=======
+            }
+        </div>
+        <div class="foot-product">
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}))
+>>>>>>> 1804dbdfc2dc4f8fa558a9f355fd76ff479175ac
         </div>
     </div>
 </div>
@@ -90,42 +107,51 @@
 
 
 
-        @section Scripts{
-            <script>
-                async function AddItem(productId) {
+@section Scripts{
+    <script>
+        async function AddItem(productId) {
 
-                    var usernameEl = document.getElementById("username");
+            var usernameEl = document.getElementById("username");
 
-                    if (usernameEl == null) {
-                        window.location.href = "/Identity/Account/Login";
-                    }
-                    try {
-                        var response = await fetch(`/Cart/AddItem?productId=${productId}`);
+            if (usernameEl == null) {
+                window.location.href = "/Identity/Account/Login";
+            }
+            try {
+                var response = await fetch(`/Cart/AddItem?productId=${productId}`);
 
-                        if (response.status == 200) {
-                            var result = await response.json();
-                            console.log(result);
-                            var cartCountEl = document.getElementById("cartCount");
-                            cartCountEl.innerHTML = result;
-                            window.location.href = "#cartCount"
-                        }
-                    }
-                    catch (err) {
-                        console.log(err);
-                    }
+                if (response.status == 200) {
+                    var result = await response.json();
+                    console.log(result);
+                    var cartCountEl = document.getElementById("cartCount");
+                    cartCountEl.innerHTML = result;
+                    window.location.href = "#cartCount"
                 }
-            </script>
-            <script>
-                var swiper = new Swiper(".mySwiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                    loop: true,
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    }
-                });
-            </script>
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            }
+        });
+    </script>
+    <script>
+        var libtn = document.getElementsByTagName("li");
+        document.getElementsByTagName("li").onclick() = function () {
+            colortocate();
+        }
+        function colortocate(){
+            libtn.style.backgroundColor = "red";
+        }
+    </script>
         }
 
-                        
+

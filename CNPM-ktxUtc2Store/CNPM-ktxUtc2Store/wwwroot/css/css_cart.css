@@ -1,31 +1,36 @@
 ﻿body {
-   background-color : antiquewhite;
+    background-color: #fff;
 }
-.hidden-item-main-title{
+
+.hidden-item-main-title {
     display: none;
 }
-.img{
+
+.img {
     max-width: 100px;
     max-height: 200px;
 }
-.main-item-info{
+
+.main-item-info {
     background-color: white;
     display: flex;
     flex-direction: row;
     padding: 20px;
     margin: 2px;
-   
 }
-.item-img{
-  flex-basis: 15%;
+
+.item-img {
+    flex-basis: 15%;
 }
-.item-name-product{
-   padding: 5px;
-   flex-basis: 25%;
-   text-align: center;
-   display:grid;
-   place-content: center;
+
+.item-name-product {
+    padding: 5px;
+    flex-basis: 25%;
+    text-align: center;
+    display: grid;
+    place-content: center;
 }
+
 .item-money {
     padding: 5px;
     flex-basis: 15%;
@@ -33,6 +38,7 @@
     display: grid;
     place-content: center;
 }
+
 .item-quantity {
     padding: 5px;
     flex-basis: 20%;
@@ -41,14 +47,16 @@
     grid-template-columns: auto auto auto;
     place-content: center;
 }
-.btn-info{
+
+.btn-info {
     width: 40px;
-    
 }
+
 #item-soluong {
     width: 50px;
     text-align: center;
 }
+
 .item-moneypay {
     padding: 5px;
     flex-basis: 15%;
@@ -56,37 +64,39 @@
     display: grid;
     place-content: center;
 }
-    
+
 .item-order {
- 
     padding: 5px;
     flex-basis: 20%;
     text-align: center;
     display: grid;
     place-content: center;
 }
+
 .hidden-item-order {
     display: none;
 }
+
 .nav-show-allsell {
     position: sticky;
     bottom: 0;
-    margin-top:20px;
+    margin-top: 20px;
     background-color: white;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.nav-show-allsell:before {
+
+    .nav-show-allsell:before {
         position: absolute;
         content: "";
         width: 100%;
         top: -1.25rem;
         height: 1.25rem;
         background: linear-gradient(transparent,rgba(0,0,0,.06));
+    }
 
-}
-.my-2{
+.my-2 {
     max-width: 400px;
     display: grid;
     place-content: center;
