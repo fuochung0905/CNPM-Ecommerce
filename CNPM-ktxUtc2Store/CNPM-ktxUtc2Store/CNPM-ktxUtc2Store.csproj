@@ -40,6 +40,10 @@
     <Folder Include="Data\Migrations\" />
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
+>>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
