@@ -99,7 +99,7 @@ namespace CNPM_ktxUtc2Store.Controllers
 
 
             ViewBag.maloai = maloai;
-            int pageSize = 8;
+            int pageSize = 12;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
             PagedList<product> list = new PagedList<product>(listProduct, pageNumber, pageSize);
             return View(list);

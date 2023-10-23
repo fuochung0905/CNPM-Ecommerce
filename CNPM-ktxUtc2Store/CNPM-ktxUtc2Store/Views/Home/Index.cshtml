@@ -87,20 +87,13 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <div class="foot-product">
-                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}),Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)
-                </div>
-            </div>
-=======
             }
         </div>
         <div class="foot-product">
             Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-            @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}))
->>>>>>> 1804dbdfc2dc4f8fa558a9f355fd76ff479175ac
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}),Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)
         </div>
+        
     </div>
 </div>
 
