@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231022053045_ciuanhdi")]
-    partial class ciuanhdi
+    [Migration("20231025160859_done")]
+    partial class done
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

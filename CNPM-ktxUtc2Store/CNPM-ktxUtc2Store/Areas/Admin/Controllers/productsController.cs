@@ -113,7 +113,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             _context.products.Update(product);
             _context.SaveChanges();
 
-            return RedirectToAction("Index");  
+            return RedirectToAction("Create");  
 
            
               

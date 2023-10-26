@@ -19,7 +19,7 @@ namespace CNPM_ktxUtc2Store.Models
         public IFormFile image { get; set; }
         public int categoryId { get; set;}
         public virtual category category { get; set; }
-        public int qty_inStock { get; set; }
+        public int qty_inStock { get; set; } = 0;
         public virtual ICollection<productVariation> ProductVariations { get; set; }  = new List<productVariation>();
       
     }

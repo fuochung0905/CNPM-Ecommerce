@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     /// <inheritdoc />
-    public partial class ciuanhdi : Migration
+    public partial class done : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
