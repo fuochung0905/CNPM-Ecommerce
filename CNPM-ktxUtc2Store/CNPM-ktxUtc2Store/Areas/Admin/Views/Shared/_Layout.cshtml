@@ -36,8 +36,9 @@
                             <div class="item-icon"><i class="bi bi-graph-up"></i></div>
                             <h3>Doanh số</h3>
                         </div>
-                        <div class="show"><i class="fa-solid fa-angle-up"></i></div>
+                        <div class="show d-none"><i class="fa-solid fa-angle-up"></i></div>
                    </a>
+                   
                </li>
                 <li class="item-menu">
                     <a href="#">
@@ -48,6 +49,10 @@
                         </div>
                         <div class="show"><i class="fa-solid fa-angle-up"></i></div>
                     </a>
+                        <ul class="submenu">
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý loại hàng</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý sản phẩm</a></li>
+                        </ul>
                 </li>
                 <li class="item-menu">
                     <a href="#">
@@ -57,15 +62,24 @@
                         </div>
                         <div class="show"><i class="fa-solid fa-angle-up"></i></div>
                     </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý Banner</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý Logo</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý truyền thông</a></li>
+                    </ul>
                 </li>
                 <li class="item-menu">
                     <a href="#">
                         <div class="title">
-                            <div class="item-icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <h3>Doanh số</h3>
+                            <div class="item-icon"><i class="bi bi-list-check"></i></div>
+                            <h3>Quản lý đơn hàng</h3>
                         </div>
                         <div class="show"><i class="fa-solid fa-angle-up"></i></div>
                     </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Thông tin đơn hàng</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Lịch sử đơn hàng</a></li>
+                    </ul>
                 </li>
                 <li class="item-menu">
                     <a href="#">
@@ -93,6 +107,10 @@
         $(".admin-content .navbar-icon").click(function(){
             $(".admin-sidebar").toggleClass("hide");
             $(".admin-content").toggleClass("show");
+        })
+        $(".admin-menu .item-menu > a").click(function () {
+            $(this).next(".submenu").toggleClass("collapse");
+            $(this).children(".show").toggleClass("active");
         })
     })
     $(function () {

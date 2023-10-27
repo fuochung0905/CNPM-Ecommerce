@@ -15,9 +15,11 @@
         z-index: 2;
         transition: all .5s;
     }
-        .admin-layout-main .admin-sidebar.hide{
-            left:-100%;
+
+        .admin-layout-main .admin-sidebar.hide {
+            left: -100%;
         }
+
         .admin-layout-main .admin-sidebar .admin-profile {
             display: flex;
             flex-direction: column;
@@ -26,7 +28,7 @@
             padding-top: 30px;
             margin-bottom: 50px;
         }
-            
+
             .admin-layout-main .admin-sidebar .admin-profile .ava {
                 display: block;
                 width: 70px;
@@ -35,20 +37,26 @@
                 background: #5b5b5b;
                 overflow: hidden;
             }
+
             .admin-layout-main .admin-sidebar .admin-profile .name {
                 line-height: 1;
                 font-size: 16px;
                 padding: 5px 0px;
             }
+
         .admin-layout-main .admin-sidebar .admin-menu .item-menu {
+            display: inline-block;
             width: 100%;
             height: 45px;
             border-bottom: 1px solid #4d4d4d;
         }
-            .admin-layout-main .admin-sidebar .admin-menu .item-menu:hover .show i {
+            .admin-layout-main .admin-sidebar .admin-menu .item-menu .show.d-none i {
+                opacity:0
+            }
+            .admin-layout-main .admin-sidebar .admin-menu .item-menu .show.active i {
                 transform: rotate(180deg);
             }
-            .admin-layout-main .admin-sidebar .admin-menu .item-menu a {
+            .admin-layout-main .admin-sidebar .admin-menu .item-menu > a {
                 display: flex;
                 height: 100%;
                 align-items: center;
@@ -57,42 +65,82 @@
                 line-height: 1;
             }
 
-                .admin-layout-main .admin-sidebar .admin-menu .item-menu a .title {
+            .admin-layout-main .admin-sidebar .admin-menu .item-menu a .title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+                .admin-layout-main .admin-sidebar .admin-menu .item-menu a .title h3 {
+                    font-size: 16px;
+                    margin: 0px;
+                    line-height: 1;
+                    text-transform: capitalize;
+                }
+
+            .admin-layout-main .admin-sidebar .admin-menu .item-menu a .show {
+                width: 30px;
+                height: 30px;
+                text-align: end;
+                line-height: 30px;
+                font-size: 14px;
+            }
+
+                .admin-layout-main .admin-sidebar .admin-menu .item-menu a .show.hide {
+                    opacity: 0
+                }
+
+                .admin-layout-main .admin-sidebar .admin-menu .item-menu a .show i {
+                    transition: all .3s;
+                }
+
+            .admin-layout-main .admin-sidebar .admin-menu .item-menu .submenu {
+                display: block;
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                vertical-align: top;
+                margin-bottom: -15px;
+                transition:all .3s;
+            }
+            .admin-layout-main .admin-sidebar .admin-menu .item-menu .submenu.collapse {
+                height:fit-content;
+            }
+                .admin-layout-main .admin-sidebar .admin-menu .item-menu .submenu .submenu-item {
                     display: flex;
+                    width: 100%;
+                    height: 35px;
                     align-items: center;
-                    gap: 10px;
+                    padding: 0px 10px;
+                    opacity: 0.7;
                 }
+                    .admin-layout-main .admin-sidebar .admin-menu .item-menu .submenu .submenu-item:hover {
+                        background: #fbfbfb24;
+                        opacity: 1;
+                    }
+                    .admin-layout-main .admin-sidebar .admin-menu .item-menu .submenu .submenu-item > a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 35px;
+                        font-size: 15px;
+                    }
+                    .admin-layout-main .admin-sidebar .admin-menu .item-menu .submenu .submenu-item > i {
+                        padding-left: 25px;
+                    }
+                       
+                        .admin-layout-main .admin-content {
+                            width: 100%;
+                            height: 100%;
+                            margin-left: 15%;
+                            padding: 10px 20px;
+                            transition: all .5s;
+                        }
 
-                    .admin-layout-main .admin-sidebar .admin-menu .item-menu a .title h3 {
-                        font-size: 16px;
-                        margin: 0px;
-                        line-height: 1;
-                        text-transform: capitalize;
-                    }
-
-                .admin-layout-main .admin-sidebar .admin-menu .item-menu a .show {
-                    width: 30px;
-                    height: 30px;
-                    text-align: end;
-                    line-height: 30px;
-                    font-size: 14px;
-                }
-                    .admin-layout-main .admin-sidebar .admin-menu .item-menu a .show.hide{
-                        opacity:0
-                    }
-                    .admin-layout-main .admin-sidebar .admin-menu .item-menu a .show i {
-                        transition: all .3s;
-                    }
-    .admin-layout-main .admin-content {
-        width: 100%;
-        height: 100%;
-        margin-left: 15%;
-        padding: 10px 20px;
-        transition:all .5s;
-    }
-        .admin-layout-main .admin-content.show{
-            margin:0px;
+        .admin-layout-main .admin-content.show {
+            margin: 0px;
         }
+
         .admin-layout-main .admin-content .admin-head {
             display: flex;
             padding: 10px;
@@ -100,6 +148,7 @@
             border-radius: 10px;
             margin-bottom: 15px;
         }
+
             .admin-layout-main .admin-content .admin-head .navbar-icon {
                 font-size: 23px;
                 line-height: 1;
