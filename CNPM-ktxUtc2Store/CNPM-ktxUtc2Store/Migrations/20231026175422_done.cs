@@ -321,6 +321,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     quantity = table.Column<int>(type: "int", nullable: false),
+                    size = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    color = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     unitPrice = table.Column<double>(type: "float", nullable: false),
                     orderId = table.Column<int>(type: "int", nullable: false),
                     productId = table.Column<int>(type: "int", nullable: false)

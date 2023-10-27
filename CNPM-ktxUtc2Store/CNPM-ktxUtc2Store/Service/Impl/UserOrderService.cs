@@ -28,7 +28,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                 .ThenInclude(x=>x.product)
                 .ThenInclude(x=>x.category)
                 .Where(a=>a.userId==userid).ToListAsync();
-             return orders;
+             return orders; 
         }
         public async Task<int>XoaDatHang(int productId)
         {

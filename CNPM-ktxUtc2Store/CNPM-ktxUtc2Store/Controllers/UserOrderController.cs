@@ -21,9 +21,27 @@ namespace CNPM_ktxUtc2Store.Controllers
         }
         public async Task<IActionResult> Userorder()
         {
-            var orders = await _userOrderService.UserOrders();
-            return View(orders);
+            var userid = GetUserId();
+            if (string.IsNullOrWhiteSpace(userid))
+            {
+                throw new Exception("User is not logged-in");
+            }
+
+            var orders = await _context.orders
+                .Include(x => x.status)
+                .Include(x => x.orderDetails)
+                .ThenInclude(x => x.product)
+                .ThenInclude(x => x.category)
+                .Where(a => a.userId == userid).ToListAsync();
+            var list = new doneOrder();
+           foreach (var order in orders)
+            {
+                list.orderList.Add(order);
+            }
+
+            return View(list);
         }
+
 
 
         //public async Task<IActionResult> dathang(int productId, int quantity)

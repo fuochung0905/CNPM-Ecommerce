@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.order>
+﻿@model CNPM_ktxUtc2Store.Dto.doneOrder
 @{
   
 }
@@ -8,21 +8,36 @@
         <h3>My order</h3>
         <table class="table table-striped"> 
             <tr>
-                <th>Ngày đặt hàng</th>
-                <th>Trạng thái đơn hàng</th>
+                <th></th>
+                <th>Tên sản phẩm</th>
+                <th>Phân loại</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
             </tr>
-            @foreach(var order in Model)
+            @foreach (var order in Model.orderList)
             {
-                <tr>
-                    <td>@order.createDate.ToString("dd-MM-yyyy")</td>
-                    <td>@order.status.statusName</td>
-                    @if(order.orderDetails!=null && order.orderDetails.Count > 0)
+                <form >
+                    @foreach (var item in order.orderDetails)
                     {
-                        <span>Order detail</span>
+                    <tr>
+                         <td>
+                                <input asp-for="orderId" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                
+                         </td>
+                        <td>@item.product.productName</td>
+                        <td>
+                            <span>@item.size</span>
+                            <span>@item.color</span>
+                        </td>
+                        <td>@item.quantity</td>
+                        <td>@item.product.price</td>
 
+                    </tr>
                     }
-                </tr>
+                </form>
+                
             }
+
         </table>
        
     }

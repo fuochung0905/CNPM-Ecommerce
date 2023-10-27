@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CNPM_ktxUtc2Store.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -151,21 +152,18 @@ namespace CNPM_ktxUtc2Store.Controllers
                 {
                     return Redirect("/Identity/Account/Login");
                 }
-                var dathang =  GetDatHang(userid);
-                if (dathang is null)
-                {
-                    dathang = new order
+                //var dathang =  GetDatHang(userid);
+               
+                  var dathang = new order
                     {
                         userId = userid,
                         createDate = DateTime.UtcNow,
                         orderStatusId = 1
                     };
                     _dbcontext.orders.Add(dathang);
-                }
+               
                 _dbcontext.SaveChanges();
-                var CTDH = _dbcontext.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id && x.productId == id);
-                
-                
+                var CTDH = _dbcontext.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id );
                     var product = _dbcontext.products.Find(id);
                     CTDH = new orderDetail
                     {

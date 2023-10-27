@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231025160859_done")]
+    [Migration("20231026175422_done")]
     partial class done
     {
         /// <inheritdoc />
@@ -107,6 +107,10 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("orderId")
                         .HasColumnType("int");
 
@@ -115,6 +119,10 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     b.Property<int>("quantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("unitPrice")
                         .HasColumnType("float");
