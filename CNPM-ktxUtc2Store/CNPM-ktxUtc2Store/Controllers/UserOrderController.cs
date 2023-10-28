@@ -19,6 +19,7 @@ namespace CNPM_ktxUtc2Store.Controllers
             _usermanagement = userManager;
 
         }
+    
         public async Task<IActionResult> Userorder()
         {
             var userid = GetUserId();
@@ -32,7 +33,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                 .Include(x => x.orderDetails)
                 .ThenInclude(x => x.product)
                 .ThenInclude(x => x.category)
-                .Where(a => a.userId == userid).ToListAsync();
+                .Where(a => a.userId == userid && a.IsDelete==false).ToListAsync();
             var list = new doneOrder();
            foreach (var order in orders)
             {
@@ -40,6 +41,19 @@ namespace CNPM_ktxUtc2Store.Controllers
             }
 
             return View(list);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Userorder(doneOrder doneOrder)
+        {
+            var order = await _context.orders.FindAsync(doneOrder.orderId);
+            order.IsDelete=true;
+            _context.orders.Update(order);
+            _context.SaveChanges();
+            return RedirectToAction("Complete", "UserOrder");
+        }
+        public IActionResult Complete()
+        {
+            return View();
         }
 
 
@@ -119,6 +133,15 @@ namespace CNPM_ktxUtc2Store.Controllers
                               select new { orderDetail.Id }
                               ).ToListAsync();
             return data.Count;
+        }
+        public double tongtien(doneOrder doneOrder)
+        {
+           var orderdetail= _context.orderDetails.Where(x=>x.orderId==doneOrder.orderId).FirstOrDefault();
+            if (orderdetail!=null)
+            {
+                return orderdetail.quantity * orderdetail.unitPrice;
+            }
+            return 0;
         }
 
 

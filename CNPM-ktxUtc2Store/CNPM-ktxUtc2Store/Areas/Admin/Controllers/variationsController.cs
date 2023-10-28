@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class variationsController : Controller
     {
         private readonly ApplicationDbContext _context;

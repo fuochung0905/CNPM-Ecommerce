@@ -5,11 +5,6 @@
 @{
 
 }
-
-
-
-
-
 <div class="banner">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -40,8 +35,7 @@
             
             @foreach (var product in Model)
             {
-                @if (product.qty_inStock != 0)
-                {
+                
                     <div class="item-product">
                         <div class="img-box">
                             <img src="/images/@product.imageUrl" alt="...">
@@ -59,8 +53,7 @@
                             </div>
                         </div>
                     </div>
-                }
-              
+                
             }
         </div>
         <div class="foot-product">

@@ -27,7 +27,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/products
         public IActionResult Index(string name)
         {
-            var product = from p in _context.products select p;
+            var product = from p in _context.products.Where(x=>x.qty_inStock>0) select p;
             if (!string.IsNullOrEmpty(name))
             {
                     product = product.Where(x => x.productName.Contains(name) );
@@ -44,7 +44,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             var variation = (from v in _context.variation
                              join c in _context.categories
                              on v.categoryId equals c.Id
-                             where(c.Id==product.categoryId)
+                             where(c.Id==product.categoryId )
                              select new variation
                              {
                                  Id = v.Id,

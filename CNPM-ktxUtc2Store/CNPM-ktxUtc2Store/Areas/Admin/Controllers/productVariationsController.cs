@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class productVariationsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -51,7 +53,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName");
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id");
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "value");
             return View();
         }
 
@@ -69,7 +71,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName", productVariation.productId);
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id", productVariation.variationId);
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "value", productVariation.variationId);
             return View(productVariation);
         }
 
@@ -87,7 +89,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName", productVariation.productId);
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id", productVariation.variationId);
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Ivalued", productVariation.variationId);
             return View(productVariation);
         }
 
@@ -124,7 +126,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName", productVariation.productId);
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id", productVariation.variationId);
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "value", productVariation.variationId);
             return View(productVariation);
         }
 

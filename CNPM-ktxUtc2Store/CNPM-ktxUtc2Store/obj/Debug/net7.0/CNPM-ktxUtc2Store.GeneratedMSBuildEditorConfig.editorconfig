@@ -40,6 +40,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3Ncb3JkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/orders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3Ncb3JkZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/orders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3Ncb3JkZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3Ncb3JkZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3Ncb3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/products/AddVariation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NccHJvZHVjdHNcQWRkVmFyaWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -378,6 +398,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/UserOrder/Complete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyXENvbXBsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rukac/source/repos/fuochung0905/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/UserOrder/dathang.cshtml]

@@ -39,6 +39,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                 listProduct = (from product in _dbcontext.products
                                join category in _dbcontext.categories
                                on product.categoryId equals category.Id
+                               where(product.qty_inStock > 0)
                                select new product
                                {
                                    Id = product.Id,
@@ -49,6 +50,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                                    categoryId = product.categoryId,
                                    category = category,
                                    imageUrl = product.imageUrl,
+                                  
                                }).Where(x => x.categoryId == cateId & x.productName.Contains(searchName)).ToList();
             }
             else
@@ -59,6 +61,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                     listProduct = (from product in _dbcontext.products
                                    join category in _dbcontext.categories
                                    on product.categoryId equals category.Id
+                                   where (product.qty_inStock > 0)
                                    select new product
                                    {
                                        Id = product.Id,
@@ -75,6 +78,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                     listProduct = (from product in _dbcontext.products
                                    join category in _dbcontext.categories
                                    on product.categoryId equals category.Id
+                                   where (product.qty_inStock > 0)
                                    select new product
                                    {
                                        Id = product.Id,
@@ -91,6 +95,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                     listProduct = (from product in _dbcontext.products
                                    join category in _dbcontext.categories
                                    on product.categoryId equals category.Id
+                                   where (product.qty_inStock > 0)
                                    select new product
                                    {
                                        Id = product.Id,
@@ -143,7 +148,14 @@ namespace CNPM_ktxUtc2Store.Controllers
         [HttpPost]
         public IActionResult Details(int id,productvariatonOrderView model)
         {
-            
+            if (string.IsNullOrEmpty(model.color))
+            {
+                model.color = "";
+            }
+            if (string.IsNullOrEmpty(model.size))
+            {
+                model.size = "";
+            }
             using var transaction = _dbcontext.Database.BeginTransaction();
             var userid = GetUserId();
             try
@@ -176,6 +188,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                     };
                     _dbcontext.orderDetails.Add(CTDH);
                 product.qty_inStock = product.qty_inStock - model.quantity;
+              
                 _dbcontext.Update(product);
                 _dbcontext.SaveChanges();
                 transaction.Commit();
