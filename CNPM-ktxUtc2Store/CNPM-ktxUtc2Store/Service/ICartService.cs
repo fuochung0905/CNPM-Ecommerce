@@ -6,7 +6,7 @@
         Task<int> RemoveItem(int productId);
         Task<shoppingCart> GetUserCart();
         Task<int> GetCartItemCount(string userId = "");
-        Task<bool> Docheckout();
+        //Task<bool> Docheckout();
     }
 
 }

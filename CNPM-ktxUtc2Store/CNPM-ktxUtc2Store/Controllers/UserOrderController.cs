@@ -9,9 +9,9 @@ namespace CNPM_ktxUtc2Store.Controllers
     {
         private readonly IUserOrderService _userOrderService;
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _usermanagement;
+        private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public UserOrderController(IUserOrderService userOrderService, ApplicationDbContext context, UserManager<IdentityUser> userManager, IHttpContextAccessor httpContextAccessor)
+        public UserOrderController(IUserOrderService userOrderService, ApplicationDbContext context, UserManager<applicationUser> userManager, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
             _userOrderService = userOrderService;
@@ -33,7 +33,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                 .Include(x => x.orderDetails)
                 .ThenInclude(x => x.product)
                 .ThenInclude(x => x.category)
-                .Where(a => a.userId == userid && a.IsDelete==false).ToListAsync();
+                .Where(a => a.applicationUser.Id == userid && a.IsDelete==false).ToListAsync();
             var list = new doneOrder();
            foreach (var order in orders)
             {
@@ -109,7 +109,7 @@ namespace CNPM_ktxUtc2Store.Controllers
         //}
         public async Task<order> GetDatHang(string userId)
         {
-            var dathang = _context.orders.FirstOrDefault(x => x.userId == userId);
+            var dathang = _context.orders.FirstOrDefault(x => x.applicationUser.Id == userId);
             return dathang;
         }
         private string GetUserId()

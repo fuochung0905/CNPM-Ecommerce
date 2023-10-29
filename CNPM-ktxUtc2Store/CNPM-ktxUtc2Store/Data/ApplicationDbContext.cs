@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 
 namespace CNPM_ktxUtc2Store.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<applicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -21,6 +21,7 @@ namespace CNPM_ktxUtc2Store.Data
         public DbSet<shoppingCart> shoppingCarts { get; set; }
         public DbSet<variation> variation { get; set; }
         public DbSet<productVariation> productVariations { get; set; }
+        public DbSet<applicationUser> applicationUsers { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

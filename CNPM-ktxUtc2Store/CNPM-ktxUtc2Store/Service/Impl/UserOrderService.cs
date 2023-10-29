@@ -6,9 +6,9 @@ namespace CNPM_ktxUtc2Store.Service.Impl
     public class UserOrderService:IUserOrderService
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _usermanagement;
+        private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public UserOrderService(ApplicationDbContext context, UserManager<IdentityUser> usermanagement, IHttpContextAccessor httpContextAccessor)
+        public UserOrderService(ApplicationDbContext context, UserManager<applicationUser> usermanagement, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
             _usermanagement = usermanagement;
@@ -27,7 +27,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                 .Include(x=>x.orderDetails)
                 .ThenInclude(x=>x.product)
                 .ThenInclude(x=>x.category)
-                .Where(a=>a.userId==userid).ToListAsync();
+                .Where(a=>a.applicationUser.Id ==userid).ToListAsync();
              return orders; 
         }
         public async Task<int>XoaDatHang(int productId)
@@ -122,7 +122,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
         //}
         public async Task<order>GetDatHang( string userId)
         {
-            var dathang=  _context.orders.FirstOrDefault(x=>x.userId==userId);
+            var dathang=  _context.orders.FirstOrDefault(x=>x.applicationUser.Id ==userId);
             return dathang;
         }
         private string GetUserId()

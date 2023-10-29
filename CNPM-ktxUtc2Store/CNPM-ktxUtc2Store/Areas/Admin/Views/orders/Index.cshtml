@@ -14,16 +14,17 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.userId)
+               Ngày đặt hàng
+            </th>
+           
+            <th>
+               Trạng thái
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.createDate)
+               Tên người dùng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsDelete)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.status)
+                Số điện thoại
             </th>
             <th></th>
         </tr>
@@ -32,17 +33,18 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.userId)
+                @item.createDate
+            </td>
+     
+            <td>
+               @item.status.statusName
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.createDate)
+               @item.applicationUser.fullname
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDelete)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status.Id)
-            </td>
+                <td>
+                    @item.applicationUser.PhoneNumber
+                </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

@@ -8,7 +8,8 @@ namespace CNPM_ktxUtc2Store.Models
     {
         [Key]
         public int Id { get; set; }
-        public string UserId { get; set; }
+        public string applicationUserId { get; set; }
+        public applicationUser applicationUser { get; set; }
         public bool isDelete { get; set; }=false;
         public virtual ICollection<cartDetail> cartDetails { get; set; }
     }

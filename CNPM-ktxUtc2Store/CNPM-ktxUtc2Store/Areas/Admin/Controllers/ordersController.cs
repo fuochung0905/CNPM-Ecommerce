@@ -25,8 +25,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/orders
         public async Task<IActionResult> Index()
         {
-
-            var applicationDbContext = _context.orders.Include(o => o.status).Where(x=>x.IsDelete==true);
+            var applicationDbContext = _context.orders.Include(o => o.applicationUser).Include(o => o.status);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -39,6 +38,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
 
             var order = await _context.orders
+                .Include(o => o.applicationUser)
                 .Include(o => o.status)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
@@ -52,14 +52,17 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/orders/Create
         public IActionResult Create()
         {
+            ViewData["applicationUserId"] = new SelectList(_context.applicationUsers, "Id", "Id");
             ViewData["orderStatusId"] = new SelectList(_context.orderStatus, "Id", "Id");
             return View();
         }
 
-     
+        // POST: Admin/orders/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( order order)
+        public async Task<IActionResult> Create([Bind("Id,createDate,IsDelete,orderStatusId,applicationUserId")] order order)
         {
             if (ModelState.IsValid)
             {
@@ -67,6 +70,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["applicationUserId"] = new SelectList(_context.applicationUsers, "Id", "Id", order.applicationUserId);
             ViewData["orderStatusId"] = new SelectList(_context.orderStatus, "Id", "Id", order.orderStatusId);
             return View(order);
         }
@@ -84,14 +88,17 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            ViewData["applicationUserId"] = new SelectList(_context.applicationUsers, "Id", "Id", order.applicationUserId);
             ViewData["orderStatusId"] = new SelectList(_context.orderStatus, "Id", "Id", order.orderStatusId);
             return View(order);
         }
 
-        
+        // POST: Admin/orders/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,  order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,createDate,IsDelete,orderStatusId,applicationUserId")] order order)
         {
             if (id != order.Id)
             {
@@ -118,6 +125,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["applicationUserId"] = new SelectList(_context.applicationUsers, "Id", "Id", order.applicationUserId);
             ViewData["orderStatusId"] = new SelectList(_context.orderStatus, "Id", "Id", order.orderStatusId);
             return View(order);
         }
@@ -131,6 +139,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
 
             var order = await _context.orders
+                .Include(o => o.applicationUser)
                 .Include(o => o.status)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)

@@ -1,17 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<applicationUser> SignInManager
+@inject UserManager<applicationUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
     <div class="admin-profile">
-        <div class="ava">
-            <img src="../wwwroot/images/ao1.jpg">
-        </div>
-
-        <a class="name" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-            <span id="username">@User.Identity?.Name</span>
-        </a>
+        @await Component.InvokeAsync("admin")
     </div>
        
 }

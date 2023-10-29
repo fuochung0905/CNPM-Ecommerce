@@ -1,4 +1,4 @@
-﻿using CNPM_ktxUtc2Store.Dto;
+﻿    using CNPM_ktxUtc2Store.Dto;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,10 +18,10 @@ namespace CNPM_ktxUtc2Store.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IHomeService _homeRepository;
         private readonly ApplicationDbContext _dbcontext;
-        private readonly UserManager<IdentityUser> _usermanagement;
+        private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public HomeController(ILogger<HomeController> logger, IHomeService homeRepository, ApplicationDbContext dbcontext, UserManager<IdentityUser> userManager, IHttpContextAccessor httpContextAccessor)
+        public HomeController(ILogger<HomeController> logger, IHomeService homeRepository, ApplicationDbContext dbcontext, UserManager<applicationUser> userManager, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
             _homeRepository = homeRepository;
@@ -164,11 +164,12 @@ namespace CNPM_ktxUtc2Store.Controllers
                 {
                     return Redirect("/Identity/Account/Login");
                 }
+                var applicationUser = _dbcontext.applicationUsers.Find(userid);
                 //var dathang =  GetDatHang(userid);
                
                   var dathang = new order
                     {
-                        userId = userid,
+                        applicationUserId=userid,
                         createDate = DateTime.UtcNow,
                         orderStatusId = 1
                     };
@@ -202,7 +203,7 @@ namespace CNPM_ktxUtc2Store.Controllers
         }
         public  order GetDatHang(string userId)
         {
-            var dathang = _dbcontext.orders.FirstOrDefault(x => x.userId == userId);
+            var dathang = _dbcontext.orders.FirstOrDefault(x => x.applicationUser.Id == userId);
             return dathang;
         }
         private string GetUserId()
