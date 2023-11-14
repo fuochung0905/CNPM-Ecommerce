@@ -72,39 +72,17 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         public async Task<IActionResult> Create(product product)
         {
             string uniqueFileName = uploadImage(product);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-         
-=======
-
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
-            
->>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
-                product.imageUrl= uniqueFileName;
-                _context.Add(product);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Create));
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        
-=======
-         
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
-
+            product.imageUrl = uniqueFileName;
+            _context.Add(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Create));
 
             product.imageUrl = uniqueFileName;
             _context.Add(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 
-<<<<<<< HEAD
-=======
->>>>>>> 600951208ce200ed36ece0c0424d5ef4dcf5d007
->>>>>>> 04903f9ef176d65da5faa35ba7dda0cd10264ebd
         }
-
         // GET: Admin/products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
