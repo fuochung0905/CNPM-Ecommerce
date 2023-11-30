@@ -1,14 +1,10 @@
 ﻿@using X.PagedList;
 @using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc.Bootstrap4.Core;
 @model X.PagedList.IPagedList<product>
 @{
 
 }
-
-
-
-
-
 <div class="banner">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -33,61 +29,38 @@
                 @await Component.InvokeAsync("Categories")
             </div>
             <div class="state-component-cate"></div>
-            @*<div class="search-wrap">
-                <div class="filter-search">
-                    <div class="filter-product">
-                        <label class="visually-hidden" for="categoryId"></label>
-                        <select class="form-select" id="categoryId" name="categoryId">
-                        </select>
-                    </div>
-                    <div class="search">
-
-                        <form class="form-inline" asp-action="Index" method="get">
-                            <input type="text" name="searchName" placeholder="Search">
-                            <button class="btn btn-outline-success" type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
-                        </form>
-                    </div>
-                    <div class="filter-product">
-                        <form class="form-inline" asp-action="Index" method="get">
-                            <div class="search">
-                                <input type="text" name="searchName" placeholder="Search">
-
-                            </div>
-
-                            <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-
-                        </form>
-                    </div>
-
-                </div>
-            </div>*@
+           
         </div>
         <div class="list-product">
+            
             @foreach (var product in Model)
             {
-                <div class="item-product">
-                    <div class="img-box">
-                        <img src="/images/@product.imageUrl" alt="...">
-                    </div>
+                
+                    <div class="item-product">
+                        <div class="img-box">
+                            <img src="/images/@product.imageUrl" alt="...">
+                        </div>
 
-                    <div class="card-body">
-                        <h5 class="card-title">@product.productName</h5>
-                        <div class="card-detail">
-                            <p class="card-text">@product.price vnđ</p>
-                            <span class="card-rate">4.5<i class="fa-solid fa-star"></i></span>
-                        </div>
-                        <div class="box-button">
-                            <a class="wrap-btn detail" asp-action="Details" asp-route-id="@product.Id">Chi tiết</a>
-                            <button type="button" onclick="AddItem(@product.Id)" class="wrap-btn add"><i class="bi bi-cart-plus"></i><sapn>Thêm</sapn></button>
+                        <div class="card-body">
+                            <h5 class="card-title">@product.productName</h5>
+                            <div class="card-detail">
+                                <p class="card-text">@product.price vnđ</p>
+                                <span class="card-rate">4.5<i class="fa-solid fa-star"></i></span>
+                            </div>
+                            <div class="box-button">
+                                <a class="wrap-btn detail" asp-action="Details" asp-route-id="@product.Id">Chi tiết</a>
+                                <button type="button" onclick="AddItem(@product.Id)" class="wrap-btn add"><i class="bi bi-cart-plus"></i><sapn>Thêm</sapn></button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                
             }
         </div>
         <div class="foot-product">
             Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-            @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}))
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page ,maloai=ViewBag.maloai}),Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)
         </div>
+        
     </div>
 </div>
 

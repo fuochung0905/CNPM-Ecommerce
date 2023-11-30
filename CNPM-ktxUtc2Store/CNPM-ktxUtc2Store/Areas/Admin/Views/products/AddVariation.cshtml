@@ -1,0 +1,20 @@
+﻿@model CNPM_ktxUtc2Store.Dto.productVaritionCreateView
+@{
+    ViewData["Title"] = "AddVariation";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="AddVariation">
+    < <div class="form-group">
+        <select asp-for="selectVariation"  asp-items="Model.Items">
+            <option>
+
+            </option>
+
+          </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+

@@ -401,3 +401,48 @@ footer {
 .list-component-cate li a{
     padding: 8px 15px 8px;
 }
+.login-item img{
+    border-radius: 50%;
+}
+#tooltip-login-wrap{
+    position: relative;
+    display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+}
+#tooltip-login-item{
+   
+    position: absolute;
+    left:50%;
+    bottom:-130%;
+    transform: translateX(-50%);
+    background-color: lightblue;
+    border-radius: 7px;
+    width: 100%;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+#tooltip-login-item::after{
+    content: "";    
+    position: absolute;
+    left: 50%;
+    bottom:100%;
+    transform: translateX(-50%);
+    border: 10px solid;
+    border-color: #0000 #0000 lightblue #0000;
+}
+#tooltip-login-wrap:hover #tooltip-login-item{
+   
+   visibility: visible;
+   opacity: 1;
+}
+#tooltip-login-item:hover #tooltip-login-item{
+   
+    visibility: visible;
+    opacity: 1;
+}

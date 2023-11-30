@@ -1,23 +1,33 @@
-﻿using CNPM_ktxUtc2Store.Dto;
+﻿    using CNPM_ktxUtc2Store.Dto;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using X.PagedList;
+using Microsoft.CodeAnalysis;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CNPM_ktxUtc2Store.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IHomeService _homeRepository;
         private readonly ApplicationDbContext _dbcontext;
+        private readonly UserManager<applicationUser> _usermanagement;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public HomeController(ILogger<HomeController> logger, IHomeService homeRepository, ApplicationDbContext dbcontext)
+        public HomeController(ILogger<HomeController> logger, IHomeService homeRepository, ApplicationDbContext dbcontext, UserManager<applicationUser> userManager, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
             _homeRepository = homeRepository;
             _dbcontext = dbcontext;
+            _usermanagement = userManager;
+            _httpContextAccessor = httpContextAccessor; 
         }
 
         public IActionResult Index(string maloai, string searchName, int? page)
@@ -29,6 +39,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                 listProduct = (from product in _dbcontext.products
                                join category in _dbcontext.categories
                                on product.categoryId equals category.Id
+                               where(product.qty_inStock > 0)
                                select new product
                                {
                                    Id = product.Id,
@@ -39,6 +50,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                                    categoryId = product.categoryId,
                                    category = category,
                                    imageUrl = product.imageUrl,
+                                  
                                }).Where(x => x.categoryId == cateId & x.productName.Contains(searchName)).ToList();
             }
             else
@@ -49,6 +61,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                     listProduct = (from product in _dbcontext.products
                                    join category in _dbcontext.categories
                                    on product.categoryId equals category.Id
+                                   where (product.qty_inStock > 0)
                                    select new product
                                    {
                                        Id = product.Id,
@@ -65,6 +78,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                     listProduct = (from product in _dbcontext.products
                                    join category in _dbcontext.categories
                                    on product.categoryId equals category.Id
+                                   where (product.qty_inStock > 0)
                                    select new product
                                    {
                                        Id = product.Id,
@@ -81,6 +95,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                     listProduct = (from product in _dbcontext.products
                                    join category in _dbcontext.categories
                                    on product.categoryId equals category.Id
+                                   where (product.qty_inStock > 0)
                                    select new product
                                    {
                                        Id = product.Id,
@@ -102,29 +117,105 @@ namespace CNPM_ktxUtc2Store.Controllers
             PagedList<product> list = new PagedList<product>(listProduct, pageNumber, pageSize);
             return View(list);
         }
-        public IActionResult TheoloaiSanPham(int maloai)
-        {
-            var listCategory = new List<category>();
-            listCategory = _dbcontext.categories.Where(x => x.Id == maloai).ToList();
-            return View(listCategory);
-        }
-        public async Task<IActionResult> Details(int? id)
+      
+
+        public IActionResult Details(int? id)
         {
             if (id == null || _dbcontext.products == null)
             {
                 return NotFound();
             }
 
-            var product = await _dbcontext.products
-                .Include(p => p.category)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
+            var product = new product();
+            product = _dbcontext.products.Find(id);
+            
+            var productvariation = (from p in _dbcontext.products
+                        join pv in _dbcontext.productVariations
+                        on p.Id equals pv.productId
+                        where (p.Id == id)
+                        select new productVariation
+                        {
+                            product = p,
+                            variation = pv.variation,
+                        }).ToList();
+            product.ProductVariations = productvariation;
+
+            var result = new productvariatonOrderView();
+
+            result.product=product;
+            return View(result);
+        }
+        [HttpPost]
+        public IActionResult Details(int id,productvariatonOrderView model)
+        {
+            if (string.IsNullOrEmpty(model.color))
             {
-                return NotFound();
+                model.color = "";
+            }
+            if (string.IsNullOrEmpty(model.size))
+            {
+                model.size = "";
+            }
+            using var transaction = _dbcontext.Database.BeginTransaction();
+            var userid = GetUserId();
+            try
+            {
+                if (string.IsNullOrEmpty(userid))
+                {
+                    return Redirect("/Identity/Account/Login");
+                }
+                var applicationUser = _dbcontext.applicationUsers.Find(userid);
+                //var dathang =  GetDatHang(userid);
+               
+                  var dathang = new order
+                    {
+                        applicationUserId=userid,
+                        createDate = DateTime.UtcNow,
+                        orderStatusId = 1
+                    };
+                    _dbcontext.orders.Add(dathang);
+               
+                _dbcontext.SaveChanges();
+                var CTDH = _dbcontext.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id );
+                    var product = _dbcontext.products.Find(id);
+                    CTDH = new orderDetail
+                    {
+                        productId = id,
+                        orderId = dathang.Id,
+                        quantity = model.quantity,
+                        size=model.size,
+                        color=model.color,
+                        unitPrice = product.price
+                    };
+                    _dbcontext.orderDetails.Add(CTDH);
+                product.qty_inStock = product.qty_inStock - model.quantity;
+              
+                _dbcontext.Update(product);
+                _dbcontext.SaveChanges();
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
             }
 
-            return View(product);
+            return RedirectToAction("Userorder", "UserOrder");
+            
         }
+        public  order GetDatHang(string userId)
+        {
+            var dathang = _dbcontext.orders.FirstOrDefault(x => x.applicationUser.Id == userId);
+            return dathang;
+        }
+        private string GetUserId()
+        {
+
+            var pricipal = _httpContextAccessor.HttpContext.User;
+            string userId = _usermanagement.GetUserId(pricipal);
+
+            return userId;
+        }
+
+
         public IActionResult Privacy()
         {
             return View();

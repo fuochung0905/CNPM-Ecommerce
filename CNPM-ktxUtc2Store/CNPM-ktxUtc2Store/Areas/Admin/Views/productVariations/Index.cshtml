@@ -1,8 +1,8 @@
-﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.productvoption>
+﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.productVariation>
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
@@ -17,7 +17,7 @@
                 @Html.DisplayNameFor(model => model.product)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.variationoption)
+                @Html.DisplayNameFor(model => model.variation)
             </th>
             <th></th>
         </tr>
@@ -29,7 +29,7 @@
                 @Html.DisplayFor(modelItem => item.product.productName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.variationoption.Id)
+                @Html.DisplayFor(modelItem => item.variation.Id)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

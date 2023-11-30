@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.order>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Ngày đặt hàng
+            </th>
+           
+            <th>
+               Trạng thái
+            </th>
+            <th>
+               Tên người dùng
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.createDate
+            </td>
+     
+            <td>
+               @item.status.statusName
+            </td>
+            <td>
+               @item.applicationUser.fullname
+            </td>
+                <td>
+                    @item.applicationUser.PhoneNumber
+                </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

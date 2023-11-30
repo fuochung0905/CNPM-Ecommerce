@@ -9,9 +9,9 @@ namespace CNPM_ktxUtc2Store.Models
         [Key]
         public int Id { get; set; }
         public string name { get; set; }
+        public string value { get; set; }   
         public int categoryId { get; set; }
-        public category category { get; set; } 
-       
-        public virtual ICollection<variation_option>variation_Options { get; set; }
+        public virtual category category { get; set; } 
+        public virtual ICollection<productVariation> ProductVariations { get; set; }  
     }
 }

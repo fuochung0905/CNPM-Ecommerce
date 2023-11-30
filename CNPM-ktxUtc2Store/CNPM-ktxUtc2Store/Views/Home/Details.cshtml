@@ -1,21 +1,26 @@
-﻿@model CNPM_ktxUtc2Store.Models.product
-
-
-<div class="detail-card-wrapper">
+﻿@model  CNPM_ktxUtc2Store.Dto.productvariatonOrderView
+@{
+    // Since Product isn't a string, it requires a cast.
+    // var product = ViewData["Product"] as product;
+}
+<div class="detail-card-wrapper">   
     <div class="card">
         <!--card trái-->
+
         <div class="product-imgs">
             <div class="img-display">
                 <div class="img-showcase">
-                    <img src="/images/@Model.imageUrl" alt="Tshirt image">
+                    <img src="/images/@Model.product.imageUrl" alt="Tshirt image">
                    
                 </div>
             </div>
         </div>
+
         <!--card phải-->
         <div class="product-content">
-            <h2 class="product-title">@Model.productName</h2>
+            <h2 class="product-title">@Model.product.productName</h2>
             <a href="#" class="product-link">visit shop</a>
+            
             <div class="product-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -25,38 +30,43 @@
                 <span>4.5(3700)</span>
             </div>
             <div class="product-price">
-                <p class="last-price">Giá cũ: <span>@Model.price</span></p>
-                <p class="new-price">Giá hiện tại: <span>@Model.price</span></p>
+                <p class="last-price">Giá cũ: <span>@Model.product.price</span></p>
+                <p class="new-price">Giá hiện tại: <span>@Model.product.price</span></p>
             </div>
 
-            <div class="product-detail">
-
-                <div class="size">
-                    <p>Size</p>
-                    <div class="psize">
-                        <p>M[nhỏ hơn 1m55/ 45kg]</p>
-                    </div>
-                    <div class="psize">
-                        <p>L[nhỏ hơn 1m60/ 55kg]</p>
-                    </div>
-                    <div class="psize">
-                        <p>XL[nhỏ hơn 1m70/ 65kg]</p>
-                    </div>
+            <div class="product-detail">          
+                <form asp-area="" asp-controller="Home" asp-action="Details">
+                    @foreach (var item in Model.product.ProductVariations)
+                    {
+                        @if (item.variation.name == "size")
+                        {
+                            <input asp-for="size" type="radio" id="@item.variation.value" name="size" value="@item.variation.value">
+                            <label for="@item.variation.value">@item.variation.value</label>
+                            <br>
+                        }
+                    }
+                    @foreach (var item in Model.product.ProductVariations)
+                    {
+                        @if (item.variation.name == "color")
+                        {
+                            <input asp-for="color" type="radio" id="@item.variation.value" name="color" value="@item.variation.value">
+                            <label for="@item.variation.value">@item.variation.value</label>
+                            <br>
+                        }
+                    }   
+                        <input asp-for="quantity" type="number" min="0" max="@Model.product.qty_inStock" value="1">
+                        <h6>@Model.product.qty_inStock sản phẩm có sẵn</h6>
+                        <button type="button" onclick="AddItem(@Model.product.Id)">
+                            Thêm vào giỏ hàng <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <button type="submit">Mua hàng</button>
+                    </form>
+                    
                 </div>
-
-                <div class="purchase-info">
-                    <p>Số Lượng</p>
-                    <input type="number" min="0" value="1">
-                    <button type="button" class="btn">
-                        Thêm vào giỏ hàng <i class="fas fa-shopping-cart"></i>
-                    </button>
-                    <button type="button" class="btn">
-                        Mua ngay
-                    </button>
-                </div>
+               
                 <p>
                     <h3>MÔ TẢ SẢN PHẨM</h3>
-                  @Model.description
+                @Model.product.description
                 </p>
             </div>
             <div class="social-links">
@@ -83,3 +93,51 @@
         </div>
     </div>
 </div>
+  @section Scripts
+  {
+    <script>
+        async function AddItem(productId) {
+
+            var usernameEl = document.getElementById("username");
+
+            if (usernameEl == null) {
+                window.location.href = "/Identity/Account/Login";
+            }
+            try {
+                var response = await fetch(`/Cart/AddItem?productId=${productId}`);
+
+                if (response.status == 200) {
+                    var result = await response.json();
+                    console.log(result);
+                    var cartCountEl = document.getElementById("cartCount");
+                    cartCountEl.innerHTML = result;
+                    window.location.href = "#cartCount"
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+    <script>
+        async function dathang(productId) {
+
+            var usernameEl = document.getElementById("username");
+
+            if (usernameEl == null) {
+                window.location.href = "/Identity/Account/Login";
+            }
+            try {
+                var response = await fetch(`/UserOrder/dathang?productId=${productId}`);
+
+                if (response.status == 200) {
+                    var result = await response.json();
+                    console.log(result);
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+}

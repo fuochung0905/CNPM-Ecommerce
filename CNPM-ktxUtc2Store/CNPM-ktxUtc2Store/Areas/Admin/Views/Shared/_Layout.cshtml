@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -11,7 +12,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
           integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,153 +27,115 @@
 </head>
 <body>
     <div class="admin-layout-main">
-        <div class="sidebarAD" id="sidebarad" style="display:none;">
-            <a href="javascript:void(0)" class="close-bar" onclick="w3_close()">&times;</a>
-            <div class="sidebarAD-brand">
-                <h1 > <span class="las la-accusoft">Accusoft</span>Accusoft</h1>
-            </div>
-            <div class="sidebarAD-menu">
-                <ul>
-                    <li>
-                        <p>
-                            <span class="las la-igloo"></span>
-                            <span>Dashboard</span>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebarAD-menu">
-                <ul>
-                    <li>
-                        <a href="">
-                            <span class="las la-igloo"></span>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebarAD-menu">
-                <ul>
-                    <li>
-                        <a href="">
-                            <span class="las la-igloo"></span>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebarAD-menu">
-                <ul>
-                    <li>
-                        <a href="">
-                            <span class="las la-igloo"></span>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebarAD-menu">
-                <ul>
-                    <li>
-                        <a href="">
-                            <span class="las la-users"></span>
-                            <span>Customers</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebarAD-menu">
-                <ul>
-                    <li>
-                        <a href="">
-                            <span class="las la-clipboard-list"></span>
-                            <span>Products</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebarAD-menu">
-                <ul>
-                    <li>
-                        <a href="">
-                            <span class="las la-receipt"></span>
-                            <span>Inventory</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="admin-sidebar">
+            <partial name="_LoginPartial" />
+            <ul class="admin-menu">
+               <li class="item-menu">
+                   <a href="#">
+                        <div class="title">
+                            <div class="item-icon"><i class="bi bi-graph-up"></i></div>
+                            <h3>Doanh số</h3>
+                        </div>
+                        <div class="show d-none"><i class="fa-solid fa-angle-up"></i></div>
+                   </a>
+                   
+               </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <div class="title">
+                            <div class="item-icon"><i class="bi bi-cart4"></i></div>
+                            <h3>Quản lý danh mục</h3>
+
+                        </div>
+                        <div class="show"><i class="fa-solid fa-angle-up"></i></div>
+                    </a>
+                        <ul class="submenu">
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/categories">Quản lý loại hàng</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/products">Quản lý sản phẩm</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/productVariations">Quản lý biến thể của loại</a></li>
+                        </ul>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <div class="title">
+                            <div class="item-icon"><i class="bi bi-gear"></i></div>
+                            <h3>Quản lý website</h3>
+                        </div>
+                        <div class="show"><i class="fa-solid fa-angle-up"></i></div>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý Banner</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý Logo</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý truyền thông</a></li>
+                    </ul>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <div class="title">
+                            <div class="item-icon"><i class="bi bi-list-check"></i></div>
+                            <h3>Quản lý đơn hàng</h3>
+                        </div>
+                        <div class="show"><i class="fa-solid fa-angle-up"></i></div>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/orders">Thông tin đơn hàng</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Lịch sử đơn hàng</a></li>
+                    </ul>
+                </li>
+                <li class="item-menu">
+                    <a href="#">
+                        <div class="title">
+                            <div class="item-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <h3>Doanh số</h3>
+                        </div>
+                        <div class="show"><i class="fa-solid fa-angle-up"></i></div>
+                    </a>
+                </li>
+             
+            </ul>
         </div>
-
-        <div class="ad-main-content">
-
-            <header>
-                <h2 class="ad-main-content-header">
-                    <label for="">
-                        <span class="las la-bars bar-button" onclick=" w3_open()" style="cursor:alias;"> </span>
-                    </label>
-                    Dashboard
-                </h2>
-            </header>
-            <main>
-                <div class="cards">
-                    <div class="card-single">
-                        @RenderBody()
-                    </div>
-
-                </div>
-            </main>
-
-
+        <div class="admin-content">
+            <div class="admin-head">
+                <div class="navbar-icon" ><i class="fa-solid fa-bars"></i></div>
+            </div>
+            @RenderBody()
         </div>
     </div>
-    
-    
-
-    <script>
-        function w3_open() {
-            const adMainContents = document.getElementsByClassName('ad-main-content');
-
-            for (const adMainContent of adMainContents) {
-                adMainContent.style.marginLeft = "250px";
-            }
-            document.getElementById("sidebarad").style.display = "block";
-            document.getElementById("sidebarad").style.width = "250px";
-            
-        }
-
-        function w3_close() {
-            document.getElementById("sidebarad").style.width = "0";
-            const adMainContents = document.getElementsByClassName('ad-main-content');
-
-            for (const adMainContent of adMainContents) {
-                adMainContent.style.marginLeft = "2%";
-            }
-           
-        }
-        $(function () {
-            // Định dạng số tiền
-            const money = 1234567890;
-            const formattedMoney = money.toLocaleString();
-
-            // Hiển thị số tiền
-            $("#money").html(formattedMoney);
-        });
-
-        const evwheels = document.getElementsByClassName('repos-item-img-container');
-        for (const evwhell of evwheels) {
-            evwhell.addEventListener("wheel", wheelf);
-        }
-
-        function wheelf() {
-            const imgresizes = document.getElementsByClassName('repos-item-img-show');
-            for (const imgresize of imgresizes) {
-                imgresize.style.width = "300px";
-                imgresize.style.height = "300px";
-            }
-           
-        }
-    </script>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".admin-content .navbar-icon").click(function(){
+            $(".admin-sidebar").toggleClass("hide");
+            $(".admin-content").toggleClass("show");
+        })
+        $(".admin-menu .item-menu > a").click(function () {
+            $(this).next(".submenu").toggleClass("collapse");
+            $(this).children(".show").toggleClass("active");
+        })
+    })
+    $(function () {
+        // Định dạng số tiền
+        const money = 1234567890;
+        const formattedMoney = money.toLocaleString();
+
+        // Hiển thị số tiền
+        $("#money").html(formattedMoney);
+    });
+
+    const evwheels = document.getElementsByClassName('repos-item-img-container');
+    for (const evwhell of evwheels) {
+        evwhell.addEventListener("wheel", wheelf);
+    }
+
+    function wheelf() {
+        const imgresizes = document.getElementsByClassName('repos-item-img-show');
+        for (const imgresize of imgresizes) {
+            imgresize.style.width = "300px";
+            imgresize.style.height = "300px";
+        }
+
+    }
+</script>
 </html>
 @RenderSection("scripts", required: false)
-

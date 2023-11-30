@@ -1,8 +1,14 @@
 ﻿@model CNPM_ktxUtc2Store.Models.shoppingCart
+
 @{
     ViewData["Title"] = "GetUserCart";
     //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+
+
+
+
+
     <div style="width:90%; margin:auto">
         @if (Model != null && Model.cartDetails != null && Model.cartDetails.Count > 0)
     {
@@ -36,6 +42,7 @@
         </section>
         @foreach (var item in Model.cartDetails)
         {
+
             <section class="main-item-info">
                 <h3 class="hidden-item-main-title">Item Info</h3>
                 <!--    -->
@@ -68,6 +75,34 @@
                     <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
                 </div>
             </section>
+
+            /*<table class="table table-bordered">
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Ảnh</th>
+                    <th>Số lượng</th>
+                    <th>Tổng giá</th>
+                    <th>Khác</th>
+                    <th>Đặt hàng</th>
+                </tr>
+
+                <tr>
+                    <td>@item.product.productName</td>
+                    <td>
+                        <img src="/images/@item.product.imageUrl" style="width:80px;height:100px">
+                    </td>
+                    <td>@item.quantity</td>
+                    <td>@item.quantity*@item.product.price</td>
+                    <td>
+                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
+                        <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="/UserOrder/Order">Đặt hàng</a>
+                    </td>
+                </tr>
+
+            </table>*/
         }
         <div class="nav-show-allsell">
             <div class="my-2">
@@ -77,8 +112,8 @@
                     </p>
                      <p style="place-content: center; color: orangered; font-size: 20px; padding-left: 5px;"> @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫ </p>
                 </div>  
-                </div>
+            </div>
                  <a class="btn btn-primary" href="/Cart/checkout">CheckOut</a>
-           </div>
-}
-</div>
+        </div>
+    }
+    </div>

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     /// <inheritdoc />
-    public partial class chiuuuanhhh : Migration
+    public partial class Ten_Migration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,6 +30,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    fullname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    profilePicture = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -74,20 +76,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_orderStatus", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "shoppingCart",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    isDelete = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_shoppingCart", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -197,6 +185,26 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "shoppingCart",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    isDelete = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_shoppingCart", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_shoppingCart_AspNetUsers_applicationUserId",
+                        column: x => x.applicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "product",
                 columns: table => new
                 {
@@ -228,7 +236,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    categoryId = table.Column<int>(type: "int", nullable: true)
+                    value = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    categoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -237,7 +246,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                         name: "FK_variation_category_categoryId",
                         column: x => x.categoryId,
                         principalTable: "category",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -246,14 +256,20 @@ namespace CNPM_ktxUtc2Store.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    userId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     createDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
                     orderStatusId = table.Column<int>(type: "int", nullable: false),
-                    IsDelete = table.Column<bool>(type: "bit", nullable: false)
+                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_order", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_order_AspNetUsers_applicationUserId",
+                        column: x => x.applicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_order_orderStatus_orderStatusId",
                         column: x => x.orderStatusId,
@@ -291,19 +307,22 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "variation_option",
+                name: "productVariations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    value = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    variationId = table.Column<int>(type: "int", nullable: true)
+                    productId = table.Column<int>(type: "int", nullable: false),
+                    variationId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_variation_option", x => x.Id);
+                    table.PrimaryKey("PK_productVariations", x => new { x.productId, x.variationId });
                     table.ForeignKey(
-                        name: "FK_variation_option_variation_variationId",
+                        name: "FK_productVariations_product_productId",
+                        column: x => x.productId,
+                        principalTable: "product",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_productVariations_variation_variationId",
                         column: x => x.variationId,
                         principalTable: "variation",
                         principalColumn: "Id");
@@ -316,6 +335,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     quantity = table.Column<int>(type: "int", nullable: false),
+                    size = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    color = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     unitPrice = table.Column<double>(type: "float", nullable: false),
                     orderId = table.Column<int>(type: "int", nullable: false),
                     productId = table.Column<int>(type: "int", nullable: false)
@@ -333,30 +354,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                         name: "FK_orderDetail_product_productId",
                         column: x => x.productId,
                         principalTable: "product",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "productvoption",
-                columns: table => new
-                {
-                    productId = table.Column<int>(type: "int", nullable: false),
-                    variationoptionId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_productvoption", x => new { x.productId, x.variationoptionId });
-                    table.ForeignKey(
-                        name: "FK_productvoption_product_productId",
-                        column: x => x.productId,
-                        principalTable: "product",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_productvoption_variation_option_variationoptionId",
-                        column: x => x.variationoptionId,
-                        principalTable: "variation_option",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -411,6 +408,11 @@ namespace CNPM_ktxUtc2Store.Migrations
                 column: "shoppingCartId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_order_applicationUserId",
+                table: "order",
+                column: "applicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_order_orderStatusId",
                 table: "order",
                 column: "orderStatusId");
@@ -431,19 +433,19 @@ namespace CNPM_ktxUtc2Store.Migrations
                 column: "categoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_productvoption_variationoptionId",
-                table: "productvoption",
-                column: "variationoptionId");
+                name: "IX_productVariations_variationId",
+                table: "productVariations",
+                column: "variationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_shoppingCart_applicationUserId",
+                table: "shoppingCart",
+                column: "applicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_variation_categoryId",
                 table: "variation",
                 column: "categoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_variation_option_variationId",
-                table: "variation_option",
-                column: "variationId");
         }
 
         /// <inheritdoc />
@@ -471,13 +473,10 @@ namespace CNPM_ktxUtc2Store.Migrations
                 name: "orderDetail");
 
             migrationBuilder.DropTable(
-                name: "productvoption");
+                name: "productVariations");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "shoppingCart");
@@ -489,13 +488,13 @@ namespace CNPM_ktxUtc2Store.Migrations
                 name: "product");
 
             migrationBuilder.DropTable(
-                name: "variation_option");
+                name: "variation");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "orderStatus");
-
-            migrationBuilder.DropTable(
-                name: "variation");
 
             migrationBuilder.DropTable(
                 name: "category");

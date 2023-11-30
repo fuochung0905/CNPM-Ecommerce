@@ -1,30 +1,55 @@
-﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.order>
+﻿@model CNPM_ktxUtc2Store.Dto.doneOrder
 @{
   
 }
 <div style="width:90%; margin:auto">
     @if (Model != null )
     {
+        <form asp-area="" asp-controller="UserOrder" asp-action="Userorder">
         <h3>My order</h3>
         <table class="table table-striped"> 
             <tr>
-                <th>Ngày đặt hàng</th>
-                <th>Trạng thái đơn hàng</th>
+                <th></th>
+                <th>Tên sản phẩm</th>
+                <th>Phân loại</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Tổng tiền</th>
             </tr>
-            @foreach(var order in Model)
+            @foreach (var order in Model.orderList)
             {
-                <tr>
-                    <td>@order.createDate.ToString("dd-MM-yyyy")</td>
-                    <td>@order.status.statusName</td>
-                    @if(order.orderDetails!=null && order.orderDetails.Count > 0)
+              
+                    @foreach (var item in order.orderDetails)
                     {
-                        <span>Order detail</span>
+                    <tr>
+                         <td>
+                            <label>
+                                @* viết js khi nhấn vào đây sẽ hiện ra tồng tiền sản phẩm
+                                đường dẫn tổng tiền của sản phẩm đó 
+                                *@
+                                <input  asp-for="orderId" type="radio"
+                                       
+                                       value="@item.orderId" /> 
+                            </label>
+                                
+                         </td>
+                        <td>@item.product.productName</td>
+                        <td>
+                            <span>@item.size</span>
+                            <span>@item.color</span>
+                        </td>
+                        <td>@item.quantity</td>
+                        <td>@item.product.price</td>
+                        <td>@(item.unitPrice * item.quantity)</td>
 
-                    }
-                </tr>
+                    </tr>
+                    }   
             }
         </table>
-       
+        <button type="submit">Đặt hàng</button>
+           </form>  
     }
 </div>
+
+
 

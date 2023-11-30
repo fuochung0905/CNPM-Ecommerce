@@ -10,13 +10,15 @@ namespace CNPM_ktxUtc2Store.Data
         public static async Task SeedRoleAndAdmin(IServiceProvider service)
         {
             // Seed Role
-            var userManager = service.GetService<UserManager<IdentityUser>>();
+            var userManager = service.GetService<UserManager<applicationUser>>();
             var roleManager = service.GetService<RoleManager<IdentityRole>>();
             await roleManager.CreateAsync(new IdentityRole(Roles.Admin.ToString()));
             await roleManager.CreateAsync(new IdentityRole(Roles.User.ToString()));
             // create Admin
-            var user = new IdentityUser
+            var user = new applicationUser
             {
+                fullname="Nguyễn Phước Hùng",
+                profilePicture="anhAdmin.jpg",
                 UserName = "Admin123@gmail.com",
                 Email = "Admin123@gmail.com", 
                 EmailConfirmed = true,

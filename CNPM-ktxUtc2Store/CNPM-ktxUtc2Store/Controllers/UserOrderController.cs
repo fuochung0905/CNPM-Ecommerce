@@ -9,79 +9,107 @@ namespace CNPM_ktxUtc2Store.Controllers
     {
         private readonly IUserOrderService _userOrderService;
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _usermanagement;
+        private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public UserOrderController(IUserOrderService userOrderService, ApplicationDbContext context, UserManager<IdentityUser> userManager, IHttpContextAccessor httpContextAccessor)
+        public UserOrderController(IUserOrderService userOrderService, ApplicationDbContext context, UserManager<applicationUser> userManager, IHttpContextAccessor httpContextAccessor)
         {
-            _context=context;
+            _context = context;
             _userOrderService = userOrderService;
             _httpContextAccessor = httpContextAccessor;
-            _usermanagement=userManager;
-    
+            _usermanagement = userManager;
+
         }
+    
         public async Task<IActionResult> Userorder()
         {
-            var orders = await _userOrderService.UserOrders();
-            return View(orders);
-        }
-        
-
-        public async Task<IActionResult> dathang(int productId, int variationId, int quantity = 1)
-        {
-            using var transaction = _context.Database.BeginTransaction();
             var userid = GetUserId();
-            try
+            if (string.IsNullOrWhiteSpace(userid))
             {
-                if (string.IsNullOrEmpty(userid))
-                {
-                  return Redirect("/Identity/Account/Login");   
-                }
-                var dathang = await GetDatHang(userid);
-
-                if (dathang is null)
-                {
-                    dathang = new order
-                    {
-                        userId = userid,
-                        createDate = DateTime.UtcNow,
-                        orderStatusId = 1
-                    };
-                    _context.orders.Add(dathang);
-                }
-                _context.SaveChanges();
-                var CTDH = _context.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id && x.productId == productId);
-                if (CTDH is not null)
-                {
-                    CTDH.quantity = CTDH.quantity + quantity;
-                }
-                else
-                {
-                     var product = _context.products.Find(productId);
-                  
-                                    
-                   
-                    CTDH = new orderDetail
-                    {
-                        productId = productId,
-                        orderId = dathang.Id,
-                        quantity = quantity,
-                        unitPrice = product.price
-                    };
-                    _context.orderDetails.Add(CTDH);
-                }
-                _context.SaveChanges();
-                transaction.Commit();
+                throw new Exception("User is not logged-in");
             }
-            catch (Exception)
+
+            var orders = await _context.orders
+                .Include(x => x.status)
+                .Include(x => x.orderDetails)
+                .ThenInclude(x => x.product)
+                .ThenInclude(x => x.category)
+                .Where(a => a.applicationUser.Id == userid && a.IsDelete==false).ToListAsync();
+            var list = new doneOrder();
+           foreach (var order in orders)
             {
-
+                list.orderList.Add(order);
             }
-            
-            return RedirectToAction("Userorder", "UserOrder");
+
+            return View(list);
         }
+        [HttpPost]
+        public async Task<IActionResult> Userorder(doneOrder doneOrder)
+        {
+            var order = await _context.orders.FindAsync(doneOrder.orderId);
+            order.IsDelete=true;
+            _context.orders.Update(order);
+            _context.SaveChanges();
+            return RedirectToAction("Complete", "UserOrder");
+        }
+        public IActionResult Complete()
+        {
+            return View();
+        }
+
+
+
+        //public async Task<IActionResult> dathang(int productId, int quantity)
+        //{
+        //    using var transaction = _context.Database.BeginTransaction();
+        //    var userid = GetUserId();
+        //    try
+        //    {
+        //        if (string.IsNullOrEmpty(userid))
+        //        {
+        //            return Redirect("/Identity/Account/Login");
+        //        }
+        //        var dathang = await GetDatHang(userid);
+        //        if (dathang is null)
+        //        {
+        //            dathang = new order
+        //            {
+        //                userId = userid,
+        //                createDate = DateTime.UtcNow,
+        //                orderStatusId = 1
+        //            };
+        //            _context.orders.Add(dathang);
+        //        }
+        //        _context.SaveChanges();
+        //        var CTDH = _context.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id && x.productId == productId);
+        //        if (CTDH is not null)
+        //        {
+        //            CTDH.quantity = CTDH.quantity + quantity;
+        //        }
+        //        else
+        //        {
+        //            var product = _context.products.Find(productId);
+        //            CTDH = new orderDetail
+        //            {
+        //                productId = productId,
+        //                orderId = dathang.Id,
+        //                quantity = model.,
+        //                unitPrice = product.price
+        //            };
+        //            _context.orderDetails.Add(CTDH);
+        //        }
+        //        _context.SaveChanges();
+        //        transaction.Commit();
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //    }
+
+        //    return RedirectToAction("Userorder", "UserOrder");
+        //}
         public async Task<order> GetDatHang(string userId)
         {
-            var dathang = _context.orders.FirstOrDefault(x => x.userId == userId);
+            var dathang = _context.orders.FirstOrDefault(x => x.applicationUser.Id == userId);
             return dathang;
         }
         private string GetUserId()
@@ -105,6 +133,15 @@ namespace CNPM_ktxUtc2Store.Controllers
                               select new { orderDetail.Id }
                               ).ToListAsync();
             return data.Count;
+        }
+        public double tongtien(doneOrder doneOrder)
+        {
+           var orderdetail= _context.orderDetails.Where(x=>x.orderId==doneOrder.orderId).FirstOrDefault();
+            if (orderdetail!=null)
+            {
+                return orderdetail.quantity * orderdetail.unitPrice;
+            }
+            return 0;
         }
 
 

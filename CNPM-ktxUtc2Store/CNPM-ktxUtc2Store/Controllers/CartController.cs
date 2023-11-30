@@ -36,16 +36,16 @@ namespace CNPM_ktxUtc2Store.Controllers
             int cartItem=await _cartService.GetCartItemCount();
             return Ok(cartItem);
         }
-        public async Task<IActionResult> checkout()
-        {
-            bool isCheckOut = await _cartService.Docheckout();
-            if (isCheckOut==false)
-            {
-                throw new Exception("Something happen in server side");
-            }
-            return RedirectToAction("Index", "Home");
+        //public async Task<IActionResult> checkout()
+        //{
+        //    bool isCheckOut = await _cartService.Docheckout();
+        //    if (isCheckOut==false)
+        //    {
+        //        throw new Exception("Something happen in server side");
+        //    }
+        //    return RedirectToAction("Index", "Home");
 
-        }
+        //}
 
     }
 }

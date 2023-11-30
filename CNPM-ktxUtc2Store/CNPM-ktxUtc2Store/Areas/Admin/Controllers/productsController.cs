@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
+using X.PagedList;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -23,53 +24,83 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             _context = context;
             _webHostEnvironment = webHostEnvironment;
         }
-
         // GET: Admin/products
         public IActionResult Index(string name)
         {
-            var product = from p in _context.products select p;
+            var product = from p in _context.products.Where(x=>x.qty_inStock>0) select p;
             if (!string.IsNullOrEmpty(name))
             {
                     product = product.Where(x => x.productName.Contains(name) );
             }
-
-
             return View(product);
         }
-
         // GET: Admin/products/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
+        {
+
+            var product = new product();
+            product = _context.products.Find(id);
+             
+            var variation = (from v in _context.variation
+                             join c in _context.categories
+                             on v.categoryId equals c.Id
+                             where(c.Id==product.categoryId )
+                             select new variation
+                             {
+                                 Id = v.Id,
+                                 name = v.name,
+                                value=v.value,
+                                category=c
+                             }).ToList();
+            return View(variation);
+        }
+        // GET: Admin/products/Create
+        public IActionResult Create()
+        {
+            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "categoryName");
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(product product)
+        {
+            string uniqueFileName = uploadImage(product);
+
+                product.imageUrl= uniqueFileName;
+                _context.Add(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Create));
+        }
+        //Get Admin/product/AddVariation/5
+        public  IActionResult AddVariation(int? id)
         {
             if (id == null || _context.products == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.products
-                .Include(p => p.category)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var product =  _context.products.Find(id);
             if (product == null)
             {
                 return NotFound();
             }
+            var variation=_context.variation.Where(x=>x.categoryId==product.categoryId).ToList();
+            var selectLists= new List<SelectListItem>();
+            foreach(var item in variation)
+            {
+                selectLists.Add(new SelectListItem(item.value, item.Id.ToString()));
+            }
+            var vm = new productVaritionCreateView()
+            {
+                Items = selectLists
+            };
 
-            return View(product);
+            ViewData["variationId"] = new SelectList(_context.variation.Where(x=>x.categoryId==product.categoryId), "Id", "value");
+            return View(vm);  
         }
-
-        // GET: Admin/products/Create
-        public IActionResult Create()
-        {
-           
-            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "categoryName");
-            return View();
-        }
-
-        // POST: Admin/products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /*
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(product product)
+        public IActionResult AddVariation(int id, productVaritionCreateView vm)
         {
             string uniqueFileName = uploadImage(product);
             product.imageUrl = uniqueFileName;
@@ -81,8 +112,20 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             _context.Add(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+            var product = _context.products.Find(id);
+            foreach(var item in vm.selectVariation)
+            {
+                product.ProductVariations.Add(new productVariation
+                {
+                    variationId = Convert.ToInt32(item)
+                }); 
+            }
+            _context.products.Update(product);
+            _context.SaveChanges();
 
-        }
+            return RedirectToAction("Create");  
+
+        }*/
         // GET: Admin/products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -90,20 +133,16 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
             var product = await _context.products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
-            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
             return View(product);
         }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,productName,description,discount,price,imageUrl,categoryId,qty_inStock,categoryName")] product product)
+        public async Task<IActionResult> Edit(int id, product product)
         {
             if (id != product.Id)
             {

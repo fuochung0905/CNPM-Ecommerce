@@ -1,40 +1,41 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<applicationUser> SignInManager
+@inject UserManager<applicationUser> UserManager
 
-<ul class="login-wrap">
+
     
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="login-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-                Hello <span id="username">@User.Identity?.Name</span>
-            </a>
-    </li>
-        @if (User.IsInRole("Admin"))
-        {
-            <li class="login-item">
-                <a class="nav-link text-dark" href="/Admin/Home">
-                    <span>Quản lí</span>
-                </a>
-            </li>
-        }
-        <li class="login-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
+    <div id="tooltip-login-wrap">
+        @await Component.InvokeAsync("user")
+        <div id="tooltip-login-item">
+            @if (User.IsInRole("Admin"))
+            {
+
+                <div class="menu-item">
+                    <a class="nav-link " href="/Admin/Home/Index">Quản lí </a>
+                </div>
+            }
+            <div class="nav-link" href="/Identity/Account/Manage">
+                <span>Thông Tin Tài Khoản</span>
+            </div>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Đăng Xuất</button>
+            </form>
+        </div>
+    </div>
+       
 }
 else
 {
-      
+    <div class="login-wrap"></div>
 
     
-    <li class="login-item">
+    <div class="login-item">
             <a class="" asp-area="Identity" asp-page="/Account/Login"> <i class="fa-solid fa-circle-user"></i> Đăng nhập</a>
-    </li>
-    <li class="login-item">
+    </div>
+    <div class="login-item">
             <a class="" asp-area="Identity" asp-page="/Account/Login"> <i class="fa-solid fa-phone"></i> Liên hệ</a>
-    </li>
+    </div>
 }
 </ul>
