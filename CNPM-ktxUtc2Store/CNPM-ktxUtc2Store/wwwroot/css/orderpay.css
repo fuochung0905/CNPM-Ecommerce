@@ -1,0 +1,12 @@
+﻿.order-complete-address{
+    background-color: blue;
+}
+.order-complete-details{
+    background-color: orange;
+}
+.order-complete-product{
+    background-color: green;
+}
+#item-end {
+    background-color: red;
+}

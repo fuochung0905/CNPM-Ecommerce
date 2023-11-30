@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\orderpay.css",
+      "PackagePath": "staticwebassets\\css\\orderpay.css"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\repos_inven.css",
       "PackagePath": "staticwebassets\\css\\repos_inven.css"
     },

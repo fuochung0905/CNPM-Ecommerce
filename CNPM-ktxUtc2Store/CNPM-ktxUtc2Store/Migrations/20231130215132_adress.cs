@@ -6,11 +6,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     /// <inheritdoc />
-    public partial class Ten_Migration : Migration
+    public partial class adress : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Adress",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    homeAdress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    villageAdress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    districAdress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Adress", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -23,33 +38,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetRoles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AspNetUsers",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    fullname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    profilePicture = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -79,6 +67,40 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    fullname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    profilePicture = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    adressId = table.Column<int>(type: "int", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetUsers_Adress_adressId",
+                        column: x => x.adressId,
+                        principalTable: "Adress",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -95,6 +117,52 @@ namespace CNPM_ktxUtc2Store.Migrations
                         name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "product",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    productName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    discount = table.Column<double>(type: "float", nullable: false),
+                    price = table.Column<double>(type: "float", nullable: false),
+                    imageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    categoryId = table.Column<int>(type: "int", nullable: false),
+                    qty_inStock = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_product", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_product_category_categoryId",
+                        column: x => x.categoryId,
+                        principalTable: "category",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "variation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    value = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    categoryId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_variation", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_variation_category_categoryId",
+                        column: x => x.categoryId,
+                        principalTable: "category",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -185,72 +253,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "shoppingCart",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    isDelete = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_shoppingCart", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_shoppingCart_AspNetUsers_applicationUserId",
-                        column: x => x.applicationUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "product",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    productName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    discount = table.Column<double>(type: "float", nullable: false),
-                    price = table.Column<double>(type: "float", nullable: false),
-                    imageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    categoryId = table.Column<int>(type: "int", nullable: false),
-                    qty_inStock = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_product", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_product_category_categoryId",
-                        column: x => x.categoryId,
-                        principalTable: "category",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "variation",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    value = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    categoryId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_variation", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_variation_category_categoryId",
-                        column: x => x.categoryId,
-                        principalTable: "category",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "order",
                 columns: table => new
                 {
@@ -279,29 +281,21 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "cartDetail",
+                name: "shoppingCart",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    shoppingCartId = table.Column<int>(type: "int", nullable: false),
-                    productId = table.Column<int>(type: "int", nullable: false),
-                    quantity = table.Column<int>(type: "int", nullable: false),
-                    unitPrice = table.Column<double>(type: "float", nullable: false)
+                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    isDelete = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_cartDetail", x => x.Id);
+                    table.PrimaryKey("PK_shoppingCart", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_cartDetail_product_productId",
-                        column: x => x.productId,
-                        principalTable: "product",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_cartDetail_shoppingCart_shoppingCartId",
-                        column: x => x.shoppingCartId,
-                        principalTable: "shoppingCart",
+                        name: "FK_shoppingCart_AspNetUsers_applicationUserId",
+                        column: x => x.applicationUserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -358,6 +352,34 @@ namespace CNPM_ktxUtc2Store.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "cartDetail",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    shoppingCartId = table.Column<int>(type: "int", nullable: false),
+                    productId = table.Column<int>(type: "int", nullable: false),
+                    quantity = table.Column<int>(type: "int", nullable: false),
+                    unitPrice = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_cartDetail", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_cartDetail_product_productId",
+                        column: x => x.productId,
+                        principalTable: "product",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cartDetail_shoppingCart_shoppingCartId",
+                        column: x => x.shoppingCartId,
+                        principalTable: "shoppingCart",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -389,6 +411,11 @@ namespace CNPM_ktxUtc2Store.Migrations
                 name: "EmailIndex",
                 table: "AspNetUsers",
                 column: "NormalizedEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_adressId",
+                table: "AspNetUsers",
+                column: "adressId");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
@@ -498,6 +525,9 @@ namespace CNPM_ktxUtc2Store.Migrations
 
             migrationBuilder.DropTable(
                 name: "category");
+
+            migrationBuilder.DropTable(
+                name: "Adress");
         }
     }
 }

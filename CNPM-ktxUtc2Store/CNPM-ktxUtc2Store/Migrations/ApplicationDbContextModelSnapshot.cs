@@ -22,6 +22,31 @@ namespace CNPM_ktxUtc2Store.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.Adress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("districAdress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("homeAdress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("villageAdress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Adress");
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.applicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -74,6 +99,9 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<int>("adressId")
+                        .HasColumnType("int");
+
                     b.Property<string>("fullname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -91,6 +119,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("adressId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -457,6 +487,17 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.applicationUser", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.Adress", "adresss")
+                        .WithMany("users")
+                        .HasForeignKey("adressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("adresss");
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.cartDetail", b =>
                 {
                     b.HasOne("CNPM_ktxUtc2Store.Models.product", "product")
@@ -615,6 +656,11 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.Adress", b =>
+                {
+                    b.Navigation("users");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.category", b =>

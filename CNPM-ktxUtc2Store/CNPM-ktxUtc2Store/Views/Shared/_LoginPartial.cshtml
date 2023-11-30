@@ -7,7 +7,7 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <div id="tooltip-login-wrap">
-        @await Component.InvokeAsync("user")
+        <div class="tooltip-login-hover">@await Component.InvokeAsync("user")</div>
         <div id="tooltip-login-item">
             @if (User.IsInRole("Admin"))
             {

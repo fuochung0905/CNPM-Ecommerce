@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p5y71mDdFXW2anD1E8TK+OT61yhI5X5auG0csJV1AWs=",
+  "Hash": "LqLKdPMtVRVNM4UOz4Z+MJbWBI4p04k1JXmf3v0w+L8=",
   "Source": "CNPM-ktxUtc2Store",
   "BasePath": "_content/CNPM-ktxUtc2Store",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\orderpay.css",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "css/orderpay.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\orderpay.css"
     },
     {
       "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\repos_inven.css",

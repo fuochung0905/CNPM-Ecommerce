@@ -406,10 +406,20 @@ footer {
 }
 #tooltip-login-wrap{
     position: relative;
+   
+}
+.tooltip-login-hover{
     display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
+    justify-content: space-between;
+}
+.tooltip-login-hover .login-item {
+    display: grid;
+    justify-content: center;
+}
+.tooltip-login-hover .login-item a{
+    display: grid;
+    place-content: center;
+    padding-left: 5px;
 }
 #tooltip-login-item{
    

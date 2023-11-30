@@ -1,52 +1,91 @@
 ﻿@model CNPM_ktxUtc2Store.Dto.doneOrder
+@using CNPM_ktxUtc2Store.Models
 @{
-  
+    
 }
 <div style="width:90%; margin:auto">
+    
     @if (Model != null )
     {
+       
         <form asp-area="" asp-controller="UserOrder" asp-action="Userorder">
         <h3>My order</h3>
-        <table class="table table-striped"> 
-            <tr>
-                <th></th>
-                <th>Tên sản phẩm</th>
-                <th>Phân loại</th>
-                <th>Số lượng</th>
-                <th>Giá</th>
-                <th>Tổng tiền</th>
-            </tr>
-            @foreach (var order in Model.orderList)
-            {
-              
-                    @foreach (var item in order.orderDetails)
-                    {
+        <div class="order-complete-address">
+            <div class=" address-name">
+                <span id="username"></span>
+            </div>
+            <div class="address-phonenum">
+                <span>0000000000</span>
+            </div>
+            <div class="address-details">
+                <a>KTX DH GTVT, 448 lê văn việt, Phường Tăng Nhơn Phú A, TP Thủ Đức </a>
+            </div>
+        </div>
+        <div class="order-complete-details">
+                <table class="table table-striped">
                     <tr>
-                         <td>
-                            <label>
-                                @* viết js khi nhấn vào đây sẽ hiện ra tồng tiền sản phẩm
-                                đường dẫn tổng tiền của sản phẩm đó 
-                                *@
-                                <input  asp-for="orderId" type="radio"
-                                       
-                                       value="@item.orderId" /> 
-                            </label>
-                                
-                         </td>
-                        <td>@item.product.productName</td>
-                        <td>
-                            <span>@item.size</span>
-                            <span>@item.color</span>
-                        </td>
-                        <td>@item.quantity</td>
-                        <td>@item.product.price</td>
-                        <td>@(item.unitPrice * item.quantity)</td>
-
+                        <th></th>
+                        <th>Tên sản phẩm</th>
+                        <th>Phân loại</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Tổng tiền</th>
                     </tr>
-                    }   
-            }
-        </table>
-        <button type="submit">Đặt hàng</button>
+                    @foreach (var order in Model.orderList)
+                    {
+
+                        @foreach (var item in order.orderDetails)
+                        {
+                            <tr>
+                                <td>
+                                    <label>
+                                        @* viết js khi nhấn vào đây sẽ hiện ra tồng tiền sản phẩm
+                            đường dẫn tổng tiền của sản phẩm đó
+                            *@
+                                        <input asp-for="orderId" type="radio"
+                                               value="@item.orderId" />
+                                    </label>
+
+                                </td>
+                                <td>@item.product.productName</td>
+                                <td>
+                                    <span>@item.size</span>
+                                    <span>@item.color</span>
+                                </td>
+                                <td>@item.quantity</td>
+                                <td>@item.product.price</td>
+                                <td>@(item.unitPrice * item.quantity)</td>
+
+                            </tr>
+                        }
+                    }
+                </table>
+        </div>
+        <div class="order-complete-product">
+                <div class="order-complete-payment">
+                    <span>Phương Thức Thanh Toán</span>
+                    <span>Thanh Toán Khi Nhận Hàng</span>
+                </div>
+                <div class="order-complete-end">
+                    <div class="order-conplete-end-ship"></div>
+                    <div class="end-details">
+                        <div id="item-all-price">
+                            <a>Tỏng tiền sản phẩm: </a>
+                            <a>00.000000</a>
+                        </div>
+                        <div id="item-ship-price">
+                            <a>Phí vận chuyển: </a>
+                            <a>00.000000 </a>
+                        </div>
+                        <div id="item-end">
+                            <a>Tổng thanh toán: </a>
+                            <a>00.000000</a>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Đặt hàng</button>
+        </div>
+       
            </form>  
     }
 </div>
