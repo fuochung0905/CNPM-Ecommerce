@@ -6,7 +6,7 @@
         public string homeAdress { get; set; }
         public string villageAdress { get; set;}
         public string districAdress { get; set; }
-        public virtual ICollection<applicationUser> users { get; set; }
+        public virtual List<UserAdress> UserAdresses { get; set; }
 
 
     }

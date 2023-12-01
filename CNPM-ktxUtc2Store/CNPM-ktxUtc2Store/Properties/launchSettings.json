@@ -21,10 +21,13 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "api/values",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
+        "“ASPNETCORE_ENVIRONMENT\": \"Development\""
+      },
+      "applicationUrl": "http://localhost:44316/"
+    }
+  },
     "WSL": {
       "commandName": "WSL2",
       "launchBrowser": true,

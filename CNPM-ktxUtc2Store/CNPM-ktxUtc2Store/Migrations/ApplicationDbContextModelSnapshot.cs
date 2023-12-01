@@ -47,6 +47,21 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.ToTable("Adress");
                 });
 
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.UserAdress", b =>
+                {
+                    b.Property<int>("AdressId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("applicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("AdressId", "applicationUserId");
+
+                    b.HasIndex("applicationUserId");
+
+                    b.ToTable("UserAdress");
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.applicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -99,9 +114,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("adressId")
-                        .HasColumnType("int");
-
                     b.Property<string>("fullname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -119,8 +131,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("adressId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -487,15 +497,23 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.applicationUser", b =>
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.UserAdress", b =>
                 {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.Adress", "adresss")
-                        .WithMany("users")
-                        .HasForeignKey("adressId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("CNPM_ktxUtc2Store.Models.Adress", "adress")
+                        .WithMany("UserAdresses")
+                        .HasForeignKey("AdressId")
+                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
-                    b.Navigation("adresss");
+                    b.HasOne("CNPM_ktxUtc2Store.Models.applicationUser", "applicationUser")
+                        .WithMany("UserAdresses")
+                        .HasForeignKey("applicationUserId")
+                        .OnDelete(DeleteBehavior.ClientNoAction)
+                        .IsRequired();
+
+                    b.Navigation("adress");
+
+                    b.Navigation("applicationUser");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.cartDetail", b =>
@@ -660,7 +678,12 @@ namespace CNPM_ktxUtc2Store.Migrations
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.Adress", b =>
                 {
-                    b.Navigation("users");
+                    b.Navigation("UserAdresses");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.applicationUser", b =>
+                {
+                    b.Navigation("UserAdresses");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.category", b =>

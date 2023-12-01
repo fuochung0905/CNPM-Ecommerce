@@ -22,7 +22,8 @@ namespace CNPM_ktxUtc2Store.Data
         public DbSet<variation> variation { get; set; }
         public DbSet<productVariation> productVariations { get; set; }
         public DbSet<applicationUser> applicationUsers { get; set; }
-
+        public DbSet<Adress> adresses { get; set; } 
+        public DbSet<UserAdress> userAdresses { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -30,9 +31,19 @@ namespace CNPM_ktxUtc2Store.Data
            
             builder.Entity<productVariation>().HasKey(pv => new { pv.productId, pv.variationId });
             builder.Entity<productVariation>()
-                .HasOne(pv => pv.product).WithMany(pv => pv.ProductVariations).HasForeignKey(p => p.productId).OnDelete(DeleteBehavior.ClientNoAction);
+                .HasOne(pv => pv.product).WithMany(pv => pv.ProductVariations)
+                .HasForeignKey(p => p.productId).OnDelete(DeleteBehavior.ClientNoAction);
             builder.Entity<productVariation>()
-              .HasOne(pv => pv.variation).WithMany(pv => pv.ProductVariations).HasForeignKey(p => p.variationId).OnDelete(DeleteBehavior.ClientNoAction);
+              .HasOne(pv => pv.variation).WithMany(pv => pv.ProductVariations)
+              .HasForeignKey(p => p.variationId).OnDelete(DeleteBehavior.ClientNoAction);
+
+            builder.Entity<UserAdress>().HasKey(ua => new { ua.AdressId, ua.applicationUserId });
+            builder.Entity<UserAdress>()
+                .HasOne(pv => pv.adress).WithMany(pv => pv.UserAdresses)
+                .HasForeignKey(p => p.AdressId).OnDelete(DeleteBehavior.ClientNoAction);
+            builder.Entity<UserAdress>()
+              .HasOne(pv => pv.applicationUser).WithMany(pv => pv.UserAdresses)
+              .HasForeignKey(p => p.applicationUserId).OnDelete(DeleteBehavior.ClientNoAction);
         }
     }
 }

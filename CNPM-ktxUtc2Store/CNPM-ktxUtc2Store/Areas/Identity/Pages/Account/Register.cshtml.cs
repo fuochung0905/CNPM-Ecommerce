@@ -83,6 +83,9 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            public string homeAdress { get; set; }
+            public string villageAdress { get; set; }
+            public string districAdress { get; set; }
         }
 
 
