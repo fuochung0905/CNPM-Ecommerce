@@ -47,7 +47,8 @@ namespace CNPM_ktxUtc2Store.Controllers
         public async Task<IActionResult> Userorder(doneOrder doneOrder)
         {
             var userid = GetUserId();
-            var userAdress= await _context.userAdresses.Include(x=>x.adress).Include(x=>x.applicationUser).Where(x=>x.applicationUserId==userid).Where(x=>x.isDefine==true).ToListAsync();
+            var userAdress= await _context.userAdresses.Include(x=>x.adress).Include(x=>x.applicationUser)
+                .Where(x=>x.applicationUserId==userid).Where(x=>x.isDefine==true).ToListAsync();
           foreach( var item in userAdress)
             {
                 if(item != null)
