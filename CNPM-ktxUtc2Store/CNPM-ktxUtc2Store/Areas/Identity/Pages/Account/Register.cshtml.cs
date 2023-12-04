@@ -11,7 +11,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
-using CNPM_ktxUtc2Store.Constants;
+using CNPM_ktxUtc2Store.Controllers.Constants;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;

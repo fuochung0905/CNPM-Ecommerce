@@ -11,7 +11,7 @@ namespace CNPM_ktxUtc2Store.Models
         [NotMapped]
         [Display(Name = "choose Picture")]
         public IFormFile Picture { get; set; }
-        public virtual List<UserAdress> UserAdresses { get; set; }
+        public virtual List<UserAdress> UserAdresses { get; set; } = new List<UserAdress>();
 
     }
 }

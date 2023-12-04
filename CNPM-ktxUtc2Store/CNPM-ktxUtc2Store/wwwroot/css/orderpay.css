@@ -1,12 +1,89 @@
-﻿.order-complete-address{
-    background-color: blue;
+﻿.order-complete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-.order-complete-details{
-    background-color: orange;
+
+.order-complete-left{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
 }
-.order-complete-product{
-    background-color: green;
+    .order-complete-address{
+        background-color: lightblue;
+        margin: 10px;
+        padding: 10px;
+    }
+        .address-detail{
+   
+        }
+            .address-detail-head {
+                 display: flex;
+                 flex-direction: row;
+                justify-content: space-between;
+            }
+            .address-detail-tail{
+
+            }
+
+    .order-complete-detail{
+         
+    }
+    .order-chose-ship{
+
+    }
+         .chosen-ship{
+             display: flex;
+             flex-direction: row;
+             padding: 5px;
+             border: 1px solid lightgray;
+             max-width: 30%;
+         }
+            .chosen-ship-detail{
+                display: flex;
+                flex-direction: column;
+                padding:0 5px;
+            }
+.order-complete-right {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 38%;
 }
-#item-end {
-    background-color: red;
-}
+    .order-complete-product{
+         background-color: white;
+    }
+        .order-complete-payment{
+            display:flex;
+            flex-direction: column;
+            padding:5px;
+        }
+            .chose-payment{
+
+            }
+                .chosen-payment{
+                    padding: 10px;
+                    border: 1px solid lightgray;
+                    
+                }
+    .order-complete-end{
+
+    }
+        .order-complete-end-ship{
+
+         }
+        .end-details{
+            display: flex;
+            flex-direction: column;
+         }
+            .item-all-price, .item-ship-price, .item-end, .item-discount-price{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding:7px;
+            }
+            #item-ship-price{
+
+            }
+            #item-end {
+                 background-color: red;
+            }

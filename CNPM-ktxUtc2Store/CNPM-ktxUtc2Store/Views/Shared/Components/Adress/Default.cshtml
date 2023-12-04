@@ -1,0 +1,10 @@
+﻿@model IEnumerable<UserAdress>
+@foreach (var item in Model)
+{
+    <li>
+        <a asp-area="" asp-controller="Home" asp-action="Index" >@item.applicationUser.fullname @item.applicationUser.PhoneNumber</a>
+    </li>
+    <li>
+        <a asp-area="" asp-controller="Home" asp-action="Index">  @item.adress.homeAdress  @item.adress.villageAdress @item.adress.districAdress</a>
+    </li>
+}

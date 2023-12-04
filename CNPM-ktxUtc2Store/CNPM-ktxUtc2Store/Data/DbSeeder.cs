@@ -1,4 +1,4 @@
-﻿using CNPM_ktxUtc2Store.Constants;
+﻿using CNPM_ktxUtc2Store.Controllers.Constants;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

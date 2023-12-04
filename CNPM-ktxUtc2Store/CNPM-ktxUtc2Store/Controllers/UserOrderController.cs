@@ -19,9 +19,10 @@ namespace CNPM_ktxUtc2Store.Controllers
             _usermanagement = userManager;
 
         }
-    
-        public async Task<IActionResult> Userorder()
-        {
+      
+  
+            public async Task<IActionResult> Userorder()
+             {
             var userid = GetUserId();
             if (string.IsNullOrWhiteSpace(userid))
             {
@@ -45,16 +46,32 @@ namespace CNPM_ktxUtc2Store.Controllers
         [HttpPost]
         public async Task<IActionResult> Userorder(doneOrder doneOrder)
         {
-            var order = await _context.orders.FindAsync(doneOrder.orderId);
-            order.IsDelete=true;
-            _context.orders.Update(order);
-            _context.SaveChanges();
-            return RedirectToAction("Complete", "UserOrder");
+            var userid = GetUserId();
+            var userAdress= await _context.userAdresses.Include(x=>x.adress).Include(x=>x.applicationUser).Where(x=>x.applicationUserId==userid).Where(x=>x.isDefine==true).ToListAsync();
+          foreach( var item in userAdress)
+            {
+                if(item != null)
+                {
+                    var detailorder = await _context.orderDetails.FindAsync(doneOrder.orderId);
+                    var order = await _context.orders.FindAsync(doneOrder.orderId);
+                    order.IsDelete = true;
+                    _context.orders.Update(order);
+                    var product = await _context.products.FindAsync(detailorder.productId);
+                    product.qty_inStock = product.qty_inStock - detailorder.quantity;
+                    _context.products.Update(product); 
+                    _context.SaveChanges();
+                    return Content("Đã đặt hàng");
+                }
+            }
+            return Content("Cần chọn địa chỉ người dụng");
+
         }
         public IActionResult Complete()
         {
             return View();
         }
+
+        
 
 
 

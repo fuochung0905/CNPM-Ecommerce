@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     /// <inheritdoc />
-    public partial class adress : Migration
+    public partial class done : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Adress",
+                name: "adresses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -23,7 +23,7 @@ namespace CNPM_ktxUtc2Store.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Adress", x => x.Id);
+                    table.PrimaryKey("PK_adresses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -220,7 +220,7 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserAdress",
+                name: "userAdresses",
                 columns: table => new
                 {
                     AdressId = table.Column<int>(type: "int", nullable: false),
@@ -228,16 +228,16 @@ namespace CNPM_ktxUtc2Store.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserAdress", x => new { x.AdressId, x.applicationUserId });
+                    table.PrimaryKey("PK_userAdresses", x => new { x.AdressId, x.applicationUserId });
                     table.ForeignKey(
-                        name: "FK_UserAdress_Adress_AdressId",
-                        column: x => x.AdressId,
-                        principalTable: "Adress",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_UserAdress_AspNetUsers_applicationUserId",
+                        name: "FK_userAdresses_AspNetUsers_applicationUserId",
                         column: x => x.applicationUserId,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_userAdresses_adresses_AdressId",
+                        column: x => x.AdressId,
+                        principalTable: "adresses",
                         principalColumn: "Id");
                 });
 
@@ -480,8 +480,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                 column: "applicationUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserAdress_applicationUserId",
-                table: "UserAdress",
+                name: "IX_userAdresses_applicationUserId",
+                table: "userAdresses",
                 column: "applicationUserId");
 
             migrationBuilder.CreateIndex(
@@ -518,7 +518,7 @@ namespace CNPM_ktxUtc2Store.Migrations
                 name: "productVariations");
 
             migrationBuilder.DropTable(
-                name: "UserAdress");
+                name: "userAdresses");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -536,7 +536,7 @@ namespace CNPM_ktxUtc2Store.Migrations
                 name: "variation");
 
             migrationBuilder.DropTable(
-                name: "Adress");
+                name: "adresses");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
