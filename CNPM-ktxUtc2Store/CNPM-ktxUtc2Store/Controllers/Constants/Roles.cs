@@ -1,10 +1,10 @@
-﻿namespace CNPM_ktxUtc2Store.Constants
+﻿namespace CNPM_ktxUtc2Store.Controllers.Constants
 {
     public enum Roles
     {
         Admin,
         User
     }
-    
-   
+
+
 }

@@ -18,9 +18,24 @@
                 <span>0000000000</span>
             </div>
             <div class="address-details">
-                <a>KTX DH GTVT, 448 lê văn việt, Phường Tăng Nhơn Phú A, TP Thủ Đức </a>
+                <ul>
+                    <h4 style="color:white">Địa chỉ người dùng</h4>
+                </ul>
+                <ul>
+                        <a asp-controller="Adresses" asp-action="Create">Thêm địa chỉ người dùng</a>
+                </ul>
+                <ul>
+                   
+                        <h5 style="color:red"> Mặc định</h5>
+                        @await Component.InvokeAsync("Adress")
+                </ul>
+                <ul>
+                        <a asp-controller="Adresses" asp-action="Index">Thay đổi địa chỉ</a>
+                </ul>
+                 
             </div>
         </div>
+
         <div class="order-complete-details">
                 <table class="table table-striped">
                     <tr>
@@ -43,7 +58,7 @@
                             đường dẫn tổng tiền của sản phẩm đó
                             *@
                                         <input asp-for="orderId" type="radio"
-                                               value="@item.orderId" />
+                                               value="@item.Id" />
                                     </label>
 
                                 </td>

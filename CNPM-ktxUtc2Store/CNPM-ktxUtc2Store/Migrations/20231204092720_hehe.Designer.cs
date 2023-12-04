@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231201042155_adress")]
-    partial class adress
+    [Migration("20231204092720_hehe")]
+    partial class hehe
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Adress");
+                    b.ToTable("adresses");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.UserAdress", b =>
@@ -58,11 +58,14 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.Property<string>("applicationUserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<bool>("isDefine")
+                        .HasColumnType("bit");
+
                     b.HasKey("AdressId", "applicationUserId");
 
                     b.HasIndex("applicationUserId");
 
-                    b.ToTable("UserAdress");
+                    b.ToTable("userAdresses");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.applicationUser", b =>

@@ -188,9 +188,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                         unitPrice = product.price
                     };
                     _dbcontext.orderDetails.Add(CTDH);
-                product.qty_inStock = product.qty_inStock - model.quantity;
-              
-                _dbcontext.Update(product);
+               
                 _dbcontext.SaveChanges();
                 transaction.Commit();
             }
