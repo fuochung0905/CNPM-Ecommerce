@@ -146,6 +146,10 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("productId")
                         .HasColumnType("int");
 
@@ -154,6 +158,10 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     b.Property<int>("shoppingCartId")
                         .HasColumnType("int");
+
+                    b.Property<string>("size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("unitPrice")
                         .HasColumnType("float");
@@ -500,6 +508,21 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("applicationUserproduct", b =>
+                {
+                    b.Property<int>("productForeignKey")
+                        .HasColumnType("int");
+
+                    b.Property<string>("userForeignKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("productForeignKey", "userForeignKey");
+
+                    b.HasIndex("userForeignKey");
+
+                    b.ToTable("applicationUserproduct");
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.UserAdress", b =>
                 {
                     b.HasOne("CNPM_ktxUtc2Store.Models.Adress", "adress")
@@ -675,6 +698,21 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.HasOne("CNPM_ktxUtc2Store.Models.applicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("applicationUserproduct", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.product", null)
+                        .WithMany()
+                        .HasForeignKey("productForeignKey")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CNPM_ktxUtc2Store.Models.applicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("userForeignKey")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

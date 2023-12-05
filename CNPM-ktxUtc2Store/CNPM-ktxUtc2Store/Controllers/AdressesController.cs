@@ -44,7 +44,7 @@ namespace CNPM_ktxUtc2Store.Controllers
             return View(ca);
         }
         [HttpPost]
-        public async Task<IActionResult> Index(changeAdress changeadress)
+        public async Task<IActionResult> Index(listAdressUser changeadress)
         {
            
             var userId = GetUserId();
@@ -60,7 +60,7 @@ namespace CNPM_ktxUtc2Store.Controllers
             }
             var result = await _context.userAdresses
                   .Where(x => x.applicationUserId == userId)
-                  .Where(x => x.AdressId == changeadress.id)
+                  .Where(x => x.AdressId == changeadress.Id)
                   .ToListAsync();
 
 

@@ -9,6 +9,7 @@ using X.PagedList;
 using Microsoft.CodeAnalysis;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Drawing;
 
 namespace CNPM_ktxUtc2Store.Controllers
 {
@@ -117,7 +118,11 @@ namespace CNPM_ktxUtc2Store.Controllers
             PagedList<product> list = new PagedList<product>(listProduct, pageNumber, pageSize);
             return View(list);
         }
-      
+        public  shoppingCart GetCart(string userId)
+        {
+            var cart = _dbcontext.shoppingCarts.FirstOrDefault(x => x.applicationUserId == userId);
+            return cart;
+        }
 
         public IActionResult Details(int? id)
         {
@@ -146,7 +151,7 @@ namespace CNPM_ktxUtc2Store.Controllers
             return View(result);
         }
         [HttpPost]
-        public IActionResult Details(int id,productvariatonOrderView model)
+        public  IActionResult Details(int id,productvariatonOrderView model)
         {
             if (string.IsNullOrEmpty(model.color))
             {
@@ -157,40 +162,46 @@ namespace CNPM_ktxUtc2Store.Controllers
                 model.size = "";
             }
             using var transaction = _dbcontext.Database.BeginTransaction();
-            var userid = GetUserId();
+            string userid = GetUserId();
             try
             {
                 if (string.IsNullOrEmpty(userid))
                 {
                     return Redirect("/Identity/Account/Login");
                 }
-                var applicationUser = _dbcontext.applicationUsers.Find(userid);
-                //var dathang =  GetDatHang(userid);
-               
-                  var dathang = new order
+                var cart =  GetCart(userid);
+                if (cart is null)
+                {
+                    cart = new shoppingCart
                     {
-                        applicationUserId=userid,
-                        createDate = DateTime.UtcNow,
-                        orderStatusId = 1
+                        applicationUserId = userid
                     };
-                    _dbcontext.orders.Add(dathang);
-               
+                    _dbcontext.shoppingCarts.Add(cart);
+                }
                 _dbcontext.SaveChanges();
-                var CTDH = _dbcontext.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id );
+                var cartItem = _dbcontext.cartDetails.FirstOrDefault(a => a.shoppingCartId == cart.Id && a.productId == id);
+                if (cartItem is not null)
+                {
+                    cartItem.quantity += model.quantity;
+                }
+
+                else
+                {
                     var product = _dbcontext.products.Find(id);
-                    CTDH = new orderDetail
+                    cartItem = new cartDetail
                     {
                         productId = id,
-                        orderId = dathang.Id,
+                        shoppingCartId = cart.Id,
                         quantity = model.quantity,
-                        size=model.size,
-                        color=model.color,
-                        unitPrice = product.price
+                        unitPrice = product.price,
+                        color = model.color,
+                        size = model.size
                     };
-                    _dbcontext.orderDetails.Add(CTDH);
-               
+                    _dbcontext.cartDetails.Add(cartItem);
+                }
                 _dbcontext.SaveChanges();
                 transaction.Commit();
+
             }
             catch (Exception)
             {

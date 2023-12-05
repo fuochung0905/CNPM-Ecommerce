@@ -1,13 +1,57 @@
-﻿.order-complete{
+﻿#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu sắc của overlay với độ trong suốt 50% */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Z-index cao để nằm trên tất cả các phần tử khác */
+}
+.order-complete{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position:relative;
 }
-
+    .more-address{
+        position:absolute; 
+        z-index:1;
+        background-color: white;
+        height: 100%;
+        width: 30%;
+        right: -120%;
+        transform: translateX(-50%);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    
+        .more-address-head{
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+            padding: 10px 5px;
+        }
+            .more-address-head a{
+                display: grid;
+                place-content: center;
+                padding-right: 5px;
+                color: dodgerblue;
+            }
+        .more-address-list{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        
 .order-complete-left{
     display: flex;
     flex-direction: column;
-    flex-basis: 60%;
+    flex-basis: 70%;
+    border-right: 1px solid lightgray;
 }
     .order-complete-address{
         background-color: lightblue;
@@ -37,7 +81,7 @@
              flex-direction: row;
              padding: 5px;
              border: 1px solid lightgray;
-             max-width: 30%;
+             max-width: 80%;
          }
             .chosen-ship-detail{
                 display: flex;
@@ -47,7 +91,8 @@
 .order-complete-right {
     display: flex;
     flex-direction: column;
-    flex-basis: 38%;
+    flex-basis: 28%;
+    padding-top: 10px;
 }
     .order-complete-product{
          background-color: white;

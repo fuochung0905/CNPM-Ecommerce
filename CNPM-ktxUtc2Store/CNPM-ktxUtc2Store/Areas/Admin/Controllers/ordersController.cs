@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
+using CNPM_ktxUtc2Store.Areas.Admin.dto;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -25,8 +26,31 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/orders
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.orders.Include(o => o.applicationUser).Include(o => o.status);
-            return View(await applicationDbContext.ToListAsync());
+            var applicationDbContext = await _context.orders.Include(o => o.applicationUser).Include(o => o.status).ToListAsync();
+            duyetDon a = new duyetDon();
+            foreach(var item in applicationDbContext) {
+                var orderDetail = await _context.orderDetails.Include(x=>x.product).Where(x=>x.Id == item.Id).ToListAsync();  
+                foreach(var ite in orderDetail)
+                {
+                    a.orderDetail = ite;
+                }
+              
+                a.orderList.Add(item);
+            }
+         
+
+
+            return View(a);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Index(duyetDon duyetDon)
+        {
+            var order =await _context.orders.FindAsync(duyetDon.Id);
+            order.IsDelete = true;
+            order.orderStatusId = 2;
+            _context.orders.Update(order);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "orders");
         }
 
         // GET: Admin/orders/Details/5

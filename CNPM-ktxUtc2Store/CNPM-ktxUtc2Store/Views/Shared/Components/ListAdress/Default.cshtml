@@ -1,0 +1,12 @@
+﻿@model listAdressUser
+@foreach (var item in Model.useradress)
+{
+   <div class="more-address-item">
+        <label>
+            <input asp-for="Id" type="radio" value="@item.AdressId" />
+        </label>
+        <a>@item.adress.homeAdress @item.adress.villageAdress @item.adress.districAdress</a>
+
+    </div>
+       
+}

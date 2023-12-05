@@ -17,10 +17,18 @@ namespace CNPM_ktxUtc2Store.Service.Impl
             _httpContextAccessor = httpContextAccessor;
 
         }
-        public async Task<int> AddItem(int productId, int quantity)
+        public async Task<int> AddItem(int productId, int quantity, string color, string size)
         {
             // cart -save
             //cartDetail -error
+            if (string.IsNullOrEmpty(color))
+            {
+               color = "";
+            }
+            if (string.IsNullOrEmpty(size))
+            {
+               size = "";
+            }
             using var transaction = _context.Database.BeginTransaction();
             string userId = GetUserId();
             try
@@ -54,7 +62,9 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                         productId = productId,
                         shoppingCartId = cart.Id,
                         quantity = quantity,
-                        unitPrice=product.price
+                        unitPrice=product.price,
+                        color= color,
+                        size= size
                     };
                     _context.cartDetails.Add(cartItem);
                 }
@@ -141,6 +151,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
             var data = await (from cart in _context.shoppingCarts
                               join cartDetail in _context.cartDetails
                               on cart.Id equals cartDetail.shoppingCartId
+                                where cart.applicationUserId==userId
                               select new { cartDetail.Id }
                               ).ToListAsync();
             return data.Count;

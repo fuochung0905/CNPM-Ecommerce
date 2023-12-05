@@ -4,25 +4,34 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CNPM_ktxUtc2Store.Data.Components
 {
-    public class userViewComponent : ViewComponent
+    public class ListAdressViewComponent : ViewComponent
     {
+    
         private readonly ApplicationDbContext _context;
         private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public userViewComponent(ApplicationDbContext dbContext, UserManager<applicationUser> userManager, IHttpContextAccessor httpContextAccessor )
+        public ListAdressViewComponent(ApplicationDbContext dbContext, UserManager<applicationUser> usermanagement, IHttpContextAccessor httpContextAccessor)
         {
             _context = dbContext;
-            _usermanagement = userManager;
+            _usermanagement = usermanagement;
             _httpContextAccessor = httpContextAccessor;
         }
+
         public IViewComponentResult Invoke()
         {
-            string userId =GetUserId();
-            var user = _context.applicationUsers.Find(userId);
-           return View(user);
+            var userId = GetUserId();
+            var useradress = _context.userAdresses.Include(x => x.applicationUser).Include(x => x.adress).Where(x => x.applicationUserId.Equals(userId))
+                .ToList();
+            listAdressUser a= new listAdressUser();
+            foreach (var user in useradress)
+            {
+                a.useradress.Add(user);
+            }
+            return View(a);
         }
         private string GetUserId()
         {
+
             var pricipal = _httpContextAccessor.HttpContext.User;
             string userId = _usermanagement.GetUserId(pricipal);
 

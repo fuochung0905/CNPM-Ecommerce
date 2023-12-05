@@ -4,37 +4,16 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<p>
-    <a asp-action="Create">Thêm địa chỉ mới</a>
-</p>
 <form asp-area="" asp-controller="Adresses" asp-action="Index">
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>
-                    Địa chỉ
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.orderList)
-            {
-                <tr>
-                    <td>
-                        <label>
-                            <input asp-for="id" type="radio"
-                                   value="@item.Id" />
-                        </label>
-                    </td>
-                    <td>
-                        @item.homeAdress @item.villageAdress @item.districAdress
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="">
+        <div>
+            <h4> Địa chỉ</h4>
+            <a asp-action="Create">Thêm địa chỉ mới</a>
+        </div>
+
+     
+
+    </div>
     <button type="submit">Chọn</button>
 
 </form>

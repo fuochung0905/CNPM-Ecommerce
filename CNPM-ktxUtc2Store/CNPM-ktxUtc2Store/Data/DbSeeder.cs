@@ -16,6 +16,7 @@ namespace CNPM_ktxUtc2Store.Data
             var roleManager = service.GetService<RoleManager<IdentityRole>>();
             await roleManager.CreateAsync(new IdentityRole(Roles.Admin.ToString()));
             await roleManager.CreateAsync(new IdentityRole(Roles.User.ToString()));
+            await roleManager.CreateAsync(new IdentityRole(Roles.Saler.ToString()));
 
 
             // create Admin

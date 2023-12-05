@@ -36,20 +36,21 @@
 
             <div class="product-detail">          
                 <form asp-area="" asp-controller="Home" asp-action="Details">
+                   
                     @foreach (var item in Model.product.ProductVariations)
                     {
                         @if (item.variation.name == "size")
                         {
-                            <input asp-for="size" type="radio" id="@item.variation.value" name="size" value="@item.variation.value">
+                            <input asp-for="size" type="radio" class="variation-size" name="size" value="@item.variation.value">
                             <label for="@item.variation.value">@item.variation.value</label>
                             <br>
-                        }
+                        }  
                     }
                     @foreach (var item in Model.product.ProductVariations)
                     {
                         @if (item.variation.name == "color")
                         {
-                            <input asp-for="color" type="radio" id="@item.variation.value" name="color" value="@item.variation.value">
+                            <input asp-for="color" type="radio" class="variation-color" name="color" value="@item.variation.value">
                             <label for="@item.variation.value">@item.variation.value</label>
                             <br>
                         }
@@ -99,12 +100,33 @@
         async function AddItem(productId) {
 
             var usernameEl = document.getElementById("username");
+            var svsize;
+            var svcolor
+            var vsize = document.getElementsByClassName('variation-size');
+            for (var i = 0; i < vsize.length; i++) {
+                if (vsize[i].checked) {
+                    svsize = vsize[i].value;
+                    break; // Dừng vòng lặp khi tìm thấy radio được chọn
+                    
+                }
+            }
+            var vcolor = document.getElementsByClassName('variation-color');
 
+            // Duyệt qua từng radio để kiểm tra xem radio nào được chọn
+            for (var i = 0; i < vcolor.length; i++) {
+                if (vcolor[i].checked) {
+                    // Nếu radio được chọn, lấy giá trị và lưu vào biến
+                     svcolor = vcolor[i].value;
+                    break; // Dừng vòng lặp khi tìm thấy radio được chọn
+                }
+            }
+            console.log(svsize);
+            console.log(svcolor);
             if (usernameEl == null) {
                 window.location.href = "/Identity/Account/Login";
             }
             try {
-                var response = await fetch(`/Cart/AddItem?productId=${productId}`);
+                var response = await fetch(`/Cart/AddItem?productId=${productId}&color=${svcolor}&size=${svsize}`);
 
                 if (response.status == 200) {
                     var result = await response.json();
@@ -120,6 +142,10 @@
         }
     </script>
     <script>
+
+        function getRadioValue() {
+         
+        }
         async function dathang(productId) {
 
             var usernameEl = document.getElementById("username");

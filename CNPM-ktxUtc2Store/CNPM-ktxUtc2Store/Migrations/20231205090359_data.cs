@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CNPM_ktxUtc2Store.Migrations
 {
     /// <inheritdoc />
-    public partial class done : Migration
+    public partial class data : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -224,7 +224,8 @@ namespace CNPM_ktxUtc2Store.Migrations
                 columns: table => new
                 {
                     AdressId = table.Column<int>(type: "int", nullable: false),
-                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    isDefine = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -316,6 +317,30 @@ namespace CNPM_ktxUtc2Store.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "applicationUserproduct",
+                columns: table => new
+                {
+                    productForeignKey = table.Column<int>(type: "int", nullable: false),
+                    userForeignKey = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_applicationUserproduct", x => new { x.productForeignKey, x.userForeignKey });
+                    table.ForeignKey(
+                        name: "FK_applicationUserproduct_AspNetUsers_userForeignKey",
+                        column: x => x.userForeignKey,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_applicationUserproduct_product_productForeignKey",
+                        column: x => x.productForeignKey,
+                        principalTable: "product",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "cartDetail",
                 columns: table => new
                 {
@@ -324,7 +349,9 @@ namespace CNPM_ktxUtc2Store.Migrations
                     shoppingCartId = table.Column<int>(type: "int", nullable: false),
                     productId = table.Column<int>(type: "int", nullable: false),
                     quantity = table.Column<int>(type: "int", nullable: false),
-                    unitPrice = table.Column<double>(type: "float", nullable: false)
+                    unitPrice = table.Column<double>(type: "float", nullable: false),
+                    size = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    color = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -394,6 +421,11 @@ namespace CNPM_ktxUtc2Store.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_applicationUserproduct_userForeignKey",
+                table: "applicationUserproduct",
+                column: "userForeignKey");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -493,6 +525,9 @@ namespace CNPM_ktxUtc2Store.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "applicationUserproduct");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 

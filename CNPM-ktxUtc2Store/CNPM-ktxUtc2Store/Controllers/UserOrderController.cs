@@ -20,56 +20,88 @@ namespace CNPM_ktxUtc2Store.Controllers
 
         }
       
-  
-            public async Task<IActionResult> Userorder()
-             {
-            var userid = GetUserId();
-            if (string.IsNullOrWhiteSpace(userid))
-            {
-                throw new Exception("User is not logged-in");
-            }
+        public async Task<shoppingCart> GetUserCart()
+        {
+            var userId = GetUserId();
 
-            var orders = await _context.orders
-                .Include(x => x.status)
-                .Include(x => x.orderDetails)
-                .ThenInclude(x => x.product)
-                .ThenInclude(x => x.category)
-                .Where(a => a.applicationUser.Id == userid && a.IsDelete==false).ToListAsync();
-            var list = new doneOrder();
-           foreach (var order in orders)
-            {
-                list.orderList.Add(order);
-            }
+            if (userId == null)
+                throw new Exception("Invalid user");
+            var shoppingcart = await _context.shoppingCarts
+                .Include(a => a.cartDetails)
+                .ThenInclude(a => a.product)
+                .ThenInclude(a => a.category)
+                .Where(a => a.applicationUserId == userId).FirstOrDefaultAsync();
+            return shoppingcart;
 
-            return View(list);
+
         }
+        public async Task<IActionResult> Userorder()
+         {
+            var cart = await GetUserCart();
+            cartToOrder a = new cartToOrder();
+            a.shoppingCarts = cart;
+
+            return View(a);
+        }
+    
         [HttpPost]
-        public async Task<IActionResult> Userorder(doneOrder doneOrder)
+        public async Task<IActionResult> Userorder(cartToOrder cartTo)
         {
             var userid = GetUserId();
-            var userAdress= await _context.userAdresses.Include(x=>x.adress).Include(x=>x.applicationUser).Where(x=>x.applicationUserId==userid).Where(x=>x.isDefine==true).ToListAsync();
-          foreach( var item in userAdress)
+            var userAdress= await _context.userAdresses.Include(x=>x.adress).Include(x=>x.applicationUser)
+                .Where(x=>x.applicationUserId==userid).Where(x=>x.isDefine==true).ToListAsync();
+            foreach( var item in userAdress)
             {
                 if(item != null)
                 {
-                    var detailorder = await _context.orderDetails.FindAsync(doneOrder.orderId);
-                    var order = await _context.orders.FindAsync(doneOrder.orderId);
-                    order.IsDelete = true;
-                    _context.orders.Update(order);
-                    var product = await _context.products.FindAsync(detailorder.productId);
-                    product.qty_inStock = product.qty_inStock - detailorder.quantity;
-                    _context.products.Update(product); 
-                    _context.SaveChanges();
-                    return Content("Đã đặt hàng");
+                    var cartDetail = await _context.cartDetails.FindAsync(cartTo.Id);
+                    if (cartDetail != null)
+                    {
+                        using var transaction = _context.Database.BeginTransaction();
+                        try
+                        {
+                            var applicationUser = _context.applicationUsers.Find(userid);
+                            //var dathang =  GetDatHang(userid);
+
+                            var dathang = new order
+                            {
+                                applicationUserId = userid,
+                                createDate = DateTime.UtcNow,
+                                orderStatusId = 1
+                            };
+                            _context.orders.Add(dathang);
+
+                            _context.SaveChanges();
+                            var CTDH = _context.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id);
+                            var product = _context.products.Find(cartDetail.productId);
+                            CTDH = new orderDetail
+                            {
+                                productId = cartDetail.productId,
+                                orderId = dathang.Id,
+                                quantity = cartDetail.quantity,
+                                size = cartDetail.size,
+                                color = cartDetail.color,
+                                unitPrice = product.price
+                            };
+                            _context.orderDetails.Add(CTDH);
+                            _context.cartDetails.Remove(cartDetail);
+                            product.qty_inStock = product.qty_inStock - cartDetail.quantity;
+                            _context.products.Update(product);
+                            _context.SaveChanges();
+                            transaction.Commit();
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+                    return Content("Đặt hàng thành công");
                 }
             }
             return Content("Cần chọn địa chỉ người dụng");
 
         }
-        public IActionResult Complete()
-        {
-            return View();
-        }
+    
 
         
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System.Reflection.Emit;
 
 namespace CNPM_ktxUtc2Store.Data
@@ -22,8 +23,8 @@ namespace CNPM_ktxUtc2Store.Data
         public DbSet<variation> variation { get; set; }
         public DbSet<productVariation> productVariations { get; set; }
         public DbSet<applicationUser> applicationUsers { get; set; }
-        public DbSet<Adress> adresses { get; set; } 
-        public DbSet<UserAdress> userAdresses { get; set; } 
+        public DbSet<Adress> adresses { get; set; }
+        public DbSet<UserAdress> userAdresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -44,6 +45,23 @@ namespace CNPM_ktxUtc2Store.Data
             builder.Entity<UserAdress>()
               .HasOne(pv => pv.applicationUser).WithMany(pv => pv.UserAdresses)
               .HasForeignKey(p => p.applicationUserId).OnDelete(DeleteBehavior.ClientNoAction);
+
+
+
+            builder.Entity<product>()
+        .HasMany(e => e.ApplicationUsers)
+        .WithMany(e => e.Products)
+        .UsingEntity(
+            l => l.HasOne(typeof(applicationUser)).WithMany().HasForeignKey("userForeignKey"),
+            r => r.HasOne(typeof(product)).WithMany().HasForeignKey("productForeignKey"));
+
+
+
+
+
+
+
+
         }
     }
 }

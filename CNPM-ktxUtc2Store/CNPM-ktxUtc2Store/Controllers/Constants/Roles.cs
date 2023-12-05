@@ -3,7 +3,9 @@
     public enum Roles
     {
         Admin,
+        Saler,
         User
+       
     }
 
 

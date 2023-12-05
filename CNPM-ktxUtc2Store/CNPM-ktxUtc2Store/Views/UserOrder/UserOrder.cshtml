@@ -1,21 +1,21 @@
-﻿@model CNPM_ktxUtc2Store.Dto.doneOrder
+﻿@model cartToOrder
 
 @{
     
 }
 <div style="width:90%; margin:auto" >
-    
     @if (Model != null )
-    {
+    {   
        
-        <form asp-area="" asp-controller="UserOrder" asp-action="Userorder">
-            <div class ="order-complete">
+    <div class ="order-complete">
+        
         <div class="order-complete-left">
                 <div class="order-complete-address">
+                     <form asp-area="" asp-controller="UserOrder" asp-action="Userorder">
                     <div class="address-detail">
                         <div class="address-detail-head">
                                 <h4>Thông tin người nhận</h4>
-                                <a asp-controller="Adresses" asp-action="Index">Thay đổi địa chỉ</a>
+                                <a id="open-more-address" onclick="OpenMore()">Thay đổi địa chỉ</a>
                         </div>
                         <div class="address-detail-tail">
                                 @await Component.InvokeAsync("Adress")
@@ -23,8 +23,9 @@
                         </div> 
                             
                     </div>
+                    </form>
                 </div>
-
+                <form asp-area="" asp-controller="UserOrder" asp-action="Userorder">
                 <div class="order-complete-detail">
                     <table class="table table-striped">
                         <tr>
@@ -35,54 +36,30 @@
                             <th>Giá</th>
                             <th>Tổng tiền</th>
                         </tr>
-                        @foreach (var order in Model.orderList)
+                        @foreach (var result in Model.shoppingCarts.cartDetails)
                         {
-
-                            @foreach (var item in order.orderDetails)
-                            {
-                                <tr>
+                             <tr>
                                     <td>
                                         <label>
-                                            @* viết js khi nhấn vào đây sẽ hiện ra tồng tiền sản phẩm
-                                đường dẫn tổng tiền của sản phẩm đó
-                                *@
-                                            <input asp-for="orderId" type="radio"
-                                                   value="@item.Id" />
+                                           
+                                        <input asp-for="Id" type="radio"
+                                               value="@result.Id" />
                                         </label>
-
                                     </td>
-                                    <td>@item.product.productName</td>
+                                <td>@result.product.productName</td>
                                     <td>
-                                        <span>@item.size</span>
-                                        <span>@item.color</span>
+                                    <span>@result.size</span>
+                                    <span>@result.color</span>
                                     </td>
-                                    <td>@item.quantity</td>
-                                    <td>@item.product.price</td>
-                                    <td>@(item.unitPrice * item.quantity)</td>
-
-                                </tr>
-                            }
+                                <td>@result.quantity</td>
+                                <td>@result.product.price</td>
+                                <td>@(result.unitPrice * result.quantity)</td>
+                                </tr>   
                         }
                     </table>
                 </div>
-                <hr>
-                <div class="order-chose-ship">
-                    <h3>Giao Hàng</h3>
-                    <div class="chosen-ship">
-                        <div>
-                            <input type="radio">
-                        </div>
-                        <div class="chosen-ship-detail">
-                            <a>Tiêu chuẩn</a>
-                            <a>00.000000</a>
-                            <div>
-                                    <a>Dự kiến nhận: </a>
-                                    <a>Na/Na</a>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
+                    <button style="padding:0 40%;" type="submit">Đặt hàng</button>
+                </form>
         </div>
         <div class="order-complete-right">
                 <div class="order-complete-product">
@@ -96,6 +73,27 @@
                                
                         </div>
                     </div>
+                        <hr>
+                        <hr>
+                    <div class="order-chose-ship">
+                            <h3>Giao Hàng</h3>
+                            <div class="chosen-ship">
+                                <div>
+                                    <input type="radio">
+                                </div>
+                                <div class="chosen-ship-detail">
+                                    <a>Tiêu chuẩn</a>
+                                    <a>00.000000</a>
+                                    <div>
+                                        <a>Dự kiến nhận: </a>
+                                        <a>Na/Na</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+                        <hr>
+                        <hr>
                     <div class="order-complete-end">
                         <h3>Thông tin đơn hàng</h3>
                         <div class="order-conplete-end-ship"></div>
@@ -119,13 +117,50 @@
                             </div>
                         </div>
                     </div>
-                    <button style="padding:0 40%;"type="submit">Đặt hàng</button>
+                   
                 </div>
         </div>
+
+
+
+
+            <div class="more-address">
+                
+                    <div class="more-address-head">
+                        <h4> Địa chỉ</h4>
+                    <a asp-controller="Adresses" asp-action="Index">Thêm địa chỉ mới</a>
+                    </div>
+                    <div class="more-address-list">
+                        <form asp-area="" asp-controller="Adresses" asp-action="Index">
+                            <a>@await Component.InvokeAsync("ListAdress")</a>
+                            <button type="submit">Chọn</button>
+                        </form>
+                    </div>
+                
+               
+                  
             </div>
-           </form>  
+    </div>
+          
     }
+    
 </div>
 
+<script>
+    function openModal() {
+        document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+    function OpenMore(){
+       
+        var elm = document.querySelector('.more-address');
+        elm.style.visibility = 'visible';
+        elm.style.opacity = '1';
+        elm.style.right = '10%';
+    } 
+</script>
 
 

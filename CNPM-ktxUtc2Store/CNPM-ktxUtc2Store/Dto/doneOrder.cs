@@ -3,7 +3,6 @@
     public class doneOrder
     {
         public int orderId { get; set; }
-        public bool check {  get; set; }    
-        public  List<order> orderList { get; set; }= new List<order>();
+        public  List<shoppingCart> orderList { get; set; }= new List<shoppingCart>();
     }
 }
