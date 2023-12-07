@@ -70,7 +70,7 @@ namespace CNPM_ktxUtc2Store.Controllers
         }
 
         // GET: orders/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
             if (id == null || _context.orders == null)
             {

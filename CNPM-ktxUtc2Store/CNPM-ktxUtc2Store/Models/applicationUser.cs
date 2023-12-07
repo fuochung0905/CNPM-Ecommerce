@@ -12,7 +12,8 @@ namespace CNPM_ktxUtc2Store.Models
         [Display(Name = "choose Picture")]
         public IFormFile Picture { get; set; }
 
-        public bool isUprole;
+        public bool isUprole { get; set; }
+        public bool isSale {  get; set; }   
 
         public virtual List<UserAdress> UserAdresses { get; set; } = new List<UserAdress>();
 

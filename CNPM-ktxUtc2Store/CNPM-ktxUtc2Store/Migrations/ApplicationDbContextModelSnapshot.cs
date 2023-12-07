@@ -121,6 +121,12 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isSale")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("isUprole")
+                        .HasColumnType("bit");
+
                     b.Property<string>("profilePicture")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

@@ -1,0 +1,18 @@
+﻿@model applicationUser
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="User" asp-action="wantToSaler">
+    <span>
+        Thân gửi @Model.fullname
+    Tôi là quản lí website này bạn muốn đăng kí trở thành người bán phải tuân thử những quy tắc và theo sự quản lí của chúng tôi và cần chúng tôi kiểm duyệt, sau 3-4 ngày
+    khi chúng tôi kiểm duyệt thành công chúng tôi sẽ gửi về gamil của bạn và bạn có thể thêm những sản phẩm của bạn để những sản phẩm của bạn
+    </span>
+    <label>
+        <input type="checkbox" asp-for="isUprole"  value="@Model.isUprole"/> Tôi đồng ý với điều khoản
+    </label>
+    <button type="submit">Đăng kí</button>
+   
+     </form>
