@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\CNPM-ktxUtc2Store.bundle.scp.css"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_product.css",
+      "PackagePath": "staticwebassets\\css\\ad_product.css"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\css_cart.css",
       "PackagePath": "staticwebassets\\css\\css_cart.css"
     },
@@ -63,6 +67,10 @@
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg",
       "PackagePath": "staticwebassets\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
+      "PackagePath": "staticwebassets\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\anhAdmin.jpg",
