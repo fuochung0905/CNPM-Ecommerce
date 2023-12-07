@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\CNPM-ktxUtc2Store.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_product.css",
+      "PackagePath": "staticwebassets\\css\\ad_product.css"
+    },
+    {
       "Id": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\css_cart.css",
       "PackagePath": "staticwebassets\\css\\css_cart.css"
     },
@@ -69,8 +73,16 @@
       "PackagePath": "staticwebassets\\images\\76836c19-b37e-417a-8b7f-8327c3464109_vit.jpg"
     },
     {
+      "Id": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png",
+      "PackagePath": "staticwebassets\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png"
+    },
+    {
       "Id": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg",
       "PackagePath": "staticwebassets\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
+      "PackagePath": "staticwebassets\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg"
     },
     {
       "Id": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\anhAdmin.jpg",

@@ -29,7 +29,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                                                        Id = product.Id,
                                                        productName = product.productName,
                                                        description = product.description,
-                                                       discount = product.discount,
+                                                       oldprice = product.oldprice,
                                                        price = product.price,
                                                        categoryId=product.categoryId,
                                                        imageUrl = product.imageUrl,

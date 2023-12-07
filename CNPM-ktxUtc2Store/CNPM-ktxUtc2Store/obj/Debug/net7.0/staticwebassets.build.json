@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OiBRwWpo3Yjt+ManzhaYsT7HrWTSST35tCL3BEl0k8A=",
+  "Hash": "LXi/3LEhma6dctWaNY4MPr/nnCz+11n+gUJiXaeGdMA=",
   "Source": "CNPM-ktxUtc2Store",
   "BasePath": "_content/CNPM-ktxUtc2Store",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CNPM-ktxUtc2Store.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_product.css",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "css/ad_product.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ad_product.css"
+    },
+    {
       "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\css_cart.css",
       "SourceId": "CNPM-ktxUtc2Store",
       "SourceType": "Discovered",
@@ -1343,6 +1360,23 @@
       "OriginalItemSpec": "wwwroot\\images\\76836c19-b37e-417a-8b7f-8327c3464109_vit.jpg"
     },
     {
+      "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "images/9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png"
+    },
+    {
       "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg",
       "SourceId": "CNPM-ktxUtc2Store",
       "SourceType": "Discovered",
@@ -1358,6 +1392,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "images/a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg"
     },
     {
       "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\anhAdmin.jpg",
