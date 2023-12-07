@@ -21,6 +21,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             _context = context;
             _httpContextAccessor = httpContextAccessor;
             _usermanagement = usermanagement;
+            _httpContextAccessor= httpContextAccessor;
         }
 
         public async Task<IActionResult> Index()

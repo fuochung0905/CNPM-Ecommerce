@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LXi/3LEhma6dctWaNY4MPr/nnCz+11n+gUJiXaeGdMA=",
+  "Hash": "/JwJUcjtyJBrPYmgEU8MJ3fl6yTsQ5uI1rkN6RYqfYc=",
   "Source": "CNPM-ktxUtc2Store",
   "BasePath": "_content/CNPM-ktxUtc2Store",
   "Mode": "Default",
@@ -1766,6 +1766,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\donu5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "images/f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png"
     },
     {
       "Identity": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay1.jpg",
