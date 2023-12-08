@@ -27,10 +27,8 @@ namespace CNPM_ktxUtc2Store.Data
                 UserName = "Admin123@gmail.com",
                 Email = "Admin123@gmail.com",
                 EmailConfirmed = true,
-                PhoneNumberConfirmed = true,
-                isUprole = false,
-                isSale=false
-
+                PhoneNumberConfirmed = true
+         
 
             };
 

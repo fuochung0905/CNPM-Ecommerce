@@ -15,41 +15,59 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public UserController(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, UserManager<applicationUser> usermanagement)
+        public UserController(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor,
+            UserManager<applicationUser> usermanagement,
+            IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
             _httpContextAccessor = httpContextAccessor;
             _usermanagement = usermanagement;
-            _httpContextAccessor= httpContextAccessor;
+            _httpContextAccessor = httpContextAccessor;
+            _webHostEnvironment = webHostEnvironment;
+        }
+        private string uploadImage(applicationUser model)
+        {
+            string uniqueFileName = string.Empty;
+            if (model.Picture != null)
+            {
+                string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, "images/");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Picture.FileName;
+                string filePath = Path.Combine(uploadFoder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.Picture.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Create()
         {
-            var applicationDbContext = await _context.applicationUsers.Where(x => x.isUprole == true).ToListAsync();
-            changeRole a = new changeRole();
-            foreach(var user in applicationDbContext) { 
-            a.applicationUsers.Add(user);
-            }
-            return View(a);
+            return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(changeRole user)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(applicationUser applicationUser)
         {
-            var userdb = await _context.applicationUsers.FindAsync(user.Id);
-            var userInDb = await _usermanagement.FindByEmailAsync(userdb.Email);
-            userdb.isSale = true;
-            _context.applicationUsers.Update(userdb);
-            _context.SaveChanges();
-            if (userInDb != null)
+            string uniqueFileName = uploadImage(applicationUser);
+
+            applicationUser.profilePicture = uniqueFileName;
+            applicationUser.PhoneNumberConfirmed = true;
+            applicationUser.EmailConfirmed = true;
+            var userInDb = await _usermanagement.FindByEmailAsync(applicationUser.Email);
+            if (userInDb == null)
             {
-                await _usermanagement.AddToRoleAsync(userdb, Roles.Saler.ToString());
-                await _usermanagement.RemoveFromRoleAsync(userdb, Roles.User.ToString());
-                return Content("success");
+                await _usermanagement.CreateAsync(applicationUser, "nhanvien@123");
+                await _usermanagement.AddToRoleAsync(applicationUser, Roles.Saler.ToString());
+                _context.applicationUsers.Add(applicationUser);
+                _context.SaveChanges(); 
+                return RedirectToAction("Index", "Home");
 
             }
-          
-            return RedirectToAction("Index", "Home");
+           return Content("Thêm thất bại");
+           
         }
     }
 }

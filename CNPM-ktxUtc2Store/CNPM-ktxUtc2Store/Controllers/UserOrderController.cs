@@ -1,4 +1,5 @@
 ﻿using CNPM_ktxUtc2Store.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -32,8 +33,6 @@ namespace CNPM_ktxUtc2Store.Controllers
                 .ThenInclude(a => a.category)
                 .Where(a => a.applicationUserId == userId).FirstOrDefaultAsync();
             return shoppingcart;
-
-
         }
         public async Task<IActionResult> Userorder()
          {
@@ -45,6 +44,7 @@ namespace CNPM_ktxUtc2Store.Controllers
         }
     
         [HttpPost]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> Userorder(cartToOrder cartTo)
         {
             var userid = GetUserId();
@@ -61,16 +61,16 @@ namespace CNPM_ktxUtc2Store.Controllers
                         try
                         {
                             var applicationUser = _context.applicationUsers.Find(userid);
-                            //var dathang =  GetDatHang(userid);
-
                             var dathang = new order
                             {
                                 applicationUserId = userid,
-                                createDate = DateTime.UtcNow,
-                                orderStatusId = 1
+                                createDate = DateTime.Now,
+                                updateDate = DateTime.Now,
+                                orderStatusId = 1,
+                                IsComplete = false,
+                                IsDelete=false
                             };
                             _context.orders.Add(dathang);
-
                             _context.SaveChanges();
                             var CTDH = _context.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id);
                             var product = _context.products.Find(cartDetail.productId);
@@ -102,60 +102,7 @@ namespace CNPM_ktxUtc2Store.Controllers
 
         }
     
-
-        
-
-
-
-        //public async Task<IActionResult> dathang(int productId, int quantity)
-        //{
-        //    using var transaction = _context.Database.BeginTransaction();
-        //    var userid = GetUserId();
-        //    try
-        //    {
-        //        if (string.IsNullOrEmpty(userid))
-        //        {
-        //            return Redirect("/Identity/Account/Login");
-        //        }
-        //        var dathang = await GetDatHang(userid);
-        //        if (dathang is null)
-        //        {
-        //            dathang = new order
-        //            {
-        //                userId = userid,
-        //                createDate = DateTime.UtcNow,
-        //                orderStatusId = 1
-        //            };
-        //            _context.orders.Add(dathang);
-        //        }
-        //        _context.SaveChanges();
-        //        var CTDH = _context.orderDetails.FirstOrDefault(x => x.orderId == dathang.Id && x.productId == productId);
-        //        if (CTDH is not null)
-        //        {
-        //            CTDH.quantity = CTDH.quantity + quantity;
-        //        }
-        //        else
-        //        {
-        //            var product = _context.products.Find(productId);
-        //            CTDH = new orderDetail
-        //            {
-        //                productId = productId,
-        //                orderId = dathang.Id,
-        //                quantity = model.,
-        //                unitPrice = product.price
-        //            };
-        //            _context.orderDetails.Add(CTDH);
-        //        }
-        //        _context.SaveChanges();
-        //        transaction.Commit();
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //    }
-
-        //    return RedirectToAction("Userorder", "UserOrder");
-        //}
+      
         public async Task<order> GetDatHang(string userId)
         {
             var dathang = _context.orders.FirstOrDefault(x => x.applicationUser.Id == userId);

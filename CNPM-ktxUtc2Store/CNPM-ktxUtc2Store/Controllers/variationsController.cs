@@ -10,6 +10,7 @@ using CNPM_ktxUtc2Store.Models;
 
 namespace CNPM_ktxUtc2Store.Controllers
 {
+
     public class variationsController : Controller
     {
         private readonly ApplicationDbContext _context;

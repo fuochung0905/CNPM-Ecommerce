@@ -1,0 +1,13 @@
+﻿@model IEnumerable<InforStorage>
+
+@foreach (var item in Model)
+{
+    <p class="fw-lighter">Hiện tại @item.namestorage<span>STORE</span> chỉ hoạt động kinh doanh qua các kênh trực tuyến: Website, Facebook, Instagram, Shopee, Lazada & Tiktok shop</p>
+    <div class="list-icon">
+        <a href="@item.linkInstagram">  <i class="fa-brands fa-instagram"></i></a>
+        <a href="@item.linkfacbook"> <i class="fa-brands fa-facebook-f"></i></a>
+        <a href="@item.linktiktok">  <i class="fa-brands fa-tiktok"></i></a>
+        <a href="@item.linkyoutube"> <i class="fa-brands fa-youtube"></i></a>
+
+    </div>
+}

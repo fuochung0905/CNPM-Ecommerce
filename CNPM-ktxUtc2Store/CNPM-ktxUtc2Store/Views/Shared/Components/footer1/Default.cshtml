@@ -1,0 +1,11 @@
+﻿
+
+@model IEnumerable<InforStorage>
+
+@foreach(var item in Model)
+{
+    <div class="logo">
+        <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span>@item.namestorage</span><span>Store</span></a>
+    </div>
+    <p class="fw-lighter pt-2">Đến với @item.namestorage<span>STORE</span> quý khách sẽ được trải nghiệm các sản phẩm hoàn toàn mới với chất lượng đảm bảo uy tín - mẫu mã.</p>
+}

@@ -17,27 +17,24 @@
                 Số điện thoại
             </th>
               
-                <th>
-                  Tên sản phẩm
-                </th>
-                <th>
-                    Biến thể
-                </th>
-                <th>
-                   Số lượng
-                </th>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Biến thể
+            </th>
+            <th>
+                Số lượng
+            </th>
                 
-                <th>
-                   Thành tiền
-                </th>
+            <th>
+                Thành tiền
+            </th>
             <th>
                Ngày đặt hàng
             </th>
             <th>
                Trạng thái
-           
-           
-         
             <th></th>
         </tr>
     </thead>
@@ -45,12 +42,11 @@
 @foreach (var item in Model.orderList) {
         <tr>
             <td>
-                        @if (item.IsDelete == false)
-                        {
-                            <label>
-                                <input asp-for="Id" type="radio" value="@item.Id" />
-                            </label>
-                        }
+                
+                    <label>
+                        <input asp-for="Id" type="radio" value="@item.Id" />
+                    </label>
+                
             </td>
             <td>
                 @item.applicationUser.fullname
@@ -60,22 +56,22 @@
                 @item.applicationUser.PhoneNumber
             </td>
            
-                        @foreach(var i in item.orderDetails)
-                        {
-                        <td>
-                            @i.product.productName
-                        </td>
-                        <td>
-                            @i.size @i.color
-                        </td>
-                        <td>
-                            @i.quantity
-                        </td>
-                        <td>
-                            @i.unitPrice
-                        </td>
+                @foreach(var i in item.orderDetails)
+                {
+                <td>
+                    @i.product.productName
+                </td>
+                <td>
+                    @i.size @i.color
+                </td>
+                <td>
+                    @i.quantity
+                </td>
+                <td>
+                    @i.unitPrice
+                </td>
 
-                        }
+                }
             
             <td>
                 @item.createDate
@@ -83,14 +79,15 @@
             <td>
                 @item.status.statusName
             </td>
-           
             <td>
-                        @if (item.IsDelete == false)
-                        {
-                            <button style="padding:0 40%;" type="submit">Duyệt đơn </button>
-                        }
-
-                 
+                @if (item.IsDelete == false && item.IsComplete==false)
+                {
+                     <button style="padding:0 40%;" type="submit" >Duyệt đơn </button>
+                }
+                        @if (item.IsDelete == true && item.IsComplete == false)
+                {
+                    <button style="padding:0 40%;" type="button" onclick="ordercomplete(@item.Id)">Đơn hàng đã giao </button>
+                }
             </td>
         </tr>
 }
@@ -98,3 +95,24 @@
 </table>
 
 </form>
+
+ @section Scripts
+  {
+
+    <script>
+        async function ordercomplete(orderid) {
+            try {
+                var response = await fetch(`/Admin/orders/ordercomplete?orderId=${orderid}`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    console.log(result);
+                    console.log("complete");
+                    window.location.href = "#complete"
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+  }

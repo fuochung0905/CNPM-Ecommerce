@@ -47,6 +47,103 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.ToTable("adresses");
                 });
 
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.AdressStorage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("InforStorageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameAdress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InforStorageId");
+
+                    b.ToTable("adressStorage");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.BannerStorage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Bannerpicture")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("InforStorageId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InforStorageId");
+
+                    b.ToTable("bannerStorage");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.InforStorage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("emailcskh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("emailwork")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("linkInstagram")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("linkfacbook")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("linktiktok")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("linkyoutube")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("logo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("namestorage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("phonenumbershop")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("timework")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InforStorage");
+                });
+
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.UserAdress", b =>
                 {
                     b.Property<int>("AdressId")
@@ -120,12 +217,6 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.Property<string>("fullname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("isSale")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("isUprole")
-                        .HasColumnType("bit");
 
                     b.Property<string>("profilePicture")
                         .IsRequired()
@@ -206,6 +297,9 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("IsComplete")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
@@ -218,6 +312,9 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     b.Property<int>("orderStatusId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("updateDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -514,19 +611,26 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("applicationUserproduct", b =>
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.AdressStorage", b =>
                 {
-                    b.Property<int>("productForeignKey")
-                        .HasColumnType("int");
+                    b.HasOne("CNPM_ktxUtc2Store.Models.InforStorage", "InforStorage")
+                        .WithMany("AdressStorages")
+                        .HasForeignKey("InforStorageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<string>("userForeignKey")
-                        .HasColumnType("nvarchar(450)");
+                    b.Navigation("InforStorage");
+                });
 
-                    b.HasKey("productForeignKey", "userForeignKey");
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.BannerStorage", b =>
+                {
+                    b.HasOne("CNPM_ktxUtc2Store.Models.InforStorage", "InforStorage")
+                        .WithMany("BannerStorages")
+                        .HasForeignKey("InforStorageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasIndex("userForeignKey");
-
-                    b.ToTable("applicationUserproduct");
+                    b.Navigation("InforStorage");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.UserAdress", b =>
@@ -708,24 +812,16 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("applicationUserproduct", b =>
-                {
-                    b.HasOne("CNPM_ktxUtc2Store.Models.product", null)
-                        .WithMany()
-                        .HasForeignKey("productForeignKey")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CNPM_ktxUtc2Store.Models.applicationUser", null)
-                        .WithMany()
-                        .HasForeignKey("userForeignKey")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.Adress", b =>
                 {
                     b.Navigation("UserAdresses");
+                });
+
+            modelBuilder.Entity("CNPM_ktxUtc2Store.Models.InforStorage", b =>
+                {
+                    b.Navigation("AdressStorages");
+
+                    b.Navigation("BannerStorages");
                 });
 
             modelBuilder.Entity("CNPM_ktxUtc2Store.Models.applicationUser", b =>

@@ -45,6 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Saler\Controllers\" />
     <Folder Include="Areas\Saler\Data\" />
     <Folder Include="Areas\Saler\Dto\" />
     <Folder Include="Migrations\" />

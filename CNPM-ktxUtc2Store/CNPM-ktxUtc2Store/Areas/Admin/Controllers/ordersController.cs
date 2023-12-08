@@ -22,8 +22,34 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         {
             _context = context;
         }
+        public async Task<IActionResult> ordercomplete(int orderId)
+        {
+            var order = await _context.orders.FindAsync(orderId);
+            order.IsDelete = true;
+            order.IsComplete= true;
+            order.updateDate = DateTime.Now;
+            order.status.Id = 4;
+            _context.orders.Update(order);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "orders");
 
-        // GET: Admin/orders
+        }
+        public async Task<IActionResult> history()
+        {
+            var history = await _context.orders.Include(o => o.applicationUser).Include(o => o.status).Where(x=>x.IsComplete==true).ToListAsync();
+            duyetDon a = new duyetDon();
+            foreach (var item in history)
+            {
+                var orderDetail = await _context.orderDetails.Include(x => x.product).Where(x => x.Id == item.Id).ToListAsync();
+                foreach (var ite in orderDetail)
+                {
+                    a.orderDetail = ite;
+                }
+                a.orderList.Add(item);
+            }
+            return View(a);
+
+        }
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = await _context.orders.Include(o => o.applicationUser).Include(o => o.status).ToListAsync();
@@ -37,9 +63,6 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
               
                 a.orderList.Add(item);
             }
-         
-
-
             return View(a);
         }
         [HttpPost]
@@ -48,6 +71,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             var order =await _context.orders.FindAsync(duyetDon.Id);
             order.IsDelete = true;
             order.orderStatusId = 2;
+            order.updateDate = DateTime.Now;
             _context.orders.Update(order);
             _context.SaveChanges();
             return RedirectToAction("Index", "orders");

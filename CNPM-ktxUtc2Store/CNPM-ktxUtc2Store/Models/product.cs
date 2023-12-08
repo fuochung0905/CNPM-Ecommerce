@@ -20,7 +20,7 @@ namespace CNPM_ktxUtc2Store.Models
         public int categoryId { get; set;}
         public virtual category category { get; set; }
         public int qty_inStock { get; set; } = 0;
-        public virtual List<applicationUser> ApplicationUsers { get; set; } = new List<applicationUser>();
+
         public virtual List<productVariation> ProductVariations { get; set; }  = new List<productVariation>();
       
     }

@@ -13514,11 +13514,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+      "projectUniqueName": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
       "projectName": "CNPM-ktxUtc2Store",
-      "projectPath": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+      "projectPath": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
       "packagesPath": "C:\\Users\\rukac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
+      "outputPath": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rukac\\AppData\\Roaming\\NuGet\\NuGet.Config",

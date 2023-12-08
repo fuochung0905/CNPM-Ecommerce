@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H9DKLaOVp3d33pEQmP6m60CxEwKOsevwCybCXNKWzAGvCJONYcBXH2rWsGNnFsemUF2TeIRCF0HP22nsayUYWA==",
+  "dgSpecHash": "YgNBHAZMfSqwFWftG8MRoDwzmJ5HVQk/SWsuRIUdG3f4+uPCjm8rQ3HfUfYs9Y9M7kZLfpvGWukTrjKIOS3uHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rukac\\source\\repos\\fuochung0905\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
+  "projectFilePath": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rukac\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\rukac\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
