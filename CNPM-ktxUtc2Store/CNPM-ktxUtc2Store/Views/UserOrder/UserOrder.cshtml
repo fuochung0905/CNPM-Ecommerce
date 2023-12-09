@@ -43,7 +43,7 @@
                                         <label>
                                            
                                         <input asp-for="Id" type="radio"
-                                               value="@result.Id" />
+                                                   value="@result.Id" onclick="orderchange(@(result.unitPrice * result.quantity), shipchange)" />
                                         </label>
                                     </td>
                                 <td>@result.product.productName</td>
@@ -79,11 +79,11 @@
                             <h3>Giao Hàng</h3>
                             <div class="chosen-ship">
                                 <div>
-                                    <input type="radio">
+                                    <input type="radio" onclick="shipchange()">
                                 </div>
                                 <div class="chosen-ship-detail">
                                     <a>Tiêu chuẩn</a>
-                                    <a>00.000000</a>
+                                    <a id="ship-price">20000.000000</a>
                                     <div>
                                         <a>Dự kiến nhận: </a>
                                         <a>Na/Na</a>
@@ -100,20 +100,20 @@
                         <div class="end-details">
                             <div class="item-all-price">
                                 <a>Tỏng tiền sản phẩm: </a>
-                                <a>00.000000</a>
+                                <a id="pay-item-price">00.000000</a>
                             </div>
                             <div class="item-ship-price">
                                 <a>Phí vận chuyển: </a>
-                                <a>00.000000 </a>
+                                <a id="pay-ship">00.000000 </a>
                             </div>
                             <div class="item-discount-price">
                                 <a>Tổng giảm: </a>
-                                <a>00.000000</a>
+                                <a id="pay-dícount">00.000000</a>
                             </div>
                             <hr>
                             <div class="item-end">
                                 <a>Tổng thanh toán: </a>
-                                <a>00.000000</a>
+                                <a id="pay-all">00.000000</a>
                             </div>
                         </div>
                     </div>
@@ -147,6 +147,25 @@
 </div>
 
 <script>
+    function shipchange() {
+        var newship = document.getElementById('pay-ship');
+        var getship = document.getElementById('ship-price');
+        newship.textContent = parseFloat(getship.textContent);
+        callback();
+    }
+    function orderchange(allitemprice, shipchange){
+        var discount = document.getElementById('pay-discount');
+        var ship = document.getElementById('pay-ship');
+        var price = document.getElementById('pay-item-price');
+        price.textContent = allitemprice;
+        var show = document.getElementById('pay-all');
+        var all = parseFloat(price.textContent) + parseFloat(ship.textContent);
+        show.textContent = all;
+        
+        var fprice = parseFloat(price.textContent);
+        var fship = parseFloat(ship.textContent);
+        var fdiscount = parseFloat(discount.textContent);
+    }
     function openModal() {
         document.getElementById('overlay').style.display = 'flex';
     }
