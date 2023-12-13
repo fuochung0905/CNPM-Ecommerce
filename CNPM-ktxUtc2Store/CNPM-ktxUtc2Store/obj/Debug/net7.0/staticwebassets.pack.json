@@ -49,24 +49,48 @@
       "PackagePath": "staticwebassets\\images\\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\1c629f78-17f5-4001-990a-9c8553c70ca2_2023-07-05.png",
+      "PackagePath": "staticwebassets\\images\\1c629f78-17f5-4001-990a-9c8553c70ca2_2023-07-05.png"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg",
       "PackagePath": "staticwebassets\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\3175ca50-1731-43f4-b039-1d1fc56f8767_2023-06-29.png",
+      "PackagePath": "staticwebassets\\images\\3175ca50-1731-43f4-b039-1d1fc56f8767_2023-06-29.png"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\4c4e5966-0820-4aa1-b85f-3a41f31b1700_DFS.jpg",
       "PackagePath": "staticwebassets\\images\\4c4e5966-0820-4aa1-b85f-3a41f31b1700_DFS.jpg"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\56d92ac3-d7f8-4b37-bb49-82d38d690f22_2023-06-06.png",
+      "PackagePath": "staticwebassets\\images\\56d92ac3-d7f8-4b37-bb49-82d38d690f22_2023-06-06.png"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\6606b5ae-6dd4-4221-8feb-139cb124985b_donam5.jpg",
       "PackagePath": "staticwebassets\\images\\6606b5ae-6dd4-4221-8feb-139cb124985b_donam5.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\75196e25-1d12-4779-aaf0-b97062afb947_2023-06-06.png",
+      "PackagePath": "staticwebassets\\images\\75196e25-1d12-4779-aaf0-b97062afb947_2023-06-06.png"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\76836c19-b37e-417a-8b7f-8327c3464109_vit.jpg",
       "PackagePath": "staticwebassets\\images\\76836c19-b37e-417a-8b7f-8327c3464109_vit.jpg"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png",
+      "PackagePath": "staticwebassets\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg",
       "PackagePath": "staticwebassets\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a50cb0af-14bf-48d8-a303-09a52f4cb796_2023-06-29.png",
+      "PackagePath": "staticwebassets\\images\\a50cb0af-14bf-48d8-a303-09a52f4cb796_2023-06-29.png"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
@@ -129,6 +153,10 @@
       "PackagePath": "staticwebassets\\images\\d4bb2c6d-92e9-4a51-97ec-5d85c3ee4062_vit.jpg"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\default.jpg",
+      "PackagePath": "staticwebassets\\images\\default.jpg"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam1.jpg",
       "PackagePath": "staticwebassets\\images\\donam1.jpg"
     },
@@ -155,6 +183,10 @@
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donu5.jpg",
       "PackagePath": "staticwebassets\\images\\donu5.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png",
+      "PackagePath": "staticwebassets\\images\\f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay1.jpg",

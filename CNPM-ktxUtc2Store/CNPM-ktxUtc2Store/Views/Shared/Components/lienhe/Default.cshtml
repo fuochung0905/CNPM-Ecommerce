@@ -1,0 +1,21 @@
+﻿@model IEnumerable<InforStorage>
+
+@foreach (var item in Model)
+{
+    <div class="text-wrap">
+        <p class="fw-lighter">Điện thoại</p>
+        <span class="fw-bold">@item.phonenumbershop</span>
+    </div>
+    <div class="text-wrap">
+        <p class="fw-lighter">Email CSKH</p>
+        <span class="fw-bold">@item.emailcskh</span>
+    </div>
+    <div class="text-wrap">
+        <p class="fw-lighter">Email công việc</p>
+        <span class="fw-bold">@item.emailwork</span>
+    </div>
+    <div class="text-wrap">
+        <p class="fw-lighter">Thứ Hai - Chủ Nhật</p>
+        <span class="fw-bold">@item.timework</span>
+    </div>
+}

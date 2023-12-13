@@ -46,22 +46,12 @@ namespace CNPM_ktxUtc2Store.Data
               .HasOne(pv => pv.applicationUser).WithMany(pv => pv.UserAdresses)
               .HasForeignKey(p => p.applicationUserId).OnDelete(DeleteBehavior.ClientNoAction);
 
-
-
-            builder.Entity<product>()
-        .HasMany(e => e.ApplicationUsers)
-        .WithMany(e => e.Products)
-        .UsingEntity(
-            l => l.HasOne(typeof(applicationUser)).WithMany().HasForeignKey("userForeignKey"),
-            r => r.HasOne(typeof(product)).WithMany().HasForeignKey("productForeignKey"));
-
-
-
-
-
-
-
-
         }
+
+        public DbSet<CNPM_ktxUtc2Store.Models.InforStorage> InforStorage { get; set; } = default!;
+
+        public DbSet<CNPM_ktxUtc2Store.Models.AdressStorage> AdressStorage { get; set; } = default!;
+
+        public DbSet<CNPM_ktxUtc2Store.Models.BannerStorage> BannerStorage { get; set; } = default!;
     }
 }

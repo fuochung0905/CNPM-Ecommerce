@@ -1,0 +1,57 @@
+﻿@model CNPM_ktxUtc2Store.Models.InforStorage
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>InforStorage</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.namestorage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.namestorage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.linkfacbook)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.linkfacbook)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.linkInstagram)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.linkInstagram)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.linkyoutube)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.linkyoutube)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.linktiktok)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.linktiktok)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

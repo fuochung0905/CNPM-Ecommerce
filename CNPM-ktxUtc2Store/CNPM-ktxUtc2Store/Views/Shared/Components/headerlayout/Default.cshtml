@@ -1,0 +1,9 @@
+﻿@model IEnumerable<InforStorage>
+
+@foreach(var item in Model)
+{
+    <div class="logo">
+        <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span>@item.namestorage</span><span>Store</span></a>
+    </div>
+  
+}

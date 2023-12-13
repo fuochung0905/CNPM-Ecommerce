@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.InforStorage>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.namestorage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.logo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.linkfacbook)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.linkInstagram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.linkyoutube)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.linktiktok)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.namestorage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.logo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.linkfacbook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.linkInstagram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.linkyoutube)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.linktiktok)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

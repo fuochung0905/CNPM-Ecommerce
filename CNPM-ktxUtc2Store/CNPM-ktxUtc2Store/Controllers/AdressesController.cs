@@ -16,7 +16,6 @@ namespace CNPM_ktxUtc2Store.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
-
         public AdressesController(ApplicationDbContext context, UserManager<applicationUser> userManager, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;

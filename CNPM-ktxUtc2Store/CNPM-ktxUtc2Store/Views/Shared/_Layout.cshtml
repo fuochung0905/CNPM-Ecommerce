@@ -26,29 +26,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+
     <header>
         <div class="container-large">
             <div class="top-box">
-                <div class="logo">
-                    <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span>UTC2</span><span>Store</span></a>
-
-                    <a asp-controller="User" asp-action="Index">Dang ki user</a>
-                </div>
+                @await Component.InvokeAsync("headerlayout")
                 <partial name="_LoginPartial" />
             </div>
             <div class="bottom-box">
                 <ul class="main-menu">
-                   
-                    <!--
-                    <li class="menu-item">
-                        <a class="" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="menu-item">
-                        <a class="" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                  -->
-                   
-                    
                 </ul>
                 <div class="search-wrap">
                     <div class="search-box">
@@ -64,7 +51,6 @@
                         <span id="cartCount" class="num">0</span>
                     </a>
                 </div>
-
             </div>
         </div>
     </header>
@@ -75,58 +61,35 @@
     <footer>
         <div class="container-large">
             <div class="wrap-footer">
+
                 <div class="about-us">
                     <div class="title fw-semibold">Về chúng tôi</div>
-                    <div class="logo">
-                        <a class="" asp-area="" asp-controller="Home" asp-action="Index"><span>UTC2</span><span>Store</span></a>
-                    </div>
-                    <p class="fw-lighter pt-2">Đến với UTC2STORE quý khách sẽ được trải nghiệm các sản phẩm hoàn toàn mới với chất lượng đảm bảo uy tín - mẫu mã.</p>
+                    @await Component.InvokeAsync("footer1")
                 </div>
+               
                 <div class="other-us">
                     <div class="title fw-semibold">Chi nhánh</div>
-                    <span class="fw-lighter">Cơ sở I: <span class="fw-bold">445 Sư Vạn Hạnh, P.12, Q.10.</span></span><br />
-                    <span class="fw-lighter">Cơ sở II: <span class="fw-bold">22/40 Phường Hiệp Bình Chánh, Thủ Đức.</span></span><br />
-                    <span class="fw-lighter">Cơ sở III: <span class="fw-bold">53 Tân lập 1, Thủ Đức.</span></span>
-
+                    @await Component.InvokeAsync("adressstorage")
                 </div>
+
                 <div class="contact-us">
                     <div class="title fw-semibold">Liên hệ</div>
-                    <div class="text-wrap">
-                        <p class="fw-lighter">Điện thoại</p>
-                        <span class="fw-bold">036 378 5203</span>
-                    </div>
-                    <div class="text-wrap">
-                        <p class="fw-lighter">Email CSKH</p>
-                        <span class="fw-bold">customercare@utc2store.vn</span>
-                    </div>
-                    <div class="text-wrap">
-                        <p class="fw-lighter">Email công việc</p>
-                        <span class="fw-bold">business@utc2store.vn</span>
-                    </div>
-                    <div class="text-wrap">
-                        <p class="fw-lighter">Thứ Hai - Chủ Nhật</p>
-                        <span class="fw-bold">8h30 - 22h30</span>
-                    </div>
+                    @await Component.InvokeAsync("lienhe")
                 </div>
+
 
                 <div class="follow-us">
                     <div class="title fw-semibold">Hệ thống cửa hàng</div>
-                    <p class="fw-lighter">Hiện tại UTC2STORE chỉ hoạt động kinh doanh qua các kênh trực tuyến: Website, Facebook, Instagram, Shopee, Lazada & Tiktok shop</p>
-                    <div class="list-icon">
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-tiktok"></i>
-                        <i class="fa-brands fa-youtube"></i>
-                    </div>
+                    @await Component.InvokeAsync("footer2")
                 </div>
+              
+
             </div>
         </div>
     </footer>
     <script>
         loadcartcount();
-
         async function loadcartcount() {
-            console.log("text");
             try {
                 var response = await fetch(`/Cart/GetTotalItemInCart`);
                 if (response.status == 200) {
@@ -140,7 +103,6 @@
             }
         }
     </script>
-
 </body>
 
 <script link="~/js/site.js"></script>
