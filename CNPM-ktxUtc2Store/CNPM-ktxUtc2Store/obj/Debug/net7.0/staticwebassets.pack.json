@@ -1,491 +1,491 @@
 {
   "Files": [
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CNPM-ktxUtc2Store.bundle.scp.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CNPM-ktxUtc2Store.bundle.scp.css",
       "PackagePath": "staticwebassets\\CNPM-ktxUtc2Store.bundle.scp.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_product.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_product.css",
       "PackagePath": "staticwebassets\\css\\ad_product.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\css_cart.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\css_cart.css",
       "PackagePath": "staticwebassets\\css\\css_cart.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ctdh.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ctdh.css",
       "PackagePath": "staticwebassets\\css\\ctdh.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\layoutAdmin.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\layoutAdmin.css",
       "PackagePath": "staticwebassets\\css\\layoutAdmin.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\main.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\main.css",
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\orderpay.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\orderpay.css",
       "PackagePath": "staticwebassets\\css\\orderpay.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\repos_inven.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\repos_inven.css",
       "PackagePath": "staticwebassets\\css\\repos_inven.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\site.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\style.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\favicon.ico",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg",
       "PackagePath": "staticwebassets\\images\\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\1c629f78-17f5-4001-990a-9c8553c70ca2_2023-07-05.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\1c629f78-17f5-4001-990a-9c8553c70ca2_2023-07-05.png",
       "PackagePath": "staticwebassets\\images\\1c629f78-17f5-4001-990a-9c8553c70ca2_2023-07-05.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg",
       "PackagePath": "staticwebassets\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\3175ca50-1731-43f4-b039-1d1fc56f8767_2023-06-29.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\3175ca50-1731-43f4-b039-1d1fc56f8767_2023-06-29.png",
       "PackagePath": "staticwebassets\\images\\3175ca50-1731-43f4-b039-1d1fc56f8767_2023-06-29.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\4c4e5966-0820-4aa1-b85f-3a41f31b1700_DFS.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\4c4e5966-0820-4aa1-b85f-3a41f31b1700_DFS.jpg",
       "PackagePath": "staticwebassets\\images\\4c4e5966-0820-4aa1-b85f-3a41f31b1700_DFS.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\56d92ac3-d7f8-4b37-bb49-82d38d690f22_2023-06-06.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\56d92ac3-d7f8-4b37-bb49-82d38d690f22_2023-06-06.png",
       "PackagePath": "staticwebassets\\images\\56d92ac3-d7f8-4b37-bb49-82d38d690f22_2023-06-06.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\6606b5ae-6dd4-4221-8feb-139cb124985b_donam5.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\6606b5ae-6dd4-4221-8feb-139cb124985b_donam5.jpg",
       "PackagePath": "staticwebassets\\images\\6606b5ae-6dd4-4221-8feb-139cb124985b_donam5.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\75196e25-1d12-4779-aaf0-b97062afb947_2023-06-06.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\75196e25-1d12-4779-aaf0-b97062afb947_2023-06-06.png",
       "PackagePath": "staticwebassets\\images\\75196e25-1d12-4779-aaf0-b97062afb947_2023-06-06.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\76836c19-b37e-417a-8b7f-8327c3464109_vit.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\76836c19-b37e-417a-8b7f-8327c3464109_vit.jpg",
       "PackagePath": "staticwebassets\\images\\76836c19-b37e-417a-8b7f-8327c3464109_vit.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png",
       "PackagePath": "staticwebassets\\images\\9330642f-f14f-4a0b-965f-ae0c9d0f7d03_2023-06-29.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg",
       "PackagePath": "staticwebassets\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a50cb0af-14bf-48d8-a303-09a52f4cb796_2023-06-29.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a50cb0af-14bf-48d8-a303-09a52f4cb796_2023-06-29.png",
       "PackagePath": "staticwebassets\\images\\a50cb0af-14bf-48d8-a303-09a52f4cb796_2023-06-29.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
       "PackagePath": "staticwebassets\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\anhAdmin.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\anhAdmin.jpg",
       "PackagePath": "staticwebassets\\images\\anhAdmin.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao1.jpg",
       "PackagePath": "staticwebassets\\images\\ao1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao2.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao2.jpg",
       "PackagePath": "staticwebassets\\images\\ao2.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao3.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao3.jpg",
       "PackagePath": "staticwebassets\\images\\ao3.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao4.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao4.jpg",
       "PackagePath": "staticwebassets\\images\\ao4.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao5.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\ao5.jpg",
       "PackagePath": "staticwebassets\\images\\ao5.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\aonu1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\aonu1.jpg",
       "PackagePath": "staticwebassets\\images\\aonu1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\aonu2.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\aonu2.jpg",
       "PackagePath": "staticwebassets\\images\\aonu2.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\aonu3.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\aonu3.jpg",
       "PackagePath": "staticwebassets\\images\\aonu3.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\banner1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\banner1.jpg",
       "PackagePath": "staticwebassets\\images\\banner1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\banner2.webp",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\banner2.webp",
       "PackagePath": "staticwebassets\\images\\banner2.webp"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\banner3.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\banner3.jpg",
       "PackagePath": "staticwebassets\\images\\banner3.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\c6704767-9c2b-4944-9f18-5943aa79c25b_thanhnhu.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\c6704767-9c2b-4944-9f18-5943aa79c25b_thanhnhu.jpg",
       "PackagePath": "staticwebassets\\images\\c6704767-9c2b-4944-9f18-5943aa79c25b_thanhnhu.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\d4bb2c6d-92e9-4a51-97ec-5d85c3ee4062_vit.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\d4bb2c6d-92e9-4a51-97ec-5d85c3ee4062_vit.jpg",
       "PackagePath": "staticwebassets\\images\\d4bb2c6d-92e9-4a51-97ec-5d85c3ee4062_vit.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\default.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\default.jpg",
       "PackagePath": "staticwebassets\\images\\default.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam1.jpg",
       "PackagePath": "staticwebassets\\images\\donam1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam2.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam2.png",
       "PackagePath": "staticwebassets\\images\\donam2.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam3.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam3.jpg",
       "PackagePath": "staticwebassets\\images\\donam3.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam4.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam4.jpg",
       "PackagePath": "staticwebassets\\images\\donam4.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam5.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donam5.jpg",
       "PackagePath": "staticwebassets\\images\\donam5.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donu4.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donu4.jpg",
       "PackagePath": "staticwebassets\\images\\donu4.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donu5.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\donu5.jpg",
       "PackagePath": "staticwebassets\\images\\donu5.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png",
       "PackagePath": "staticwebassets\\images\\f845530a-e466-40d5-9b91-dca93db85f34_Ảnh chụp màn hình 2023-06-01 161831.png"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay1.jpg",
       "PackagePath": "staticwebassets\\images\\giay1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay2.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay2.jpg",
       "PackagePath": "staticwebassets\\images\\giay2.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay3.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay3.jpg",
       "PackagePath": "staticwebassets\\images\\giay3.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay4.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\giay4.jpg",
       "PackagePath": "staticwebassets\\images\\giay4.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\iphone-11.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\iphone-11.jpg",
       "PackagePath": "staticwebassets\\images\\iphone-11.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\may-chay-bo-dien-sakura-hq-666-1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\may-chay-bo-dien-sakura-hq-666-1.jpg",
       "PackagePath": "staticwebassets\\images\\may-chay-bo-dien-sakura-hq-666-1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\site.txt",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\site.txt",
       "PackagePath": "staticwebassets\\images\\site.txt"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\tuinu1.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\tuinu1.jpg",
       "PackagePath": "staticwebassets\\images\\tuinu1.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\tuinu4.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\tuinu4.jpg",
       "PackagePath": "staticwebassets\\images\\tuinu4.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\tuinu6.jpg",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\tuinu6.jpg",
       "PackagePath": "staticwebassets\\images\\tuinu6.jpg"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\PreImg.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\PreImg.js",
       "PackagePath": "staticwebassets\\js\\PreImg.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\js.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\js.js",
       "PackagePath": "staticwebassets\\js\\js.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\script.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\site.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Web\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\DaiHoc\\BTL\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
