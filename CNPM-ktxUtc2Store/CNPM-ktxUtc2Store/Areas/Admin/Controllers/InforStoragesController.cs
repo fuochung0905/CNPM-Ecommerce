@@ -16,10 +16,27 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
     public class InforStoragesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public InforStoragesController(ApplicationDbContext context)
+        public InforStoragesController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
+        }
+        private string uploadImage(InforStorage  model)
+        {
+            string uniqueFileName = string.Empty;
+            if (model.pictureLogo != null)
+            {
+                string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, "images/");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.pictureLogo.FileName;
+                string filePath = Path.Combine(uploadFoder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.pictureLogo.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
         }
 
         // GET: Admin/InforStorages
@@ -53,20 +70,16 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         {
             return View();
         }
-
-        // POST: Admin/InforStorages/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,namestorage,logo,linkfacbook,linkInstagram,linkyoutube,linktiktok")] InforStorage inforStorage)
+        public async Task<IActionResult> Create( InforStorage inforStorage)
         {
-            if (ModelState.IsValid)
-            {
+          
+                string uniqueFileName = uploadImage(inforStorage);
+
+                inforStorage.logo = uniqueFileName;
                 _context.Add(inforStorage);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             return View(inforStorage);
         }
 
@@ -85,39 +98,30 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
             return View(inforStorage);
         }
-
-        // POST: Admin/InforStorages/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,namestorage,logo,linkfacbook,linkInstagram,linkyoutube,linktiktok")] InforStorage inforStorage)
+        public async Task<IActionResult> Edit(int id,  InforStorage inforStorage)
         {
             if (id != inforStorage.Id)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            var infor = await _context.InforStorage.ToListAsync();
+            foreach (var item in infor)
             {
-                try
-                {
-                    _context.Update(inforStorage);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!InforStorageExists(inforStorage.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                item.namestorage = inforStorage.namestorage;
+                item.phonenumbershop=inforStorage.phonenumbershop;
+                item.emailwork = inforStorage.emailwork;
+                item.emailcskh= inforStorage.emailcskh;
+                item.timework= inforStorage.timework;
+                item.linkfacbook=inforStorage.linkfacbook;
+                item.linkInstagram=inforStorage.linkInstagram;
+                item.linkyoutube = inforStorage.linkyoutube;
+                item.linktiktok=inforStorage .linktiktok;
+                _context.InforStorage.Update(item);
+                await _context.SaveChangesAsync();
             }
+                
             return View(inforStorage);
         }
 

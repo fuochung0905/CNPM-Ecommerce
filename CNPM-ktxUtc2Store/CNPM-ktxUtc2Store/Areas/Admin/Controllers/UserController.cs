@@ -11,7 +11,6 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
-
         private readonly ApplicationDbContext _context;
         private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
@@ -27,6 +26,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             _httpContextAccessor = httpContextAccessor;
             _webHostEnvironment = webHostEnvironment;
         }
+    
         private string uploadImage(applicationUser model)
         {
             string uniqueFileName = string.Empty;
@@ -43,7 +43,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return uniqueFileName;
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -63,7 +63,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 await _usermanagement.AddToRoleAsync(applicationUser, Roles.Saler.ToString());
                 _context.applicationUsers.Add(applicationUser);
                 _context.SaveChanges(); 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "daskboard");
 
             }
            return Content("Thêm thất bại");

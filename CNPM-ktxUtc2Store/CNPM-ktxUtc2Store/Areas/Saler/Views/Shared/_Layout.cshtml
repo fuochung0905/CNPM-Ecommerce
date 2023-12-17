@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="~/css/ctdh.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="~/css/layoutAdmin.css">
+    <link rel="stylesheet" href="~/css/ad_product.css">
     
 
 </head>
@@ -46,7 +47,6 @@
                         <div class="title">
                             <div class="item-icon"><i class="bi bi-cart4"></i></div>
                             <h3>Quản lý danh mục</h3>
-
                         </div>
                         <div class="show"><i class="fa-solid fa-angle-up"></i></div>
                     </a>
@@ -65,9 +65,9 @@
                         <div class="show"><i class="fa-solid fa-angle-up"></i></div>
                     </a>
                     <ul class="submenu">
-                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý Banner</a></li>
-                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý Logo</a></li>
-                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Quản lý truyền thông</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/InforStorages">Thông tin cửa hàng</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/BannerStorages">Quản lý Banner</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/AdressStorages">Địa chỉ cửa hàng</a></li>
                     </ul>
                 </li>
                 <li class="item-menu">
@@ -80,19 +80,24 @@
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/orders">Thông tin đơn hàng</a></li>
-                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="#">Lịch sử đơn hàng</a></li>
-                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/User/Index">Quản lí người dùng</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/orders/history">Lịch sử đơn hàng</a></li>
                     </ul>
                 </li>
                 <li class="item-menu">
                     <a href="#">
                         <div class="title">
-                            <div class="item-icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <h3>Doanh số</h3>
+                            <div class="item-icon"><i class="bi bi-list-check"></i></div>
+                            <h3>Quản lý nhân viên</h3>
                         </div>
                         <div class="show"><i class="fa-solid fa-angle-up"></i></div>
                     </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/User">Thông tin nhân viên</a></li>
+                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/User">Thông tin người dùng</a></li>
+                        
+                    </ul>
                 </li>
+              
              
             </ul>
         </div>

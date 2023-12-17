@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
+using CNPM_ktxUtc2Store.Migrations;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -59,14 +60,16 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create( AdressStorage adressStorage)
         {
-            if (ModelState.IsValid)
+            var infor = await _context.InforStorage.ToListAsync();
+            foreach(var item in infor)
             {
-                var inforStorage = _context.InforStorage.Find(1);
-                adressStorage.InforStorage = inforStorage;
+                adressStorage.InforStorage = item;
+            }
+              
                 _context.Add(adressStorage);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            
+            
           
             return View(adressStorage);
         }

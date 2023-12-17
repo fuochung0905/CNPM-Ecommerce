@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using CNPM_ktxUtc2Store.Areas.Admin.dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
@@ -16,27 +17,15 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         {
             _context = context;
         }
-        public IActionResult Index( string SearchString, int? page)
+        public IActionResult Index()
         {
-            var listProduct = new List<product>();
-            if (SearchString != null)
-            {
-                page = 1;
-            }
-           
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                listProduct = _context.products.Where(n => n.productName.Contains(SearchString)).ToList();
-            }
-            else
-            {
-                listProduct = _context.products.ToList();
-            }
-         
-            int pageSize = 5;
-            int pageNumber = page ?? 1;
-            listProduct = listProduct.OrderByDescending(n => n.Id).ToList();
-            return View(listProduct.ToPagedList(pageNumber, pageSize));
+            dask dask = new dask();
+          int countnv= _context.Roles.Where(x=>x.Name=="Saler").Count();
+            dask.sonhanvien=countnv;
+            int countuser = _context.Roles.Where(x => x.Name == "User").Count();
+            dask.songuoidung=countuser;
+            return View(dask);
         }
+
     }
 }

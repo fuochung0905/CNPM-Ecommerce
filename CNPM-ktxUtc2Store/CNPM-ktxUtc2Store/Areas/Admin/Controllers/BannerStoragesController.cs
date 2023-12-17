@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
+using CNPM_ktxUtc2Store.Migrations;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -16,10 +17,27 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
     public class BannerStoragesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public BannerStoragesController(ApplicationDbContext context)
+        public BannerStoragesController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
+        }
+        private string uploadImage(BannerStorage model)
+        {
+            string uniqueFileName = string.Empty;
+            if (model.picture != null)
+            {
+                string uploadFoder = Path.Combine(_webHostEnvironment.WebRootPath, "images/");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.picture.FileName;
+                string filePath = Path.Combine(uploadFoder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.picture.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
         }
 
         // GET: Admin/BannerStorages
@@ -57,12 +75,17 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Bannerpicture,InforStorageId")] BannerStorage bannerStorage)
+        public async Task<IActionResult> Create( BannerStorage bannerStorage)
         {
             if (ModelState.IsValid)
             {
-                var inforStorage = _context.InforStorage.Find(1);
-                bannerStorage.InforStorage = inforStorage;
+                var infor = await _context.InforStorage.ToListAsync();
+                foreach (var item in infor)
+                {
+                    bannerStorage.InforStorage = item;
+                }
+                string uniqueFileName = uploadImage(bannerStorage);
+                bannerStorage.Bannerpicture = uniqueFileName;
                 _context.Add(bannerStorage);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

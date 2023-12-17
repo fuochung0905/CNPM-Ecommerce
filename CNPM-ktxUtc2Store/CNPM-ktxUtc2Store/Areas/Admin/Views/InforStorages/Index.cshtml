@@ -7,62 +7,70 @@
 
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.namestorage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.logo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.linkfacbook)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.linkInstagram)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.linkyoutube)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.linktiktok)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.namestorage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.logo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.linkfacbook)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.linkInstagram)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.linkyoutube)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.linktiktok)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+    <div>
+        <h4>InforStorage</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+              Tên cửa hàng
+            </dt>
+            <dd class="col-sm-10">
+             @item.namestorage
+            </dd>
+
+            <dt class="col-sm-2">
+              Số điện thoại
+            </dt>
+            <dd class="col-sm-10">
+                @item.phonenumbershop
+            </dd>
+            <dt class="col-sm-2">
+             Email
+            </dt>
+            <dd class="col-sm-10">
+                @item.emailwork
+            </dd>
+            <dt class="col-sm-2">
+               CSKH
+            </dt>
+            <dd class="col-sm-10">
+                @item.emailcskh
+            </dd>
+            <dt class="col-sm-2">
+                Thời gian hoạt động
+            </dt>
+            <dd class="col-sm-10">
+                @item.timework
+            </dd>
+            <dt class="col-sm-2">
+            Facbook
+            </dt>
+            <dd class="col-sm-10">
+             @item.linkfacbook
+            </dd>
+            <dt class="col-sm-2">
+                Instagram
+            </dt>
+            <dd class="col-sm-10">
+              @item.linkInstagram
+            </dd>
+            <dt class="col-sm-2">
+              Youtobe
+            </dt>
+            <dd class="col-sm-10">
+              @item.linkfacbook
+            </dd>
+            <dt class="col-sm-2">
+             Tiktok
+            </dt>
+            <dd class="col-sm-10">
+              @item.linktiktok
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@item?.Id">Chỉnh sửa thông tin</a> 
+    </div>
 }
-    </tbody>
-</table>
+   
