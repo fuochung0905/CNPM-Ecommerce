@@ -403,8 +403,10 @@ footer {
     .list-component-cate li a {
         padding: 5px 15px 5px;
     }
-.login-item img{
+.login-item img {
     border-radius: 50%;
+    width: 35px;
+    height: 35px;
 }
 #tooltip-login-wrap{
     position: relative;
@@ -423,11 +425,10 @@ footer {
     place-content: center;
     padding-left: 5px;
 }
-#tooltip-login-item{  
+#tooltip-login-item {
     position: absolute;
-    left:50%;
-    bottom:-130%;
-    transform: translateX(-50%);
+    left: 0;
+    top: 110%;
     background-color: lightblue;
     border-radius: 7px;
     width: 100%;
@@ -435,13 +436,12 @@ footer {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 #tooltip-login-item::before{
     content: '';    
     position: absolute;
-    left: 50%;
+    left: 10px;
     top:-20%;
     border: 10px solid;
     border-color: #0000 #0000 lightblue #0000;

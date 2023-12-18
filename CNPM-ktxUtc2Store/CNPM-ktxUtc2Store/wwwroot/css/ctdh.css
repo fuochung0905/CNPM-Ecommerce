@@ -328,9 +328,53 @@ img {
             border-color: transparent;
             color: #fff;
         }
-
-@media screen and (min-width: 992px) {
-    .card {
+.setting-wrap {
+    margin-top: 35px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+    .setting-wrap h2.title {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 26px;
+        line-height: 1;
+        margin-bottom: 14px;
+        text-transform: capitalize;
+        vertical-align: middle;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .setting-wrap .setting-box .nav-item .nav-link {
+        color: #e74c3c;
+    }
+    .setting-wrap .setting-box .nav-item .nav-link.active {
+        background-color: #e74c3c;
+        color:#fff;
+    }
+    .setting-wrap .setting-box .col-md-2 {
+        border-right: 1px solid #ccc;
+    }
+    .setting-wrap .setting-box .wrap-btn.save {
+        color: #fff;
+        background-color: #e74c3c;
+        border: 1px solid #e74c3c;
+        padding: 10px 20px;
+    }
+        .setting-wrap .setting-box .wrap-btn.save:hover {
+            filter: brightness(0.95);
+        }
+    .setting-wrap .setting-box input:focus {
+        box-shadow: unset;
+        border: 1px solid #e74c3c;
+    }
+    .setting-wrap .setting-box .up-img:focus {
+        box-shadow: unset;
+        border: unset;
+    }
+    @media screen and (min-width: 992px) {
+        .card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.5rem;
