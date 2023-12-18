@@ -26,7 +26,49 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             _httpContextAccessor = httpContextAccessor;
             _webHostEnvironment = webHostEnvironment;
         }
-    
+        public async Task<IActionResult> Saler()
+        {
+            UserDto userDto = new UserDto();
+           var Salerrolers=_context.Roles.Where(x=>x.Name=="Saler").ToList();
+            foreach(var item in Salerrolers)
+            {
+                foreach(var userrole in Salerrolers)
+                {
+                    var salers=await _context.UserRoles.Where(x=>x.RoleId==item.Id).ToListAsync();
+                  foreach(var user in salers)
+                    {
+                        var saler= await _context.Users.Where(x=>x.Id==user.UserId).ToListAsync();
+                        foreach(var i in saler)
+                        {
+                            userDto.Users.Add(i);
+                        }
+                    }
+                }
+            }
+            return View(userDto);
+        }
+        public async Task<IActionResult> user()
+        {
+            UserDto userDto = new UserDto();
+            var Salerrolers = _context.Roles.Where(x => x.Name == "User").ToList();
+            foreach (var item in Salerrolers)
+            {
+                foreach (var userrole in Salerrolers)
+                {
+                    var salers = await _context.UserRoles.Where(x => x.RoleId == item.Id).ToListAsync();
+                    foreach (var user in salers)
+                    {
+                        var saler = await _context.Users.Where(x => x.Id == user.UserId).ToListAsync();
+                        foreach (var i in saler)
+                        {
+                            userDto.Users.Add(i);
+                        }
+                    }
+                }
+            }
+            return View(userDto);
+        }
+
         private string uploadImage(applicationUser model)
         {
             string uniqueFileName = string.Empty;

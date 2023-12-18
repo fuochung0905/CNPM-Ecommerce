@@ -1,34 +1,37 @@
-﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.product>
-
+﻿@model CNPM_ktxUtc2Store.Areas.Admin.dto.productDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Trang chủ sản phẩm</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Thêm sản phẩm mới</a>
 </p>
-<form class="form-inline" asp-action="Index" method="get" >
-    <input class="form-control me-2"  type="search" placeholder="Search" name="name"aria-label="Search">
-    giá từ <input type="number" name="to" /> đến <input type="number" name="from" />
-    <button class="btn btn-outline-success" type="submit">Search</button>
-    
-</form>
+
 <div class="admin-product">
+    <div class="admin-product-name">   </div>
     <div class="admin-product-name">Tên SP</div>
     <div class="admin-product-image">Ảnh</div>
     <div class="admin-product-price">Giá</div>
     <div class="admin-product-discount">Giảm giá</div>
     <div class="admin-product-quanty">Số lượng</div>
+    <div class="admin-product-quanty">Kích thước</div>
+    <div class="admin-product-quanty">Màu</div>
     <div class="admin-product-descript">Mô tả</div>
     <div class="admin-product-controle">Thao tác</div>
 </div>
 <!------------------------------------------------------------------------------>
-@foreach (var item in Model) {
+@foreach (var item in Model.products) {
     <hr />
 <div class="admin-product">
+    <div>
+        <label>
+            <input asp-for="Id" type="radio"
+                    value="@item.Id"  />
+        </label>
+    </div>
     <div class="admin-product-name">
         @item.productName
     </div>
@@ -37,8 +40,6 @@
                 <i class="fa-solid fa-eye"></i>
                 <div class="show-img"><img src="/images/@item.imageUrl"></div>
         </div>
-            
-            
     </div>
     <div class="admin-product-price">
             @item.price
@@ -49,7 +50,33 @@
     <div class="admin-product-quanty">
             @item.qty_inStock
     </div>
-    <div class="admin-product-descript">
+        <div class="admin-product-quanty">
+            @foreach (var i in Model.productVariation)
+            {
+                if (i.productId == item.Id)
+                {
+                    @if (i.variation.name == "size")
+                    {
+                        @i.variation.value
+                    }
+                }
+            }
+        </div>
+        <div class="admin-product-quanty">
+            @foreach (var i in Model.productVariation)
+            {
+                if (i.productId == item.Id)
+                {
+                    @if (i.variation.name == "color")
+                    {
+                        @i.variation.value
+                    }
+                }
+            }
+        </div>
+
+       
+        <div class="admin-product-descript">
         <div class="admin-product-descript-tooltip">
                 <a class="hover-show-descript">Xem</a>
                 <div class="show-descript">

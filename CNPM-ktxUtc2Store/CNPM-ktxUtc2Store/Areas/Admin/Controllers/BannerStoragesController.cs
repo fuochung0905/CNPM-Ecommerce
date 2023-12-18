@@ -86,7 +86,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 _context.BannerStorage.Add(bannerStorage);
                 await _context.SaveChangesAsync();
            
-            return Content(bannerStorage.Bannerpicture);
+            return RedirectToAction("Index", "BannerStorages");
         }
 
         // GET: Admin/BannerStorages/Edit/5
