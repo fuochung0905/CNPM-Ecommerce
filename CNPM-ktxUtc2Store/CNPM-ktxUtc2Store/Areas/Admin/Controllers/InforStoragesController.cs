@@ -76,7 +76,6 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         {
           
                 string uniqueFileName = uploadImage(inforStorage);
-
                 inforStorage.logo = uniqueFileName;
                 _context.Add(inforStorage);
                 await _context.SaveChangesAsync();

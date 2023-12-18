@@ -69,29 +69,24 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/BannerStorages/Create
         public IActionResult Create()
         {
-       
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( BannerStorage bannerStorage)
+        public async Task<IActionResult> Create(BannerStorage bannerStorage)
         {
-            if (ModelState.IsValid)
-            {
-                var infor = await _context.InforStorage.ToListAsync();
+            string uniqueFileName = uploadImage(bannerStorage);
+            bannerStorage.Bannerpicture = uniqueFileName;
+            var infor = await _context.InforStorage.ToListAsync();
                 foreach (var item in infor)
                 {
                     bannerStorage.InforStorage = item;
                 }
-                string uniqueFileName = uploadImage(bannerStorage);
-                bannerStorage.Bannerpicture = uniqueFileName;
-                _context.Add(bannerStorage);
+                _context.BannerStorage.Add(bannerStorage);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["InforStorageId"] = new SelectList(_context.InforStorage, "Id", "Id", bannerStorage.InforStorageId);
-            return View(bannerStorage);
+           
+            return Content(bannerStorage.Bannerpicture);
         }
 
         // GET: Admin/BannerStorages/Edit/5

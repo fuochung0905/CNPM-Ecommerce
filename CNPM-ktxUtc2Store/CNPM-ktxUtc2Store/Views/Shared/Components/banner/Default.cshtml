@@ -1,0 +1,10 @@
+﻿@model IEnumerable<BannerStorage>
+
+@foreach (var item in Model)
+{
+    <div class="swiper-slide">
+        <a class="img-banner" href="#"><img src="/images/@item.Bannerpicture" /></a>
+    </div>
+   
+}
+
