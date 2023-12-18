@@ -127,7 +127,7 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account.Manage
            
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            StatusMessage = "Cập nhật thành công !!";
             return RedirectToPage();
         }
     }
