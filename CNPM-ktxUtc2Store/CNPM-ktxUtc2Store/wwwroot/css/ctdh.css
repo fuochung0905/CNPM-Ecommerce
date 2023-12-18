@@ -9,9 +9,11 @@
 }
 .detail-card-wrapper {
     max-width: 100%;
-    padding: 2%;
+    margin-top: 50px;
 }
-
+    .detail-card-wrapper .card {
+        padding: 10px 25px;
+    }
 img {
     width: 100%;
     display: block;
@@ -54,25 +56,87 @@ img {
 .product-content {
     padding: 2rem 1rem;
 }
-
-.product-title {
-    font-size: 3rem;
-    text-transform: capitalize;
-    font-weight: 700;
-    position: relative;
-    color: #12263a;
-    margin: 1rem 0;
-}
-
-
-.product-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 80px;
-    background: #12263a;
+    .product-content .product-detail .box-detail p.title {
+        padding: 0;
+        color: #12263a;
+        font-size: 16px;
+        opacity: 1;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    .product-content .product-detail .box-detail .item-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+        .product-content .product-detail .box-detail .item-detail input {
+            opacity: 0;
+            width: 0;
+            position: absolute;
+        }
+        .product-content .product-detail .box-detail .item-detail label {
+            padding: 8px 20px;
+            line-height: 1;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+            .product-content .product-detail .box-detail .item-detail label:hover {
+                border: 1px solid #e74c3c;
+                color: #e74c3c;
+            }
+        .product-content .product-detail .box-detail .item-detail input:checked ~ label {
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+        }
+    .product-content .product-detail .box-detail.amount{
+        display:flex;
+        align-items:center;
+    }
+    .product-content .product-detail .box-detail.amount h6 {
+        margin: 0;
+        margin-left: 10px;
+        font-size: 14px;
+        color: #a9a9a9;
+    }
+    .product-content .product-detail .get-product {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0px 50px 0px;
+    }
+            .product-content .product-detail .get-product .add {
+                color: #e74c3c;
+                border-color: #e74c3c;
+            }
+                .product-content .product-detail .get-product .add:hover {
+                    color: #fff;
+                }
+                    .product-content .product-detail .get-product .add:hover::after {
+                        background: #e74c3c;
+                        border-color: #e74c3c;
+                    }
+            .product-content .product-detail .get-product .buy {
+                background: #e74c3c;
+                border-color: #e74c3c;
+                color:#fff
+            }
+                .product-content .product-detail .get-product .buy:hover {
+                    filter: brightness(0.95);
+                }
+                .product-title {
+                    font-size: 28px;
+                    text-transform: capitalize;
+                    font-weight: 700;
+                    position: relative;
+                    color: #12263a;
+                    margin: 10px 0px;
+                }
+.product-describe h3 {
+    font-size: 20px;
+    margin: 10px 0px;
+    background: #cccccc57;
+    padding: 5px;
 }
 
 .product-link {
@@ -104,7 +168,7 @@ img {
 .product-price {
     margin: 1rem 0;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .product-price span {
@@ -244,26 +308,26 @@ img {
 
 }
 
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    color: #000;
-    border: 1px solid #000;
-    margin: 0 0.2rem;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 0.8rem;
-    transition: all 0.5s ease;
-}
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        color: #e74c3c;
+        border: 1px solid #e74c3c;
+        margin: 0 0.2rem;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 0.8rem;
+        transition: all 0.5s ease;
+    }
 
-.social-links a:hover {
-    background: #000;
-    border-color: transparent;
-    color: #fff;
-}
+        .social-links a:hover {
+            background: #e74c3c;
+            border-color: transparent;
+            color: #fff;
+        }
 
 @media screen and (min-width: 992px) {
     .card {

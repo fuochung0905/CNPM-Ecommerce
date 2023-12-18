@@ -28,8 +28,13 @@ namespace CNPM_ktxUtc2Store.Data
             
             var context = service.GetService<ApplicationDbContext>();
 
-            context.InforStorage.Add(inforStorage);
-            context.SaveChanges();
+            var infor=context.InforStorage.Where(x=>x.namestorage==inforStorage.namestorage).FirstOrDefault();   
+            if(infor==null)
+            {
+                context.InforStorage.Add(inforStorage);
+                context.SaveChanges();
+            }
+           
         }
         public static async Task SeedRoleAndAdmin(IServiceProvider service)
         {
