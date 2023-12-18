@@ -8,7 +8,29 @@ namespace CNPM_ktxUtc2Store.Data
 {
     public class DbSeeder
     {
+       
+      
 
+        public static async Task SeedInfor(IServiceProvider service)
+        {
+
+            InforStorage inforStorage= new InforStorage();
+            inforStorage.namestorage = "UTC2";
+            inforStorage.logo = "hihi";
+            inforStorage.phonenumbershop = "0399333643";
+            inforStorage.emailcskh = "6251071033@st.utc2.edu.vn";
+            inforStorage.emailwork = "phuochungnguyen.work@gmail.com";
+            inforStorage.timework="7:00-22:00";
+            inforStorage.linkfacbook = "https://facbook.com";
+            inforStorage.linkInstagram = "https://instagram.com";
+            inforStorage.linkyoutube = "https://youtobe.com";
+            inforStorage.linktiktok = "https://tiktok.com";
+            
+            var context = service.GetService<ApplicationDbContext>();
+
+            context.InforStorage.Add(inforStorage);
+            context.SaveChanges();
+        }
         public static async Task SeedRoleAndAdmin(IServiceProvider service)
         {
             // Seed Role

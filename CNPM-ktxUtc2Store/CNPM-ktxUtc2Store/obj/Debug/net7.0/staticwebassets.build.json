@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fS7aMSL01+ZOMBhh16I+bOValfZ8sd4vfnI5F659Df8=",
+  "Hash": "q4qTp2TlnhdLtGN+UbJEz3tsWgFTnbjxec7uRQJtmg0=",
   "Source": "CNPM-ktxUtc2Store",
   "BasePath": "_content/CNPM-ktxUtc2Store",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CNPM-ktxUtc2Store.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_daskboard.css",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "css/ad_daskboard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ad_daskboard.css"
     },
     {
       "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_product.css",
@@ -270,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg"
+    },
+    {
+      "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "images/29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg"
     },
     {
       "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",

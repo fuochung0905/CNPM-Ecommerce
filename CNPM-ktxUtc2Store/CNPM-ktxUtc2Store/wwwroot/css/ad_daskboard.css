@@ -1,0 +1,27 @@
+﻿body{
+    background-color: black;
+}
+.all-panel{
+    display:grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-evenly;
+    row-gap: 20px;
+}
+.statt-panel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    
+}
+    .statt-img{
+        width: 30%;
+    }
+    .statt-details{
+        display: flex;
+        width: 70%;
+        height: 100%;
+        flex-direction: column;
+
+    }

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\CNPM-ktxUtc2Store.bundle.scp.css"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_daskboard.css",
+      "PackagePath": "staticwebassets\\css\\ad_daskboard.css"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\css\\ad_product.css",
       "PackagePath": "staticwebassets\\css\\ad_product.css"
     },
@@ -55,6 +59,10 @@
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg",
       "PackagePath": "staticwebassets\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
+      "PackagePath": "staticwebassets\\images\\29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
