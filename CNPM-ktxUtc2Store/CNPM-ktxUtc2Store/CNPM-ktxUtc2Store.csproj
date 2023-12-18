@@ -47,6 +47,7 @@
   <ItemGroup>
     <Folder Include="Areas\Saler\Data\" />
     <Folder Include="Areas\Saler\Models\" />
+    <Folder Include="Data\TEST\" />
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
