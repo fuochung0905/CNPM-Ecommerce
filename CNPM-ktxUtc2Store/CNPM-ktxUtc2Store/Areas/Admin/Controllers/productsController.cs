@@ -67,6 +67,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             string uniqueFileName = uploadImage(product);
 
                 product.imageUrl= uniqueFileName;
+            product.soluongnhap = product.qty_inStock;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Create));

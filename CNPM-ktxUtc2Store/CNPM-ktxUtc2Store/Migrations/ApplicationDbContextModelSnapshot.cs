@@ -412,6 +412,9 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.Property<int>("qty_inStock")
                         .HasColumnType("int");
 
+                    b.Property<int>("soluongnhap")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("categoryId");
