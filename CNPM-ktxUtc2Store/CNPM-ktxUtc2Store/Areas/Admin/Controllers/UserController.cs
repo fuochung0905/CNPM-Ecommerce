@@ -11,7 +11,6 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
-
         private readonly ApplicationDbContext _context;
         private readonly UserManager<applicationUser> _usermanagement;
         private readonly IHttpContextAccessor _httpContextAccessor;
@@ -27,6 +26,49 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             _httpContextAccessor = httpContextAccessor;
             _webHostEnvironment = webHostEnvironment;
         }
+        public async Task<IActionResult> Saler()
+        {
+            UserDto userDto = new UserDto();
+           var Salerrolers=_context.Roles.Where(x=>x.Name=="Saler").ToList();
+            foreach(var item in Salerrolers)
+            {
+                foreach(var userrole in Salerrolers)
+                {
+                    var salers=await _context.UserRoles.Where(x=>x.RoleId==item.Id).ToListAsync();
+                  foreach(var user in salers)
+                    {
+                        var saler= await _context.Users.Where(x=>x.Id==user.UserId).ToListAsync();
+                        foreach(var i in saler)
+                        {
+                            userDto.Users.Add(i);
+                        }
+                    }
+                }
+            }
+            return View(userDto);
+        }
+        public async Task<IActionResult> user()
+        {
+            UserDto userDto = new UserDto();
+            var Salerrolers = _context.Roles.Where(x => x.Name == "User").ToList();
+            foreach (var item in Salerrolers)
+            {
+                foreach (var userrole in Salerrolers)
+                {
+                    var salers = await _context.UserRoles.Where(x => x.RoleId == item.Id).ToListAsync();
+                    foreach (var user in salers)
+                    {
+                        var saler = await _context.Users.Where(x => x.Id == user.UserId).ToListAsync();
+                        foreach (var i in saler)
+                        {
+                            userDto.Users.Add(i);
+                        }
+                    }
+                }
+            }
+            return View(userDto);
+        }
+
         private string uploadImage(applicationUser model)
         {
             string uniqueFileName = string.Empty;
@@ -43,7 +85,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return uniqueFileName;
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -63,7 +105,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 await _usermanagement.AddToRoleAsync(applicationUser, Roles.Saler.ToString());
                 _context.applicationUsers.Add(applicationUser);
                 _context.SaveChanges(); 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "daskboard");
 
             }
            return Content("Thêm thất bại");

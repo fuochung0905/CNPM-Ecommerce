@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "~/Areas/Saler/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Delete</h1>
@@ -19,10 +19,22 @@
             @Html.DisplayFor(model => model.createDate)
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.updateDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.updateDate)
+        </dd>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IsDelete)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IsDelete)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsComplete)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsComplete)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.status)

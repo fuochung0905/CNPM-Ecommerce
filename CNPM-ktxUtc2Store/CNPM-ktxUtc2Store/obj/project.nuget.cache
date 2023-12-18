@@ -289,12 +289,5 @@
     "C:\\Users\\huy26\\.nuget\\packages\\x.pagedlist.mvc.bootstrap4\\8.1.0\\x.pagedlist.mvc.bootstrap4.8.1.0.nupkg.sha512",
     "C:\\Users\\huy26\\.nuget\\packages\\x.pagedlist.mvc.core\\8.4.7\\x.pagedlist.mvc.core.8.4.7.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

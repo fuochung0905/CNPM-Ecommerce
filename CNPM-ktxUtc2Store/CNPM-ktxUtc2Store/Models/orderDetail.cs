@@ -16,6 +16,7 @@ namespace CNPM_ktxUtc2Store.Models
         public virtual order order { get; set;} 
         public int productId { get; set; }
         public virtual product product { get; set; }    
+        public string addressuer { get; set; }
    
 
     }

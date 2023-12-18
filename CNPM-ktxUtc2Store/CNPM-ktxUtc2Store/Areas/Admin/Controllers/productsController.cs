@@ -9,6 +9,7 @@ using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
 using X.PagedList;
+using CNPM_ktxUtc2Store.Areas.Admin.dto;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -27,12 +28,29 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         // GET: Admin/products
         public IActionResult Index(string name)
         {
+            productDto productDto = new productDto();
             var product = from p in _context.products.Where(x=>x.qty_inStock>0) select p;
+           
+            foreach(var item in product)
+            {
+                
+                productDto.products.Add(item);
+                var productvariation = _context.productVariations.Include(x=>x.variation).Where(x => x.productId == item.Id).ToList();
+                foreach (var i in productvariation)
+                {
+                    productDto.productVariation.Add(i);
+                }
+            }
             if (!string.IsNullOrEmpty(name))
             {
                     product = product.Where(x => x.productName.Contains(name) );
+                foreach (var item in product)
+                {
+                    productDto.products.Add(item);
+                }
+
             }
-            return View(product);
+            return View(productDto);
         }
         // GET: Admin/products/Details/5
         public IActionResult Details(int? id)
@@ -67,6 +85,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             string uniqueFileName = uploadImage(product);
 
                 product.imageUrl= uniqueFileName;
+            product.soluongnhap = product.qty_inStock;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Create));

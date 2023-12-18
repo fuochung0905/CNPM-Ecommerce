@@ -12,6 +12,7 @@ namespace CNPM_ktxUtc2Store.Models
         [NotMapped]
         [Display(Name = "choose image")]
         public IFormFile picture { get; set; }
+       
         public int InforStorageId { get; set; }
         public InforStorage InforStorage { get; set; }
     }

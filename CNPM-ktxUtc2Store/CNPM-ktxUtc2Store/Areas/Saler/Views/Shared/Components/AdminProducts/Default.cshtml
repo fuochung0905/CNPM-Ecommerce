@@ -1,0 +1,62 @@
+﻿@model IEnumerable<product>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Miêu tả
+            </th>
+            <th>
+                Giảm giá
+            </th>
+            <th>
+                Gía
+            </th>
+            <th>
+                ảnh
+            </th>
+
+            <th>
+                số lượng còn lại
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.productName
+                </td>
+                <td>
+                    @item.description
+                </td>
+                <td>
+                    @item.oldprice
+                </td>
+                <td>
+                    @item.price
+                </td>
+                <td>
+                    <img src="/images/@item.imageUrl">
+                </td>
+
+                <td>
+                    @item.qty_inStock
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="AddVariation" asp-route-id="@item.Id">Cập nhật biến thể</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

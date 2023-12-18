@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/daskboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcZGFza2JvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -194,6 +198,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/User/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/User/Saler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxTYWxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/User/user.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclx1c2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/variations/Create.cshtml]
@@ -380,38 +392,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/categories/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcY2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/categories/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcY2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/categories/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcY2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/categories/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcY2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcY2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/orders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3Ncb3JkZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -432,44 +412,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3Ncb3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/products/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NccHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/Shared/Components/AdminProducts/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5Qcm9kdWN0c1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/products/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NccHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/Shared/Components/admin/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcYWRtaW5cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/products/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NccHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/products/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NccHJvZHVjdHNcRWRpdC5jc2h0bWw=
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/products/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NccHJvZHVjdHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/variations/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcdmFyaWF0aW9uc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/variations/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcdmFyaWF0aW9uc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/variations/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcdmFyaWF0aW9uc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/variations/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcdmFyaWF0aW9uc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/variations/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcdmFyaWF0aW9uc1xJbmRleC5jc2h0bWw=
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2FsZXJcVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Saler/_ViewImports.cshtml]
@@ -578,6 +538,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/Components/Adress/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRyZXNzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/Components/banner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcYmFubmVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/Shared/Components/Categories/Default.cshtml]

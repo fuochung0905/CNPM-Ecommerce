@@ -1,0 +1,8 @@
+﻿@model applicationUser
+<div class="ava">
+    <img src="/images/@Model.profilePicture">
+</div>
+
+<a class="name" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+    <span id="username">@Model.fullname</span>
+</a>

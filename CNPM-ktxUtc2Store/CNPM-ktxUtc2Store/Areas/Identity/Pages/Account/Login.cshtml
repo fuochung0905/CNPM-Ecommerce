@@ -12,36 +12,31 @@
 
 <div style="display: flex; justify-content: center">
     <div class="containersignin">
-
-        <form id="account" method="post">
-            <h2>Login</h2>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-input ">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" username aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email" class="form-label">Email</label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-input ">
-                <input asp-for="Input.Password" class="form-control" id="password" autocomplete="current-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password" class="form-label">Password</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-
-            <div>
-                <button id="submit" type="submit" class="btsubmit">Đăng nhập</button>
-            </div>
-
-            <div>
-                <p>
+        <div class="form-wrap">
+            <form id="account" method="post">
+                <h2 class="title-form">Đăng nhập</h2>
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="body-form">
+                    <div class="form-input">
+                        <label asp-for="Input.Email" class="form-label">Email</label>
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="Email" required />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-input">
+                        <label asp-for="Input.Password" class="form-label">Password</label>
+                        <input asp-for="Input.Password" class="form-control" id="password" autocomplete="current-password" aria-required="true" placeholder="Password" required />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <button id="submit" type="submit" class="btsubmit">Đăng nhập</button>
+                    </div>
+                </div>
+                <div class="foot-form">
                     <a id="forgot-password" asp-page="./ForgotPassword">Quên mật khẩu</a>
-                </p>
-                <p>
-                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Đăng kí</a>
-                </p>
-
-            </div>
-        </form>
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Đăng ký</a>
+                </div>
+            </form>
+        </div>
     </div>
 
 </div>

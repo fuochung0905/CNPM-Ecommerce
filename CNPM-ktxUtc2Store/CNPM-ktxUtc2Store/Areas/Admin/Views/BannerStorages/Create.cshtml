@@ -1,29 +1,21 @@
-﻿@model CNPM_ktxUtc2Store.Models.BannerStorage
-
+﻿@model BannerStorage
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-
 }
-
-<h1>Create</h1>
 
 <h4>BannerStorage</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Bannerpicture" class="control-label"></label>
-                <input asp-for="Bannerpicture" class="form-control" />
-                <span asp-validation-for="Bannerpicture" class="text-danger"></span>
+                <label asp-for="picture"></label>
+                <input type="file" class="form-control" asp-for="picture" id="ChooseImg" />
             </div>
-            <div class="form-group">
-                <label asp-for="InforStorageId" class="control-label"></label>
-                <select asp-for="InforStorageId" class ="form-control" asp-items="ViewBag.InforStorageId"></select>
-            </div>
+           
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

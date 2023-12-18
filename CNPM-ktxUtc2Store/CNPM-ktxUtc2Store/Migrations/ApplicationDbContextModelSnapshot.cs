@@ -333,6 +333,10 @@ namespace CNPM_ktxUtc2Store.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("addressuer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("color")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -406,6 +410,9 @@ namespace CNPM_ktxUtc2Store.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("qty_inStock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("soluongnhap")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

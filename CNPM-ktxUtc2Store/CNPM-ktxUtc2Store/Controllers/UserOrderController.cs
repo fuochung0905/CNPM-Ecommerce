@@ -60,7 +60,13 @@ namespace CNPM_ktxUtc2Store.Controllers
                         using var transaction = _context.Database.BeginTransaction();
                         try
                         {
+                            var useradress = await _context.userAdresses.Include(x => x.adress).Where(x => x.isDefine == true).Where(x => x.applicationUserId == GetUserId()).ToListAsync();
                             var applicationUser = _context.applicationUsers.Find(userid);
+                            string address = "";
+                            foreach(var au in useradress)
+                            {
+                                address = au.adress.homeAdress + ", " + au.adress.villageAdress + ", " + au.adress.districAdress + au;
+                            }
                             var dathang = new order
                             {
                                 applicationUserId = userid,
@@ -81,6 +87,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                                 quantity = cartDetail.quantity,
                                 size = cartDetail.size,
                                 color = cartDetail.color,
+                                addressuer=address,
                                 unitPrice = product.price
                             };
                             _context.orderDetails.Add(CTDH);

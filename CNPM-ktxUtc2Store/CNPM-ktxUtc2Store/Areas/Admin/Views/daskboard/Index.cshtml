@@ -1,0 +1,83 @@
+﻿@model CNPM_ktxUtc2Store.Areas.Admin.dto.dask
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h4>Index</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+          Số nhân viên
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sonhanvien)
+        </dd>
+        <dt class="col-sm-2">
+           Số người dùng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.songuoidung)
+        </dd>
+         <dt class="col-sm-2">
+           Tổng nhập hàng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tongnhaphang)
+        </dd>
+        <dt class="col-sm-2">
+           Tổng doanh số
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tongdoanhso)
+        </dd>
+    </dl>
+
+
+    <h2>Những sản phẩm đã bán</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   Sản phẩm
+                </th>
+                <th>
+                    Tổng giá nhập
+                </th>
+                <th>
+                    Tổng doanh thu
+                </th>
+                <th>
+                  Số lượng đã bán
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.orderDetail)
+            {
+                @if (item.productId == item.product.Id)
+                {
+                    <tr>
+                        <td>
+                            @item.product.productName
+                        </td>
+
+                        <td>
+                            @(item.product.oldprice * item.product.soluongnhap)
+                        </td>
+                        <td>
+                            @(item.quantity* item.product.price)
+                        </td>
+                        <td>
+                            @(item.product.soluongnhap - item.product.qty_inStock)
+                        </td>
+
+                    </tr>
+                }
+               
+            }
+        </tbody>
+    </table>
+
+</div>
