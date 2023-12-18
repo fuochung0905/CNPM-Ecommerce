@@ -30,7 +30,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 int countuser = _context.UserRoles.Where(x => x.RoleId == role.Id).ToList().Count();
                 dask.songuoidung = countuser;
             }
-           var order=_context.orders.Include(x=>x.applicationUser).Include(x=>x.orderDetails).ThenInclude(o=>o.product).Where(x=>x.IsComplete).ToList();
+           var order=_context.orders.OrderByDescending(x=>x.Id).Include(x=>x.applicationUser).Include(x=>x.orderDetails).ThenInclude(o=>o.product).Where(x=>x.IsComplete == true).ToList();
             double tongdoanhthu = 0.0;
             foreach(var item in order)
             {
@@ -48,8 +48,44 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 gianhap = pr.oldprice * pr.soluongnhap + gianhap;
             }
             dask.tongnhaphang=gianhap;
+           
+            var month = _context.orders.Where(x => x.updateDate.Month == DateTime.Now.Month).Where(x => x.IsComplete==true).Include(x => x.applicationUser).Include(x => x.orderDetails).ThenInclude(o => o.product).ToList();
+           
+            double doanhthuthang = 0.0;
+            foreach (var item in month)
+            {
+              
+                var orderdetail = _context.orderDetails.Find(item.Id);
+                doanhthuthang = doanhthuthang + (orderdetail.unitPrice * orderdetail.quantity);
+               
+            }
+            dask.doanhthuthang = doanhthuthang;
+            var date = _context.orders.Where(x => x.updateDate.Day == DateTime.Now.Day).Where(x => x.IsComplete == true).Include(x => x.applicationUser).Include(x => x.orderDetails).ThenInclude(o => o.product).ToList();
+            double doanhthungay = 0.0;
+            foreach (var item in date)
+            {
+                var orderdetail = _context.orderDetails.Find(item.Id);
+                doanhthungay = doanhthungay + (orderdetail.unitPrice * orderdetail.quantity);
 
-          
+            }
+            dask.doanhthungay = doanhthungay;
+
+
+            var year = _context.orders.Where(x => x.updateDate.Year == DateTime.Now.Year).Where(x => x.IsComplete == true).Include(x => x.applicationUser).Include(x => x.orderDetails).ThenInclude(o => o.product).ToList();
+            double doanhthunam = 0.0;
+            foreach (var item in year)
+            {
+                var orderdetail = _context.orderDetails.Find(item.Id);
+                doanhthunam = doanhthunam + (orderdetail.unitPrice * orderdetail.quantity);
+
+            }
+            dask.doanhthunam = doanhthunam;
+
+
+            var donchoduyet = _context.orders.Include(x => x.orderDetails).Where(x => x.IsDelete ==false ).ToList();
+            int dem = donchoduyet.Count();
+            dask.donchoduyet = dem;
+
             return View(dask);
         }
     }

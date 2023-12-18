@@ -8,7 +8,7 @@ namespace CNPM_ktxUtc2Store.Models
     {
         [Key]
         public int Id { get; set; }
-        public DateTime createDate { get; set; } = DateTime.UtcNow;
+        public DateTime createDate { get; set; } = DateTime.Now;
         public DateTime updateDate { get; set; } 
         public bool IsDelete { get; set; }
         public bool IsComplete { get; set; }  
