@@ -12,6 +12,7 @@ namespace CNPM_ktxUtc2Store.Models
         public string? productName { get; set; }
         public string? description { get; set; }
         public double oldprice { get; set;}
+        
         public double price { get; set; }
         public int soluongnhap { get; set; }
         public string?  imageUrl { get; set;}

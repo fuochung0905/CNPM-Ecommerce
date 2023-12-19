@@ -6,19 +6,20 @@
 
 <h1>Trang chủ sản phẩm</h1>
 
-<p>
-    <a asp-action="Create">Thêm sản phẩm mới</a>
-</p>
 
+<div class="add-product">
+    <div class="add-product-1">
+        <a class="btn btn-primary" asp-action="Create"><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i>Thêm sản phẩm mới</a>
+    </div>
+
+</div>
 <div class="admin-product">
-    <div class="admin-product-name">   </div>
+    <div class="admin-product-select"></div>
     <div class="admin-product-name">Tên SP</div>
     <div class="admin-product-image">Ảnh</div>
     <div class="admin-product-price">Giá</div>
     <div class="admin-product-discount">Giảm giá</div>
-    <div class="admin-product-quanty">Số lượng</div>
-    <div class="admin-product-quanty">Kích thước</div>
-    <div class="admin-product-quanty">Màu</div>
+    <div class="admin-product-quanty">Số lượng</div> 
     <div class="admin-product-descript">Mô tả</div>
     <div class="admin-product-controle">Thao tác</div>
 </div>
@@ -26,7 +27,7 @@
 @foreach (var item in Model.products) {
     <hr />
 <div class="admin-product">
-    <div>
+    <div class="admin-product-select">
         <label>
             <input asp-for="Id" type="radio"
                     value="@item.Id"  />
@@ -50,7 +51,7 @@
     <div class="admin-product-quanty">
             @item.qty_inStock
     </div>
-        <div class="admin-product-quanty">
+       @*  <div class="admin-product-quanty">
             @foreach (var i in Model.productVariation)
             {
                 if (i.productId == item.Id)
@@ -73,7 +74,7 @@
                     }
                 }
             }
-        </div>
+        </div> *@
 
        
         <div class="admin-product-descript">
@@ -85,10 +86,8 @@
         </div>    
     </div>
     <div class="admin-product-controle">
-            <a asp-action="AddVariation" asp-route-id="@item.Id">Cập nhật biến thể</a> |
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
+            <a asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
     </div>
 </div>
 }

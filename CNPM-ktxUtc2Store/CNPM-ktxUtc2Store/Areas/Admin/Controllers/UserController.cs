@@ -94,17 +94,27 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         public async Task<IActionResult> Create(applicationUser applicationUser)
         {
             string uniqueFileName = uploadImage(applicationUser);
+            var nv = new applicationUser
+            {
+                fullname = applicationUser.fullname,
+                profilePicture = uniqueFileName,
+                UserName =applicationUser.UserName,
+                Email =applicationUser.Email,
+                PhoneNumber=applicationUser.PhoneNumber,
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true
 
-            applicationUser.profilePicture = uniqueFileName;
-            applicationUser.PhoneNumberConfirmed = true;
-            applicationUser.EmailConfirmed = true;
-            var userInDb = await _usermanagement.FindByEmailAsync(applicationUser.Email);
+
+            };
+
+            var userInDb = await _usermanagement.FindByEmailAsync(nv.Email);
+          
             if (userInDb == null)
             {
-                await _usermanagement.CreateAsync(applicationUser, "nhanvien@123");
-                await _usermanagement.AddToRoleAsync(applicationUser, Roles.Saler.ToString());
-                _context.applicationUsers.Add(applicationUser);
-                _context.SaveChanges(); 
+                await _usermanagement.CreateAsync(nv, "nhanvien@123");
+                await _usermanagement.AddToRoleAsync(nv, Roles.Saler.ToString());
+                 _context.applicationUsers.Add(nv);
+                _context.SaveChanges();
                 return RedirectToAction("Index", "daskboard");
 
             }

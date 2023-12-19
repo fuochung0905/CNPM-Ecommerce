@@ -10,6 +10,7 @@ using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
 using X.PagedList;
 using CNPM_ktxUtc2Store.Areas.Admin.dto;
+using System.Net.WebSockets;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -81,8 +82,13 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(product product)
+          
         {
-            string uniqueFileName = uploadImage(product);
+            if (product.price<=0 || product.oldprice<0 || product.oldprice> product.price)
+            {
+                return Content("Cần nhập đúng thông tin ");
+            }
+                string uniqueFileName = uploadImage(product);
 
                 product.imageUrl= uniqueFileName;
             product.soluongnhap = product.qty_inStock;
@@ -167,28 +173,15 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(product);
+            var pr = _context.products.Find(id);
+            pr.price = product.price;   
+            pr.description=product.description;
+            pr.productName=product.productName;
+            pr.oldprice=product.oldprice;
+            pr.qty_inStock=product.qty_inStock;
+                    _context.products.Update(pr);
                     await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!productExists(product.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
+          
             return View(product);
         }
 

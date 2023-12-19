@@ -28,7 +28,8 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             order.IsDelete = true;
             order.IsComplete= true;
             order.updateDate = DateTime.Now;
-            order.status.Id = 4;
+            var satus = _context.orderStatus.Find(4);
+            order.status = satus;
             _context.orders.Update(order);
             _context.SaveChanges();
             return RedirectToAction("Index", "orders");

@@ -125,13 +125,32 @@ input, select {
     .wrap-btn i::before {
         margin-bottom: 4px;
     }
-
-.logo a {
-    line-height: 1;
-    font-size: 30px;
-    color: #000;
-    font-weight: 700;
-}
+    .wrap-btn.m-color {
+        color: #e74c3c;
+        border-color: #e74c3c;
+    }
+        .wrap-btn.m-color:hover {
+            color: #fff;
+        }
+    .wrap-btn.m-color-full {
+        background: #e74c3c;
+        border-color: #e74c3c;
+        color: #fff;
+    }
+        .wrap-btn.m-color-full:hover {
+             filter: brightness(0.95);
+        }
+        .wrap-btn.m-color:hover::after {
+            color: #fff;
+            border-color: #e74c3c;
+            background: #e74c3c;
+        }
+    .logo a {
+        line-height: 1;
+        font-size: 30px;
+        color: #000;
+        font-weight: 700;
+    }
 
     .logo a span:first-child {
         margin-right: 5px;

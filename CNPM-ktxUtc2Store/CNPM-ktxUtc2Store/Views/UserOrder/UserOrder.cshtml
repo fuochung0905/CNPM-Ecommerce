@@ -3,7 +3,7 @@
 @{
     
 }
-<div style="width:90%; margin:auto" >
+<div class="container-web">
     @if (Model != null )
     {   
        
@@ -58,7 +58,7 @@
                         }
                     </table>
                 </div>
-                    <button style="padding:0 40%;" type="submit">Đặt hàng</button>
+                    <button class="wrap-btn m-color-full" type="submit">Đặt hàng</button>
                 </form>
         </div>
         <div class="order-complete-right">
@@ -99,7 +99,7 @@
                         <div class="order-conplete-end-ship"></div>
                         <div class="end-details">
                             <div class="item-all-price">
-                                <a>Tỏng tiền sản phẩm: </a>
+                                <a>Tổng tiền sản phẩm: </a>
                                 <a id="pay-item-price">00.000000</a>
                             </div>
                             <div class="item-ship-price">
@@ -120,10 +120,6 @@
                    
                 </div>
         </div>
-
-
-
-
             <div class="more-address">
                 
                     <div class="more-address-head">
@@ -133,7 +129,7 @@
                     <div class="more-address-list">
                         <form asp-area="" asp-controller="Adresses" asp-action="Index">
                             <a>@await Component.InvokeAsync("ListAdress")</a>
-                            <button type="submit">Chọn</button>
+                            <button class="btn btn-primary" type="submit">Chọn</button>
                         </form>
                     </div>
                 

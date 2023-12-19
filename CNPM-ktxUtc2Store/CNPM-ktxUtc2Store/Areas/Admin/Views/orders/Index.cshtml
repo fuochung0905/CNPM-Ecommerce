@@ -42,7 +42,11 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.orderList) {
+            @if (Model.orderList.Count == 0)
+            {
+                <h1 style="align-content: center;">TRỐNG</h1>
+            }
+            @foreach (var item in Model.orderList) {
         <tr>
             <td>
                 
