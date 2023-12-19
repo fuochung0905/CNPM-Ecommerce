@@ -20,13 +20,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="oldprice" class="control-label">Giá Gốc</label>
-                    <input asp-for="oldprice" class="form-control" />
+                    <label asp-for="oldprice" class="control-label" id="checkprice">Giá Nhập</label>
+                    <input asp-for="oldprice" class="form-control" min="1"/>
                     <span asp-validation-for="oldprice" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="price" class="control-label">Giá Đã Giảm</label>
-                    <input asp-for="price" class="form-control" />
+                    <label asp-for="price" class="control-label">Giá Bán</label>
+                    <input asp-for="price" class="form-control" min="1" />
                     <span asp-validation-for="price" class="text-danger"></span>
                 </div>
                 <div class="row">
@@ -68,4 +68,16 @@
 <div>
     <a asp-area="Admin" asp-controller="Home" asp-action="Index">Back to List</a>
 </div>
+<script>
+    document.getElementById('checkprice').addEventListener('input', function () {
+        // Lấy giá trị của input
+        var inputValue = this.value;
 
+        // Kiểm tra điều kiện phù hợp
+        if (inputValue < 0) {
+            console.log('Nội dung phù hợp.');
+        } else {
+            console.log('Nội dung không phù hợp.');
+        }
+    });
+</script>
