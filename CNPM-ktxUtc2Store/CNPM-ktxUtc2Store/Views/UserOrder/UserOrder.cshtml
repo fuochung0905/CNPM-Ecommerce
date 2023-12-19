@@ -120,10 +120,6 @@
                    
                 </div>
         </div>
-
-
-
-
             <div class="more-address">
                 
                     <div class="more-address-head">
@@ -133,7 +129,7 @@
                     <div class="more-address-list">
                         <form asp-area="" asp-controller="Adresses" asp-action="Index">
                             <a>@await Component.InvokeAsync("ListAdress")</a>
-                            <button type="submit">Chọn</button>
+                            <button class="btn btn-primary" type="submit">Chọn</button>
                         </form>
                     </div>
                 

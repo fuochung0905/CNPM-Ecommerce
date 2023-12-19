@@ -16,18 +16,21 @@
     justify-content: space-between;
     position:relative;
 }
-    .more-address{
-        position:absolute; 
-        z-index:1;
-        background-color: white;
-        height: 100%;
-        width: 30%;
-        right: -120%;
-        transform: translateX(-50%);
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
+.more-address {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    height: 100%;
+    width: 30%;
+    right: -120%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border: 1px solid red;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #888888;
+}
     
         .more-address-head{
             display: flex;
@@ -67,7 +70,7 @@
                 justify-content: space-between;
             }
             .address-detail-tail{
-
+               
             }
 
     .order-complete-detail{
