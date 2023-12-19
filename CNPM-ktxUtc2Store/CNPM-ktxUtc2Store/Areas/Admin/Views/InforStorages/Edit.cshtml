@@ -8,60 +8,60 @@
 }
 <h1>Edit</h1>
 
-<h4>InforStorage</h4>
+<h4>Thông tin cửa hàng</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" class="group-info">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="namestorage" class="control-label"></label>
+                <label asp-for="namestorage" class="control-label">Tên cửa hàng</label>
                 <input asp-for="namestorage" class="form-control" />
                 <span asp-validation-for="namestorage" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="phonenumbershop" class="control-label"></label>
+                <label asp-for="phonenumbershop" class="control-label">SĐT liên hệ</label>
                 <input asp-for="phonenumbershop" class="form-control" />
                 <span asp-validation-for="phonenumbershop" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="emailwork" class="control-label"></label>
+                <label asp-for="emailwork" class="control-label">Email liên hệ</label>
                 <input asp-for="emailwork" class="form-control" />
                 <span asp-validation-for="emailwork" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="emailcskh" class="control-label"></label>
+                <label asp-for="emailcskh" class="control-label">Email cskh</label>
                 <input asp-for="emailcskh" class="form-control" />
                 <span asp-validation-for="emailcskh" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="timework" class="control-label"></label>
+                <label asp-for="timework" class="control-label">Thời gian hoạt động</label>
                 <input asp-for="timework" class="form-control" />
                 <span asp-validation-for="timework" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="linkfacbook" class="control-label"></label>
+                <label asp-for="linkfacbook" class="control-label">Facebook</label>
                 <input asp-for="linkfacbook" class="form-control" />
                 <span asp-validation-for="linkfacbook" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="linkInstagram" class="control-label"></label>
+                <label asp-for="linkInstagram" class="control-label">Instagram</label>
                 <input asp-for="linkInstagram" class="form-control" />
                 <span asp-validation-for="linkInstagram" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="linkyoutube" class="control-label"></label>
+                <label asp-for="linkyoutube" class="control-label">Youtobe</label>
                 <input asp-for="linkyoutube" class="form-control" />
                 <span asp-validation-for="linkyoutube" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="linktiktok" class="control-label"></label>
+                <label asp-for="linktiktok" class="control-label">Tiktok</label>
                 <input asp-for="linktiktok" class="form-control" />
                 <span asp-validation-for="linktiktok" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group sp">
+                <input type="submit" value="Lưu" class="wrap-btn m-color" />
             </div>
         </form>
     </div>

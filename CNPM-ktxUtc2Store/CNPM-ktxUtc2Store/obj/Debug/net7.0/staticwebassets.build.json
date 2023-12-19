@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Sc95zd0Nu7IWoQ4aCXqnglB3dRt4xN607TWo94f0LSY=",
+  "Hash": "o3zYOrKGQOar/b9hL8vYcuWLtSg0hmGGLYTpp7MqNy8=",
   "Source": "CNPM-ktxUtc2Store",
   "BasePath": "_content/CNPM-ktxUtc2Store",
   "Mode": "Default",
@@ -304,6 +304,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\737f1d92-08bd-4e6b-912c-82eb679f607d_9a93bf4a-143c-4d08-8a32-f972e045c3d7_a4a9e914-e950-47cc-a365-2ed5fe66d942_donam5.jpg"
+    },
+    {
+      "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\88b8b19e-1e8d-438d-88b9-bb7bb9fde6db_default.jpg",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "images/88b8b19e-1e8d-438d-88b9-bb7bb9fde6db_default.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\88b8b19e-1e8d-438d-88b9-bb7bb9fde6db_default.jpg"
+    },
+    {
+      "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\8db9a8c6-1260-4983-838d-288c3a9510ff_banner3.jpg",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "images/8db9a8c6-1260-4983-838d-288c3a9510ff_banner3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\8db9a8c6-1260-4983-838d-288c3a9510ff_banner3.jpg"
     },
     {
       "Identity": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\99873925-43e9-4566-8e87-43b2397e9495_a4a9e914-e950-47cc-a365-2ed5fe66d942_donam5.jpg",

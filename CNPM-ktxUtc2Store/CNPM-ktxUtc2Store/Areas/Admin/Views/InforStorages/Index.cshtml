@@ -9,7 +9,7 @@
 
 @foreach (var item in Model) {
     <div>
-        <h4>InforStorage</h4>
+        <h4>Thông tin cửa hàng</h4>
         <hr />
         <dl class="row">
             <dt class="col-sm-2">
@@ -70,7 +70,8 @@
         </dl>
     </div>
     <div>
-        <a asp-action="Edit" asp-route-id="@item?.Id">Chỉnh sửa thông tin</a> 
+        <a asp-action="Edit" asp-route-id="@item?.Id"><button class="wrap-btn change">Chỉnh sửa thông tin</button> </a>
+        
     </div>
 }
    

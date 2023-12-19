@@ -8,26 +8,28 @@
 }
 <h1>Create</h1>
 
-<h4>AdressStorage</h4>
+<h4>Địa chỉ cửa hàng</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="NameAdress" class="control-label"></label>
+                
                 <input asp-for="NameAdress" class="form-control" />
                 <span asp-validation-for="NameAdress" class="text-danger"></span>
             </div>
+            
+            <div class="form-group box-btn">
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" placeholder="Địa chỉ" value="Lưu" class="wrap-btn m-color-full"/>   
             </div>
         </form>
+        <div>
+            <a asp-action="Index"><button class="wrap-btn m-color">Trở về</button></a>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
