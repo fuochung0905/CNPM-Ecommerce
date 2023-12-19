@@ -11,15 +11,19 @@
   <ItemGroup>
     <Compile Remove="Areas\Admin\Data\**" />
     <Compile Remove="Areas\Admin\Models\**" />
+    <Compile Remove="Controllers\test\**" />
     <Compile Remove="Data\Migrations\**" />
     <Content Remove="Areas\Admin\Data\**" />
     <Content Remove="Areas\Admin\Models\**" />
+    <Content Remove="Controllers\test\**" />
     <Content Remove="Data\Migrations\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
     <EmbeddedResource Remove="Areas\Admin\Models\**" />
+    <EmbeddedResource Remove="Controllers\test\**" />
     <EmbeddedResource Remove="Data\Migrations\**" />
     <None Remove="Areas\Admin\Data\**" />
     <None Remove="Areas\Admin\Models\**" />
+    <None Remove="Controllers\test\**" />
     <None Remove="Data\Migrations\**" />
   </ItemGroup>
 
@@ -47,7 +51,6 @@
   <ItemGroup>
     <Folder Include="Areas\Saler\Data\" />
     <Folder Include="Areas\Saler\Dto\" />
-    <Folder Include="Controllers\test\" />
     <Folder Include="Areas\Saler\Models\" />
     <Folder Include="Data\TEST\" />
     <Folder Include="Migrations\" />
