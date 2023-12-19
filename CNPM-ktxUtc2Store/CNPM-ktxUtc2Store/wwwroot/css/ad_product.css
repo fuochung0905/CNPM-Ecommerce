@@ -1,5 +1,21 @@
 ﻿body {
 }
+.add-product{
+    display: grid;
+    place-content: center;
+    height: 100px;
+    padding-top: 30px;
+}
+.add-product-1{
+    max-height: 30px;
+    background-color: deepskyblue;
+    display: grid;
+    place-content: center;
+    margin:10px;
+}
+.add-product-1:hover{
+    background-color: dodgerblue;
+}
 .admin-product{
     display: flex;
     flex-direction: row;

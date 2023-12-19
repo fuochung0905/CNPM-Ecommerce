@@ -192,6 +192,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\00ae3fe8-d5dc-4e4b-8360-93ea93238e02_giay4.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CNPM-ktxUtc2Store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CNPM-ktxUtc2Store</BasePath>
+      <RelativePath>images/00ae3fe8-d5dc-4e4b-8360-93ea93238e02_giay4.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\00ae3fe8-d5dc-4e4b-8360-93ea93238e02_giay4.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CNPM-ktxUtc2Store</SourceId>
@@ -208,6 +224,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\05b5f3d1-b25b-4658-b59d-6db981753cba_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CNPM-ktxUtc2Store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CNPM-ktxUtc2Store</BasePath>
+      <RelativePath>images/05b5f3d1-b25b-4658-b59d-6db981753cba_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\05b5f3d1-b25b-4658-b59d-6db981753cba_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CNPM-ktxUtc2Store</SourceId>
@@ -223,6 +255,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1e41552f-3a67-4464-b4df-0e910fe12c83_29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CNPM-ktxUtc2Store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CNPM-ktxUtc2Store</BasePath>
+      <RelativePath>images/1e41552f-3a67-4464-b4df-0e910fe12c83_29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1e41552f-3a67-4464-b4df-0e910fe12c83_29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg))">
       <SourceType>Package</SourceType>
@@ -255,6 +303,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\36394326-10ab-48f6-9408-5581bc56f3cd_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CNPM-ktxUtc2Store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CNPM-ktxUtc2Store</BasePath>
+      <RelativePath>images/36394326-10ab-48f6-9408-5581bc56f3cd_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\36394326-10ab-48f6-9408-5581bc56f3cd_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg))">
       <SourceType>Package</SourceType>
@@ -320,6 +384,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\7f8c0872-b71b-472d-bc45-c2b41e3f5cd9_default.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\862dc648-d33e-4a43-95cb-9123cf1ab2fc_giay3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CNPM-ktxUtc2Store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CNPM-ktxUtc2Store</BasePath>
+      <RelativePath>images/862dc648-d33e-4a43-95cb-9123cf1ab2fc_giay3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\862dc648-d33e-4a43-95cb-9123cf1ab2fc_giay3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\99f37342-2c1b-4496-bc41-91af1e8d1cd8_default.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CNPM-ktxUtc2Store</SourceId>
@@ -351,6 +431,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a1e2fffb-6d7a-4cbd-a0cc-33e7b731a193_banner3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CNPM-ktxUtc2Store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CNPM-ktxUtc2Store</BasePath>
+      <RelativePath>images/a1e2fffb-6d7a-4cbd-a0cc-33e7b731a193_banner3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a1e2fffb-6d7a-4cbd-a0cc-33e7b731a193_banner3.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg))">
       <SourceType>Package</SourceType>

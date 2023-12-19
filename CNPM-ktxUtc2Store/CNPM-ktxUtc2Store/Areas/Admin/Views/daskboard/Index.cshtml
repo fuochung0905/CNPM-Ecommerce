@@ -4,108 +4,135 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <div>
-    <h4>Index</h4>
-    <hr />
-    <div class="all-panel">
-        <div class="statt-panel">
-            <div class="statt-img" style="background-color: lightblue;">
-                <div>HAHAHAHA</div>
-            </div>
-            <div class="statt-details">
-                <div class="statt-details-1" style="background-color: red;">
-                    Số nhân viên
+    
+    
+    <div class="all">
+        <hr />
+        <div class="all-panel-1" >
+            <div class="statt-panel" style="background-color: #96D6FF">
+                <div class="statt-img">
+                    <i class="far fa-user-circle"></i>
                 </div>
-                <div class="statt-details-2" style="background-color: yellow;">
-                    @Html.DisplayFor(model => model.sonhanvien)
+                <div class="statt-details">
+                    
+                    <div class="statt-details-1">
+                        <h5>@Html.DisplayFor(model => model.sonhanvien)</h5>
+                    </div>
+                    <div class="statt-details-1">
+                        Nhân Viên
+                    </div>
+                </div>
+            </div>
+            <div class="statt-panel" style="background-color: #FFFFA9; ">
+                <div class="statt-img">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="statt-details">
+                    
+                    <div class="statt-details-1" >
+                        <h5>@Html.DisplayFor(model => model.songuoidung)</h5>
+                    </div>
+                    <div class="statt-details-1">
+                        Người Dùng
+                    </div>
+                </div>
+            </div>
+
+            <div class="statt-panel" style="background-color: #0063EC; color: white;">
+                <div class="statt-img">
+                    <i class="far fa-calendar-check"></i>
+                </div>
+                <div class="statt-details">
+                    <div class="statt-details-1">
+                        Tình Trạng Đơn
+                    </div>
+                    <div class="statt-details-2">
+                       <div>
+                           <span>Đang Chờ Duyệt: </span> <span>N/A</span>
+                       </div>
+                       <div>
+                           <span>Đã Thành Công: </span> <span>N/A</span>
+                       </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="statt-panel">
-            <div class="statt-img" style="background-color: lightblue;">
-                <div>HAHAHAHA</div>
-            </div>
-            <div class="statt-details">
-                <div class="statt-details-1" style="background-color: red;">
-                    Số người dùng
+        <hr />
+        <h4 style="text-align: center;">DOANH THU</h4>
+        <hr />
+        <div class="all-panel-2">
+            <div class="statt-panel" style="background-color: #68D69D; color: #401D83;">
+                <div class="statt-img">
+                    <i class="fas fa-cart-arrow-down"></i>
                 </div>
-                <div class="statt-details-2" style="background-color: yellow;">
-                    @Html.DisplayFor(model => model.songuoidung)
+                <div class="statt-details">
+                    <div class="statt-details-1">
+                        Tổng Hàng Đã Nhập
+                    </div>
+                    <div class="statt-details-2">
+                        <h5 style="font-size: 1.5em;">@Html.DisplayFor(model => model.tongdoanhso)</h5>
+                    </div>
                 </div>
             </div>
+            <div class="statt-panel" style="background-color: #FFD154; color: #002795;">
+                <div class="statt-img">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="statt-details">
+                    <div class="statt-details-1">
+                        Tổng Doanh Số Thu Được
+                    </div>
+                    <div class="statt-details-2">
+                        <h5 style="font-size: 1.5em;" >@Html.DisplayFor(model => model.tongdoanhso)</h5>
+                    </div>
+                </div>
+            </div>            
         </div>
-        
-        <div class="statt-panel">
-            <div class="statt-img" style="background-color: lightblue;">
-                <div>HAHAHAHA</div>
-            </div>
-            <div class="statt-details">
-                <div class="statt-details-1" style="background-color: red;">
-                    Tổng nhập hàng
+        <div class="all-panel-3">
+                <div class="statt-panel" style="background-color: #FFD154; color: #002795;">
+                    <div class="statt-img">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="statt-details">
+                        <div class="statt-details-1">
+                            Doanh Thu Hôm Nay
+                        </div>
+                        <div class="statt-details-2">
+                            <h5 style="font-size: 1.5em;">@Html.DisplayFor(model => model.tongdoanhso)</h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="statt-details-2" style="background-color: yellow;">
-                    @Html.DisplayFor(model => model.tongnhaphang)
+            
+            <div>
+                <div class="statt-panel" style="background-color: #FFD154; color: #002795;">
+                    <div class="statt-img">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="statt-details">
+                        <div class="statt-details-1">
+                            Doanh Thu Trong Tháng
+                        </div>
+                        <div class="statt-details-2">
+                            <h5 style="font-size: 1.5em;">@Html.DisplayFor(model => model.tongdoanhso)</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="statt-panel">
-            <div class="statt-img" style="background-color: lightblue;">
-                <div>HAHAHAHA</div>
-            </div>
-            <div class="statt-details">
-                <div class="statt-details-1" style="background-color: red;">
-                    Tổng doanh số
-                </div>
-                <div class="statt-details-2" style="background-color: yellow;">
-                    @Html.DisplayFor(model => model.tongdoanhso)
+            <div>
+                <div class="statt-panel" style="background-color: #FFD154; color: #002795;">
+                    <div class="statt-img">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="statt-details">
+                        <div class="statt-details-1">
+                            Doanh Thu TRong Năm
+                        </div>
+                        <div class="statt-details-2">
+                            <h5 style="font-size: 1.5em;">@Html.DisplayFor(model => model.tongdoanhso)</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <h2>Những sản phẩm đã bán</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                   Sản phẩm
-                </th>
-                <th>
-                    Tổng giá nhập
-                </th>
-                <th>
-                    Tổng doanh thu
-                </th>
-                <th>
-                  Số lượng đã bán
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.orderDetail)
-            {
-                @if (item.productId == item.product.Id)
-                {
-                    <tr>
-                        <td>
-                            @item.product.productName
-                        </td>
-
-                        <td>
-                            @(item.product.oldprice * item.product.soluongnhap)
-                        </td>
-                        <td>
-                            @(item.quantity* item.product.price)
-                        </td>
-                        <td>
-                            @(item.product.soluongnhap - item.product.qty_inStock)
-                        </td>
-
-                    </tr>
-                }
-               
-            }
-        </tbody>
-    </table>
-
 </div>

@@ -49,12 +49,24 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\00ae3fe8-d5dc-4e4b-8360-93ea93238e02_giay4.jpg",
+      "PackagePath": "staticwebassets\\images\\00ae3fe8-d5dc-4e4b-8360-93ea93238e02_giay4.jpg"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
       "PackagePath": "staticwebassets\\images\\0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\05b5f3d1-b25b-4658-b59d-6db981753cba_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg",
+      "PackagePath": "staticwebassets\\images\\05b5f3d1-b25b-4658-b59d-6db981753cba_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg",
       "PackagePath": "staticwebassets\\images\\0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\1e41552f-3a67-4464-b4df-0e910fe12c83_29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
+      "PackagePath": "staticwebassets\\images\\1e41552f-3a67-4464-b4df-0e910fe12c83_29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\27368b87-967c-4cfc-9ffb-4a2c97589684_2.jpg",
@@ -63,6 +75,10 @@
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
       "PackagePath": "staticwebassets\\images\\29e47220-48ec-4a21-a23b-0a3d40101e3c_0126125f-2ee0-453a-b622-ac7a17b53553_5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\36394326-10ab-48f6-9408-5581bc56f3cd_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg",
+      "PackagePath": "staticwebassets\\images\\36394326-10ab-48f6-9408-5581bc56f3cd_0e9e9999-e053-4b0a-8fd4-fb3e88a57026_giay1.jpg"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\5f8719f4-eec7-4961-89ce-e2935f229180_banner1.jpg",
@@ -81,12 +97,20 @@
       "PackagePath": "staticwebassets\\images\\7f8c0872-b71b-472d-bc45-c2b41e3f5cd9_default.jpg"
     },
     {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\862dc648-d33e-4a43-95cb-9123cf1ab2fc_giay3.jpg",
+      "PackagePath": "staticwebassets\\images\\862dc648-d33e-4a43-95cb-9123cf1ab2fc_giay3.jpg"
+    },
+    {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\99f37342-2c1b-4496-bc41-91af1e8d1cd8_default.jpg",
       "PackagePath": "staticwebassets\\images\\99f37342-2c1b-4496-bc41-91af1e8d1cd8_default.jpg"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg",
       "PackagePath": "staticwebassets\\images\\a1d97451-886a-451a-b2fd-3a7e0af4df8b_thanhnhu.jpg"
+    },
+    {
+      "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a1e2fffb-6d7a-4cbd-a0cc-33e7b731a193_banner3.jpg",
+      "PackagePath": "staticwebassets\\images\\a1e2fffb-6d7a-4cbd-a0cc-33e7b731a193_banner3.jpg"
     },
     {
       "Id": "C:\\BTL_ASPNET\\CNPM-Ecommerce\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\images\\a61a4897-8d78-423c-81de-b29d41ace641_2.jpg",
