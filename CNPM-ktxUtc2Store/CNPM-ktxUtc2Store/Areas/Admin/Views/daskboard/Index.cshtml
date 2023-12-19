@@ -4,6 +4,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <div>
+<<<<<<< HEAD
     
     
     <div class="all">
@@ -37,6 +38,107 @@
                     </div>
                 </div>
             </div>
+=======
+    <h4>Index</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+          Số nhân viên
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sonhanvien)
+        </dd>
+        <dt class="col-sm-2">
+           Số người dùng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.songuoidung)
+        </dd>
+         <dt class="col-sm-2">
+           Tổng nhập hàng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tongnhaphang)
+        </dd>
+        <dt class="col-sm-2">
+           Tổng doanh số
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tongdoanhso)
+        </dd>
+        <dt class="col-sm-2">
+           Doanh thu ngày
+        </dt>
+         <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.doanhthungay)
+        </dd>
+        <dt class="col-sm-2">
+           Doanh thu tháng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.doanhthuthang)
+        </dd>
+        <dt class="col-sm-2">
+           Doanh thu năm
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.doanhthunam)
+        </dd>
+        <dt class="col-sm-2">
+          Đơn chờ duyệt
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.donchoduyet)
+        </dd>
+    </dl>
+
+
+    <h2>Những sản phẩm đã bán</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   Sản phẩm
+                </th>
+                <th>
+                    Tổng giá nhập
+                </th>
+                <th>
+                    Tổng doanh thu
+                </th>
+                <th>
+                  Số lượng đã bán
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.orderDetail)
+            {
+                @if (item.productId == item.product.Id)
+                {
+                    <tr>
+                        <td>
+                            @item.product.productName
+                        </td>
+
+                        <td>
+                            @(item.product.oldprice * item.product.soluongnhap)
+                        </td>
+                        <td>
+                            @(item.quantity* item.product.price)
+                        </td>
+                        <td>
+                            @(item.product.soluongnhap - item.product.qty_inStock)
+                        </td>
+
+                    </tr>
+                }
+               
+            }
+        </tbody>
+    </table>
+>>>>>>> d21f92dc19f6b8a871005efc1c4d1ddf3ea8e0e7
 
             <div class="statt-panel" style="background-color: #0063EC; color: white;">
                 <div class="statt-img">

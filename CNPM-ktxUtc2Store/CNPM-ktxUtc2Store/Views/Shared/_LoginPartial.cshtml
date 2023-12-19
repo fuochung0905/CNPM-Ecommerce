@@ -11,14 +11,16 @@
         <div id="tooltip-login-item">
             @if (User.IsInRole("Admin"))
             {
-
                 <div class="menu-item">
                     <a class="nav-link " asp-area="Admin" asp-controller="daskboard" asp-action="Index">Quản lí </a>
                 </div>
             }
-            <div class="nav-link" href="/Identity/Account/Manage">
-                <span>Thông Tin Tài Khoản</span>
+            <div class="menu-item">
+                <a class="nav-link" href="/Identity/Account/Manage">
+                    <span>Thông Tin Tài Khoản</span>
+                </a>
             </div>
+            
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                 <button type="submit" class="nav-link btn btn-link text-dark">Đăng Xuất</button>
             </form>
