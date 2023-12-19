@@ -1,66 +1,128 @@
-﻿@model IEnumerable<CNPM_ktxUtc2Store.Models.order>
+﻿@model CNPM_ktxUtc2Store.Areas.Admin.dto.duyetDon
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<form asp-area="Admin" asp-controller="orders" asp-action="Index">
 
-<h1>Index</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    Tên người dùng
+                </th>
+                <th>
+                    Số điện thoại
+                </th>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.createDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.updateDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsDelete)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsComplete)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.applicationUser)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.createDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.updateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDelete)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsComplete)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.applicationUser.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                <th>
+                    Tên sản phẩm
+                </th>
+                <th>
+                    Biến thể
+                </th>
+                <th>
+                    Số lượng
+                </th>
+
+                <th>
+                    Thành tiền
+                </th>
+                <th>
+                    Địa điểm
+                </th>
+                <th>
+                    Ngày đặt hàng
+                </th>
+                <th>
+                    Trạng thái
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.orderList.Count == 0)
+            {
+                <h1 style="align-content: center;">TRỐNG</h1>
+            }
+            @foreach (var item in Model.orderList)
+            {
+                <tr>
+                    <td>
+
+                        <label>
+                            <input asp-for="Id" type="radio" value="@item.Id" />
+                        </label>
+
+                    </td>
+                    <td>
+                        @item.applicationUser.fullname
+                    </td>
+
+                    <td>
+                        @item.applicationUser.PhoneNumber
+                    </td>
+
+                    @foreach (var i in item.orderDetails)
+                    {
+                        <td>
+                            @i.product.productName
+                        </td>
+                        <td>
+                            @i.size @i.color
+                        </td>
+                        <td>
+                            @i.quantity
+                        </td>
+                        <td>
+                            @i.unitPrice
+                        </td>
+                        <td>
+                            @i.addressuer
+                        </td>
+                    }
+
+                    <td>
+                        @item.createDate
+                    </td>
+                    <td>
+                        @item.status.statusName
+                    </td>
+                    <td>
+                        @if (item.IsDelete == false && item.IsComplete == false)
+                        {
+                            <button style="padding:0 40%;" type="submit">Duyệt đơn </button>
+                        }
+                        @if (item.IsDelete == true && item.IsComplete == false)
+                        {
+                            <button style="padding:0 40%;" type="button" onclick="ordercomplete(@item.Id)">Đơn hàng đã giao </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</form>
+
+@section Scripts
+    {
+
+    <script>
+        async function ordercomplete(orderid) {
+            try {
+                var response = await fetch(`/Saler/orders/ordercomplete?orderId=${orderid}`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    console.log(result);
+                    console.log("complete");
+                    window.location.href = "#complete"
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+  }

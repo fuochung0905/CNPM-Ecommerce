@@ -11,7 +11,7 @@
         public double doanhthungay { get; set; }
         public double doanhthunam { get; set; }
         public int donchoduyet {  get; set; }
-
+        public int thanhcong { get; set; }
         public List<orderDetail> orderDetail { get; set; }=new List<orderDetail>();
         public List<order> order { get; set; } = new List<order>();
     }

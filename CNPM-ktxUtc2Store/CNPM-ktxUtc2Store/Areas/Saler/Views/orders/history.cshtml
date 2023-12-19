@@ -1,0 +1,83 @@
+﻿@model CNPM_ktxUtc2Store.Areas.Admin.dto.duyetDon
+
+@{
+    ViewData["Title"] = "history";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                Tên người dùng
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Biến thể
+            </th>
+            <th>
+                Số lượng
+            </th>
+
+            <th>
+                Thành tiền
+            </th>
+            <th>
+                Ngày đặt hàng
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.orderList)
+        {
+            <tr>
+                <td>
+                    @if (item.IsDelete == false)
+                    {
+                        <label>
+                            <input asp-for="Id" type="radio" value="@item.Id" />
+                        </label>
+                    }
+                </td>
+                <td>
+                    @item.applicationUser.fullname
+                </td>
+
+                <td>
+                    @item.applicationUser.PhoneNumber
+                </td>
+
+                @foreach (var i in item.orderDetails)
+                {
+                    <td>
+                        @i.product.productName
+                    </td>
+                    <td>
+                        @i.size @i.color
+                    </td>
+                    <td>
+                        @i.quantity
+                    </td>
+                    <td>
+                        @i.unitPrice
+                    </td>
+                }
+                <td>
+                    @item.createDate
+                </td>
+                <td>
+                    @item.status.statusName
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

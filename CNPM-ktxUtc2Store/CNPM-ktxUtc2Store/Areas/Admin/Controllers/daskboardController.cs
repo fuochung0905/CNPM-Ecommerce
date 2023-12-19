@@ -86,6 +86,9 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             int dem = donchoduyet.Count();
             dask.donchoduyet = dem;
 
+            var donthanhcong = _context.orders.Include(x => x.orderDetails).Where(x => x.IsComplete == true).ToList();
+            int dem1 = donthanhcong.Count();
+            dask.thanhcong = dem1;
             return View(dask);
         }
     }
