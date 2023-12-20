@@ -45,7 +45,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             var products = _context.products.ToList();
             double gianhap = 0.0;
             foreach(var pr in products) {
-                gianhap = pr.oldprice * pr.soluongnhap + gianhap;
+                gianhap = pr.oldprice.Value * pr.soluongnhap + gianhap;
             }
             dask.tongnhaphang=gianhap;
            

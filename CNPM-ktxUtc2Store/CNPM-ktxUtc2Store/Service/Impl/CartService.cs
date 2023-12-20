@@ -62,7 +62,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                         productId = productId,
                         shoppingCartId = cart.Id,
                         quantity = quantity,
-                        unitPrice=product.price,
+                        unitPrice=product.price.Value,
                         color= color,
                         size= size
                     };

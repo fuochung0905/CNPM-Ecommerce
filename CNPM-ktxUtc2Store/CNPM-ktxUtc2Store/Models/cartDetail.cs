@@ -12,6 +12,7 @@ namespace CNPM_ktxUtc2Store.Models
         public virtual shoppingCart shoppingCart { get; set; }
         public int productId { get; set; }
         public virtual product product { get; set; }
+
         public int quantity { get; set; }
         public double unitPrice { get; set; }
 
