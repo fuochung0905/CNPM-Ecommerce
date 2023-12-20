@@ -137,6 +137,9 @@ input, select {
         border-color: #e74c3c;
         color: #fff;
     }
+        .wrap-btn.m-color-full:hover {
+             filter: brightness(0.95);
+        }
         .wrap-btn.m-color:hover::after {
             color: #fff;
             border-color: #e74c3c;

@@ -1,10 +1,38 @@
 ﻿body {
     background-color: #fff;
 }
-
-.hidden-item-main-title {
-    display: none;
+.my-cart {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
 }
+    .my-cart h3 {
+        color: #e74c3c;
+        font-size: 24px;
+        font-weight: 600;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+    }
+    .my-cart .main-item-info h5 {
+        font-size: 18px;
+    }
+    .my-cart .main-item-info .btn-info {
+        outline: unset;
+        height: 30px;
+        width: 30px;
+        border-radius: 0px;
+        border-right: 0px;
+        background: #fff;
+        line-height: 30px;
+        padding: 0;
+    }
+    .my-cart .main-item-info .amount {
+        border: 1px solid #bfbfbf;
+    }
+    .hidden-item-main-title {
+        display: none;
+    }
 
 .img {
     max-width: 100px;
@@ -48,13 +76,15 @@
     place-content: center;
 }
 
-.btn-info {
-    width: 40px;
-}
+
 
 #item-soluong {
     width: 50px;
+    height: 30px;
     text-align: center;
+    padding: 0px;
+    border-right: 0px;
+    border-left: 0px;
 }
 
 .item-moneypay {
@@ -80,26 +110,27 @@
 .nav-show-allsell {
     position: sticky;
     bottom: 0;
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
     background-color: white;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid #ccc;
 }
 
-    .nav-show-allsell:before {
-        position: absolute;
-        content: "";
-        width: 100%;
-        top: -1.25rem;
-        height: 1.25rem;
-        background: linear-gradient(transparent,rgba(0,0,0,.06));
+
+    .nav-show-allsell .my-2 > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 15px;
     }
-
-.my-2 {
-    max-width: 400px;
-    display: grid;
-    place-content: center;
-    margin-right: 30px;
-    margin-left: 30px;
-}
+    .my-2 {
+        max-width: 400px;
+        display: grid;
+        place-content: center;
+        margin-right: 30px;
+        margin-left: 30px;
+    }

@@ -4,95 +4,105 @@
     ViewData["Title"] = "GetUserCart";
     //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<<<<<<< HEAD
    
         <div class="container-web">
     @if (Model != null && Model.shoppingCarts.cartDetails != null && Model.shoppingCarts.cartDetails.Count > 0)
             {
         <h3 style="margin: 30px 0px;"> Giỏ hàng của tôi</h3>
+=======
+<div class="container-web ">
+    <div class="my-cart">
+        @if (Model != null && Model.shoppingCarts.cartDetails != null && Model.shoppingCarts.cartDetails.Count > 0)
+        {
+            <h3><i class="bi bi-cart"></i> Giỏ hàng của tôi</h3>
+            <section class="main-item-info">
+                <h3 class="hidden-item-main-title">Item Info</h3>
+
+                <div class="item-img">
+
+                    <h5>Hình ảnh</h5>
+                </div>
+                <!--    -->
+                <div class="item-name-product">
+                    <h5>Sản phẩm</h5>
+                </div>
+                <!--    -->
+                <div class="item-money">
+                    <h5>Giá</h5>
+                </div>
+                <div class="item-money">
+                    <h5>Biến thể</h5>
+                </div>
+                <!--    -->
+                <div class="item-quantity">
+                    <h5>Số lượng</h5>
+                </div>
+                <!--    -->
+                <div class="item-moneypay">
+                    <h5>Tổng tiền</h5>
+                </div>
+                <!--    -->
+
+
+            </section>
+            @foreach (var result in Model.shoppingCarts.cartDetails)
+            {
+>>>>>>> 167e546de830b79c7aab9c424189fa86da0a08e5
                 <section class="main-item-info">
                     <h3 class="hidden-item-main-title">Item Info</h3>
 
+                    <!--    -->
                     <div class="item-img">
-
-                        <h5>Hình ảnh</h5>
+                        <img class="img" src="/images/@result.product.imageUrl">
                     </div>
                     <!--    -->
                     <div class="item-name-product">
-                        <h5>Sản phẩm</h5>
+                        <div class="item-name">
+                            <p>@result.product.productName</p>
+                        </div>
                     </div>
                     <!--    -->
                     <div class="item-money">
-                        <h5>Giá</h5>
+                        <p>@result.product.price  &nbsp;₫</p>
+
                     </div>
                     <div class="item-money">
-                        <h5>Biến thể</h5>
+                        <p>@result.color @result.size</p>
+
                     </div>
                     <!--    -->
                     <div class="item-quantity">
-                        <h5>Số lượng</h5>
+                        <a class="btn btn-info amount" href="/Cart/Remove?productId=@result.productId">-</a>
+                        <input id="item-soluong" class="amount" value="@result.quantity" type"number">
+                        <a class="btn btn-info amount" href="/Cart/AddItem?productId=@result.productId&&redirect=1 ">+</a>
                     </div>
                     <!--    -->
                     <div class="item-moneypay">
-                        <h5>Tổng tiền</h5>
+                        <p>@(result.product.price * result.quantity)  &nbsp;₫</p>
                     </div>
                     <!--    -->
-                   
 
                 </section>
-        @foreach (var result in Model.shoppingCarts.cartDetails)
-                {
-                    <section class="main-item-info">
-                        <h3 class="hidden-item-main-title">Item Info</h3>
-                  
-                        <!--    -->
-                        <div class="item-img">
-                            <img class="img" src="/images/@result.product.imageUrl">
-                        </div>
-                        <!--    -->
-                        <div class="item-name-product">
-                            <div class="item-name">
-                                <p>@result.product.productName</p>
-                            </div>
-                        </div>
-                        <!--    -->
-                        <div class="item-money">
-                            <p>@result.product.price</p>
 
-                        </div>
-                        <div class="item-money">
-                            <p>@result.color @result.size</p>
 
-                        </div>
-                        <!--    -->
-                        <div class="item-quantity">
-                            <a class="btn btn-info" href="/Cart/AddItem?productId=@result.productId&&redirect=1 ">+</a>
-                            <input id="item-soluong" value="@result.quantity" type"number">
-                            <a class="btn btn-info" href="/Cart/Remove?productId=@result.productId">-</a>
-                        </div>
-                        <!--    -->
-                        <div class="item-moneypay">
-                            <p>@(result.product.price * result.quantity)</p>
-                        </div>
-                        <!--    -->
-                       
-                    </section>
-
-              
-                }
-                <div class="nav-show-allsell">
-                    <div class="my-2">
-                        <div style="display: flex; flex-direction: row">
-                            <p style="display: grid;    place-content: center;">
-                        Tổng cộng( @Model.shoppingCarts.cartDetails.Count Sản Phẩm ):
-                            </p>
-                    <p style="place-content: center; color: orangered; font-size: 20px; padding-left: 5px;"> @(Model.shoppingCarts.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫ </p>
-                        </div>
-                    </div>
-            <a  asp-controller="UserOrder" asp-action="Userorder">Đặt hàng</a>
-                  
-                </div>
             }
-        </div>
+            <div class="nav-show-allsell">
+                <div class="my-2">
+                    <div>
+                        <p>
+                            Tổng cộng ( @Model.shoppingCarts.cartDetails.Count Sản Phẩm ):
+                        </p>
+                        <p style="place-content: center; color: orangered; font-size: 20px; padding-left: 5px;"> @(Model.shoppingCarts.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫ </p>
+                    </div>
+                </div>
+                <a asp-controller="UserOrder" asp-action="Userorder" class="wrap-btn m-color-full">Đặt hàng</a>
+
+            </div>
+        }
+    </div>
+    </div>
+       
 
 }
 
