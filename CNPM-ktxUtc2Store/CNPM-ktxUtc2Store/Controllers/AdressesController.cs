@@ -130,7 +130,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                 _context.userAdresses.Add(ua);
                 _context.SaveChanges();
                 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Userorder", "UserOrder");
             }
             return View(adress);
         }

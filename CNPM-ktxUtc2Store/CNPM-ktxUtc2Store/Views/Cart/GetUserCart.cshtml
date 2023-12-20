@@ -4,13 +4,12 @@
     ViewData["Title"] = "GetUserCart";
     //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-<<<<<<< HEAD
    
         <div class="container-web">
     @if (Model != null && Model.shoppingCarts.cartDetails != null && Model.shoppingCarts.cartDetails.Count > 0)
             {
         <h3 style="margin: 30px 0px;"> Giỏ hàng của tôi</h3>
-=======
+
 <div class="container-web ">
     <div class="my-cart">
         @if (Model != null && Model.shoppingCarts.cartDetails != null && Model.shoppingCarts.cartDetails.Count > 0)
@@ -48,7 +47,6 @@
             </section>
             @foreach (var result in Model.shoppingCarts.cartDetails)
             {
->>>>>>> 167e546de830b79c7aab9c424189fa86da0a08e5
                 <section class="main-item-info">
                     <h3 class="hidden-item-main-title">Item Info</h3>
 

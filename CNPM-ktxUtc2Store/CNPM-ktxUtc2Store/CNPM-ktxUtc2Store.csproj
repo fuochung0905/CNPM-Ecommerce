@@ -16,6 +16,7 @@
     <Compile Remove="Areas\Saler\Models\**" />
     <Compile Remove="Controllers\test\**" />
     <Compile Remove="Data\Migrations\**" />
+    <Compile Remove="Data\TEST\**" />
     <Content Remove="Areas\Admin\Data\**" />
     <Content Remove="Areas\Admin\Models\**" />
     <Content Remove="Areas\Saler\Data\**" />
@@ -23,6 +24,7 @@
     <Content Remove="Areas\Saler\Models\**" />
     <Content Remove="Controllers\test\**" />
     <Content Remove="Data\Migrations\**" />
+    <Content Remove="Data\TEST\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
     <EmbeddedResource Remove="Areas\Admin\Models\**" />
     <EmbeddedResource Remove="Areas\Saler\Data\**" />
@@ -30,6 +32,7 @@
     <EmbeddedResource Remove="Areas\Saler\Models\**" />
     <EmbeddedResource Remove="Controllers\test\**" />
     <EmbeddedResource Remove="Data\Migrations\**" />
+    <EmbeddedResource Remove="Data\TEST\**" />
     <None Remove="Areas\Admin\Data\**" />
     <None Remove="Areas\Admin\Models\**" />
     <None Remove="Areas\Saler\Data\**" />
@@ -37,6 +40,7 @@
     <None Remove="Areas\Saler\Models\**" />
     <None Remove="Controllers\test\**" />
     <None Remove="Data\Migrations\**" />
+    <None Remove="Data\TEST\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,7 +68,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\TEST\" />
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
