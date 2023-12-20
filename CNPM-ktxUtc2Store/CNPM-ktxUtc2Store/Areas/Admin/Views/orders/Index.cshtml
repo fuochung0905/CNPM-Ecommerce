@@ -11,22 +11,24 @@
         <tr>
             <th></th>
             <th>
-                Tên người dùng
+                Người Mua
             </th>
             <th>
-                Số điện thoại
+                SĐT
             </th>
           
             <th>
-                Tên sản phẩm
+               Sản Phẩm
             </th>
             <th>
-                Biến thể
+                Kích thước
+            </th>
+            <th>
+                Màu sắc
             </th>
             <th>
                 Số lượng
-            </th>
-                
+            </th>  
             <th>
                 Thành tiền
             </th>
@@ -38,7 +40,7 @@
             </th>
             <th>
                Trạng thái
-            <th></th>
+            
         </tr>
     </thead>
     <tbody>
@@ -69,13 +71,16 @@
                     @i.product.productName
                 </td>
                 <td>
-                    @i.size @i.color
+                    @i.size
                 </td>
+                <th>
+                    @i.color
+                </th>
                 <td>
                     @i.quantity
                 </td>
                 <td>
-                    @i.unitPrice
+                    @(i.unitPrice*i.quantity)
                 </td>
                 <td>
                     @i.addressuer

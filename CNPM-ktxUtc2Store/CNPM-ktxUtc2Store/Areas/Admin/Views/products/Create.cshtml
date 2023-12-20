@@ -5,10 +5,24 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="text-align: center;">Thêm</h2>
-<hr />
-<div class="row">
-    <div class="col-md-4" style="display: flex; flex-direction: column;">
+
+
+<div class="row" style="display: grid; justify-content: space-evenly; grid-template-columns: 80%; ">
+    <div class="" style="display: flex; flex-direction: column; background: #F8F8F8; border-radius: 10px;">
+        <div class="admin-product-head">
+            <div class="head-item">
+                <h5><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i> Thêm sản phẩm</h5>
+            </div>
+
+            <div class="head-item search-box">
+            </div>
+            <div class="head-item add-product">
+                <div class="add-product-1">
+                    <a class="wrap-btn  " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
+                </div>
+
+            </div>
+        </div>
         <form asp-action="Create" method="post" enctype="multipart/form-data">
            
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -30,7 +44,7 @@
                     <span asp-validation-for="price" class="text-danger"></span>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-8" style="width: 100%;">
                         <label asp-for="image">Ảnh Minh Họa</label>
                         <input type="file" class="form-control" asp-for="image" id="ChooseImg" />
                     </div>
@@ -48,26 +62,26 @@
                     <input asp-for="qty_inStock" class="form-control" min="1"/>
                     <span asp-validation-for="qty_inStock" class="text-danger"></span>
                 </div>
-            </div>
-            <div>
                 <div class="form-group">
                     <label asp-for="description" class="control-label">Mô Tả Sản Phẩm</label>
-                    <textarea asp-for="description" class="form-control" rows="30" style="width: 1000px;"></textarea>
+                    <textarea asp-for="description" class="form-control" rows="5" style="width: 100%;"></textarea>
                     @* <input asp-for="description" class="form-control" /> *@
                     <span asp-validation-for="description" class="text-danger"></span>
                 </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div style="display:flex ; justify-content: space-between; padding-top:10px; padding-bottom: 10px;">
+                <div class="form-group">
+                    <input type="submit" value="Lưu" class="wrap-btn " style="background-color:#F8F8F8" />
+                </div>
+                
             </div>
+          
         </form>
     </div>
 </div>
 
 
-<div>
-    <a asp-area="Admin" asp-controller="Home" asp-action="Index">Back to List</a>
-</div>
+
 <script>
     document.getElementById('checkprice').addEventListener('input', function () {
         // Lấy giá trị của input

@@ -5,50 +5,25 @@
 }
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p style="display: grid; place-content: center;">
+    <a class="wrap-btn m-color-full" asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-              Tên nhân viên
-            </th>
-    
-            <th>
-                SĐT
-            </th>
-            <th>
-                Tài khoản
-            </th>
-            <th>
-               Avata
-            </th>
+<div class="user-all-profile">
+    @foreach (var item in Model.Users)
+    {
+        <div class="user-profile">
+            <div class="img-hover">
+                <img src="/images/@item.profilePicture">
+            </div>
+            <div class="user-details">
+                <p>@item.fullname</p>
+                <p>@item.Email</p>
+                <p>@item.PasswordHash</p>
+                <p>@item.PhoneNumber</p>
+                
+            </div>
+        </div>
+    }
+</div>
 
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Users)
-        {
-            <tr>
-                <td>
-                   @item.fullname
-                </td>
-                <td>
-                    @item.PhoneNumber
-                </td>
-                <td>
-                    @item.Email
-                </td>
-                <td>
-                    <img src="/images/@item.profilePicture">
-                   
-                </td>
-                <td>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
 

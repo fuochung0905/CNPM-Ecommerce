@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\CNPM-ktxUtc2Store.props" />
-</Project>

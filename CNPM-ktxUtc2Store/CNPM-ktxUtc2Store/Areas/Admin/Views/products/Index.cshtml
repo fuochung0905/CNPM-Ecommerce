@@ -4,16 +4,38 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Trang chủ sản phẩm</h1>
 
 
-<div class="add-product">
-    <div class="add-product-1">
-        <a class="btn btn-primary" asp-action="Create"><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i>Thêm sản phẩm mới</a>
+<div class="admin-product-head">
+    <div class="head-item">
+        <h5><i class="far fa-clipboard"></i> Danh sách sản phẩm</h5>
     </div>
+    
+    <div class="head-item search-box">
+        <form class="form-inline" asp-area="" asp-controller="Home" asp-action="Index" method="get">
+            <div style="display: flex; flex-direction: row;">
+                <div class="">
+                    <input type="text" name="searchName" placeholder="Search">
+                </div>
+                <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+           
+        </form>
+       
+        
+    </div>
+    <div class="head-item add-product">
+        <div class="add-product-1">
+            <a class="btn btn-primary " asp-action="Create"><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i>Thêm</a>
+        </div>
 
+    </div>
 </div>
-<div class="admin-product">
+
+<div class="all">
+
+
+<div class="admin-product head-color">
     <div class="admin-product-select"></div>
     <div class="admin-product-name">Tên SP</div>
     <div class="admin-product-image">Ảnh</div>
@@ -27,7 +49,7 @@
 @foreach (var item in Model.products) {
     <hr />
 <div class="admin-product">
-    <div class="admin-product-select">
+        <div style="display: none;" class="admin-product-select">
         <label>
             <input asp-for="Id" type="radio"
                     value="@item.Id"  />
@@ -38,7 +60,7 @@
     </div>
     <div class="admin-product-image">
         <div class="hover-img">
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye txt-blue"></i>
                 <div class="show-img"><img src="/images/@item.imageUrl"></div>
         </div>
     </div>
@@ -79,15 +101,18 @@
        
         <div class="admin-product-descript">
         <div class="admin-product-descript-tooltip">
-                <a class="hover-show-descript">Xem</a>
+                <a class="hover-show-descript txt-blue">Xem</a>
                 <div class="show-descript">
                     @item.description
                 </div>
         </div>    
     </div>
     <div class="admin-product-controle">
-            <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
-            <a asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+            <div> <a class="btn btn-green btn-primary" asp-action="Edit" asp-route-id="@item.Id">Sửa</a></div>
+            
+            <div> <a class="btn btn-red btn-primary" asp-action="Delete" asp-route-id="@item.Id">Xóa</a></div>
+           
     </div>
 </div>
 }
+</div>

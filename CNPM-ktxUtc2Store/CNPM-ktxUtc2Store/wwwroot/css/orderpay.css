@@ -15,21 +15,24 @@
     flex-direction: row;
     justify-content: space-between;
     position:relative;
+    margin-top:30px;
 }
 .more-address {
     position: absolute;
     z-index: 1;
     background-color: white;
-    height: 100%;
+    height: 60%;
+    top: 45px;
+    border: unset;
     width: 30%;
-    right: -120%;
+    right: 17%;
     transform: translateX(-50%);
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease;
-    border: 1px solid red;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #888888;
+    box-shadow: 0 0 10px #888888;
 }
     
         .more-address-head{
@@ -55,12 +58,14 @@
     flex-direction: column;
     flex-basis: 70%;
     border-right: 1px solid lightgray;
+    padding-right:30px;
 }
-    .order-complete-address{
-        background-color: lightblue;
-        margin: 10px;
-        padding: 10px;
-    }
+.order-complete-address {
+    background-color: #e74c3c;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+}
         .address-detail{
    
         }
@@ -69,9 +74,22 @@
                  flex-direction: row;
                 justify-content: space-between;
             }
-            .address-detail-tail{
-               
-            }
+                .address-detail-head h4 {
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin: 0;
+                }
+#open-more-address {
+    cursor: pointer;
+    font-size: 14px;
+    line-height:24px;
+
+}
+    #open-more-address:hover{
+        text-decoration:underline;
+    }
+    .address-detail-tail {
+    }
 
     .order-complete-detail{
          
@@ -84,7 +102,7 @@
              flex-direction: row;
              padding: 5px;
              border: 1px solid lightgray;
-             max-width: 80%;
+             max-width: 100%;
          }
             .chosen-ship-detail{
                 display: flex;
@@ -95,15 +113,16 @@
     display: flex;
     flex-direction: column;
     flex-basis: 28%;
-    padding-top: 10px;
 }
     .order-complete-product{
          background-color: white;
     }
-        .order-complete-payment{
-            display:flex;
+        .order-complete-product h3{
+            font-size:24px;
+        }
+        .order-complete-payment {
+            display: flex;
             flex-direction: column;
-            padding:5px;
         }
             .chose-payment{
 
@@ -129,9 +148,11 @@
                 justify-content: space-between;
                 padding:7px;
             }
-            #item-ship-price{
-
-            }
+.item-end {
+    color: #e74c3c;
+}
+#item-ship-price {
+}
             #item-end {
                  background-color: red;
             }
