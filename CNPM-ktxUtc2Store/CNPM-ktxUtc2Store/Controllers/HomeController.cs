@@ -193,7 +193,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                         productId = id,
                         shoppingCartId = cart.Id,
                         quantity = model.quantity,
-                        unitPrice = product.price,
+                        unitPrice = product.price.Value,
                         color = model.color,
                         size = model.size
                     };

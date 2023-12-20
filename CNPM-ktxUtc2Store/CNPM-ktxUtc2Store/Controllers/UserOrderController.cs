@@ -88,7 +88,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                                 size = cartDetail.size,
                                 color = cartDetail.color,
                                 addressuer=address,
-                                unitPrice = product.price
+                                unitPrice = product.price.Value
                             };
                             _context.orderDetails.Add(CTDH);
                             _context.cartDetails.Remove(cartDetail);

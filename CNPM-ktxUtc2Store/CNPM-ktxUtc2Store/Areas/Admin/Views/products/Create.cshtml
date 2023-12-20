@@ -24,13 +24,14 @@
             </div>
         </div>
         <form asp-action="Create" method="post" enctype="multipart/form-data">
-           
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
              <div>
+                
                 <div class="form-group">
-                    <label asp-for="productName" class="control-label">Tên Sản Phẩm</label>
+                    <label class="control-label">Tên Sản Phẩm</label>
                     <input asp-for="productName" class="form-control" />
                     <span asp-validation-for="productName" class="text-danger"></span>
+                  
                 </div>
 
                 <div class="form-group">
@@ -64,7 +65,11 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="description" class="control-label">Mô Tả Sản Phẩm</label>
+<<<<<<< HEAD
                     <textarea asp-for="description" class="form-control" rows="5" style="width: 100%;"></textarea>
+=======
+                    <textarea asp-for="description" class="form-control" rows="4" style="width: 1000px;"></textarea>
+>>>>>>> b7a01142a47857c8260fe2bffd82e94511ab2d52
                     @* <input asp-for="description" class="form-control" /> *@
                     <span asp-validation-for="description" class="text-danger"></span>
                 </div>

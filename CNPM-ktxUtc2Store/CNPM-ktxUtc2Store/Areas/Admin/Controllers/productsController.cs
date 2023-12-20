@@ -82,19 +82,25 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(product product)
-          
         {
-            if (product.price<=0 || product.oldprice<0 || product.oldprice> product.price)
+            if (product.oldprice.HasValue && product.price.HasValue)
             {
-                return Content("Cần nhập đúng thông tin ");
+                if (product.oldprice.Value > product.price.Value)
+                {
+                    ModelState.AddModelError("", " Giá nhập nên bé hơn giá bán");
+                }
             }
-                string uniqueFileName = uploadImage(product);
-
-                product.imageUrl= uniqueFileName;
-            product.soluongnhap = product.qty_inStock;
+            if (ModelState.IsValid)
+            {
+                string uni=uploadImage(product);
+                product.imageUrl = uni;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Create));
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["categoryId"] = new SelectList(_context.categories, "Id", "Id", product.categoryId);
+            return View(product);
+
         }
         //Get Admin/product/AddVariation/5
         public  IActionResult AddVariation(int? id)
@@ -123,34 +129,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             ViewData["variationId"] = new SelectList(_context.variation.Where(x=>x.categoryId==product.categoryId), "Id", "value");
             return View(vm);  
         }
-        /*
-        [HttpPost]
-        public IActionResult AddVariation(int id, productVaritionCreateView vm)
-        {
-            string uniqueFileName = uploadImage(product);
-            product.imageUrl = uniqueFileName;
-            _context.Add(product);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Create));
-
-            product.imageUrl = uniqueFileName;
-            _context.Add(product);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-            var product = _context.products.Find(id);
-            foreach(var item in vm.selectVariation)
-            {
-                product.ProductVariations.Add(new productVariation
-                {
-                    variationId = Convert.ToInt32(item)
-                }); 
-            }
-            _context.products.Update(product);
-            _context.SaveChanges();
-
-            return RedirectToAction("Create");  
-
-        }*/
+       
         // GET: Admin/products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

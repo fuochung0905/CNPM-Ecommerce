@@ -16,6 +16,7 @@
     <Compile Remove="Areas\Saler\Models\**" />
     <Compile Remove="Controllers\test\**" />
     <Compile Remove="Data\Migrations\**" />
+    <Compile Remove="Data\TEST\**" />
     <Content Remove="Areas\Admin\Data\**" />
     <Content Remove="Areas\Admin\Models\**" />
     <Content Remove="Areas\Saler\Data\**" />
@@ -23,6 +24,7 @@
     <Content Remove="Areas\Saler\Models\**" />
     <Content Remove="Controllers\test\**" />
     <Content Remove="Data\Migrations\**" />
+    <Content Remove="Data\TEST\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
     <EmbeddedResource Remove="Areas\Admin\Models\**" />
     <EmbeddedResource Remove="Areas\Saler\Data\**" />
@@ -30,6 +32,7 @@
     <EmbeddedResource Remove="Areas\Saler\Models\**" />
     <EmbeddedResource Remove="Controllers\test\**" />
     <EmbeddedResource Remove="Data\Migrations\**" />
+    <EmbeddedResource Remove="Data\TEST\**" />
     <None Remove="Areas\Admin\Data\**" />
     <None Remove="Areas\Admin\Models\**" />
     <None Remove="Areas\Saler\Data\**" />
@@ -37,6 +40,7 @@
     <None Remove="Areas\Saler\Models\**" />
     <None Remove="Controllers\test\**" />
     <None Remove="Data\Migrations\**" />
+    <None Remove="Data\TEST\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +48,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="jquery" Version="3.7.1" />
+    <PackageReference Include="jquery.validation" Version="1.19.5" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.10" />
@@ -54,6 +60,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="microsoft.jquery.unobtrusive.validation" Version="4.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
     <PackageReference Include="X.PagedList" Version="8.4.7" />
     <PackageReference Include="X.PagedList.Mvc.Bootstrap4" Version="8.1.0" />
@@ -61,7 +68,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\TEST\" />
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
