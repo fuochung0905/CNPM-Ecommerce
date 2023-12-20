@@ -5,50 +5,29 @@
 }
 <h1>Index</h1>
 
-<p>
+@* <p>
     <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Tên nhân viên
-            </th>
-
-            <th>
-                SĐT
-            </th>
-            <th>
-                Tài khoản
-            </th>
-            <th>
-                Avata
-            </th>
-
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Users)
-        {
-            <tr>
-                <td>
-                    @item.fullname
-                </td>
-                <td>
-                    @item.PhoneNumber
-                </td>
-                <td>
-                    @item.Email
-                </td>
-                <td>
-                    <img src="/images/@item.profilePicture">
-
-                </td>
-                <td>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
+</p> *@
+<div class="user-all-profile">
+    @foreach (var item in Model.Users)
+    {
+        <div class="user-profile">
+            <div class="img-hover">
+                <img src="/images/@item.profilePicture">
+            </div>
+            <div class="user-details">
+                <p>@item.fullname</p>
+                <p>@item.Email</p>
+               
+                @if (item.PhoneNumber == null)
+                {
+                    <p>Chưa cập nhật</p>
+                }
+                else
+                {
+                    <p>@item.PhoneNumber</p>
+                }
+            </div>
+        </div>
+    }
+</div>

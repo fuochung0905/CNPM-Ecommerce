@@ -1,0 +1,38 @@
+﻿body {
+    background-color: #F8F8F8;
+}
+.user-all-profile{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-evenly;
+    row-gap: 15px;
+    column-gap: 3%;
+    padding-top: 20px;
+}
+.user-profile {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    background-color : white;
+}
+    .img-hover{
+        flex-basis: 40%;
+        
+    }
+        .img-hover img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    .user-details{
+        flex-basis: 60%;
+        display: grid;
+        place-content: center;
+        justify-content: space-evenly;
+    }
+        .user-profile p{
+            display: grid;
+            place-content: center;
+        }

@@ -65,7 +65,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                             string address = "";
                             foreach(var au in useradress)
                             {
-                                address = au.adress.homeAdress + ", " + au.adress.villageAdress + ", " + au.adress.districAdress + au;
+                                address = au.adress.homeAdress + ", " + au.adress.villageAdress + ", " + au.adress.districAdress ;
                             }
                             var dathang = new order
                             {

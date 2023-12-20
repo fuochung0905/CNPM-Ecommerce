@@ -1,0 +1,104 @@
+﻿.content-pl-tab{
+    position: relative;
+}
+
+.pl-tab {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+#content-pl-tab-all {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.phanloai{
+    display:flex;
+    justify-content: space-between;
+    width:40%;
+    flex-direction:row ;
+    height:50px;
+     margin-bottom:10px;
+    padding-right :5px;
+}
+    .phanloai .phanloai-item {
+        padding-right: 10px;
+        width: 200px;
+        display: grid;
+       justify-content: space-evenly;
+       
+    }
+.phanloai .hh {
+    display: grid;
+    place-content: center;
+    justify-content: space-evenly;
+    padding: 10px;
+  
+  
+}
+    .phanloai a:hover  {
+       background:red;
+       border: 1px solid black;
+       
+       border-radius: 5px;
+    }
+.admin-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80%;
+}
+
+
+
+
+.admin-order-user  {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-sdt {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-sp {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-size {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-sl {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-price {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-address {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-date {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}
+admin-order-option {
+    display: grid;
+    place-content: center;
+    flex-basis: 10%;
+}

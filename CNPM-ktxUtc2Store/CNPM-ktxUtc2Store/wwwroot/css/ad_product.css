@@ -1,17 +1,41 @@
-﻿body {
+﻿
+.all{
+   background:white;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding : 10px;
+    
 }
-.add-product{
+hr{
+    margin: 0.4rem 0;
+}
+.admin-product-head {
     display: grid;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    grid-template-columns: 30% 40% 30%;
     place-content: center;
-    height: 100px;
-    padding-top: 30px;
+    border-radius: 10px;
+    position: relative;
+    height: 60px;
+    background: white;
+}
+    .head-item{
+        display: grid;
+        place-content: center;
+        justify-content: space-evenly;
+    }
+.add-product{
+ 
+    height: 100%;
 }
 .add-product-1{
-    max-height: 30px;
-    background-color: deepskyblue;
+    height: 100%;
+    border-radius: 10px;
     display: grid;
     place-content: center;
-    margin:10px;
+   
 }
 .add-product-1:hover{
     background-color: dodgerblue;
@@ -20,11 +44,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 80%;
+
 }
 .admin-product-name{
     display: grid;
     place-content: center;
-    flex-basis: 10%;
+    flex-basis: 20%;
 }
 .admin-product-image {
     display: grid;
@@ -55,12 +81,12 @@
 .admin-product-price {
     display: grid;
     place-content: center;
-    flex-basis: 15%;
+    flex-basis: 10%;
 }
 .admin-product-discount {
     display: grid;
     place-content: center;
-    flex-basis: 15%;
+    flex-basis: 10%;
 }
 .admin-product-quanty {
     display: grid;
@@ -107,5 +133,12 @@
 .admin-product-controle {
     display: grid;
     place-content: center;
+    grid-template-columns: 30% 30%;
     flex-basis: 20%;
+}
+.head-color{
+    background-color: aqua;
+}
+.m-color-full {
+    background: #e74c3c;
 }

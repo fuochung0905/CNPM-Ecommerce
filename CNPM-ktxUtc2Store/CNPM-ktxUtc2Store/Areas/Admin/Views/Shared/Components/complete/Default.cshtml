@@ -1,0 +1,96 @@
+﻿@model CNPM_ktxUtc2Store.Areas.Admin.dto.duyetDon
+
+<form asp-area="Admin" asp-controller="orders" asp-action="Index">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    Người Mua
+                </th>
+                <th>
+                    SĐT
+                </th>
+
+                <th>
+                    Sản Phẩm
+                </th>
+                <th>
+                    Kích thước
+                </th>
+                <th>
+                    Màu sắc
+                </th>
+                <th>
+                    Số lượng
+                </th>
+                <th>
+                    Thành tiền
+                </th>
+                <th>
+                    Địa điểm
+                </th>
+                <th>
+                    Ngày đặt hàng
+                </th>
+           
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.orderList.Count == 0)
+            {
+                <h1 style="align-content: center;">TRỐNG</h1>
+            }
+            @foreach (var item in Model.orderList)
+            {
+                <tr>
+                    <td>
+
+                        <label>
+                            <input asp-for="Id" type="radio" value="@item.Id" />
+                        </label>
+
+                    </td>
+                    <td>
+                        @item.applicationUser.fullname
+                    </td>
+
+                    <td>
+                        @item.applicationUser.PhoneNumber
+                    </td>
+
+                    @foreach (var i in item.orderDetails)
+                    {
+                        <td>
+                            @i.product.productName
+                        </td>
+                        <td>
+                            @i.size
+                        </td>
+                        <th>
+                            @i.color
+                        </th>
+                        <td>
+                            @i.quantity
+                        </td>
+                        <td>
+                            @(i.unitPrice * i.quantity)
+                        </td>
+                        <td>
+                            @i.addressuer
+                        </td>
+                    }
+
+                    <td>
+                        @item.createDate
+                    </td>
+                  
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</form>
