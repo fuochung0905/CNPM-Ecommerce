@@ -18,7 +18,7 @@
             </div>
             <div class="head-item add-product">
                 <div class="add-product-1">
-                    <a class="wrap-btn  " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
+                    <a class="wrap-btn " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
                 </div>
 
             </div>
@@ -56,7 +56,14 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="categoryId" class="control-label">Loại Sản Phẩm</label>
-                    <select asp-for="categoryId" class="form-control" asp-items="ViewBag.categoryId"></select>
+                    <div style="display:flex; justify-content:space-between">
+                        <select asp-for="categoryId" class="form-control" asp-items="ViewBag.categoryId" style="width:95%;"> </select>
+                        <div class="add-product-1">
+                            <a class="wrap-btn " style="background-color:#F8F8F8 ; height:100%;" href="/Admin/Categories"><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i></a>
+                        </div>
+                    </div>
+                   
+
                 </div>
                 <div class="form-group">
                     <label asp-for="qty_inStock" class="control-label">Số Lượng Nhập</label>
@@ -65,11 +72,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="description" class="control-label">Mô Tả Sản Phẩm</label>
-<<<<<<< HEAD
-                    <textarea asp-for="description" class="form-control" rows="5" style="width: 100%;"></textarea>
-=======
-                    <textarea asp-for="description" class="form-control" rows="4" style="width: 1000px;"></textarea>
->>>>>>> b7a01142a47857c8260fe2bffd82e94511ab2d52
+                    <textarea asp-for="description" class="form-control" rows="4" style="width: 100%;"></textarea>
                     @* <input asp-for="description" class="form-control" /> *@
                     <span asp-validation-for="description" class="text-danger"></span>
                 </div>

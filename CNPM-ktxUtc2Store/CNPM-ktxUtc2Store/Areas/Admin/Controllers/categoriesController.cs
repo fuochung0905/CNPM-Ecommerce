@@ -21,11 +21,17 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         }
 
         // GET: Admin/categories
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-              return _context.categories != null ? 
-                          View(await _context.categories.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.categories'  is null.");
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(category category)
+        {
+            _context.Add(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Admin/categories/Details/5

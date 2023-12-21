@@ -73,32 +73,6 @@
     <div class="admin-product-quanty">
             @item.qty_inStock
     </div>
-       @*  <div class="admin-product-quanty">
-            @foreach (var i in Model.productVariation)
-            {
-                if (i.productId == item.Id)
-                {
-                    @if (i.variation.name == "size")
-                    {
-                        @i.variation.value
-                    }
-                }
-            }
-        </div>
-        <div class="admin-product-quanty">
-            @foreach (var i in Model.productVariation)
-            {
-                if (i.productId == item.Id)
-                {
-                    @if (i.variation.name == "color")
-                    {
-                        @i.variation.value
-                    }
-                }
-            }
-        </div> *@
-
-       
         <div class="admin-product-descript">
         <div class="admin-product-descript-tooltip">
                 <a class="hover-show-descript txt-blue">Xem</a>
