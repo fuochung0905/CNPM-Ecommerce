@@ -1,0 +1,31 @@
+﻿@model IEnumerable<category>
+
+    @foreach (var item in Model)
+    {
+        <div style="display:flex">
+            <div>
+                @item.categoryName
+            </div>
+            <div>
+            @foreach(var i in item.variations)
+            {
+                @if (i.name == "size")
+                {
+                    <div>
+                        @i.value
+                    </div>
+                }
+                @if (i.name == "color")
+                {
+                    <div>
+                        @i.value
+                    </div>
+                }
+            }
+            </div>
+          
+        </div>
+        <hr />
+      
+    }
+

@@ -16,6 +16,21 @@
     left: 0;
     width: 100%;
 }
+.all-variation{
+    display:flex;
+    flex-direction:row;
+}
+.admin-category-color {
+    display: flex;
+    flex-direction: row;
+    margin-right: 2px;
+}
+.admin-category-size {
+    display: flex;
+    flex-direction:row;
+   margin-right:2px;
+}
+
 
 #content-pl-tab-all {
     display: block;
