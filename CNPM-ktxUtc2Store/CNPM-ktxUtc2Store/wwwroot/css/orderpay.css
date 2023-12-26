@@ -156,3 +156,28 @@
             #item-end {
                  background-color: red;
             }
+.address-all{
+    display: grid;
+    justify-content: space-evenly;
+}
+.address-form{
+   padding: 20px;
+   
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+    .address-details{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .address-details .control-lable{
+        flex-basis: 30%;
+        width: 200px;
+    }
+    .address-details .form-control{
+        flex-basis: 60%;
+    }

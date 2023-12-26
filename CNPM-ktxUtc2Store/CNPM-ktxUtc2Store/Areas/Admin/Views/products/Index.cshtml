@@ -35,13 +35,14 @@
 <div class="all">
 
 
-<div class="admin-product head-color">
+<div class="admin-product">
     <div class="admin-product-select"></div>
     <div class="admin-product-name">Tên SP</div>
     <div class="admin-product-image">Ảnh</div>
-    <div class="admin-product-price">Giá</div>
-    <div class="admin-product-discount">Giảm giá</div>
-    <div class="admin-product-quanty">Số lượng</div> 
+    <div class="admin-product-discount">Giá nhập</div>
+    <div class="admin-product-price">Giá bán</div>
+    
+    <div class="admin-product-quanty">Tồn kho</div> 
     <div class="admin-product-descript">Mô tả</div>
     <div class="admin-product-controle">Thao tác</div>
 </div>
@@ -64,41 +65,16 @@
                 <div class="show-img"><img src="/images/@item.imageUrl"></div>
         </div>
     </div>
-    <div class="admin-product-price">
+    <div class="admin-product-discount money">
+                @item.oldprice
+    </div>
+    <div class="admin-product-price money ">
             @item.price
     </div>
-    <div class="admin-product-discount">
-            @item.oldprice
-    </div>
+    
     <div class="admin-product-quanty">
             @item.qty_inStock
     </div>
-       @*  <div class="admin-product-quanty">
-            @foreach (var i in Model.productVariation)
-            {
-                if (i.productId == item.Id)
-                {
-                    @if (i.variation.name == "size")
-                    {
-                        @i.variation.value
-                    }
-                }
-            }
-        </div>
-        <div class="admin-product-quanty">
-            @foreach (var i in Model.productVariation)
-            {
-                if (i.productId == item.Id)
-                {
-                    @if (i.variation.name == "color")
-                    {
-                        @i.variation.value
-                    }
-                }
-            }
-        </div> *@
-
-       
         <div class="admin-product-descript">
         <div class="admin-product-descript-tooltip">
                 <a class="hover-show-descript txt-blue">Xem</a>

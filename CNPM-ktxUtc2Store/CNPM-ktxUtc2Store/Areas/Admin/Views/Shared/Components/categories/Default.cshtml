@@ -1,0 +1,80 @@
+﻿@model IEnumerable<category>
+<div class="all-categories">
+    <div class="admin-category-around category-head-color">
+        <div class="admin-category"></div>
+        <div class="admin-category-id">Mã loại</div>
+        <div class="admin-category-name">Tên loại</div>
+        <div class="admin-category-size">Kích thước</div>
+        <div class="admin-category-color">Màu sắc</div>
+        <div class="admin-category-controle">Thao tác</div>
+    </div>
+    @foreach (var item in Model)
+    {
+        <hr />
+        <div class="admin-category-around">
+            <div style="display: none;" class="admin-category">
+                <label>
+                    <input  type="checkbox"
+                           value="@item.Id" />
+                </label>
+            </div>
+            <div class="admin-category-id">
+                @item.Id
+            </div>
+            <div class="admin-category-name">
+                @item.categoryName
+            </div>
+            <div class="admin-category-size">
+                @foreach (var i in item.variations)
+                {
+                    @if (i.name == "size")
+                    {
+                        <div style="display:flex; margin-right:2px;">
+                            @i.value
+                            </div>
+                      
+                    }
+                  
+
+                }
+            </div>
+            <div class="admin-category-color">
+                @foreach (var i in item.variations)
+                {
+                    @if (i.name == "color")
+                    {
+                        <div style="display:flex; margin-right:2px;">
+                            @i.value
+                        </div>
+                    }
+
+
+                }
+            </div>
+            
+              
+           
+               
+          
+            <div class="admin-category-controle">
+
+                <div class="admin-category-controle-option">
+                    <div style="height:10px;"> 
+                        <a class="btn btn-green btn-primary" asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
+                    </div>
+
+                    <div style="height:10px;">
+                        <a class="btn btn-red btn-primary" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                    </div>
+                    <div style="height:10px;">
+                        <a class="btn btn-red btn-primary" asp-action="Variation" asp-route-id="@item.Id">Thể loại</a>
+                    </div>
+               
+                   
+            </div>
+
+            </div>
+        </div>
+       
+    }
+</div>

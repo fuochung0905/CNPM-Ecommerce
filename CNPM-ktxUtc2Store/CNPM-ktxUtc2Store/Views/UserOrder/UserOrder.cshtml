@@ -52,13 +52,13 @@
                                     <span>@result.color</span>
                                     </td>
                                 <td>@result.quantity</td>
-                                <td>@result.product.price</td>
-                                <td>@(result.unitPrice * result.quantity)</td>
+                                <td class="money">@result.product.price</td>
+                                <td class="money">@(result.unitPrice * result.quantity)</td>
                                 </tr>   
                         }
                     </table>
                 </div>
-                    <button class="wrap-btn m-color-full" type="submit">Đặt hàng</button>
+                    
                 </form>
         </div>
         <div class="order-complete-right">
@@ -115,6 +115,7 @@
                                 <a>Tổng thanh toán: </a>
                                 <a id="pay-all">00.000000</a>
                             </div>
+                            <button class="wrap-btn m-color-full" type="submit">Đặt hàng</button>
                         </div>
                     </div>
                    

@@ -107,7 +107,19 @@
 
 <script link="~/js/site.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.js"></script>
-
+<script>
+    function formatCurrency(value) {
+        return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+    }
+    function formatCurrency(value) {
+        return value.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+    }
+    var moneyElements = document.querySelectorAll(".money");
+    moneyElements.forEach(function (element) {
+        var originalContent = element.textContent || element.innerText;
+        element.innerHTML = formatCurrency(parseInt(originalContent));
+    });
+</script>
 </html>
 @RenderSection("scripts", required: false)
 @RenderSection("styles", required: false)

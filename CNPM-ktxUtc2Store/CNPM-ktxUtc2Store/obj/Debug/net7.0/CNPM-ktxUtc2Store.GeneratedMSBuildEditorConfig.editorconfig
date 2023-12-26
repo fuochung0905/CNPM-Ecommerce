@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/categories/Variation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcY2F0ZWdvcmllc1xWYXJpYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/daskboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcZGFza2JvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -180,6 +184,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcYWRtaW5cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Shared/Components/categories/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcY2F0ZWdvcmllc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Shared/Components/complete/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcY29tcGxldGVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -190,6 +198,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Shared/Components/process/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNccHJvY2Vzc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Shared/Components/variation/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmFyaWF0aW9uXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Areas/Admin/Views/Shared/_Layout.cshtml]

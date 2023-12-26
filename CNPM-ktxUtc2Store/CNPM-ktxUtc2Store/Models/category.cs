@@ -10,6 +10,6 @@ namespace CNPM_ktxUtc2Store.Models
         public int Id { get; set; }
         public string categoryName { get; set; }
         public virtual ICollection<product> products { get; set; }
-        public virtual ICollection<variation> variations { get; set; }  
+        public virtual List<variation> variations { get; set; } = new List<variation>();
     }
 }

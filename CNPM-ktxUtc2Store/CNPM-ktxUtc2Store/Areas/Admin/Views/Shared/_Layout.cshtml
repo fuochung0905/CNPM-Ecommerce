@@ -33,6 +33,15 @@
         <div class="admin-sidebar">
             <partial name="_LoginPartial" />
             <ul class="admin-menu">
+                <li class="item-menu">
+                    <a href="/">
+                        <div class="title">
+                            <div class="item-icon"><i class="fas fa-home"></i></div>
+                            <h3 href="/">Trang Chủ</h3>
+                        </div>
+                        <div class="show d-none"><i class="fa-solid fa-angle-up"></i></div>
+                    </a>
+                </li>
                <li class="item-menu">
                     <a href="/Admin/daskboard">
                         <div class="title">
@@ -52,9 +61,9 @@
                         <div class="show"><i class="fa-solid fa-angle-up"></i></div>
                     </a>
                         <ul class="submenu">
-                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/categories">Quản lý loại hàng</a></li>
+     
                         <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/products">Quản lý sản phẩm</a></li>
-                        <li class="submenu-item"><i class="bi bi-dot"></i><a href="/Admin/productVariations">Quản lý biến thể của loại</a></li>
+               
                         </ul>
                 </li>
                 <li class="item-menu">
@@ -111,6 +120,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
+        $(".item-menu").click(function () {
+            $(".item-menu").removeClass("activecolor");
+            $(this).addClass("activecolor");
+        });
+    });
+    $(document).ready(function () {
         $(".admin-content .navbar-icon").click(function(){
             $(".admin-sidebar").toggleClass("hide");
             $(".admin-content").toggleClass("show");
@@ -120,15 +135,7 @@
             $(this).children(".show").toggleClass("active");
         })
     })
-    $(function () {
-        // Định dạng số tiền
-        const money = 1234567890;
-        const formattedMoney = money.toLocaleString();
-
-        // Hiển thị số tiền
-        $("#money").html(formattedMoney);
-    });
-
+    
     const evwheels = document.getElementsByClassName('repos-item-img-container');
     for (const evwhell of evwheels) {
         evwhell.addEventListener("wheel", wheelf);
@@ -142,6 +149,14 @@
         }
 
     }
+    function formatCurrency(value) {
+        return value.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+    }
+    var moneyElements = document.querySelectorAll(".money");
+    moneyElements.forEach(function (element) {
+        var originalContent = element.textContent || element.innerText;
+        element.innerHTML = formatCurrency(parseInt(originalContent));
+    });
 </script>
 </html>
 @RenderSection("scripts", required: false)

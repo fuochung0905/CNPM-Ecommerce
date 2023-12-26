@@ -1,96 +1,71 @@
 ﻿@model CNPM_ktxUtc2Store.Areas.Admin.dto.duyetDon
 
-<form asp-area="Admin" asp-controller="orders" asp-action="Index">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>
-                    Người Mua
-                </th>
-                <th>
-                    SĐT
-                </th>
+<div class="order-all">
+    <div style="display: grid; justify-content: space-evenly; grid-template-columns: 100%;">
+        <div class="all" style="display: flex; flex-direction: column; background: #F8F8F8; border-radius: 10px;">
+            <div class="admin-orders order-head-color">
+                <div class="admin-order-select"></div>
+                <div class="admin-order-user"><h6>Người mua</h6></div>
+                <div class="admin-order-product"><h6>Sản phẩm</h6></div>
+                <div class="admin-order-size"><h6>Thể loại</h6></div>
 
-                <th>
-                    Sản Phẩm
-                </th>
-                <th>
-                    Kích thước
-                </th>
-                <th>
-                    Màu sắc
-                </th>
-                <th>
-                    Số lượng
-                </th>
-                <th>
-                    Thành tiền
-                </th>
-                <th>
-                    Địa điểm
-                </th>
-                <th>
-                    Ngày đặt hàng
-                </th>
-           
+                <div class="admin-order-sl"><h6>Số lượng</h6></div>
+                <div class="admin-order-price"><h6>Thành tiền</h6></div>
+                <div class="admin-order-address"><h6>Địa điểm</h6></div>
+                <div class="admin-order-date"><h6>Ngày đặt hàng</h6></div>
+                <div class="admin-order-option"><h6></h6></div>
+            </div>
+            <form asp-area="Admin" asp-controller="orders" asp-action="Index">
 
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model.orderList.Count == 0)
-            {
-                <h1 style="align-content: center;">TRỐNG</h1>
-            }
-            @foreach (var item in Model.orderList)
-            {
-                <tr>
-                    <td>
 
-                        <label>
-                            <input asp-for="Id" type="radio" value="@item.Id" />
-                        </label>
+                @if (Model.orderList.Count == 0)
+                {
+                    <h1 style="align-content: center;">TRỐNG</h1>
+                }
+                @foreach (var item in Model.orderList)
+                {
+                    <hr />
+                    <div class="admin-orders">
+                        <div class="admin-order-select">
+                            <label>
+                                <input asp-for="Id" type="radio" value="@item.Id" />
+                            </label>
+                        </div>
+                        <div class="admin-order-user">
+                            <h6>@item.applicationUser.fullname</h6>
+                            <h6>@item.applicationUser.PhoneNumber</h6>
+                        </div>
 
-                    </td>
-                    <td>
-                        @item.applicationUser.fullname
-                    </td>
+                        @foreach (var i in item.orderDetails)
+                        {
+                            <div class="admin-order-product"><h6>@i.product.productName</h6></div>
+                            <div class="admin-order-size">
+                                <h6>@i.size</h6>
+                                <h6>@i.color</h6>
+                            </div>
 
-                    <td>
-                        @item.applicationUser.PhoneNumber
-                    </td>
+                            <div class="admin-order-sl">  <h6>@i.quantity</h6></div>
+                            <div class="admin-order-price money">   <h6>@(i.unitPrice * i.quantity)</h6></div>
+                            <div class="admin-order-address">   <h6> @i.addressuer</h6></div>
+                            <div class="admin-order-date">  <h6>@item.createDate</h6> </div>
+                            <div class="admin-order-option">
+                                @if (item.IsDelete == false && item.IsComplete == false)
+                                {
+                                    <button style="padding:0 40%; background:#F8F8F8" type="submit">Duyệt </button>
+                                }
+                                @if (item.IsDelete == true && item.IsComplete == false)
+                                {
+                                    <button style="padding:0 40%;background:#F8F8F8" type="submit">Đã giao</button>
+                                }
 
-                    @foreach (var i in item.orderDetails)
-                    {
-                        <td>
-                            @i.product.productName
-                        </td>
-                        <td>
-                            @i.size
-                        </td>
-                        <th>
-                            @i.color
-                        </th>
-                        <td>
-                            @i.quantity
-                        </td>
-                        <td>
-                            @(i.unitPrice * i.quantity)
-                        </td>
-                        <td>
-                            @i.addressuer
-                        </td>
-                    }
+                            </div>
+                        }
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
 
-                    <td>
-                        @item.createDate
-                    </td>
-                  
-                   
-                </tr>
-            }
-        </tbody>
-    </table>
+</div>
 
-</form>

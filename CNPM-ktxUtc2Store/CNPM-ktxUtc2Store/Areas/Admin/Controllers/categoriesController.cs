@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
+using CNPM_ktxUtc2Store.Areas.Admin.dto;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -21,11 +22,17 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         }
 
         // GET: Admin/categories
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-              return _context.categories != null ? 
-                          View(await _context.categories.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.categories'  is null.");
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(category category)
+        {
+            _context.Add(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Admin/categories/Details/5
@@ -52,9 +59,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,categoryName")] category category)
@@ -82,10 +87,32 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
             return View(category);
         }
+        public IActionResult Variation(int? id)
+        {
+            var variation= _context.variation.Include(x=>x.category).Where(variation => variation.categoryId == id).ToList();
 
-        // POST: Admin/categories/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            variationdto variationdto = new variationdto();
+            foreach (var item in variation)
+            {
+                variationdto.categoryname = item.category.categoryName;
+                variationdto.variations.Add(item);
+            }
+            return View(variationdto);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Variation(int id ,variationdto variationdto)
+        {
+            variation variation = new variation();
+            var category = await _context.categories.FindAsync(id);
+            variation.name = variationdto.name;
+            variation.value=variationdto.value;
+            variation.category = category;
+            await _context.variation.AddAsync(variation);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Variation","Categories");
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,categoryName")] category category)

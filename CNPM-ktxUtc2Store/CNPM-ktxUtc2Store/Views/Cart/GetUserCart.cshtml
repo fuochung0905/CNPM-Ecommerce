@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <!--    -->
-                            <div class="item-money">
+                            <div class="item-money money">
                                 <p>@result.product.price  &nbsp;₫</p>
 
                             </div>
@@ -76,7 +76,7 @@
                                 <a class="btn btn-info amount" href="/Cart/AddItem?productId=@result.productId&&redirect=1 ">+</a>
                             </div>
                             <!--    -->
-                            <div class="item-moneypay">
+                            <div class="item-moneypay money">
                                 <p>@(result.product.price * result.quantity)  &nbsp;₫</p>
                             </div>
                             <!--    -->
@@ -89,12 +89,11 @@
                         <div class="my-2">
                             <div>
                                 <p>
-                                    Tổng cộng ( @Model.shoppingCarts.cartDetails.Count Sản Phẩm ):
+                                    Tổng cộng : @Model.shoppingCarts.cartDetails.Count Sản Phẩm 
                                 </p>
-                                <p style="place-content: center; color: orangered; font-size: 20px; padding-left: 5px;"> @(Model.shoppingCarts.cartDetails.Select(item => item.product.price * item.quantity).Sum()) &nbsp;₫ </p>
-                            </div>
+                                </div>
                         </div>
-                        <a asp-controller="UserOrder" asp-action="Userorder" class="wrap-btn m-color-full">Đặt hàng</a>
+                        <a asp-controller="UserOrder" asp-action="Userorder" class="wrap-btn m-color-full">Chọn hàng</a>
 
                     </div>
                 }

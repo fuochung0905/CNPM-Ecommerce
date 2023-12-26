@@ -223,3 +223,7 @@ html {
 .txt-blue{
     color: blue;
 }
+.item-menu.activecolor {
+    background-color: #3498db; 
+    color: #ffffff; 
+}
