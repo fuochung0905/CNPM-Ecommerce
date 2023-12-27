@@ -37,76 +37,22 @@ namespace CNPM_ktxUtc2Store.Controllers
             if (!string.IsNullOrEmpty(maloai) & !string.IsNullOrEmpty(searchName))
             {
                 int cateId = Convert.ToInt32(maloai);
-                listProduct = (from product in _dbcontext.products
-                               join category in _dbcontext.categories
-                               on product.categoryId equals category.Id
-                               where(product.qty_inStock > 0)
-                               select new product
-                               {
-                                   Id = product.Id,
-                                   productName = product.productName,
-                                   description = product.description,
-                                   oldprice = product.oldprice,
-                                   price = product.price,
-                                   categoryId = product.categoryId,
-                                   category = category,
-                                   imageUrl = product.imageUrl,
-                                  
-                               }).Where(x => x.categoryId == cateId & x.productName.Contains(searchName)).ToList();
+                listProduct = _dbcontext.products.Where(x => x.categoryId == cateId & x.productName.Contains(searchName)).OrderBy(x=>x.daban).ToList();
             }
             else
             {
                 if (string.IsNullOrEmpty(searchName) & !string.IsNullOrEmpty(maloai))
                 {
                     int cateId = Convert.ToInt32(maloai);
-                    listProduct = (from product in _dbcontext.products
-                                   join category in _dbcontext.categories
-                                   on product.categoryId equals category.Id
-                                   where (product.qty_inStock > 0)
-                                   select new product
-                                   {
-                                       Id = product.Id,
-                                       productName = product.productName,
-                                       description = product.description,
-                                       oldprice = product.oldprice,
-                                       price = product.price,
-                                       categoryId = product.categoryId,
-                                       imageUrl = product.imageUrl,
-                                   }).Where(x => x.categoryId == cateId).ToList();
+                    listProduct = _dbcontext.products.Where(x => x.categoryId == cateId).OrderBy(x => x.daban).ToList();
                 }
                 if (string.IsNullOrEmpty(maloai) & !string.IsNullOrEmpty(searchName))
                 {
-                    listProduct = (from product in _dbcontext.products
-                                   join category in _dbcontext.categories
-                                   on product.categoryId equals category.Id
-                                   where (product.qty_inStock > 0)
-                                   select new product
-                                   {
-                                       Id = product.Id,
-                                       productName = product.productName,
-                                       description = product.description,
-                                       oldprice = product.oldprice,
-                                       price = product.price,
-                                       categoryId = product.categoryId,
-                                       imageUrl = product.imageUrl,
-                                   }).Where(x => x.productName.Contains(searchName)).ToList();
+                    listProduct = _dbcontext.products.Where(x => x.productName.Contains(searchName)).OrderBy(x => x.daban).ToList();
                 }
                 if (string.IsNullOrEmpty(maloai) & string.IsNullOrEmpty(searchName))
                 {
-                    listProduct = (from product in _dbcontext.products
-                                   join category in _dbcontext.categories
-                                   on product.categoryId equals category.Id
-                                   where (product.qty_inStock > 0)
-                                   select new product
-                                   {
-                                       Id = product.Id,
-                                       productName = product.productName,
-                                       description = product.description,
-                                       oldprice = product.oldprice,
-                                       price = product.price,
-                                       categoryId = product.categoryId,
-                                       imageUrl = product.imageUrl,
-                                   }).ToList();
+                    listProduct = _dbcontext.products.OrderByDescending(x => x.Id).ToList();
                 }
 
             }

@@ -9,6 +9,7 @@ using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
 using CNPM_ktxUtc2Store.Areas.Admin.dto;
+using Microsoft.AspNetCore.Identity;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
@@ -17,10 +18,14 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
     public class ordersController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<applicationUser> _usermanagement;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public ordersController(ApplicationDbContext context)
+        public ordersController(ApplicationDbContext context, UserManager<applicationUser> usermanagement, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _usermanagement = usermanagement;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> ordercomplete(int orderId)
         {
@@ -28,13 +33,66 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             order.IsDelete = true;
             order.IsComplete= true;
             order.updateDate = DateTime.Now;
-            var satus = _context.orderStatus.Find(4);
-            order.status = satus;
+            order.orderStatusId = 3;
             _context.orders.Update(order);
             _context.SaveChanges();
             return RedirectToAction("Index", "orders");
 
+
         }
+        private string GetUserId()
+        {
+
+            var pricipal = _httpContextAccessor.HttpContext.User;
+            string userId = _usermanagement.GetUserId(pricipal);
+
+            return userId;
+        }
+        public async Task<IActionResult> GetTotalmyOder()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
+
+        public async Task<IActionResult> GetTotalmyOrderWait()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.IsDelete == true).Where(x => x.IsComplete == false).Where(x => x.isHuy == false).ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
+        public async Task<IActionResult> GetTotalmyOrderComplete()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.IsDelete == true).Where(x => x.IsComplete == true).Where(x => x.isHuy == false).ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
+        public async Task<IActionResult> GetTotalmyOrdercho()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.IsDelete == false).Where(x => x.IsComplete == true).Where(x => x.isHuy == true).ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
+        public async Task<IActionResult> myOrder()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.applicationUserId == userId).ToListAsync();
+            myOrderDto myOrderDto = new myOrderDto();
+            foreach (var orderItem in order)
+            {
+                var orderdetail = await _context.orderDetails.Include(x => x.order).ThenInclude(o => o.status).Include(x => x.product).Where(x => x.orderId == orderItem.Id).ToListAsync();
+                foreach (var item in orderdetail)
+                {
+                    myOrderDto.orderDetails.Add(item);
+                }
+            }
+            return View(myOrderDto);
+        }
+
         public async Task<IActionResult> history()
         {
             var history = await _context.orders.Include(o => o.applicationUser).Include(o => o.status).Where(x=>x.IsComplete==true).ToListAsync();

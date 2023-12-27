@@ -5,15 +5,19 @@
         <div class="myorder-block-header">
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="opall()">Tất cả</a>
+                <span id="orderCountall" class="num">0</span>
             </div>
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="opwait()">Đang giao</a>
+                <span id="orderCountwait" class="num">0</span>
             </div>
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="opprocess()">Đã nhận</a>
+                <span id="orderCountcomplete" class="num">0</span>
             </div>
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="ophuy()">Đã hủy</a>
+                <span id="orderCountcancle" class="num">0</span>
             </div>
         </div>
 
@@ -76,6 +80,66 @@
     {
 
     <script>
+      
+            loadcartcount();
+        loadmyorderwait();
+        loadmyordecomplete();
+        loadmyordercancle();
+        async function loadcartcount() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOder`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountall");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        async function loadmyorderwait() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOrderWait`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountwait");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+        async function loadmyordecomplete() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOrderComplete`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountcomplete");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+        async function loadmyordercancle() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOrderCancle`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountcancle");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
 
         async function opall() {
             var p = document.getElementsByClassName("myorder-block-content");

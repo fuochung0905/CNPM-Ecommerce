@@ -94,6 +94,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             {
                 string uni=uploadImage(product);
                 product.imageUrl = uni;
+                product.soluongnhap = product.qty_inStock;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -135,7 +136,6 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View(product);
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, product product)
         {
             if (id != product.Id)
@@ -143,15 +143,15 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 return NotFound();
             }
             var pr = _context.products.Find(id);
+            pr.productName = product.productName;
             pr.price = product.price;   
             pr.description=product.description;
-            pr.productName=product.productName;
             pr.oldprice=product.oldprice;
             pr.qty_inStock=product.qty_inStock;
                     _context.products.Update(pr);
                     await _context.SaveChangesAsync();
           
-            return View(product);
+            return RedirectToAction("Index","products");
         }
 
         // GET: Admin/products/Delete/5

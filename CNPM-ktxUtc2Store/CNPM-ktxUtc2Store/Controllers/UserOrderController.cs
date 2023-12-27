@@ -20,6 +20,35 @@ namespace CNPM_ktxUtc2Store.Controllers
             _usermanagement = userManager;
 
         }
+        public async Task<IActionResult> GetTotalmyOder()
+        {
+            var userId = GetUserId();
+           var order=await _context.orders.Where(x=>x.applicationUserId == userId).ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
+
+        public async Task<IActionResult> GetTotalmyOrderWait()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.applicationUserId == userId).Where(x=>x.IsDelete==true).Where(x=>x.IsComplete==false).Where(x=>x.isHuy==false).ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
+        public async Task<IActionResult> GetTotalmyOrderComplete()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.applicationUserId == userId).Where(x => x.IsDelete == true).Where(x=>x.IsComplete==true).Where(x=>x.isHuy==false).ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
+        public async Task<IActionResult> GetTotalmyOrderCancle()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.applicationUserId == userId).Where(x => x.IsDelete == true).Where(x => x.IsComplete == true).Where(x => x.isHuy == true).ToListAsync();
+            int dem = order.Count();
+            return Ok(dem);
+        }
         public async Task<IActionResult> myOrder()
         {
             var userId = GetUserId();
@@ -128,6 +157,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                             _context.orderDetails.Add(CTDH);
                             _context.cartDetails.Remove(cartDetail);
                             product.qty_inStock = product.qty_inStock - cartDetail.quantity;
+                            product.daban = cartDetail.quantity;
                             _context.products.Update(product);
                             _context.SaveChanges();
                             transaction.Commit();

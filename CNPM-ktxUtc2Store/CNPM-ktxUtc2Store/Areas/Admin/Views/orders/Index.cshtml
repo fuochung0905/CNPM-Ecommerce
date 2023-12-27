@@ -25,15 +25,19 @@
     <div class="phanloai-item phanloai-all">
   
         <a class="hh" onclick="opall(this)">Tất cả</a>
+       
     </div>
     <div class="phanloai-item">
         <a class="hh" onclick="opwait(this)">Chờ xử lí</a>
+    
     </div>
     <div class="phanloai-item">
         <a class="hh" onclick="opprocess(this)">Đã xử lí</a>
+       
     </div>
     <div class="phanloai-item">
         <a class="hh" onclick="opcomplete(this)">Hoàn thành</a>
+       
     </div>
 </div>
 <div class="">
@@ -94,7 +98,7 @@
                                             }
                                             @if (item.IsDelete == true && item.IsComplete == false)
                                             {
-                                                <button style="padding:0 40%;background:#F8F8F8" type="submit">Đã giao</button>
+                                                <button style="padding:0 40%;background:#F8F8F8" onclick="ordercomplete(@item.Id)">Đã giao</button>
                                             }
 
                                         </div>
@@ -125,14 +129,71 @@
   {
 
     <script>
+
+        loadcartcount();
+        loadmyorderwait();
+        loadmyordecomplete();
+        loadmyordercancle();
+        async function loadcartcount() {
+            try {
+                var response = await fetch(`/orders/GetTotalmyOder`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountall");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        async function loadmyorderwait() {
+            try {
+                var response = await fetch(`/orders/GetTotalmyOrdercho`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountcho");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+        async function loadmyordecomplete() {
+            try {
+                var response = await fetch(`/orders/GetTotalmyOrderWait`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountwait");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+        async function loadmyordercancle() {
+            try {
+                var response = await fetch(`/orders/GetTotalmyOrderComplete`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountcomplete");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
         async function ordercomplete(orderid) {
             try {
                 var response = await fetch(`/Admin/orders/ordercomplete?orderId=${orderid}`);
                 if (response.status == 200) {
                     var result = await response.json();
-                    console.log(result);
-                    console.log("complete");
-                    window.location.href = "#complete"
+                    location.reload();
                 }
             }
             catch (err) {
