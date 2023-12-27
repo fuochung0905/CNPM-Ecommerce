@@ -1,0 +1,69 @@
+﻿.myorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+.myorder-block {
+    width: 70%;
+    height: 70%;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 20px;
+    background: #E8E8E8;
+}
+.myorder-block-header{
+    padding:5px;
+    display:flex;
+    justify-content:space-between;
+    margin:5px;
+}
+.myorder-block-header-item:hover {
+    background: #e74c3c;
+    color:white;
+    border-radius:5px;
+    padding:5px;
+    
+}
+.myorder-block-content-header-right {
+    display: flex;
+    margin: 5px;
+}
+.myorder-block-content-header-left{
+    padding-left:30px;
+}
+.myorder-block-content-header-right-item {
+    padding: 5px;
+}
+.myorder-block-content {
+    background: #ffffff;
+}
+.myorder-block-content-header{
+    display:flex;
+    justify-content:space-between;
+}
+.myorder-block-content-body{
+    display:flex;
+
+}
+.myorder-block-content-body-img{
+    display:grid;
+    justify-content:center;
+    place-content:center;
+    flex-basis:15%;
+    padding-bottom:7px;
+}
+.myorder-block-content-body-des {
+    flex-basis: 45%;
+}
+.myorder-block-content-body-price {
+    flex-basis: 20%;
+}
+.myorder-block-content-body-qty {
+    flex-basis: 20%;
+}
+.myorder-block-content-footer{
+    display:flex;
+    justify-content:space-between;
+}

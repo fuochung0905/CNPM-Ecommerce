@@ -1,0 +1,115 @@
+﻿@model myOrderDto
+
+<div class="myorder">
+    <div class="myorder-block">
+        <div class="myorder-block-header">
+            <div class="myorder-block-header-item">
+                <a class="oo" onclick="opall()">Tất cả</a>
+            </div>
+            <div class="myorder-block-header-item">
+                <a class="oo" onclick="opwait()">Đang giao</a>
+            </div>
+            <div class="myorder-block-header-item">
+                <a class="oo" onclick="opprocess()">Đã nhận</a>
+            </div>
+            <div class="myorder-block-header-item">
+                <a class="oo" onclick="ophuy()">Đã hủy</a>
+            </div>
+        </div>
+
+        <div class="tab-all-user">
+            <div id="content-pl-tab-all" class="myorder-block-content">
+                @foreach (var item in Model.orderDetails)
+                {
+                    <div class="myorder-block-content-header">
+                        <div class="myorder-block-content-header-left">  @item.product.productName</div>
+                        <div class="myorder-block-content-header-right">
+                            <div class="myorder-block-content-header-right-item">@item.order.updateDate</div>
+                            <div class="myorder-block-content-header-right-item">@item.order.status.statusName</div>
+                        </div>
+
+                    </div>
+
+                    <div class="myorder-block-content-body">
+                        <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
+
+                        <div class="myorder-block-content-body-des">
+                            <div>  @item.product.description</div>
+                            <div>Kích thước: @item.size, Màu sắc: @item.color</div>
+                        </div>
+                        <div class="myorder-block-content-body-price">đ @item.unitPrice</div>
+                        <div class="myorder-block-content-body-qty">Số lượng @item.quantity</div>
+                    </div>
+                    @if (item.order.isHuy == false)
+                    {
+                        <div class="myorder-block-content-footer">
+                            <div></div>
+                            <a href="/UserOrder/huydon?id=@item.Id"><button class="wrap-btn m-color-full">Hủy đơn</button></a>
+
+                        </div>
+                    }
+
+                    <hr>
+                }
+            </div>
+            <div id="content-pl-tab-wait" class="myorder-block-content">
+
+            </div >
+            
+            <div id="content-pl-tab-complete" class="myorder-block-content">
+
+            </div>
+
+            <div id="content-pl-tab-huy" class="myorder-block-content">
+
+            </div>
+        </div>
+       
+
+
+    </div>
+
+
+</div>
+
+@section Scripts
+    {
+
+    <script>
+
+        async function opall() {
+            var p = document.getElementsByClassName("myorder-block-content");
+            for (var i = 0; i < p.length; i++) {
+                p[i].style.display = "none";
+            }
+            var pblock = document.getElementById("content-pl-tab-all");
+            pblock.style.display = "block";
+        }
+        async function opwait() {
+            var p = document.getElementsByClassName("myorder-block-content");
+            for (var i = 0; i < p.length; i++) {
+                p[i].style.display = "none";
+
+            }
+            var pblock = document.getElementById("content-pl-tab-wait");
+            pblock.style.display = "block";
+        }
+        async function opprocess() {
+            var p = document.getElementsByClassName("myorder-block-content");
+            for (var i = 0; i < p.length; i++) {
+                p[i].style.display = "none";
+            }
+            var pblock = document.getElementById("content-pl-tab-complete");
+            pblock.style.display = "block";
+        }
+        async function ophuy() {
+            var p = document.getElementsByClassName("myorder-block-content");
+            for (var i = 0; i < p.length; i++) {
+                p[i].style.display = "none";
+            }
+            var pblock = document.getElementById("content-pl-tab-huy");
+            pblock.style.display = "block";
+        }
+    </script>
+  }
+

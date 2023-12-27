@@ -5,24 +5,31 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Thêm Banner</h4>
+<div class="admin-product-head">
+    <div class="head-item">
+        <h5><i class="far fa-clipboard"></i> Thông tin cửa hàng</h5>
+    </div>
+</div>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="edit-item">
         <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="edit-item">
+                <img class="edit-item-img" src=""/>
+            </div>
+            <div class="edit-item">
                 <input type="file" class="form-control" asp-for="picture" id="ChooseImg" />
             </div>
-           
+
             <div class="form-group box-btn">
                 <input type="submit" value="Lưu" class="wrap-btn m-color-full" />
                 <div>
                     <a asp-action="Index"><button class="wrap-btn m-color">Trở về</button></a>
                 </div>
             </div>
+            </div>
         </form>
-    </div>
 </div>
 
 

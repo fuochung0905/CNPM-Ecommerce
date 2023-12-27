@@ -36,6 +36,57 @@ namespace CNPM_ktxUtc2Store.Data
             }
            
         }
+        public static async Task SeedSattus(IServiceProvider service)
+        {
+            var context = service.GetService<ApplicationDbContext>();
+            orderStatus orderStatus = new orderStatus();
+            orderStatus.statusName = "Đã đặt hàng";
+            var orderstatus = context.orderStatus.Where(x => x.statusName == "Đã đặt hàng").ToList();  
+            foreach(var order in orderstatus) { 
+                if(order == null)
+                {
+                    context.orderStatus.Add(orderStatus);
+                    context.SaveChanges();
+                }
+            }
+
+        
+            orderStatus orderStatus1 = new orderStatus();
+            orderStatus1.statusName = "Đang vận chuyển";
+            var orderstatus1 = context.orderStatus.Where(x => x.statusName == "Đang vận chuyển").ToList();
+            foreach (var order in orderstatus1)
+            {
+                if (order == null)
+                {
+                    context.orderStatus.Add(orderStatus1);
+                    context.SaveChanges();
+                }
+            }
+
+            orderStatus orderStatus2 = new orderStatus();
+            orderStatus2.statusName = "Đã nhận";
+            var orderstatus2 = context.orderStatus.Where(x => x.statusName == "Đã nhận").ToList();
+            foreach (var order in orderstatus2)
+            {
+                if (order == null)
+                {
+                    context.orderStatus.Add(orderStatus2);
+                    context.SaveChanges();
+                }
+            }
+
+            orderStatus orderStatus3 = new orderStatus();
+            orderStatus3.statusName = "Đã hủy";
+            var orderstatus3 = context.orderStatus.Where(x => x.statusName == "Đã hủy").ToList();
+            foreach (var order in orderstatus3)
+            {
+                if (order == null)
+                {
+                    context.orderStatus.Add(orderStatus3);
+                    context.SaveChanges();
+                }
+            }
+        }
         public static async Task SeedRoleAndAdmin(IServiceProvider service)
         {
             // Seed Role

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using Microsoft.AspNetCore.Authorization;
-using CNPM_ktxUtc2Store.Migrations;
+
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {

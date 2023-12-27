@@ -4,41 +4,35 @@
     ViewData["Title"] = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<div class="admin-product-head">
+    <div class="head-item">
+        <h5><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i> Loại sản phẩm</h5>
+    </div>
+    <div class="head-item add-product">
+        <a class="wrap-btn " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
+    </div>
+</div>
+<div class="edit-body">
 
-<div >
+</div>
+    <div >
     <div  style="display: grid; justify-content: space-evenly; grid-template-columns: 80%; padding-bottom:20px;">
         <div class="" style="display: flex; flex-direction: column; background: #F8F8F8; border-radius: 10px;">
-            <div class="admin-product-head">
-                <div class="head-item">
-                    <h5><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i> Loại sản phẩm</h5>
-                </div>
-
-                <div class="head-item search-box">
-                </div>
-                <div class="head-item add-product">
-                    <div class="add-product-1">
-                        <a class="wrap-btn " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
-                    </div>
-                </div>
-            </div>
-            <div style="">
-                <form asp-action="Index">
+            
+            <div style="box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);">
+                <form asp-area="Admin" asp-controller="categories" asp-action="Index">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div style="display: grid; justify-content: space-evenly; grid-template-columns: 80%;" >
-                        <div style="padding-right:10px;">
+                    <div style="display: grid; justify-content: space-evenly; grid-template-columns: 20% 80%;" >
+                        <div style="padding-top:10px; display: grid; justify-content: space-evenly;" class="grid-center">
                             <label class="control-label">Loại sản phẩm</label>
                         </div>
                         <div style="display:flex;">
-                           
-                          
-                            <div style="padding-right:10px; width:70%;">
+                            <div style="padding-top:4px; width:70%; height: 100%;" >
                                 <input asp-for="categoryName" class="form-control" />
                             </div>
-                            <div style="padding:7px;border:1px solid black; background:#F8F8F8; ">
-                                <a type="submit" asp-area="Admin" asp-controller="Categories" asp-action="Index">Lưu</a>
+                            <div style="padding:7px; background:#F8F8F8; ">
+                                <button class="btn wrap-btn m-color-full" type="submit">Thêm</button>
                             </div>
-                           
-                          
                         </div>
                         <span asp-validation-for="categoryName" class="text-danger"></span>
                     </div>

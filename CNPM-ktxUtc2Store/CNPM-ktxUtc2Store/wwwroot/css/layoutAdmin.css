@@ -227,3 +227,7 @@ html {
     background-color: #3498db; 
     color: #ffffff; 
 }
+.grid-center{
+    display: grid;
+    justify-content: space-evenly;
+}

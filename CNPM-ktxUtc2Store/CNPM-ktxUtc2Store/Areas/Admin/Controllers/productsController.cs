@@ -103,33 +103,23 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 
         }
         //Get Admin/product/AddVariation/5
-        public  IActionResult AddVariation(int? id)
+        public IActionResult AddVariation(int? id)
         {
-            if (id == null || _context.products == null)
+            var product = _context.products.Find(id);
+            var variation = _context.variation.Where(x => x.categoryId == product.categoryId).ToList();
+            productvariationDto dto = new productvariationDto();
+            foreach (var item in variation)
             {
-                return NotFound();
+                dto.Variations.Add(item);
             }
-
-            var product =  _context.products.Find(id);
-            if (product == null)
+            var productvariation = _context.productVariations.Where(x => x.productId == product.Id).ToList();
+            foreach (var pv in productvariation)
             {
-                return NotFound();
+                dto.productVariations.Add(pv);
             }
-            var variation=_context.variation.Where(x=>x.categoryId==product.categoryId).ToList();
-            var selectLists= new List<SelectListItem>();
-            foreach(var item in variation)
-            {
-                selectLists.Add(new SelectListItem(item.value, item.Id.ToString()));
-            }
-            var vm = new productVaritionCreateView()
-            {
-                Items = selectLists
-            };
-
-            ViewData["variationId"] = new SelectList(_context.variation.Where(x=>x.categoryId==product.categoryId), "Id", "value");
-            return View(vm);  
+            return View(dto);
         }
-       
+
         // GET: Admin/products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -191,6 +181,12 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             if (_context.products == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.products'  is null.");
+            }
+            var productvari=await _context.productVariations.Where(x=>x.productId==id).ToListAsync();
+            foreach (var variation in productvari)
+            {
+                _context.productVariations.Remove(variation);
+               await _context.SaveChangesAsync();
             }
             var product = await _context.products.FindAsync(id);
             if (product != null)

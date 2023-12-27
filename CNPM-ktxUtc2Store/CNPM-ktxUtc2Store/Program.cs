@@ -74,6 +74,7 @@ using (var scope = app.Services.CreateScope())
 {
     await DbSeeder.SeedRoleAndAdmin(scope.ServiceProvider);
     await DbSeeder.SeedInfor(scope.ServiceProvider);
+    await DbSeeder.SeedSattus(scope.ServiceProvider);
 }
 
 app.Run();

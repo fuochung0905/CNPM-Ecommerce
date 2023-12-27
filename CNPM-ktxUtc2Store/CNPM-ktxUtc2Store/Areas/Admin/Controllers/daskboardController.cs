@@ -31,7 +31,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 dask.songuoidung = countuser;
             }
            var order=_context.orders.OrderByDescending(x=>x.Id).Include(x=>x.applicationUser).Include(x=>x.orderDetails).ThenInclude(o=>o.product).Where(x=>x.IsComplete == true).ToList();
-            double tongdoanhthu = 0.0;
+            double tongdoanhthu = 0;
             foreach(var item in order)
             {
                 var orderdetail = _context.orderDetails.Find(item.Id);
@@ -43,7 +43,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
             dask.tongdoanhso = tongdoanhthu;
             var products = _context.products.ToList();
-            double gianhap = 0.0;
+            double gianhap = 0;
             foreach(var pr in products) {
                 gianhap = pr.oldprice.Value * pr.soluongnhap + gianhap;
             }
@@ -51,7 +51,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
            
             var month = _context.orders.Where(x => x.updateDate.Month == DateTime.Now.Month).Where(x => x.IsComplete==true).Include(x => x.applicationUser).Include(x => x.orderDetails).ThenInclude(o => o.product).ToList();
            
-            double doanhthuthang = 0.0;
+            double doanhthuthang = 0;
             foreach (var item in month)
             {
               
@@ -61,7 +61,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
             dask.doanhthuthang = doanhthuthang;
             var date = _context.orders.Where(x => x.updateDate.Day == DateTime.Now.Day).Where(x => x.IsComplete == true).Include(x => x.applicationUser).Include(x => x.orderDetails).ThenInclude(o => o.product).ToList();
-            double doanhthungay = 0.0;
+            double doanhthungay = 0;
             foreach (var item in date)
             {
                 var orderdetail = _context.orderDetails.Find(item.Id);
@@ -72,7 +72,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 
 
             var year = _context.orders.Where(x => x.updateDate.Year == DateTime.Now.Year).Where(x => x.IsComplete == true).Include(x => x.applicationUser).Include(x => x.orderDetails).ThenInclude(o => o.product).ToList();
-            double doanhthunam = 0.0;
+            double doanhthunam = 0;
             foreach (var item in year)
             {
                 var orderdetail = _context.orderDetails.Find(item.Id);

@@ -310,6 +310,9 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.Property<DateTime>("createDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("isHuy")
+                        .HasColumnType("bit");
+
                     b.Property<int>("orderStatusId")
                         .HasColumnType("int");
 
@@ -393,16 +396,21 @@ namespace CNPM_ktxUtc2Store.Migrations
                     b.Property<int>("categoryId")
                         .HasColumnType("int");
 
+                    b.Property<int>("daban")
+                        .HasColumnType("int");
+
                     b.Property<string>("description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("imageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("oldprice")
+                    b.Property<double?>("oldprice")
+                        .IsRequired()
                         .HasColumnType("float");
 
-                    b.Property<double>("price")
+                    b.Property<double?>("price")
+                        .IsRequired()
                         .HasColumnType("float");
 
                     b.Property<string>("productName")

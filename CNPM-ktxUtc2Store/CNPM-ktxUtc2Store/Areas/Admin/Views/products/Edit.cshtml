@@ -5,55 +5,61 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="admin-product-head">
+    <div class="head-item">
+        <h5><i class="far fa-clipboard"></i> Chỉnh sửa thông tin</h5>
+    </div>
+    <div class="head-item add-product">
+        <a class="wrap-btn " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
+    </div>
+</div>
+    <hr />
+<div class="edit-body">
         <form asp-action="Edit">
+        <div class="edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="productName" class="control-label"></label>
-                <input asp-for="productName" class="form-control" />
+            <div class="edit-item">
+                <label asp-for="productName" class="control-label edit-item-1">Tên SP</label>
+                <input asp-for="productName" class="form-control edit-item-2" />
                 <span asp-validation-for="productName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="description" class="control-label"></label>
-                <input asp-for="description" class="form-control" />
-                <span asp-validation-for="description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="oldprice" class="control-label"></label>
-                <input asp-for="oldprice" class="form-control" />
+            
+            <div class="edit-item">
+                <label asp-for="oldprice" class="control-label edit-item-1">Giá Nhập</label>
+                <input asp-for="oldprice" class="form-control edit-item-2" />
                 <span asp-validation-for="oldprice" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="price" class="control-label"></label>
-                <input asp-for="price" class="form-control" />
+            <div class="edit-item">
+                <label asp-for="price" class="control-label edit-item-1">Giá Bán</label>
+                <input asp-for="price" class="form-control edit-item-2" />
                 <span asp-validation-for="price" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="imageUrl" class="control-label"></label>
-                <input asp-for="imageUrl" class="form-control" />
+            <div class="edit-item">
+                <label asp-for="imageUrl" class="control-label edit-item-1">Ảnh Minh Họa</label>
+                <input asp-for="imageUrl" class="form-control edit-item-2" />
                 <span asp-validation-for="imageUrl" class="text-danger"></span>
             </div>
           
-            <div class="form-group">
-                <label asp-for="qty_inStock" class="control-label"></label>
-                <input asp-for="qty_inStock" class="form-control" />
+            <div class="edit-item">
+                <label asp-for="qty_inStock" class="control-label edit-item-1">Tồn kho</label>
+                <input asp-for="qty_inStock" class="form-control edit-item-2" />
                 <span asp-validation-for="qty_inStock" class="text-danger"></span>
             </div>
-           
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="edit-item">
+                <label asp-for="description" class="control-label edit-item-1">Mô tả</label>
+                <textarea rows="4" asp-for="description" class="form-control edit-item-2"></textarea>
+                <span asp-validation-for="description" class="text-danger"></span>
             </div>
+            <div class="edit-item">
+                <input type="submit" value="Lưu" class="btn wrap-btn m-color-full" />
+            </div>
+        </div>
         </form>
-    </div>
+    
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    
 </div>
 

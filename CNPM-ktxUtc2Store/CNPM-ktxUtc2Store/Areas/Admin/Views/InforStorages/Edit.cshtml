@@ -6,64 +6,69 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 
 }
-<h1>Edit</h1>
-
-<h4>Thông tin cửa hàng</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" class="group-info">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="namestorage" class="control-label">Tên cửa hàng</label>
-                <input asp-for="namestorage" class="form-control" />
-                <span asp-validation-for="namestorage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="phonenumbershop" class="control-label">SĐT liên hệ</label>
-                <input asp-for="phonenumbershop" class="form-control" />
-                <span asp-validation-for="phonenumbershop" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="emailwork" class="control-label">Email liên hệ</label>
-                <input asp-for="emailwork" class="form-control" />
-                <span asp-validation-for="emailwork" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="emailcskh" class="control-label">Email cskh</label>
-                <input asp-for="emailcskh" class="form-control" />
-                <span asp-validation-for="emailcskh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="timework" class="control-label">Thời gian hoạt động</label>
-                <input asp-for="timework" class="form-control" />
-                <span asp-validation-for="timework" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="linkfacbook" class="control-label">Facebook</label>
-                <input asp-for="linkfacbook" class="form-control" />
-                <span asp-validation-for="linkfacbook" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="linkInstagram" class="control-label">Instagram</label>
-                <input asp-for="linkInstagram" class="form-control" />
-                <span asp-validation-for="linkInstagram" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="linkyoutube" class="control-label">Youtobe</label>
-                <input asp-for="linkyoutube" class="form-control" />
-                <span asp-validation-for="linkyoutube" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="linktiktok" class="control-label">Tiktok</label>
-                <input asp-for="linktiktok" class="form-control" />
-                <span asp-validation-for="linktiktok" class="text-danger"></span>
-            </div>
-            <div class="form-group sp">
-                <input type="submit" value="Lưu" class="wrap-btn m-color" />
-            </div>
-        </form>
+<div class="admin-product-head">
+    <div class="head-item">
+        <h5><i class="far fa-clipboard"></i> Thông tin cửa hàng</h5>
     </div>
+
+
+</div>
+<hr />
+<div class="edit-body">
+        <form asp-action="Edit" class="group-info">
+            <div class="edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="edit-item">
+                    <label asp-for="namestorage" class="control-label edit-item-1">Tên cửa hàng</label>
+                    <input asp-for="namestorage" class="form-control edit-item-2" />
+                    <span asp-validation-for="namestorage" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="phonenumbershop" class="control-label edit-item-1">SĐT liên hệ</label>
+                <input asp-for="phonenumbershop" class="form-control edit-item-2" />
+                    <span asp-validation-for="phonenumbershop" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="emailwork" class="control-label edit-item-1">Email liên hệ</label>
+                <input asp-for="emailwork" class="form-control edit-item-2" />
+                    <span asp-validation-for="emailwork" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="emailcskh" class="control-label edit-item-1">Email cskh</label>
+                <input asp-for="emailcskh" class="form-control edit-item-2" />
+                    <span asp-validation-for="emailcskh" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="timework" class="control-label edit-item-1">Thời gian hoạt động</label>
+                <input asp-for="timework" class="form-control edit-item-2" />
+                    <span asp-validation-for="timework" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="linkfacbook" class="control-label edit-item-1">Facebook</label>
+                <input asp-for="linkfacbook" class="form-control edit-item-2" />
+                    <span asp-validation-for="linkfacbook" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="linkInstagram" class="control-label edit-item-1">Instagram</label>
+                <input asp-for="linkInstagram" class="form-control edit-item-2" />
+                    <span asp-validation-for="linkInstagram" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="linkyoutube" class="control-label edit-item-1">Youtobe</label>
+                <input asp-for="linkyoutube" class="form-control edit-item-2" />
+                    <span asp-validation-for="linkyoutube" class="text-danger"></span>
+                </div>
+                <div class="edit-item">
+                <label asp-for="linktiktok" class="control-label edit-item-1">Tiktok</label>
+                <input asp-for="linktiktok" class="form-control edit-item-2" />
+                    <span asp-validation-for="linktiktok" class="text-danger"></span>
+                </div>
+                 <div class=" edit-item form-group sp">
+                    <input type="submit" value="Lưu" class="wrap-btn m-color-full" />
+                </div>
+            </div>
+            
+        </form>
 </div>
 

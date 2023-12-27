@@ -20,7 +20,22 @@ namespace CNPM_ktxUtc2Store.Controllers
             _usermanagement = userManager;
 
         }
-      
+        public async Task<IActionResult> myOrder()
+        {
+            var userId = GetUserId();
+            var order = await _context.orders.Where(x => x.applicationUserId == userId).ToListAsync();
+            myOrderDto myOrderDto = new myOrderDto();
+            foreach (var orderItem in order)
+            {
+                var orderdetail = await _context.orderDetails.Include(x => x.order).ThenInclude(o => o.status).Include(x => x.product).Where(x => x.orderId == orderItem.Id).ToListAsync();
+                foreach (var item in orderdetail)
+                {
+                    myOrderDto.orderDetails.Add(item);
+                }
+            }
+            return View(myOrderDto);
+        }
+
         public async Task<shoppingCart> GetUserCart()
         {
             var userId = GetUserId();
@@ -33,6 +48,25 @@ namespace CNPM_ktxUtc2Store.Controllers
                 .ThenInclude(a => a.category)
                 .Where(a => a.applicationUserId == userId).FirstOrDefaultAsync();
             return shoppingcart;
+        }
+        public IActionResult huydon(int id)
+        {
+        var order = _context.orders.Where(x=>x.Id== id).FirstOrDefault();
+            if(order != null)
+            {
+                order.isHuy=true;
+                var status = _context.orderStatus.Where(x => x.statusName == "Đã hủy").ToList();
+                foreach (var item in status)
+                {
+                    order.status = item;
+                }
+                _context.orders.Update(order);
+                _context.SaveChanges();
+                return RedirectToAction("myOrder", "UserOrder");
+
+            }
+            return Content("Null");
+;          
         }
         public async Task<IActionResult> Userorder()
          {
@@ -82,6 +116,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                             var product = _context.products.Find(cartDetail.productId);
                             CTDH = new orderDetail
                             {
+                                Id=dathang.Id,
                                 productId = cartDetail.productId,
                                 orderId = dathang.Id,
                                 quantity = cartDetail.quantity,
@@ -102,10 +137,10 @@ namespace CNPM_ktxUtc2Store.Controllers
                         }
 
                     }
-                    return Content("Đặt hàng thành công");
+                    return RedirectToAction("myOrder","UserOrder");
                 }
             }
-            return Content("Cần chọn địa chỉ người dụng");
+            return RedirectToAction("Create","Adresses");
 
         }
     

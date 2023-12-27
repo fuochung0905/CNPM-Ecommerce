@@ -3,43 +3,43 @@
     ViewData["Title"] = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
+<div class="admin-product-head">
+    <div class="head-item">
+        <h5><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i> Loại sản phẩm</h5>
+    </div>
+    <div class="head-item add-product">
+        <a class="wrap-btn " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
+    </div>
+</div>
 <div>
     <div style="display: grid; justify-content: space-evenly; grid-template-columns: 80%; padding-bottom:20px;">
         <div class="" style="display: flex; flex-direction: column; background: #F8F8F8; border-radius: 10px;">
-            <div class="admin-product-head">
-                <div class="head-item">
-                    <h5><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i> @Model.categoryname</h5>
-                </div>
-
-                <div class="head-item search-box">
-                </div>
-                <div class="head-item add-product">
-                    <div class="add-product-1">
-                        <a class="wrap-btn " style="background-color:#F8F8F8" href="/Admin/products">Danh sách sản phẩm</a>
-                    </div>
-                </div>
-            </div>
+            <div></div>
             <div style="">
                 <form asp-area="Admin" asp-controller="categories" asp-action="Variation" >
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div style="display: grid; justify-content: space-evenly; grid-template-columns: 80%;">
                         
-                        <div >
-                            <div>
-                                <label class="control-label">Tên</label>
+                        <div>
+                            <div style="display: grid; grid-template-columns: 30% 70%; margin: 10px;">
+                                <div>
+                                    <label class="control-label">Tên</label>
+                                </div>
+                                <div>
+                                    <input asp-for="name" class="form-control" />
+                                </div>
+                            </div >
+                            <div style ="display: grid; grid-template-columns: 30% 70%; margin: 10px;">
+                                <div>
+                                    <label class="control-label">Giá trị</label>
+                                </div>
+                                <div>
+                                    <input asp-for="value" class="form-control" />
+                                </div>
                             </div>
-                            <div >
-                                <input asp-for="name" class="form-control" />
-                            </div>
-                            <div>
-                                <label class="control-label">Giá trị</label>
-                            </div>
-                            <div>
-                                <input asp-for="value" class="form-control" />
-                            </div>
-                            <div style="padding:7px;border:1px solid black; background:#F8F8F8; ">
-                                <button type="submit">Lưu</button>
+                            
+                            <div style="padding:7px;">
+                                <button class="btn wrap-btn m-color-full" type="submit">Lưu</button>
                             </div>
                         </div>
                       
@@ -54,62 +54,44 @@
         <div class="" style="display: flex; flex-direction: column; background: #F8F8F8; border-radius: 10px;">
         <div class="all-variation">
             <div class="admin-variation-size">
-                <div class="admin-variation-size-head">
+                <div class="admin-variation-head">
                     Kích thước
                 </div>
-                <div class="admin-variation-size-head">
+                <hr />
+                <div class="admin-variation-items">
                     @foreach (var item in Model.variations)
                     {
-                        <div class="admin-category-around">
-                            <div style="display: none;" class="admin-category">
-                                <label>
-                                    <input type="checkbox"
-                                           value="Id" />
-                                </label>
-                            </div>
-                            <div class="admin-category-size">
-
+                            
                                 @if (item.name == "size")
                                 {
+                                <div class="admin-category-size">
                                     @item.value
+                                </div>
                                 }
-                            </div>
-
-
-                        </div>
-
+                            
                     }
                 </div>
             </div>
 
             <div class="admin-variation-color">
-                <div class="admin-variation-color-head">
-                    Kích thước
+                <div class="admin-variation-head">
+                    Màu sắc
                 </div>
-                <div class="admin-variation-color-head">
+                <hr />
+                <div class="admin-variation-items">
                     @foreach (var item in Model.variations)
                     {
-                        <div class="admin-category-around">
-                            <div style="display: none;" class="admin-category">
-                                <label>
-                                    <input type="checkbox"
-                                           value="Id" />
-                                </label>
-                            </div>
-                            <div class="admin-category-size">
-
                                 @if (item.name == "color")
                                 {
+                                <div class="admin-category-size">
                                     @item.value
+                                </div>
                                 }
-                            </div>
-
-
-                        </div>
-
                     }
                 </div>
             </div>
-        </div></div>
+        </div>
+        </div>
+    </div>
 </div>
   

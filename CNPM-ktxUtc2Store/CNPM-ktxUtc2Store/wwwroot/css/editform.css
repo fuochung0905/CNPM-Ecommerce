@@ -1,0 +1,51 @@
+﻿.edit-body{
+    display: grid;
+    place-content: center;
+    margin-top: 20px;
+    
+}
+    .edit{
+        width: 700px;
+        border: 1px solid gray;
+        border-radius: 10px;
+
+    }
+        .edit-item{
+            display: flex;
+            flex-direction: row;
+            place-content: center;
+            margin: 10px;   
+        }
+            .edit-item-1{
+                flex-basis: 25%;
+                padding-top:5px;
+                background-color: orangered;
+                color: white;
+                text-align: center;
+                border-radius: 10px;
+            }
+            .edit-item-2{
+                flex-basis: 75%;
+            }
+            .edit-item-variation{
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+            }
+            .edit-item-variation-item{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+.edit-body-variation{
+    display: grid;
+    grid-template-columns: 30% 30%;
+}
+    .edit-variation{
+        width: 350px;
+    }
+.grid-center{
+    display: grid;
+    justify-content: space-evenly;
+    
+}

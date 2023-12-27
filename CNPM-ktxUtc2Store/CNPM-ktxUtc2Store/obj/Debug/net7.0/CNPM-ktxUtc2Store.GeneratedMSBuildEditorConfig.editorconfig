@@ -624,6 +624,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyXGRhdGhhbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/UserOrder/myOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyXG15T3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/BTL_ASPNET/CNPM-Ecommerce/CNPM-ktxUtc2Store/CNPM-ktxUtc2Store/Views/UserOrder/UpdateAdress.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyXFVwZGF0ZUFkcmVzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

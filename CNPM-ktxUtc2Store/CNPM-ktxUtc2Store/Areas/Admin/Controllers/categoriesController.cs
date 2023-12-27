@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using CNPM_ktxUtc2Store.Areas.Admin.dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class categoriesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -27,10 +29,9 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(category category)
         {
-            _context.Add(category);
+            _context.categories.Add(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -61,11 +62,10 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 
        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,categoryName")] category category)
+        public async Task<IActionResult> Create( category category)
         {
              
-                _context.Add(category);
+                _context.categories.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             

@@ -11,7 +11,7 @@ namespace CNPM_ktxUtc2Store.Models
         public int quantity { get; set; }
         public string size { get; set; }    
         public string color { get; set; }
-        public double unitPrice { get; set; }
+        public double unitPrice { get; set; } = 0;
         public int orderId { get; set;}
         public virtual order order { get; set;} 
         public int productId { get; set; }
