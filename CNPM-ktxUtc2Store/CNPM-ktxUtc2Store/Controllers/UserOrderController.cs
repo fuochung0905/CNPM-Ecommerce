@@ -48,7 +48,7 @@ namespace CNPM_ktxUtc2Store.Controllers
         public async Task<IActionResult> GetTotalmyOrderCancle()
         {
             var userId = GetUserId();
-            var order = await _context.orders.Where(x => x.applicationUserId == userId).Where(x => x.IsDelete == true).Where(x => x.IsComplete == true).Where(x => x.isHuy == true).ToListAsync();
+            var order = await _context.orders.Where(x => x.applicationUserId == userId).Where(x => x.isHuy == true).ToListAsync();
             int dem = order.Count();
             return Ok(dem);
         }
@@ -180,7 +180,7 @@ namespace CNPM_ktxUtc2Store.Controllers
                       $"                    <tbody>\r\n" +
                       $"                        <tr>\r\n" +
                       $"                            <td align=\"center\" valign=\"top\">\r\n\r\n" +
-                      $"                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background-color:#96588a;color:#ffffff;border-bottom:0;font-weight:bold;line-height:100%;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;border-radius:3px 3px 0 0\">\r\n" +
+                      $"                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background-color:#e74c3c;color:#ffffff;border-bottom:0;font-weight:bold;line-height:100%;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;border-radius:3px 3px 0 0\">\r\n" +
                       $"                                    <tbody>\r\n                                        <tr>\r\n                                            <td style=\"padding:36px 48px;display:block\">\r\n" +
                       $"                                                <h1 style=\"font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;font-size:30px;font-weight:300;line-height:150%;margin:0;text-align:left;color:#ffffff;background-color:inherit\">Đơn hàng mới: #{dathang.Id}</h1>\r\n" +
                       $"                                            </td>\r\n" +
@@ -200,9 +200,9 @@ namespace CNPM_ktxUtc2Store.Controllers
                       $"                                                        <tr>\r\n" +
                       $"                                                            <td valign=\"top\" style=\"padding:48px 48px 32px\">\r\n" +
                       $"                                                                <div style=\"color:#636363;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;font-size:14px;line-height:150%;text-align:left\">\r\n\r\n" +
-                      $"                                                                    <p style=\"margin:0 0 16px\">Bạn vừa nhận được đơn hàng từ  {applicationUser.fullname}. Đơn hàng như sau:</p>\r\n" +
-                      $"                                                                    <h2 style=\"color:#96588a;display:block;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;font-size:18px;font-weight:bold;line-height:130%;margin:0 0 18px;text-align:left\">\r\n" +
-                      $"                                                                        <a href=\"#\" style=\"font-weight:normal;text-decoration:underline;color:#96588a\" target=\"_blank\">[Đơn hàng #{dathang.Id}]</a> ({dathang.createDate})\r\n" +
+                      $"                                                                    <p style=\"margin:0 0 16px\">Bạn vừa nhận được đơn hàng từ  UTC2Store. Đơn hàng như sau:</p>\r\n" +
+                      $"                                                                    <h2 style=\"color:#e74c3c;display:block;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;font-size:18px;font-weight:bold;line-height:130%;margin:0 0 18px;text-align:left\">\r\n" +
+                      $"                                                                        <a href=\"#\" style=\"font-weight:normal;text-decoration:underline;color:#e74c3c\" target=\"_blank\">[Đơn hàng #{dathang.Id}]</a> ({dathang.createDate})\r\n" +
                       $"                                                                    </h2>\r\n\r\n" +
                       $"                                                                    <div style=\"margin-bottom:40px\">\r\n" +
                       $"                                                                        <table cellspacing=\"0\" cellpadding=\"6\" border=\"1\" style=\"color:#636363;border:1px solid #e5e5e5;vertical-align:middle;width:100%;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif\">\r\n" +
@@ -214,7 +214,8 @@ namespace CNPM_ktxUtc2Store.Controllers
                       $"                                                                                </tr>\r\n" +
                       $"                                                                            </thead>\r\n" +
                       $"                                                                            <tbody>\r\n" +
-                      $"                                                                                {product.productName}\r\n" +
+                      $"<tr> <td> {product.productName}</td> <td> {CTDH.quantity}</td> <td> {CTDH.unitPrice}</td></tr>" +
+                      $"                                                                               \r\n" +
                       $"                                                                            </tbody>\r\n" +
                       $"                                                                            <tfoot>\r\n" +
                       $"                                                                                <tr>\r\n" +
@@ -243,12 +244,12 @@ namespace CNPM_ktxUtc2Store.Controllers
                       $"                                                                        <tbody>\r\n" +
                       $"                                                                        <td valign=\"top\" width=\"50%\"\r\n" +
                       $"                                                                            style=\"text-align:left;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;border:0;padding:0\">\r\n" +
-                      $"                                                                            <h2 style=\"color:#96588a;display:block;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;font-size:18px;font-weight:bold;line-height:130%;margin:0 0 18px;text-align:left\">\r\n" +
+                      $"                                                                            <h2 style=\"color:#e74c3c;display:block;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;font-size:18px;font-weight:bold;line-height:130%;margin:0 0 18px;text-align:left\">\r\n" +
                       $"                                                                                Thông tin người nhận\r\n" +
                       $"                                                                            </h2>\r\n\r\n" +
-                      $"                                                                            <address style=\"padding:12px;color:#636363;border:1px solid #e5e5e5\">\r\n" +
+                      $"                                                                            <address style=\"padding:12px;color:#e74c3c;border:1px solid #e5e5e5\">\r\n" +
                       $"                                                                                {applicationUser.fullname}<br>{CTDH.addressuer} <br><a href=\"tel:{applicationUser.PhoneNumber}\"\r\n" +
-                      $"                                                                                                                              style=\"color:#96588a;font-weight:normal;text-decoration:underline\"\r\n" +
+                      $"                                                                                                                              style=\"color:#e74c3c;font-weight:normal;text-decoration:underline\"\r\n" +
                       $"                                                                                                                              target=\"_blank\">{applicationUser.PhoneNumber}</a> <br><a href=\"mailto:{applicationUser.Email}\"\r\n" +
                       $"                                                                                                                                                                   target=\"_blank\">{applicationUser.Email}</a>\r\n " +
                       $"                                                                           </address>\r\n" +

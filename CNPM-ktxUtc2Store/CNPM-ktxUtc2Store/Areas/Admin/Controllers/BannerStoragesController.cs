@@ -14,6 +14,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
+
     public class BannerStoragesController : Controller
     {
         private readonly ApplicationDbContext _context;

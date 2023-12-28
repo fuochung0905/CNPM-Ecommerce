@@ -16,6 +16,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
+
     public class productsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -104,18 +105,19 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 
         }
         //Get Admin/product/AddVariation/5
-        public IActionResult AddVariation(int? id)
+        public async Task<IActionResult> AddVariation(int? id)
         {
-            var product = _context.products.Find(id);
-            var variation = _context.variation.Where(x => x.categoryId == product.categoryId).ToList();
+            var product =await _context.products.FindAsync(id);
+            var variation =await _context.variation.Where(x => x.categoryId == product.categoryId).ToListAsync();
             
             productvariationDto dto = new productvariationDto();
             dto.productId = product.Id;
+            
             foreach (var item in variation)
             {
                 dto.Variations.Add(item);
             }
-            var productvariation = _context.productVariations.Where(x => x.productId == product.Id).ToList();
+            var productvariation =await _context.productVariations.Where(x => x.productId == product.Id).ToListAsync();
             foreach (var pv in productvariation)
             {
                 dto.productVariations.Add(pv);
@@ -125,7 +127,8 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> AddVariation(int id, productvariationDto productvariationDto)
         {
-            var product= await _context.products.FindAsync(id);
+            var product= await _context.products.FindAsync(productvariationDto.productId);
+      
             var variation =await _context.variation.FindAsync(productvariationDto.Id);
             productVariation model = new productVariation();
             model.product = product;

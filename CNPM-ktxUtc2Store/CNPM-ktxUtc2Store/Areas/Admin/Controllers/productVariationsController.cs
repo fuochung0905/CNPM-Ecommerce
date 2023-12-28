@@ -13,6 +13,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
+
     public class productVariationsController : Controller
     {
         private readonly ApplicationDbContext _context;

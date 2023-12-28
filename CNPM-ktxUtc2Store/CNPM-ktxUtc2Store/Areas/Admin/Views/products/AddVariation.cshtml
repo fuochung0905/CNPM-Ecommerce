@@ -26,56 +26,60 @@
             </div>
             <div class="edit-item">
                 <div class="edit-item-variation">
-                    @foreach (var outerItem in Model.Variations)
-                    {
-                        @if(outerItem.name == "color")
+                    <form asp-area="Admin" asp-controller="products" asp-action="AddVariation">
+                        <input  type="hidden" asp-for="productId"/>
+                        @foreach (var outerItem in Model.Variations)
                         {
-                            isAdded = false;
-                            @foreach (var innerItem in Model.productVariations)
+                            @if (outerItem.name == "color")
                             {
-                                if (innerItem.variationId == outerItem.Id)
+                                isAdded = false;
+                                @foreach (var innerItem in Model.productVariations)
                                 {
-                                    isAdded = true; // Nếu tìm thấy phần tử tương đương, đặt isAdded thành true và thoát vòng lặp
+                                    if (innerItem.variationId == outerItem.Id)
+                                    {
+                                        isAdded = true; // Nếu tìm thấy phần tử tương đương, đặt isAdded thành true và thoát vòng lặp
 
-                                    break;
+                                        break;
+                                    }
                                 }
-                            }
-                            @if (isAdded)
-                            {
-                                <div class="edit-item-variation-item">
-                                    <div class="admin-variation-select">
-                                        <label>
+                                @if (isAdded)
+                                {
+                                    <div class="edit-item-variation-item">
+                                        <div class="admin-variation-select">
+                                            <label>
                                                 <input asp-for="Id" type="radio"
                                                        value="@outerItem.Id" />
-                                        </label>
+                                            </label>
+                                        </div>
+                                        <div class="admin-variation-value" style="color:dodgerblue;">
+                                            @outerItem.value
+                                        </div>
+                                        <div class="admin-variation-control">
+                                            <button class="btn-vremove"><i class="fas fa-remove" onclick="deletevariation(productId,@outerItem.Id)"></i></button>
+                                        </div>
                                     </div>
-                                    <div class="admin-variation-value" style="color:dodgerblue;">
-                                        @outerItem.value
+                                }
+                                else
+                                {
+                                    <div class="edit-item-variation-item" style="margin-top: 5px;">
+                                        <div class="admin-variation-control">
+                                            <label>
+                                                <input asp-for="Id" type="radio"
+                                                       value="@outerItem.Id" />
+                                            </label>
+                                        </div>
+                                        <div class="admin-variation-value">
+                                            @outerItem.value
+                                        </div>
+                                        <div class="admin-variation-control">
+                                            <button type="submit" class="btn-vcheck"><i class="fas fa-check"></i></button>
+                                        </div>
                                     </div>
-                                    <div class="admin-variation-control">
-                                        <button class="btn-vremove"><i class="fas fa-remove"></i></button>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="edit-item-variation-item" style="margin-top: 5px;">
-                                    <div class="admin-variation-control">
-                                        <label>
-                                            <input asp-for="Id" type="radio"
-                                                   value="@outerItem.Id" />
-                                        </label>
-                                    </div>
-                                    <div class="admin-variation-value" >
-                                        @outerItem.value
-                                    </div>
-                                    <div class="admin-variation-control">
-                                        <button class="btn-vcheck"><i class="fas fa-check"></i></button>
-                                    </div>
-                                </div>
+                                }
                             }
                         }
-                    }
+                    </form>
+                    
                 </div>
 
             </div>
@@ -90,73 +94,86 @@
             <div class="edit-item">
 
                 <div class="edit-item-variation">
-
-                    @foreach (var outerItem in Model.Variations)
-                    {
-                        @if (outerItem.name == "size")
+                    <form asp-area="Admin" asp-controller="products" asp-action="AddVariation">
+                        <input type="hidden" asp-for="productId" />
+                        @foreach (var outerItem in Model.Variations)
                         {
-                            isAdded = false;
-
-                            @foreach (var innerItem in Model.productVariations)
+                            @if (outerItem.name == "size")
                             {
-                                if (innerItem.variationId == outerItem.Id)
+                                isAdded = false;
+
+                                @foreach (var innerItem in Model.productVariations)
                                 {
-                                    isAdded = true; // Nếu tìm thấy phần tử tương đương, đặt isAdded thành true và thoát vòng lặp
+                                    if (innerItem.variationId == outerItem.Id)
+                                    {
+                                        isAdded = true; // Nếu tìm thấy phần tử tương đương, đặt isAdded thành true và thoát vòng lặp
 
-                                    break;
+                                        break;
+                                    }
                                 }
-                            }
 
 
-                            @if (isAdded)
-                            {
-                                <div class="edit-item-variation-item">
-                                    <div class="admin-variation-select">
-                                        <label>
+                                @if (isAdded)
+                                {
+                                    <div class="edit-item-variation-item">
+                                        <div class="admin-variation-select">
+                                            <label>
                                                 <input asp-for="Id" type="radio"
                                                        value="@outerItem.Id" />
-                                        </label>
+                                            </label>
+                                        </div>
+                                        <div class="admin-variation-value" style="color:dodgerblue;">
+                                            @outerItem.value
+                                        </div>
+                                        <div class="admin-variation-control">
+                                            <button class="btn-vremove"><i class="fas fa-remove" onclick="deletevariation(productId,@outerItem.Id)"></i></button>
+                                        </div>
                                     </div>
-                                    <div class="admin-variation-value" style="color:dodgerblue;">
-                                        @outerItem.value
+                                }
+                                else
+                                {
+                                    <div class="edit-item-variation-item" style="margin-top: 5px;">
+                                        <div class="admin-variation-control">
+                                            <label>
+                                                <input asp-for="Id" type="radio"
+                                                       value="@outerItem.Id" />
+                                            </label>
+                                        </div>
+                                        <div class="admin-variation-value">
+                                            @outerItem.value
+                                        </div>
+                                        <div class="admin-variation-control">
+                                            <button type="submit" class="btn-vcheck"><i class="fas fa-check"></i></button>
+                                        </div>
                                     </div>
-                                    <div class="admin-variation-control">
-                                        Đã Thêm
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="edit-item-variation-item" style="margin-top: 5px;">
-                                    <div class="admin-variation-control">
-                                        <label>
-                                            <input asp-for="Id" type="radio"
-                                                   value="@outerItem.Id" />
-                                        </label>
-                                    </div>
-                                    <div class="admin-variation-value" >
-                                        @outerItem.value
-                                    </div>
-                                    <div class="admin-variation-control">
-                                        <button class="btn-vcheck"><i class="fas fa-check"></i></button>
-                                    </div>
-                                </div>
 
+                                }
                             }
                         }
-                    }
+                    </form>
+
+                 
                 </div>
 
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
+@section Scripts
+    {
+    <script>
+        async function deletevariation(productId, variationId) {
+            try {
+                var response = await fetch(`/Admin/products/DeleteVariation?productId=${productId}&variationId=${variationId}`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    location.reload();
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+  }
 
