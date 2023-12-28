@@ -139,13 +139,18 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         }
         public async Task<IActionResult> DeleteVariation(int productId, int variationId)
         {
-            var productVariation=await _context.productVariations.Where(X=>X.variationId==variationId).Where(x=>x.productId==productId).ToListAsync();
-            foreach(var item in productVariation)
+        
+                var productVariation = await _context.productVariations
+                    .Where(x => x.productId == productId && x.variationId == variationId)
+                    .FirstOrDefaultAsync();
+
+              if (productVariation != null)
             {
-                _context.productVariations.Remove(item);
-                await _context.SaveChangesAsync();
+                _context.productVariations.Remove(productVariation);
             }
-            return RedirectToAction("AddVariation", "products");
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
 

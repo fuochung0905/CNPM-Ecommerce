@@ -55,7 +55,7 @@
                                             @outerItem.value
                                         </div>
                                         <div class="admin-variation-control">
-                                            <button class="btn-vremove"><i class="fas fa-remove" onclick="deletevariation(productId,@outerItem.Id)"></i></button>
+                                            <a class="btn-vremove" href="/Admin/products/DeleteVariation?productId=@Model.productId&&variationId=@outerItem.Id"><i class="fas fa-remove"></i></a>
                                         </div>
                                     </div>
                                 }
@@ -126,7 +126,8 @@
                                             @outerItem.value
                                         </div>
                                         <div class="admin-variation-control">
-                                            <button class="btn-vremove"><i class="fas fa-remove" onclick="deletevariation(productId,@outerItem.Id)"></i></button>
+                                           
+                                            <a class="btn-vremove" href="/Admin/products/DeleteVariation?productId=@Model.productId&variationId=@outerItem.Id"><i class="fas fa-remove"></i></a>
                                         </div>
                                     </div>
                                 }
