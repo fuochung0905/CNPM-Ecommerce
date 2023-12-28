@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
@@ -21,6 +23,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using SendGrid.Helpers.Mail;
 
 namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
 {
@@ -83,9 +86,7 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-            public string homeAdress { get; set; }
-            public string villageAdress { get; set; }
-            public string districAdress { get; set; }
+          
         }
 
 
@@ -122,7 +123,7 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    await SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
@@ -163,6 +164,40 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
             return (IUserEmailStore<applicationUser>)_userStore;
+        }
+        public async Task<bool> SendEmailAsync(string email,string subject,string confirmLink)
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                var smtp = new SmtpClient();
+                {
+                    smtp.Host = "smtp.gmail.com"; //host name
+                    smtp.Port = 587; //port number
+                    smtp.EnableSsl = true; //whether your smtp server requires SSL
+                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential()
+                    {
+                        UserName = "h09052003n@gmail.com",
+                        Password = "debskzkkbtkmqdfe"
+                    };
+                }
+                MailAddress fromAddress = new MailAddress("h09052003n@gmail.com", "UTC2Store");
+                message.From = fromAddress;
+                message.To.Add(email);
+                message.Subject = subject;
+                message.IsBodyHtml = true;
+                message.Body = confirmLink;
+                smtp.Send(message);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
     }
 }
