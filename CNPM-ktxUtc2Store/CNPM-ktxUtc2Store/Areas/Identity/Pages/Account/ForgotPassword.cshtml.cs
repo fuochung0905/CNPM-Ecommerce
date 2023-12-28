@@ -4,6 +4,8 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
@@ -60,8 +62,7 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
                     return RedirectToPage("./ForgotPasswordConfirmation");
                 }
 
-                // For more information on how to enable account confirmation and password reset please
-                // visit https://go.microsoft.com/fwlink/?LinkID=532713
+
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                 var callbackUrl = Url.Page(
@@ -70,7 +71,7 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
 
-                await _emailSender.SendEmailAsync(
+                await SendEmailAsync(
                     Input.Email,
                     "Reset Password",
                     $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
@@ -79,6 +80,40 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
             }
 
             return Page();
+        }
+        public async Task<bool> SendEmailAsync(string email, string subject, string confirmLink)
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                var smtp = new SmtpClient();
+                {
+                    smtp.Host = "smtp.gmail.com"; //host name
+                    smtp.Port = 587; //port number
+                    smtp.EnableSsl = true; //whether your smtp server requires SSL
+                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential()
+                    {
+                        UserName = "h09052003n@gmail.com",
+                        Password = "debskzkkbtkmqdfe"
+                    };
+                }
+                MailAddress fromAddress = new MailAddress("h09052003n@gmail.com", "UTC2Store");
+                message.From = fromAddress;
+                message.To.Add(email);
+                message.Subject = subject;
+                message.IsBodyHtml = true;
+                message.Body = confirmLink;
+                smtp.Send(message);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }
