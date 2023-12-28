@@ -29,10 +29,10 @@ namespace CNPM_ktxUtc2Store.Models
 
         [Range(0, 5000000, ErrorMessage = "Vui lòng nhập số không âm.")]
         [Required(ErrorMessage = "Nhập tên đi đồ ngu")]
-        public int qty_inStock { get; set; } = 0;
+        public int qty_inStock { get; set; } 
 
 
-        public int daban { get; set; } = 0;
+        public int daban { get; set; } 
         public virtual List<productVariation> ProductVariations { get; set; } = new List<productVariation>();
 
     }

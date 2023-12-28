@@ -82,13 +82,16 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             dask.doanhthunam = doanhthunam;
 
 
-            var donchoduyet = _context.orders.Include(x => x.orderDetails).Where(x => x.IsDelete ==false ).ToList();
+            var donchoduyet = _context.orders.Include(x => x.orderDetails).Where(x => x.IsDelete ==false ).Where(x=>x.IsComplete==false).Where(x=>x.isHuy==false).ToList();
             int dem = donchoduyet.Count();
             dask.donchoduyet = dem;
 
-            var donthanhcong = _context.orders.Include(x => x.orderDetails).Where(x => x.IsComplete == true).ToList();
+            var donthanhcong = _context.orders.Include(x => x.orderDetails).Where(x => x.IsDelete == true).Where(x => x.IsComplete == false).Where(x => x.isHuy == false).ToList();
             int dem1 = donthanhcong.Count();
             dask.thanhcong = dem1;
+
+
+          
             return View(dask);
         }
     }

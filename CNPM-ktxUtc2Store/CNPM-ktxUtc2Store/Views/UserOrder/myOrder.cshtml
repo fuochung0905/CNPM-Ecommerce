@@ -5,40 +5,50 @@
         <div class="myorder-block-header">
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="opall()">Tất cả</a>
+                <span id="orderCountall" class="num">0</span>
             </div>
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="opwait()">Đang giao</a>
+                <span id="orderCountwait" class="num">0</span>
             </div>
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="opprocess()">Đã nhận</a>
+                <span id="orderCountcomplete" class="num">0</span>
             </div>
             <div class="myorder-block-header-item">
                 <a class="oo" onclick="ophuy()">Đã hủy</a>
+                <span id="orderCountcancle" class="num">0</span>
             </div>
         </div>
 
         <div class="tab-all-user">
             <div id="content-pl-tab-all" class="myorder-block-content">
+                    <div>
+
+                    </div>
                 @foreach (var item in Model.orderDetails)
                 {
                     <div class="myorder-block-content-header">
-                        <div class="myorder-block-content-header-left">  @item.product.productName</div>
-                        <div class="myorder-block-content-header-right">
-                            <div class="myorder-block-content-header-right-item">@item.order.updateDate</div>
-                            <div class="myorder-block-content-header-right-item">@item.order.status.statusName</div>
-                        </div>
-
+                        <div class="myorder-block-content-body-img">Ảnh</div>
+                        <div class="myorder-block-content-body-des">Sản phẩm</div>
+                        <div class="myorder-block-content-body-qty">Số lượng</div>
+                        <div class="myorder-block-content-body-price"> Tổng trả</div>
                     </div>
 
                     <div class="myorder-block-content-body">
                         <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
 
                         <div class="myorder-block-content-body-des">
-                            <div>  @item.product.description</div>
+                            <div>  @item.product.productName</div>
                             <div>Kích thước: @item.size, Màu sắc: @item.color</div>
                         </div>
-                        <div class="myorder-block-content-body-price">đ @item.unitPrice</div>
-                        <div class="myorder-block-content-body-qty">Số lượng @item.quantity</div>
+                        
+                        <div class="myorder-block-content-body-qty" >@item.quantity</div>
+                        <div class="myorder-block-content-body-price money"> @item.unitPrice</div>
+                    </div>
+                    <div class="myorder-block-content-header-right">
+                        <div class="myorder-block-content-header-right-item">@item.order.updateDate</div>
+                        <div class="myorder-block-content-header-right-item">@item.order.status.statusName</div>
                     </div>
                     @if (item.order.isHuy == false)
                     {
@@ -76,6 +86,66 @@
     {
 
     <script>
+      
+            loadcartcount();
+        loadmyorderwait();
+        loadmyordecomplete();
+        loadmyordercancle();
+        async function loadcartcount() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOder`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountall");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        async function loadmyorderwait() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOrderWait`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountwait");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+        async function loadmyordecomplete() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOrderComplete`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountcomplete");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+        async function loadmyordercancle() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOrderCancle`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountcancle");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
 
         async function opall() {
             var p = document.getElementsByClassName("myorder-block-content");
