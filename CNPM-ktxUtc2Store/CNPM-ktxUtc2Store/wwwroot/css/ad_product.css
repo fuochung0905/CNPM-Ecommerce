@@ -17,6 +17,7 @@ hr{
     margin: 0.4rem 0;
 }
 .admin-product-head {
+    position: relative;
     display: grid;
     margin-top: 2px;
     margin-bottom: 20px;
@@ -33,9 +34,11 @@ hr{
         place-content: center;
         justify-content: space-evenly;
     }
-.add-product{
- 
-    height: 100%;
+.add-product {
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    
 }
 .category-head-color {
     
@@ -195,7 +198,7 @@ hr{
 .admin-product-controle {
     display: grid;
     place-content: center;
-    grid-template-columns: 30% 30%;
+    grid-template-columns: 30% 30% 30% ;
     flex-basis: 20%;
 }
 .head-color{
@@ -229,3 +232,40 @@ hr{
             grid-template-columns: auto auto auto;
             margin-bottom: 5px;
         }
+/*infostorage*/
+
+
+    .Info-item {
+        display: flex;
+        flex-direction: row;
+        place-content: center;
+       padding-top: 5px;
+       
+    }
+
+.InfoStore {
+    flex-basis: 50%;
+    display: flex;
+    align-items: flex-end;
+    direction: rtl;
+    padding-right: 10px;
+}
+        .InfoStore2{
+            flex-basis: 50%;
+            display: flex;
+            align-items: flex-start;
+        }
+/*addvariation*/
+.btn-vcheck{
+    background-color: dodgerblue;
+    color: greenyellow;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.btn-vremove {
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+}

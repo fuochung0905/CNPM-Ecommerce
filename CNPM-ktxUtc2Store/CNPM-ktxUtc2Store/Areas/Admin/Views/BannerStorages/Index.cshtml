@@ -8,41 +8,27 @@
 
 <h1>Index</h1>
 
-<div class="admin-product-head">
+<div class="admin-product-head" style="position: relative;">
     <div class="head-item">
         <h5><i class="far fa-clipboard"></i> Danh sách Banner</h5>
     </div>
+    <p style="position: absolute; top: 15px; right: 50px;">
+        <a asp-action="Create"><button class="wrap-btn m-color">Thêm Banner mới</button></a>
+    </p>
 
-    
+</div>
+<div>
+    <div style="display: grid; grid-template-columns: 30% 30% 30%; justify-content: space-evenly;">
+        @foreach(var item in Model)
+        {
+            <div style="display: flex; flex-direction: row; border: 1px solid gray; box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);">
+                <div style="align-self: flex-start;">
+                    <img class="" style="max-height:180px;" src="/images/@item.Bannerpicture">
+                </div>
+                <div style="display: grid; justify-content: space-evenly;"><a style="display: grid;" asp-action="Delete" asp-route-id="@item.Id" class="btn wrap-btn m-color-full">X</a></div>
+            </div>
+           
+        }
+    </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Banner
-            </th>
-           
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                
-                    <img class="img-banner" src="/images/@item.Bannerpicture">
-            </td>
-          
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-         
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<p>
-    <a asp-action="Create"><button class="wrap-btn m-color">Thêm Banner</button></a>
-</p>

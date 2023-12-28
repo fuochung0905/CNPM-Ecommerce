@@ -21,7 +21,7 @@
                 <input type="hidden" asp-for="Id" />
                 <div class="edit-item">
                     <label asp-for="namestorage" class="control-label edit-item-1">Tên cửa hàng</label>
-                    <input asp-for="namestorage" class="form-control edit-item-2" />
+                    <label asp-for="namestorage" class="form-control edit-item-2" >@Model.namestorage</label>
                     <span asp-validation-for="namestorage" class="text-danger"></span>
                 </div>
                 <div class="edit-item">
@@ -65,7 +65,7 @@
                     <span asp-validation-for="linktiktok" class="text-danger"></span>
                 </div>
                  <div class=" edit-item form-group sp">
-                    <input type="submit" value="Lưu" class="wrap-btn m-color-full" />
+                    <input type="submit" value="Lưu" class="wrap-btn m-color-full" asp-action="Index"/>
                 </div>
             </div>
             

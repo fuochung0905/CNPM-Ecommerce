@@ -23,26 +23,32 @@
 
         <div class="tab-all-user">
             <div id="content-pl-tab-all" class="myorder-block-content">
+                    <div>
+
+                    </div>
                 @foreach (var item in Model.orderDetails)
                 {
                     <div class="myorder-block-content-header">
-                        <div class="myorder-block-content-header-left">  @item.product.productName</div>
-                        <div class="myorder-block-content-header-right">
-                            <div class="myorder-block-content-header-right-item">@item.order.updateDate</div>
-                            <div class="myorder-block-content-header-right-item">@item.order.status.statusName</div>
-                        </div>
-
+                        <div class="myorder-block-content-body-img">Ảnh</div>
+                        <div class="myorder-block-content-body-des">Sản phẩm</div>
+                        <div class="myorder-block-content-body-qty">Số lượng</div>
+                        <div class="myorder-block-content-body-price"> Tổng trả</div>
                     </div>
 
                     <div class="myorder-block-content-body">
                         <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
 
                         <div class="myorder-block-content-body-des">
-                            <div>  @item.product.description</div>
+                            <div>  @item.product.productName</div>
                             <div>Kích thước: @item.size, Màu sắc: @item.color</div>
                         </div>
-                        <div class="myorder-block-content-body-price">đ @item.unitPrice</div>
-                        <div class="myorder-block-content-body-qty">Số lượng @item.quantity</div>
+                        
+                        <div class="myorder-block-content-body-qty" >@item.quantity</div>
+                        <div class="myorder-block-content-body-price money"> @item.unitPrice</div>
+                    </div>
+                    <div class="myorder-block-content-header-right">
+                        <div class="myorder-block-content-header-right-item">@item.order.updateDate</div>
+                        <div class="myorder-block-content-header-right-item">@item.order.status.statusName</div>
                     </div>
                     @if (item.order.isHuy == false)
                     {
