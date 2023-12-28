@@ -8,80 +8,79 @@
 
 <div class="admin-product-head">
     <div class="head-item">
-        <h5><i class="far fa-clipboard"></i>Thêm sản phẩm</h5>
+        <div class="head-item-left"><i class="far fa-clipboard"></i> Danh sách sản phẩm</div>
     </div>
     <div class="head-item add-product">
         <a class="" style="" href="/Admin/products"><button class="btn-return">Trở về danh sách</button></a>
     </div>
 </div>
-<div class="row" style="display: grid; justify-content: space-evenly; grid-template-columns: 80%; ">
-    <div class="" style="display: flex; flex-direction: column; background: #F8F8F8; border-radius: 10px;">
+<div class="" style="display: grid; justify-content: space-evenly; grid-template-columns: 80%; ">
+    <div class="edit-body" style="display: flex; flex-direction: column; background: #F8F8F8; border-radius: 10px;">
         
         <form asp-action="Create" method="post" enctype="multipart/form-data">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-             <div>
+             <div class="edit" style="width:100%; position:relative;">
                 
-                <div class="form-group">
-                    <label class="control-label">Tên Sản Phẩm</label>
-                    <input asp-for="productName" class="form-control" />
-                    <span asp-validation-for="productName" class="text-danger"></span>
+                <div class="edit-item">
+                    <label class="control-label edit-item-1">Tên Sản Phẩm</label>
+                    <input asp-for="productName" class="form-control edit-item-2" />
+                    <span asp-validation-for="productName" class="text-danger "></span>
                   
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="oldprice" class="control-label" id="checkprice">Giá Nhập</label>
-                    <input asp-for="oldprice" class="form-control" min="1"/>
+                <div class="edit-item">
+                    <label asp-for="oldprice" class="control-label edit-item-1" id="checkprice">Giá Nhập</label>
+                    <input asp-for="oldprice" class="form-control edit-item-2" min="1" />
                     <span asp-validation-for="oldprice" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="price" class="control-label">Giá Bán</label>
-                    <input asp-for="price" class="form-control" min="1" />
+                <div class="edit-item">
+                    <label asp-for="price" class="control-label edit-item-1">Giá Bán</label>
+                    <input asp-for="price" class="form-control edit-item-2" min="1" />
                     <span asp-validation-for="price" class="text-danger"></span>
                 </div>
-                <div class="row">
-                    <div class="col-8" style="width: 100%;">
-                        <label asp-for="image">Ảnh Minh Họa</label>
+                <div class="edit-item">
+                    
+                        <label class="edit-item-1" asp-for="image">Ảnh Minh Họa</label>
                         <input type="file" class="form-control" asp-for="image" id="ChooseImg" />
-                    </div>
-                    @* <div class="col-4">
-                    <img src="https://placehold.jp/150*150.png" style="width:100px; height:100px;border:1px solid red; border-radius:10px;padding:10px; "
-                    alt="product image" id="PreImg" />
-                    </div> *@
+                        
+                    
                 </div>
-                <div class="form-group">
-                    <label asp-for="categoryId" class="control-label">Loại Sản Phẩm</label>
-                    <div style="display:flex; justify-content:space-between">
+                
+                <div class="edit-item">
+                    <label asp-for="categoryId" class="control-label edit-item-1">Loại Sản Phẩm</label>
+                    <div style="display:flex; justify-content:space-between " class="edit-item-2">
                         <select asp-for="categoryId" class="form-control" asp-items="ViewBag.categoryId" style="width:95%;"> </select>
                         <div class="add-product-1">
-                            <a class="wrap-btn " style="background-color:#F8F8F8 ; height:100%;" href="/Admin/categories"><i class="fas fa-plus" style="font-size: 1em; padding-right: 5px;"></i></a>
+                            <a class="wrap-btn m-color-full" style="height:100%;" href="/Admin/categories"><i class="fas fa-plus " style="font-size: 1em; padding-right: 5px;"></i></a>
                         </div>
                     </div>
-                   
-
                 </div>
-                <div class="form-group">
-                    <label asp-for="qty_inStock" class="control-label">Số Lượng Nhập</label>
-                    <input asp-for="qty_inStock" class="form-control" min="1"/>
+                <div class="edit-item">
+                    <label asp-for="qty_inStock" class="control-label edit-item-1">Số Lượng Nhập</label>
+                    <input asp-for="qty_inStock" class="form-control edit-item-2" min="1" />
                     <span asp-validation-for="qty_inStock" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="description" class="control-label">Mô Tả Sản Phẩm</label>
-                    <textarea asp-for="description" class="form-control" rows="4" style="width: 100%;"></textarea>
+                <div class="edit-item">
+                    <label asp-for="description" class="control-label edit-item-1">Mô Tả Sản Phẩm</label>
+                    <textarea asp-for="description" class="form-control edit-item-2" rows="4" style="width: 100%;"></textarea>
                     @* <input asp-for="description" class="form-control" /> *@
                     <span asp-validation-for="description" class="text-danger"></span>
                 </div>
-            </div>
-            <div style="display:flex ; justify-content: space-between; padding-top:10px; padding-bottom: 10px;">
-                <div class="form-group">
-                    <input type="submit" value="Lưu" class="wrap-btn " style="background-color:#F8F8F8" />
+                <div class="edit-item" style="display:grid ; justify-content: space-evenly; padding-top:10px; padding-bottom: 10px;">
+                    <div class="form-group">
+                        <input type="submit" value="Lưu" class="wrap-btn m-color-full"  />
+                    </div>
+
                 </div>
-                
+                <div class="edit-item" style="position:absolute; bottom:0; left:0;">
+                    <img id="displayImg" src="" />
+                </div>
             </div>
+            
           
         </form>
     </div>
 </div>
-
 
 
 <script>
@@ -95,5 +94,17 @@
         } else {
             console.log('Nội dung không phù hợp.');
         }
+    });
+    var imgElement = document.getElementById("displayImg");
+    var inputElement = document.getElementById("ChooseImg");
+
+    inputElement.addEventListener("input", function () {
+        var ImgName = inputElement.files;
+        if (ImgName.length > 0) {
+            var fileName = ImgName[0].name;
+            var inputValue = inputElement.value;
+            imgElement.src = "/images/" + fileName;
+        }
+
     });
 </script>

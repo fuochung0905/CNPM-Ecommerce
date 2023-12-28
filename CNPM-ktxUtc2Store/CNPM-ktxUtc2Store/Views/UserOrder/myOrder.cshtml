@@ -3,29 +3,45 @@
 <div class="myorder">
     <div class="myorder-block">
         <div class="myorder-block-header">
-            <div class="myorder-block-header-item">
-                <a class="oo" onclick="opall()">Tất cả</a>
-                <span id="orderCountall" class="num">0</span>
+            <div class="myorder-block-header-item" >
+                <div class="hh hhall" onclick="opall(this)">
+                    <a >Tất cả</a>
+                    <span id="orderCountall" class="num">0</span>
+                </div>
+                
+            </div>
+            <div class="myorder-block-header-item" >
+                <div class="hh" onclick="opprocess(this)">
+                    <a> Đang xử lí</a>
+                    <span id="orderCountwait" class="num">0</span>
+                </div>
+                
             </div>
             <div class="myorder-block-header-item">
-                <a class="oo" onclick="opwait()">Đang giao</a>
-                <span id="orderCountwait" class="num">0</span>
+                <div class="hh" onclick="opwait(this)">
+                    <a >Đang giao</a>
+                    <span id="orderCountwait" class="num">0</span>
+                </div>
+                
             </div>
             <div class="myorder-block-header-item">
-                <a class="oo" onclick="opprocess()">Đã nhận</a>
-                <span id="orderCountcomplete" class="num">0</span>
+                <div class="hh" onclick="opcomplete(this)">
+                    <a >Đã nhận</a>
+                    <span id="orderCountcomplete" class="num">0</span>
+                </div>
+                
             </div>
-            <div class="myorder-block-header-item">
-                <a class="oo" onclick="ophuy()">Đã hủy</a>
-                <span id="orderCountcancle" class="num">0</span>
+            <div class="myorder-block-header-item" >
+                <div class="hh" onclick="ophuy(this)">
+                    <a >Đã hủy</a>
+                    <span id="orderCountcancle" class="num">0</span>
+                </div>
+                
             </div>
         </div>
-
+        <hr />
         <div class="tab-all-user">
             <div id="content-pl-tab-all" class="myorder-block-content">
-                    <div>
-
-                    </div>
                 @foreach (var item in Model.orderDetails)
                 {
                     <div class="myorder-block-content-header">
@@ -34,7 +50,7 @@
                         <div class="myorder-block-content-body-qty">Số lượng</div>
                         <div class="myorder-block-content-body-price"> Tổng trả</div>
                     </div>
-
+                    <hr />
                     <div class="myorder-block-content-body">
                         <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
 
@@ -47,31 +63,203 @@
                         <div class="myorder-block-content-body-price money"> @item.unitPrice</div>
                     </div>
                     <div class="myorder-block-content-header-right">
-                        <div class="myorder-block-content-header-right-item">@item.order.updateDate</div>
-                        <div class="myorder-block-content-header-right-item">@item.order.status.statusName</div>
+                        @if (item.order.isHuy)
+                        {
+                            <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtred">Đã hủy</p></div>
+                        }
+                        else
+                        {
+                            <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtblue"> @item.order.status.statusName</p></div>
+                        }
+                        <div class="myorder-block-content-header-right-item">Thời gian: @item.order.updateDate</div>
+
+                        @if (item.order.isHuy == false && item.order.status.Id ==1)
+                        {
+                            <div class="myorder-block-content-header-right-item">
+                                <div></div>
+                                <a href="/UserOrder/huydon?id=@item.Id"><button class="wrap-btn m-color-full">Hủy đơn</button></a>
+
+                            </div>
+                        }
                     </div>
-                    @if (item.order.isHuy == false)
-                    {
-                        <div class="myorder-block-content-footer">
-                            <div></div>
-                            <a href="/UserOrder/huydon?id=@item.Id"><button class="wrap-btn m-color-full">Hủy đơn</button></a>
-
-                        </div>
-                    }
-
                     <hr>
                 }
             </div>
-            <div id="content-pl-tab-wait" class="myorder-block-content">
+            <div id="content-pl-tab-process" class="myorder-block-content">
+                @foreach (var item in Model.orderDetails)
+                {
+                    @if (item.order.status.Id == 1 && item.order.isHuy == false)
+                    {
+                        <div class="myorder-block-content-header">
+                            <div class="myorder-block-content-body-img">Ảnh</div>
+                            <div class="myorder-block-content-body-des">Sản phẩm</div>
+                            <div class="myorder-block-content-body-qty">Số lượng</div>
+                            <div class="myorder-block-content-body-price"> Tổng trả</div>
+                        </div>
+                        <hr />
+                        <div class="myorder-block-content-body">
+                            <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
 
+                            <div class="myorder-block-content-body-des">
+                                <div>  @item.product.productName</div>
+                                <div>Kích thước: @item.size, Màu sắc: @item.color</div>
+                            </div>
+
+                            <div class="myorder-block-content-body-qty">@item.quantity</div>
+                            <div class="myorder-block-content-body-price money"> @item.unitPrice</div>
+                        </div>
+                        <div class="myorder-block-content-header-right">
+                            <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtblue"> @item.order.status.statusName</p></div>
+                            <div class="myorder-block-content-header-right-item">Thời gian: @item.order.updateDate</div>
+
+                            @if (item.order.isHuy == false && item.order.status.Id == 1)
+                            {
+                                <div class="myorder-block-content-header-right-item">
+                                    <div></div>
+                                    <a href="/UserOrder/huydon?id=@item.Id"><button class="wrap-btn m-color-full">Hủy đơn</button></a>
+
+                                </div>
+                            }
+                        </div>
+                        <hr>
+                    }
+                }
+            </div>
+            <div id="content-pl-tab-wait" class="myorder-block-content">
+                @foreach (var item in Model.orderDetails)
+                {
+                    @if (item.order.status.Id == 2)
+                    {
+                        <div class="myorder-block-content-header">
+                            <div class="myorder-block-content-body-img">Ảnh</div>
+                            <div class="myorder-block-content-body-des">Sản phẩm</div>
+                            <div class="myorder-block-content-body-qty">Số lượng</div>
+                            <div class="myorder-block-content-body-price"> Tổng trả</div>
+                        </div>
+                        <hr />
+                        <div class="myorder-block-content-body">
+                            <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
+
+                            <div class="myorder-block-content-body-des">
+                                <div>  @item.product.productName</div>
+                                <div>Kích thước: @item.size, Màu sắc: @item.color</div>
+                            </div>
+
+                            <div class="myorder-block-content-body-qty">@item.quantity</div>
+                            <div class="myorder-block-content-body-price money"> @item.unitPrice</div>
+                        </div>
+                        <div class="myorder-block-content-header-right">
+                            <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtblue"> @item.order.status.statusName</p></div>
+                            <div class="myorder-block-content-header-right-item">Thời gian: @item.order.updateDate</div>
+
+                            @if (item.order.isHuy == false && item.order.status.Id == 1)
+                            {
+                                <div class="myorder-block-content-header-right-item">
+                                    <div></div>
+                                    <a href="/UserOrder/huydon?id=@item.Id"><button class="wrap-btn m-color-full">Hủy đơn</button></a>
+
+                                </div>
+                            }
+                        </div>
+                        <hr>
+                    }
+                }
             </div >
             
             <div id="content-pl-tab-complete" class="myorder-block-content">
+                @foreach (var item in Model.orderDetails)
+                {
+                    @if (item.order.status.Id == 3)
+                    {
+                        <div class="myorder-block-content-header">
+                            <div class="myorder-block-content-body-img">Ảnh</div>
+                            <div class="myorder-block-content-body-des">Sản phẩm</div>
+                            <div class="myorder-block-content-body-qty">Số lượng</div>
+                            <div class="myorder-block-content-body-price"> Tổng trả</div>
+                        </div>
+                        <hr />
+                        <div class="myorder-block-content-body">
+                            <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
 
+                            <div class="myorder-block-content-body-des">
+                                <div>  @item.product.productName</div>
+                                <div>Kích thước: @item.size, Màu sắc: @item.color</div>
+                            </div>
+
+                            <div class="myorder-block-content-body-qty">@item.quantity</div>
+                            <div class="myorder-block-content-body-price money"> @item.unitPrice</div>
+                        </div>
+                        <div class="myorder-block-content-header-right">
+                            @if (item.order.isHuy)
+                            {
+                                <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtred">Đã hủy</p></div>
+                            }
+                            else
+                            {
+                                <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtblue"> @item.order.status.statusName</p></div>
+                            }
+                            <div class="myorder-block-content-header-right-item">Thời gian: @item.order.updateDate</div>
+
+                            @if (item.order.isHuy == false && item.order.status.Id == 1)
+                            {
+                                <div class="myorder-block-content-header-right-item">
+                                    <div></div>
+                                    <a href="/UserOrder/huydon?id=@item.Id"><button class="wrap-btn m-color-full">Hủy đơn</button></a>
+
+                                </div>
+                            }
+                        </div>
+                        <hr>
+                    }
+                }
             </div>
 
             <div id="content-pl-tab-huy" class="myorder-block-content">
+                @foreach (var item in Model.orderDetails)
+                {
+                    @if (item.order.isHuy)
+                    {
+                        <div class="myorder-block-content-header">
+                            <div class="myorder-block-content-body-img">Ảnh</div>
+                            <div class="myorder-block-content-body-des">Sản phẩm</div>
+                            <div class="myorder-block-content-body-qty">Số lượng</div>
+                            <div class="myorder-block-content-body-price"> Tổng trả</div>
+                        </div>
+                        <hr />
+                        <div class="myorder-block-content-body">
+                            <div class="myorder-block-content-body-img">  <img src="/images/@item.product.imageUrl" style="width:80px; height:80px;border-radius:6px;"></div>
 
+                            <div class="myorder-block-content-body-des">
+                                <div>  @item.product.productName</div>
+                                <div>Kích thước: @item.size, Màu sắc: @item.color</div>
+                            </div>
+
+                            <div class="myorder-block-content-body-qty">@item.quantity</div>
+                            <div class="myorder-block-content-body-price money"> @item.unitPrice</div>
+                        </div>
+                        <div class="myorder-block-content-header-right">
+                            @if (item.order.isHuy)
+                            {
+                                <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtred">Đã hủy</p></div>
+                            }
+                            else
+                            {
+                                <div class="myorder-block-content-header-right-item">Trạng thái: <p class="txtblue"> @item.order.status.statusName</p></div>
+                            }
+                            <div class="myorder-block-content-header-right-item">Thời gian: @item.order.updateDate</div>
+
+                            @if (item.order.isHuy == false && item.order.status.Id == 1)
+                            {
+                                <div class="myorder-block-content-header-right-item">
+                                    <div></div>
+                                    <a href="/UserOrder/huydon?id=@item.Id"><button class="wrap-btn m-color-full">Hủy đơn</button></a>
+
+                                </div>
+                            }
+                        </div>
+                        <hr>
+                    }
+                }
             </div>
         </div>
        
@@ -87,7 +275,8 @@
 
     <script>
       
-            loadcartcount();
+        loadcartcount();
+        loadmyorderprocess();
         loadmyorderwait();
         loadmyordecomplete();
         loadmyordercancle();
@@ -97,6 +286,19 @@
                 if (response.status == 200) {
                     var result = await response.json();
                     var cartcountel = document.getElementById("orderCountall");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        async function loadmyorderprocess() {
+            try {
+                var response = await fetch(`/UserOrder/GetTotalmyOrderWait`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("orderCountprocess");
                     cartcountel.innerHTML = result;
                 }
             }
@@ -147,24 +349,52 @@
         }
 
 
-        async function opall() {
+        async function opwait(elm) {
+            var color = document.getElementsByClassName("hh");
+            for (var i = 0; i < color.length; i++) {
+                color[i].style.background = "#F0F0F0";
+            }
+            elm.style.background = "orangered";
             var p = document.getElementsByClassName("myorder-block-content");
             for (var i = 0; i < p.length; i++) {
                 p[i].style.display = "none";
             }
-            var pblock = document.getElementById("content-pl-tab-all");
+            var pblock = document.getElementById("content-pl-tab-wait");
             pblock.style.display = "block";
         }
-        async function opwait() {
+        async function opall(elm) {
+            var color = document.getElementsByClassName("hh");
+            for (var i = 0; i < color.length; i++) {
+                color[i].style.background = "#F0F0F0";
+            }
+            elm.style.background = "orangered";
             var p = document.getElementsByClassName("myorder-block-content");
             for (var i = 0; i < p.length; i++) {
                 p[i].style.display = "none";
 
             }
-            var pblock = document.getElementById("content-pl-tab-wait");
+            var pblock = document.getElementById("content-pl-tab-all");
             pblock.style.display = "block";
         }
-        async function opprocess() {
+        async function opprocess(elm) {
+            var color = document.getElementsByClassName("hh");
+            for (var i = 0; i < color.length; i++) {
+                color[i].style.background = "#F0F0F0";
+            }
+            elm.style.background = "orangered";
+            var p = document.getElementsByClassName("myorder-block-content");
+            for (var i = 0; i < p.length; i++) {
+                p[i].style.display = "none";
+            }
+            var pblock = document.getElementById("content-pl-tab-process");
+            pblock.style.display = "block";
+        }
+        async function opcomplete(elm) {
+            var color = document.getElementsByClassName("hh");
+            for (var i = 0; i < color.length; i++) {
+                color[i].style.background = "#F0F0F0";
+            }
+            elm.style.background = "orangered";
             var p = document.getElementsByClassName("myorder-block-content");
             for (var i = 0; i < p.length; i++) {
                 p[i].style.display = "none";
@@ -172,7 +402,12 @@
             var pblock = document.getElementById("content-pl-tab-complete");
             pblock.style.display = "block";
         }
-        async function ophuy() {
+        async function ophuy(elm) {
+            var color = document.getElementsByClassName("hh");
+            for (var i = 0; i < color.length; i++) {
+                color[i].style.background = "#F0F0F0";
+            }
+            elm.style.background = "orangered";
             var p = document.getElementsByClassName("myorder-block-content");
             for (var i = 0; i < p.length; i++) {
                 p[i].style.display = "none";

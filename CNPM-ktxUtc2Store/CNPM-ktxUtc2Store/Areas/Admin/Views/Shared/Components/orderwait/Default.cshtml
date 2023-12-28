@@ -25,8 +25,10 @@
                     }
                     @foreach (var item in Model.orderList)
                     {
+                        @if (!item.isHuy)
+                        {
                         <hr />
-                    <div class="admin-ordersawait">
+                        <div class="admin-ordersawait">
                             <div class="admin-order-select">
                                 <label>
                                     <input asp-for="Id" type="radio" value="@item.Id" />
@@ -62,6 +64,8 @@
                                 </div>
                             }
                         </div>
+                        }
+                    
                     }
                 </form>
             </div>
