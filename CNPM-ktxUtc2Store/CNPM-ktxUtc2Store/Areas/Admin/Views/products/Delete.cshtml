@@ -7,17 +7,12 @@
 
 <div class="admin-product-head">
     <div class="head-item">
-        <h5><i class="far fa-clipboard"></i>Xóa sản phẩm</h5>
+        <div class="head-item-left"><i class="far fa-clipboard"></i> Danh sách sản phẩm</div>
     </div>
-
-    <div class="head-item search-box">
-        <form class="form-inline" asp-area="" asp-controller="Home" asp-action="Index" method="get" style="display: flex; flex-direction: row;">
-            <div class="">
-                <input type="text" name="searchName" placeholder="Search">
-            </div>
-            <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Tìm</button>
-        </form>
+    <div class="head-item add-product">
+        <a class="" style="" href="/Admin/products"><button class="btn-return">Trở về danh sách</button></a>
     </div>
+    
 </div>
 <div style="display: grid; grid-template-columns: 60%; justify-content: space-evenly;">
     <div class="card">
@@ -39,8 +34,8 @@
 
 
             <div class="product-price">
-                <p class="last-price">Giá cũ: <span class="money">@Html.DisplayFor(model => model.oldprice)</span></p>
-                <p class="new-price">Giá hiện tại: <span class="money">@Html.DisplayFor(model => model.price)</span></p>
+                <p class="">Giá nhập vào: <span class="money">@Html.DisplayFor(model => model.oldprice)</span></p>
+                <p class="new-price">Giá bán ra: <span class="money">@Html.DisplayFor(model => model.price)</span></p>
             </div>
 
             <div class="product-detail">
@@ -89,12 +84,19 @@
                 </form>
 
             </div>
+            <div class="product-describe" style="background:white; border: 1px solid #d9d9d9">
+                <div style="background: #f0f0f0; border: 1px solid #d9d9d9;">
+                    <h3 style="background: #f0f0f0; padding-left: 10px;">MÔ TẢ SẢN PHẨM</h3>
+                </div>
+                <div style="border: 1px solid #d9d9d9;">
 
-            <div class="product-describe">
-                <h3>MÔ TẢ SẢN PHẨM</h3>
-                @Html.DisplayFor(model => model.description)
+                    <div style="padding: 10px;">
+                        @Html.DisplayFor(model => model.description)
+                    </div>
+                </div>
             </div>
-            <form asp-action="Delete">
+            
+            <form asp-action="Delete" style="display: grid; place-content: center; padding-top: 10px;">
                 <input type="hidden" asp-for="Id" />
                 <input type="submit" value="Xác nhận xoá" class="btn wrap-btn m-color-full" />
 

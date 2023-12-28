@@ -6,7 +6,7 @@
 }
 <div class="admin-product-head">
     <div class="head-item">
-        <h5><i class="far fa-clipboard"></i> Danh sách đơn hàng</h5>
+        <div class="head-item-left"><i class="far fa-clipboard"></i> Danh sách sản phẩm</div>
     </div>
 
     <div class="head-item search-box">
@@ -92,9 +92,18 @@
                                         <div class="admin-order-address">   <h6> @i.addressuer</h6></div>
                                         <div class="admin-order-date">  <h6>@item.createDate</h6> </div>
                                         <div class="admin-order-option">
+                                            
                                             @if (item.IsDelete == false && item.IsComplete == false)
                                             {
-                                                <button style="padding:0 40%; background:#F8F8F8" type="submit">Duyệt</button>
+                                                @if (item.isHuy)
+                                                {
+                                                    <p class="txtred">Đã hủy</p>
+                                                }
+                                                else
+                                                {
+                                                    <button style="padding:0 40%; background:#F8F8F8" type="submit">Duyệt</button>
+                                                }    
+                                            
                                             }
                                             @if (item.IsDelete == true && item.IsComplete == false)
                                             {

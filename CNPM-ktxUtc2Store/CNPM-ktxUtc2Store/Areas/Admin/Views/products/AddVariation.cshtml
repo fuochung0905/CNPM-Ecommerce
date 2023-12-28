@@ -10,7 +10,7 @@
 }
 <div class="admin-product-head">
     <div class="head-item">
-        <h5><i class="far fa-clipboard"></i> Danh sách sản phẩm</h5>
+        <div class="head-item-left"><i class="far fa-clipboard"></i> Danh sách sản phẩm</div>
     </div>
     <div class="head-item add-product">
         <a class="" style="" href="/Admin/products"><button class="btn-return">Trở về danh sách</button></a>
@@ -147,6 +147,30 @@
                                             <button type="submit" class="btn-vcheck"><i class="fas fa-check"></i></button>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+                                    <div class="admin-variation-control">
+                                        <button class="btn-vremove"><i class="fas fa-remove"></i></button>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="edit-item-variation-item" style="margin-top: 5px;">
+                                    <div class="admin-variation-control">
+                                        <label>
+                                            <input asp-for="Id" type="radio"
+                                                   value="@outerItem.Id" />
+                                        </label>
+                                    </div>
+                                    <div class="admin-variation-value" >
+                                        @outerItem.value
+                                    </div>
+                                    <div class="admin-variation-control">
+                                        <button class="btn-vcheck"><i class="fas fa-check"></i></button>
+                                    </div>
+                                </div>
+=======
+>>>>>>> 30a23c131af65156c64340c21c1a50959c2f4f74
 
                                 }
                             }

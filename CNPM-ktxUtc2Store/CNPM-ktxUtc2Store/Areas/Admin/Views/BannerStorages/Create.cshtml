@@ -16,14 +16,14 @@
             <div class="edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="edit-item">
-                <img class="edit-item-img" src=""/>
+                <img class="edit-item-img" id="displayImg" src=""/>
             </div>
             <div class="edit-item">
                 <input type="file" class="form-control" asp-for="picture" id="ChooseImg" />
             </div>
 
-            <div class="form-group box-btn">
-                <input type="submit" value="Lưu" class="wrap-btn m-color-full" />
+            <div class="form-group box-btn" style="margin-left:10px;">
+                <input  type="submit" value="Lưu" class="wrap-btn m-color-full" />
                 <div>
                     <a asp-action="Index"><button class="wrap-btn m-color">Trở về</button></a>
                 </div>
@@ -31,6 +31,19 @@
             </div>
         </form>
 </div>
-
+<script>
+    var imgElement = document.getElementById("displayImg");
+    var inputElement = document.getElementById("ChooseImg");
+    
+    inputElement.addEventListener("input", function () {
+        var ImgName = inputElement.files;
+        if (ImgName.length > 0) {
+            var fileName = ImgName[0].name;
+            var inputValue = inputElement.value;
+            imgElement.src = "/images/" + fileName;
+        }
+        
+    });
+</script>
 
 
