@@ -9,7 +9,7 @@
     <div id="tooltip-login-wrap">
         <div class="tooltip-login-hover">@await Component.InvokeAsync("user")</div>
         <div id="tooltip-login-item">
-            @if (User.IsInRole("Admin"))
+            @if (User.IsInRole("Admin") || User.IsInRole("Saler"))
             {
                 <div class="menu-item">
                     <a class="nav-link " asp-area="Admin" asp-controller="daskboard" asp-action="Index">Quản lí </a>

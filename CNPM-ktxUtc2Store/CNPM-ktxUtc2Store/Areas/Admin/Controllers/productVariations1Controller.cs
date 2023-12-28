@@ -7,30 +7,27 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
-
-    public class productVariationsController : Controller
+    public class productVariations1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public productVariationsController(ApplicationDbContext context)
+        public productVariations1Controller(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/productVariations
+        // GET: Admin/productVariations1
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.productVariations.Include(p => p.product).Include(p => p.variation);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Admin/productVariations/Details/5
+        // GET: Admin/productVariations1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.productVariations == null)
@@ -50,15 +47,15 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View(productVariation);
         }
 
-        // GET: Admin/productVariations/Create
+        // GET: Admin/productVariations1/Create
         public IActionResult Create()
         {
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName");
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "value");
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id");
             return View();
         }
 
-        // POST: Admin/productVariations/Create
+        // POST: Admin/productVariations1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -72,11 +69,11 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName", productVariation.productId);
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "value", productVariation.variationId);
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id", productVariation.variationId);
             return View(productVariation);
         }
 
-        // GET: Admin/productVariations/Edit/5
+        // GET: Admin/productVariations1/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.productVariations == null)
@@ -90,11 +87,11 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName", productVariation.productId);
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Ivalued", productVariation.variationId);
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id", productVariation.variationId);
             return View(productVariation);
         }
 
-        // POST: Admin/productVariations/Edit/5
+        // POST: Admin/productVariations1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -127,11 +124,11 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["productId"] = new SelectList(_context.products, "Id", "productName", productVariation.productId);
-            ViewData["variationId"] = new SelectList(_context.variation, "Id", "value", productVariation.variationId);
+            ViewData["variationId"] = new SelectList(_context.variation, "Id", "Id", productVariation.variationId);
             return View(productVariation);
         }
 
-        // GET: Admin/productVariations/Delete/5
+        // GET: Admin/productVariations1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.productVariations == null)
@@ -151,7 +148,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             return View(productVariation);
         }
 
-        // POST: Admin/productVariations/Delete/5
+        // POST: Admin/productVariations1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

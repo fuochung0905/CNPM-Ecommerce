@@ -7,6 +7,7 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
+
     public class daskboardController : Controller
     {
         private readonly ApplicationDbContext _context;

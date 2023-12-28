@@ -73,7 +73,10 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
-
+            [Required]
+            [Phone]
+            [Display(Name = "SDT")]
+            public string phoneNumber { get; set; }
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
@@ -105,6 +108,7 @@ namespace CNPM_ktxUtc2Store.Areas.Identity.Pages.Account
                 var user = CreateUser();
                 user.fullname = Input.Name;
                 user.profilePicture = "default.jpg";
+                user.PhoneNumber = Input.phoneNumber;
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
