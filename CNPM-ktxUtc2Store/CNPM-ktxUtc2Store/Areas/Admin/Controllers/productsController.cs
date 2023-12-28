@@ -108,7 +108,9 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
         {
             var product = _context.products.Find(id);
             var variation = _context.variation.Where(x => x.categoryId == product.categoryId).ToList();
+            
             productvariationDto dto = new productvariationDto();
+            dto.productId = product.Id;
             foreach (var item in variation)
             {
                 dto.Variations.Add(item);
@@ -120,6 +122,29 @@ namespace CNPM_ktxUtc2Store.Areas.Admin.Controllers
             }
             return View(dto);
         }
+        [HttpPost]
+        public async Task<IActionResult> AddVariation(int id, productvariationDto productvariationDto)
+        {
+            var product= await _context.products.FindAsync(id);
+            var variation =await _context.variation.FindAsync(productvariationDto.Id);
+            productVariation model = new productVariation();
+            model.product = product;
+            model.variation = variation;
+            _context.productVariations.Add(model);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("AddVariation", "products");
+        }
+        public async Task<IActionResult> DeleteVariation(int productId, int variationId)
+        {
+            var productVariation=await _context.productVariations.Where(X=>X.variationId==variationId).Where(x=>x.productId==productId).ToListAsync();
+            foreach(var item in productVariation)
+            {
+                _context.productVariations.Remove(item);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("AddVariation", "products");
+        }
+
 
         // GET: Admin/products/Edit/5
         public async Task<IActionResult> Edit(int? id)
